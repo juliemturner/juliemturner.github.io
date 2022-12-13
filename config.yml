@@ -1,0 +1,77 @@
+baseURL: 'https://juliemturner.github.io/'
+DefaultContentLanguage: "en"
+title: "Veni, Vidi, Vici"
+theme: "beautifulhugo"
+disqusShortname: "veni-vidi-vici-1"
+#googleAnalytics: ""
+pygmentsStyle: "trac"
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+pygmentsCodefencesGuessSyntax: true
+
+taxonomies:
+  category: 'categories'
+  series: 'series'
+  tag: 'tags'
+  
+Params:
+  subtitle: "MUSINGS AND SOLUTIONS FOR SHAREPOINT, MICROSOFT 365, AND AZURE"
+  mainSections: ["post","posts"]
+  logo: "img/venividivici_header.png"
+  #favicon: "img/siteicon-julieturner-icon.png"
+  dateFormat: "January 2, 2006"
+  commit: false
+  rss: true
+  comments: true
+  readingTime: true
+  wordCount: true
+  useHLJS: true
+  socialShare: true
+  delayDisqus: true
+  showRelatedPosts: true
+  keyword: "Microsoft 365, SharePoint, Teams, Extensibility, Development, PnP"
+  
+Author:
+  # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
+  name: "Julie Turner"
+  website: "julieturner.net"
+  #email: "youremail@domain.com"
+  #facebook: "username"
+  github: "juliemturner"
+  #gitlab: "username"
+  #bitbucket: "username"
+  twitter: "jfj1997"
+  #reddit: "username"
+  linkedin: "juliemturner"
+  #xing: "username"
+  #stackoverflow: "users/XXXXXXX/username"
+  #snapchat: "username"
+  #instagram: "username"
+  youtube: "user/username" # or channel/channelname
+  #soundcloud: "username"
+  #spotify: "username"
+  #bandcamp: "username"
+  #itchio: "username"
+  #vk: "username"
+  #paypal: "username"
+  #telegram: "username"
+  #500px: "username"
+  #codepen: "username"
+  mastodon: "https://home.social/@sympjulie"
+  #kaggle: "username"
+  #weibo: "username"
+  #slack: "username"
+  #discord: "invite code (https://discord.gg/XXXXXXX)"
+  #strava: "userid"
+
+menu:
+  main:
+  - name: "Blog"
+    url: ""
+    weight: 1
+  - name: "About"
+    url: "page/me/"
+    weight: 3
+  - name: "Tags"
+    url: "tags"
+    weight: 3

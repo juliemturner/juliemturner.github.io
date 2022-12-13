@@ -3,6 +3,7 @@ title: 'Azure Function Development-Deployment Strategy'
 date: Tue, 05 Sep 2017 15:15:50 +0000
 draft: false
 tags: ['SharePoint Online', 'ALM', 'Azure Functions']
+aliases: ["/2017/09/azure-function-development-deployment-strategy/"]
 ---
 
 ![VS.jpg](VS.jpg)

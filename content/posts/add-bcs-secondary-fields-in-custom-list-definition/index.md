@@ -4,6 +4,7 @@ subtitle:
 date: Thu, 12 May 2011 19:15:37 +0000
 draft: false
 tags: ['Visual Studio', '2010', 'BCS', 'BCS', 'secondary field', 'custom list definition', 'schema.xml', 'external data', 'code']
+aliases: ["/2011/05/add-bcs-secondary-fields-in-custom-list-definition/"]
 ---
 
 When working with BCS data and creating an external data column in a list or library it is often desirable to show some or all of the secondary fields. In the SharePoint UI, this is a simple task, completed by checking off the fields to capture for viewing, searching, filtering, and sorting later. ![bcssecondaryfields1](BCSSecondaryFields1.gif) However, when you're building your list or library using a custom list definition schema.xml file this is not as simple. After struggling a bit trying to code the XML myself, it dawned on me that I could mock up the field using the UI and then extract the properly formated field tags by getting the schemaxml property of the list. ![bcssecondaryfields2](BCSSecondaryFields2.gif) There are various ways to do this but I've found the simplest way it to use a tool like [SharePoint Manager](http://spm.codeplex.com/ "SharePoint Manager 2010")

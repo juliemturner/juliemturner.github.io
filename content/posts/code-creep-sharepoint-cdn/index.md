@@ -3,6 +3,7 @@ title: 'Code Creep - SharePoint "CDN"'
 date: Tue, 06 Sep 2016 14:00:00 +0000
 draft: false
 tags: ['SharePoint', '2013', 'O365', 'Widget Wrangler', 'SharePoint Online', 'Widget Wrangler', '2010', 'ALM', 'Development', 'SharePoint Version', '2016', 'ALM', 'Development']
+aliases: ["/2016/09/code-creep-sharepoint-cdn/"]
 ---
 
 ### _Centralizing your SharePoint client side code_
