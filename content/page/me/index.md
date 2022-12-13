@@ -10,9 +10,10 @@ Julie Turner
 
 |  |  |
 | -- | -- |
-| Sympraxis Consulting <br/> Partner/CTO | <img src="Sympraxis-Consulting_Logo-e1663605350572.png" alt="Sympraxis Consulting Logo" width="200px" /> |
-| <img alt="Twitter Logo" src="twitter.png" height="50px" /> [jfj1997](https://twitter.com/jfj1997) | <img alt="LinkedIn Logo" src="linkedin.png" height="50px" /> [juliemturner](https://www.linkedin.com/in/juliemturner/) |
-| <img alt="GitHub Logo" src="github.png" height="50px" /> [Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme") | <img alt="Grepper Logo" src="greppericon.jpg" height="50px" /> [Zen Developer](https://www.codegrepper.com/profile/julie-turner) |
+| Sympraxis Consulting | {{< figure src="Sympraxis-Consulting_Logo-e1663605350572.png" alt="Sympraxis Consulting Logo" width="300px" >}} |
+| Partner/CTO |
+| {{< figure src="twitter.png" alt="Twitter Logo" width="30px">}} [jfj1997](https://twitter.com/jfj1997) | {{< figure src="linkedin.png" alt="LinkedIn Logo" width="30px">}} [juliemturner](https://www.linkedin.com/in/juliemturner/) |
+| {{< figure src="github.png" alt="GitHub Logo" width="30px">}} [Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme") | {{< figure src="greppericon.jpg" alt="Grepper Logo" width="30px">}} [Zen Developer](https://www.codegrepper.com/profile/julie-turner) |
 
 Podcasts/Video Shows
 --------------------
