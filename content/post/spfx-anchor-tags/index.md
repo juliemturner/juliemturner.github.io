@@ -4,7 +4,7 @@ date: Wed, 08 Aug 2018 18:17:18 +0000
 draft: false
 tags: ['Development', 'SPFx', 'HTML']
 aliases: ["/2018/12/resolve-to-log/"]
-bigimg: [{src: "SPFxAnchorTags_lg.png", desc: ""}]
+bigimg: [{src: "SPFxAnchorTags_lg.jpeg", desc: ""}]
 ---
 
 If you’re developing SharePoint Framework web parts you may have run across an issue whereby your anchor tags will not honor the target=”\_blank” attribute allowing you to open a url in a new browser tab. The issue manifests itself only when your goal is to open another SharePoint page from a SharePoint page, i.e. the href is in the SharePoint domain. The reason for this is SharePoint’s built in but rather complex Page Router. Basically, the Page Router is the mechanism by which pages are rendered in SharePoint. In the most basic terms a component sits between you and a page refresh providing logic to how much and when parts of the page need to be loaded. What that means for you is that when you are trying to load a SharePoint page the router steps in and “decides” how it will be rendered and because of this the target attribute is ignored.
