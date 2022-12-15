@@ -3,15 +3,16 @@ title: "Conquer your dev toolchain in 'Classic' SharePoint - Part 2"
 date: Tue, 09 Jan 2018 14:47:29 +0000
 draft: false
 tags: ['2013', 'Javascript', 'SharePoint Online', '2010', 'ALM', 'Development', '2016', 'SharePoint Version', 'Language', 'TypeScript', '2007']
-series: "Conquer your dev toolchain in 'Classic' SharePoint"
+series: ["Conquer your dev toolchain in 'Classic' SharePoint"]
 aliases: ["/2018/01/conquer-your-dev-toolchain-in-classic-sharepoint-part-2"]
 bigimg: [{src: "DevProcess2a.png", desc: ""}]
 ---
 
-In the [first post](../conquer-your-dev-toolchain-1) in this series I discussed some of the benefits of formalizing your client-side development process and then a bit about starting the process of tooling up. A common scenario to develop our own client-side solutions in SharePoint is to point a Content Editor (CEWP) or Script Editor (SEWP) web part at our custom html, css, and js files that are sitting in a document library somewhere in our environment. In this post I want to dive into the most basic implementations of a development toolchain that will automatically deploy those files into a location in SharePoint. This does not mean, and in most cases, should not mean, “production”. What it means is that while you’re developing your code any changes you make will be automatically uploaded to a location that you already have your CEWP or SEWP pointed to, that way when you refresh the page your custom solution will refresh with the latest version of your code. To accomplish this, we’re going to use [Gulp](https://gulpjs.com/) which is a JavaScript based task runner similar to the build process that exists in Visual Studio. As I said, I’m going to be sharing with you now the most basic [package.json](https://docs.npmjs.com/files/package.json) and [gulpfile.js](https://github.com/gulpjs/gulp) to configure this process. In addition, I’ve created 2 settings files, one has the project settings and the other has security and local configuration values that my gulp file will use. The reason I create two files is that one, settings.json, I check into our local source control and the other, settings\_security.json, I do not. This way in order for me to get up and running with a project that someone else worked on all I have to do is create a local copy of settings\_security.json and run “npm i” which will install all the dependencies I added to my package.json file.
+In the [first post](../conquer-your-dev-toolchain-1) in this series I discussed some of the benefits of formalizing your client-side development process and then a bit about starting the process of tooling up. A common scenario to develop our own client-side solutions in SharePoint is to point a Content Editor (CEWP) or Script Editor (SEWP) web part at our custom html, css, and js files that are sitting in a document library somewhere in our environment. In this post I want to dive into the most basic implementations of a development toolchain that will automatically deploy those files into a location in SharePoint. This does not mean, and in most cases, should not mean, “production”. What it means is that while you’re developing your code any changes you make will be automatically uploaded to a location that you already have your CEWP or SEWP pointed to, that way when you refresh the page your custom solution will refresh with the latest version of your code. To accomplish this, we’re going to use [Gulp](https://gulpjs.com/) which is a JavaScript based task runner similar to the build process that exists in Visual Studio.
 
-Using REST to move your files into SharePoint – SharePoint 2013 and beyond
---------------------------------------------------------------------------
+As I said, I’m going to be sharing with you now the most basic [package.json](https://docs.npmjs.com/files/package.json) and [gulpfile.js](https://github.com/gulpjs/gulp) to configure this process. In addition, I’ve created 2 settings files, one has the project settings and the other has security and local configuration values that my gulp file will use. The reason I create two files is that one, settings.json, I check into our local source control and the other, settings\_security.json, I do not. This way in order for me to get up and running with a project that someone else worked on all I have to do is create a local copy of settings\_security.json and run “npm i” which will install all the dependencies I added to my package.json file.
+
+## Using REST to move your files into SharePoint – SharePoint 2013 and beyond
 
 First let’s look at our package.json file for deploying files to SharePoint 2013 -> Office 365. This package.json and it’s corresponding gulpfile.js work with any SharePoint environment that supports the REST apis.
 
@@ -58,7 +59,9 @@ Provides the ability to pass each file that changed from the watch into spsave t
 
 Uploads the file into a SharePoint library.
 
-One other thing I’d like to point out in my devDependencies is the use of the ~ before the version number. This is a modification I made purposefully, again due to run ins with older code getting updated and not working together very nicely. The ~ tells npm that it should “Allows patch-level changes if a minor version is specified on the comparator. Allows minor-level changes if not.” By default, when you use the ‘npm i’ to install a new package it will use the ^ range which “Allows changes that do not modify the left-most non-zero digit in the \[major, minor, patch\] tuple.” What I’m basically saying is that I would go back to code I had written a year ago, pull it out of source control and do an ‘npm i’. Because most of the packages I had reference updated since then I would get the latest version per the ^ range rules. What I found is I would often end up with breaking changes and it was super frustrating to go back and fix them for something that wasn’t broken to begin with, so I made this modification to all my package.json files. Ok, so if you’ve run “npm i” then all of these dependencies (and their dependencies) should be installed in the node\_modules subfolder. Once that is complete we can use them by creating a gulpfile.js which is basically a JavaScript file that uses these packages and runs on our NodeJS “server”. Start off by declaring variables that we'll use in our process.
+One other thing I’d like to point out in my devDependencies is the use of the ~ before the version number. This is a modification I made purposefully, again due to run ins with older code getting updated and not working together very nicely. The ~ tells npm that it should “Allows patch-level changes if a minor version is specified on the comparator. Allows minor-level changes if not.” By default, when you use the ‘npm i’ to install a new package it will use the ^ range which “Allows changes that do not modify the left-most non-zero digit in the \[major, minor, patch\] tuple.” What I’m basically saying is that I would go back to code I had written a year ago, pull it out of source control and do an ‘npm i’. Because most of the packages I had reference updated since then I would get the latest version per the ^ range rules. What I found is I would often end up with breaking changes and it was super frustrating to go back and fix them for something that wasn’t broken to begin with, so I made this modification to all my package.json files.
+
+Ok, so if you’ve run “npm i” then all of these dependencies (and their dependencies) should be installed in the node\_modules subfolder. Once that is complete we can use them by creating a gulpfile.js which is basically a JavaScript file that uses these packages and runs on our NodeJS “server”. Start off by declaring variables that we'll use in our process.
 
 ```javascript
 "use strict";
@@ -86,21 +89,12 @@ This first part of the file imports the packages that are required, all the ones
 }
 ```
 
-projectname
-
-The project name should be unique as it’s used by the gulp-cache to generate the cache for the project, reuse will potentially have two projects using the same cache and the result will be unpredictable at best.
-
-srcFiles
-
-This is an array of Globs that should be watched, see the primer for how to form the pattern matches for folder structure.
-
-siteCollURL
-
-The URL for the site collection you want to upload the files to.
-
-destFolder
-
-The site collection relative path to the library / folder you want the files uploaded to.
+| | |
+| -- | -- |
+| projectname | The project name should be unique as it’s used by the gulp-cache to generate the cache for the project, reuse will potentially have two projects using the same cache and the result will be unpredictable at best. |
+| srcFiles | This is an array of Globs that should be watched, see the primer for how to form the pattern matches for folder structure. |
+| siteCollURL | The URL for the site collection you want to upload the files to. |
+| destFolder | The site collection relative path to the library / folder you want the files uploaded to. |
 
 ### settings\_security.json
 
@@ -112,17 +106,11 @@ The site collection relative path to the library / folder you want the files upl
 }
 ```
 
-rootFolder
-
-The root of the project relative to the drive letter (i.e. C:). A problem I’ve had in the past is that the rootFolder path is case sensitive.
-
-username
-
-Either the O365 account (in the form of an email address) or for on premises environments the username below would take the form domain\\username.
-
-pwd
-
-The password for the username provided.
+| | |
+| -- | -- |
+| rootFolder | The root of the project relative to the drive letter (i.e. C:). A problem I’ve had in the past is that the rootFolder path is case sensitive. |
+| username | Either the O365 account (in the form of an email address) or for on premises environments the username below would take the form domain\username. |
+| pwd | The password for the username provided. |
 
 You now have two options. You can either upload the files maintaining the relative folder structure of your source into the destination or you can flatten the relationship which puts all the files in the destination's root. Below I have two functions one maintains the folder structure and the other flattens it. The idea here is that you get a listing of the files then pass them through the cache, then map the files that changed into a function call that passes each individual file to spsave which then uploads the file to the library. Because I normally use the more advanced version that I’ll be showing in part 4, which pretty much creates only 1 file, I almost always use the flatten option.
 

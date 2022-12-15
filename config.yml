@@ -10,10 +10,15 @@ pygmentsCodeFences: true
 pygmentsCodefencesGuessSyntax: true
 
 taxonomies:
-  category: 'categories'
   series: 'series'
   tag: 'tags'
   
+lastmod:
+  - lastmod
+  - :git
+  - publishDate
+  - date
+
 Params:
   subtitle: "MUSINGS AND SOLUTIONS FOR SHAREPOINT, MICROSOFT 365, AND AZURE"
   mainSections: ["post","posts"]
@@ -75,6 +80,3 @@ menu:
   - name: "Privacy Policy"
     url: "page/privacy-policy/"
     weight: 5
-  - name: "Tags"
-    url: "tags"
-    weight: 3

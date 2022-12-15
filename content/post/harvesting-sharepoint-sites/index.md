@@ -137,7 +137,7 @@ using (ClientContext ctx = new ClientContext(tenantUrl))
 
 As the Microsoft Graph is an ever changing API that’s constantly being expanded I’m obviously going to be writing this as a primer as of the date of publication so please make sure you’re referencing the [graph documentation](https://developer.microsoft.com/en-us/graph/docs) to verify what might have changed. Of what we have outlined above you can get some very basic information about a site collection from the graph by making a REST call to:
 
-```
+```text
 <https://graph.microsoft.com/v1.0/sites/contoso.sharepoint.com:/sites/1drvteam>
 ```
 
@@ -166,7 +166,7 @@ where 'contoso.sharepoint.com' is your tenant and '/sites/1drvteam' is the relat
 
 What might be useful for visibility of your tenant would be information about any group enabled team sites, to get that we can utilize the **/groups** endpoint. For the time being there is no way via the graph to get the related group via the **sites** endpoint. A work around is to use the **$filter** parameter with the **mailNickname** property of the group. For example, if your site collection was <https://contoso.sharepoint.com/teams/1drvteam> then the corresponding graph call to get the group information would be:
 
-```
+```text
 https://graph.microsoft.com/v1.0/groups?$filter=mailNickname eq '1drvteam'
 ```
 
@@ -212,7 +212,7 @@ which then returns the following properties and extensions
 
 Now you have the group’s guid, you can formalize the call to
 
-```
+```text
 https://graph.microsoft.com/v1.0/groups/54e79fa1-0948-4a98-9914-199230818f49
 ```
 
