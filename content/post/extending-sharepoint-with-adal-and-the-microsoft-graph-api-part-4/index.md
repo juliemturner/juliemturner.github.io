@@ -2,7 +2,12 @@
 title: 'Extending SharePoint with ADAL and the Microsoft Graph API – Part 4 (The Extension)'
 date: Wed, 30 Aug 2017 13:25:59 +0000
 draft: false
-tags: ['REST', 'SharePoint Online', 'Microsoft Graph API', 'TypeScript']
+tags: 
+  - Microsoft 365
+  - Microsoft Graph
+  - REST
+  - TypeScript
+  - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
 aliases: ["/2017/08/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-4-the-extension/"]
 bigimg: [{src: "LeveragingGraphAPIPart4.png", desc: ""}]

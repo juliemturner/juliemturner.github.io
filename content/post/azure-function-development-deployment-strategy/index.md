@@ -2,7 +2,10 @@
 title: 'Azure Function Development-Deployment Strategy'
 date: Tue, 05 Sep 2017 15:15:50 +0000
 draft: false
-tags: ['SharePoint Online', 'ALM', 'Azure Functions']
+tags:
+  - SharePoint
+  - Microsoft 365
+  - Azure Functions
 aliases: ["/2017/09/azure-function-development-deployment-strategy/"]
 bigimg: [{src: "azurefunctiondevdep_feature.png", desc: ""}]
 ---

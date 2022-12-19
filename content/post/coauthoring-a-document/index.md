@@ -2,7 +2,9 @@
 title: 'Greetings from New Hampshire, Where I’m Co-Authoring a Document'
 date: Fri, 03 Feb 2017 16:05:47 +0000
 draft: false
-tags: ['Office Apps', 'Co-Authoring']
+tags: 
+  - SharePoint
+  - Microsoft 365
 aliases: ["/2017/02/greetings-from-new-hampshire-where-im-co-authoring-a-document/"]
 bigimg: [{src: "20170203_1.png", desc: ""}]
 ---

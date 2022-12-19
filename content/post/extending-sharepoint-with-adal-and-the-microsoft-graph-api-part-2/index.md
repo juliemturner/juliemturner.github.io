@@ -2,7 +2,12 @@
 title: 'Extending SharePoint with ADAL and the Microsoft Graph API – Part 2 (The Authorization)'
 date: Thu, 26 Jan 2017 14:02:36 +0000
 draft: false
-tags: ['Javascript', 'REST', 'SharePoint Online', 'Microsoft Graph API']
+tags: 
+  - Microsoft 365
+  - Microsoft Graph
+  - REST
+  - TypeScript
+  - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2-the-authorization/"]
 bigimg: [{src: "20170118_ADALLibs.png", desc: ""}]

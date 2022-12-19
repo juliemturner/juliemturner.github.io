@@ -2,7 +2,12 @@
 title: 'Create SharePoint Document Set (and set metadata) using REST'
 date: Mon, 14 Nov 2016 20:16:14 +0000
 draft: false
-tags: ['REST', 'SharePoint', '2013', 'O365', 'REST', 'SharePoint Online', 'SharePoint Version', 'Document Set', '2016']
+tags: 
+  - SharePoint
+  - Server 2013
+  - Server 2016
+  - REST
+  - JavaScript
 aliases: ["/2016/11/create-sharepoint-document-set-and-set-metadata-using-rest/"]
 ---
 

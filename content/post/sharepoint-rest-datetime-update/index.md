@@ -2,7 +2,13 @@
 title: 'SharePoint REST Date/Time Updates'
 date: Mon, 06 Nov 2017 20:25:15 +0000
 draft: false
-tags: ['2013', 'REST', 'SharePoint Online', '2010', '2016', 'SharePoint Version', 'List', 'Library']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - Server 2016
+  - REST
+  - JavaScript
 aliases: ["/2017/11/sharepoint-rest-datetime-updates/"]
 bigimg: [{src: "sptimeupdate_header.png", desc: ""}]
 ---

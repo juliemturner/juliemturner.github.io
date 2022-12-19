@@ -2,7 +2,10 @@
 title: 'Managing the Unified Group in Office 365 for SharePoint and Beyond'
 date: Tue, 10 Apr 2018 13:24:04 +0000
 draft: false
-tags: ['SharePoint Online', 'Development', 'O365/Unified Group', 'C#']
+tags: 
+  - SharePoint
+  - Microsoft 365
+  - C#
 aliases: ["/2018/04/managing-the-unified-group-in-office-365-for-sharepoint-and-beyond/"]
 bigimg: [{src: "ManagingUnifiedGroup_lg.png", desc: ""}]
 ---

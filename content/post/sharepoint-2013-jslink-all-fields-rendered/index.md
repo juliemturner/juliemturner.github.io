@@ -2,7 +2,11 @@
 title: 'SharePoint 2013 JSLink - All Fields Rendered'
 date: Wed, 26 Aug 2015 19:41:41 +0000
 draft: false
-tags: ['2013', 'SharePoint', '2013', 'O365', 'JSLink', 'JSLink', '2016']
+tags: 
+  - SharePoint
+  - JSLink
+  - Server 2013
+  - Server 2016
 aliases: ["/2015/08/sharepoint-2013-jslink-all-fields-rendered/"]
 ---
 

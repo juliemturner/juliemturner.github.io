@@ -2,7 +2,13 @@
 title: "Conquer your dev toolchain in 'Classic' SharePoint - Part 3"
 date: Thu, 11 Jan 2018 14:29:46 +0000
 draft: false
-tags: ['2013', 'Javascript', 'SharePoint Online', '2010', 'ALM', 'Development', '2016', 'SharePoint Version', 'Language', 'TypeScript', '2007']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - Server 2016
+  - TypeScript
+  - JavaScript
 series: ["Conquer your dev toolchain in 'Classic' SharePoint"]
 aliases: ["/2018/01/conquer-your-dev-toolchain-in-classic-sharepoint-part-3"]
 bigimg: [{src: "DevProcess2b.png", desc: ""}]

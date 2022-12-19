@@ -2,7 +2,11 @@
 title: 'Creating a property pane for editing items in your SPFx web parts'
 date: Mon, 17 Jul 2017 12:34:43 +0000
 draft: false
-tags: ['SharePoint Online', '2016', 'SPFx']
+tags: 
+  - SharePoint
+  - Teams
+  - Microsoft 365
+  - SharePoint Framework
 aliases: ["/2017/07/creating-a-property-pane-for-editing-items-in-your-spfx-web-parts/"]
 bigimg: [{src: "SPFXPropPane_featured.png", desc: ""}]
 ---

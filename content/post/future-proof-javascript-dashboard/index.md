@@ -2,7 +2,13 @@
 title: 'Future Proof - Javascript Dashboard Code Samples'
 date: Sat, 05 Apr 2014 19:29:51 +0000
 draft: false
-tags: ['2013', 'Javascript', 'SharePoint Online', 'SharePoint', '2013', 'O365', 'JavaScript', 'Widget Wrangler', 'SharePoint Online', 'widget', '2010', '2010', 'chart', 'dashboard']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - Server 2016
+  - TypeScript
+  - JavaScript
 aliases: ["/2014/04/future-proof-javascript-dashboard-code-samples/"]
 ---
 

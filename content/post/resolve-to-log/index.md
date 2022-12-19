@@ -2,7 +2,11 @@
 title: 'Resolve to Log'
 date: Mon, 31 Dec 2018 18:51:56 +0000
 draft: false
-tags: ['SharePoint Online', 'Development', '2016', 'SPFx', 'TypeScript', '2019']
+tags:
+  - Microsoft 365
+  - SharePoint Framework
+  - PnPjs
+  - TypeScript
 aliases: ["/2018/12/resolve-to-log/"]
 bigimg: [{src: "PnPLogging_lg.png", desc: ""}]
 ---

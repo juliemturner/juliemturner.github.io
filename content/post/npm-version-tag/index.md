@@ -1,8 +1,9 @@
 ---
-title: 'Tip: ''npm version'' isn''t creating tag for your project'
+title: "Tip: 'npm version' isn't creating tag for your project"
 date: Mon, 08 Apr 2019 23:33:40 +0000
 draft: false
-tags: ['ALM', 'Development', 'SPFx', 'Tips &amp; Tricks']
+tags: 
+  - SharePoint Framework
 aliases: ["/2019/04/tip-npm-version-isnt-creating-tag-for-your-project/"]
 bigimg: [{src: "TipNavComponent_kg.png", desc: ""}]
 ---
@@ -17,7 +18,7 @@ If you're repository structure looks anything like this, where your package.json
 
 So this...
 
-```
+```text
 mySpfxProject
 |----.git/
 |----docs/
@@ -29,7 +30,7 @@ mySpfxProject
 
 becomes...
 
-```
+```text
 mySpfxProject
 |----.git/
 |----docs/

@@ -2,7 +2,13 @@
 title: 'Widget Wrangler Webcast and New Release'
 date: Mon, 14 Mar 2016 20:36:26 +0000
 draft: false
-tags: ['KnockoutJS', 'JQuery', '2013', 'Office Dev PnP', 'SharePoint Online', 'SharePoint', '2013', 'O365', 'JavaScript', 'Widget Wrangler', 'SharePoint Online', 'Widget Wrangler', 'library', 'framework', 'widget', 'pattern', 'AngularJS']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - Server 2016
+  - JavaScript
+  - TypeScript
 aliases: ["/2016/03/widget-wrangler-webcast-and-new-release/"]
 ---
 

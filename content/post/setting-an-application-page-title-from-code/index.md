@@ -2,7 +2,10 @@
 title: 'Setting an Application Page Title from code'
 date: Wed, 15 Jun 2011 21:02:25 +0000
 draft: false
-tags: ['2010', 'Application Page', 'HtmlTitle', 'Application Page', 'ContentPlaceHolder', 'PlaceHolderPageTitle', 'Header', 'Title']
+tags: 
+  - SharePoint
+  - Server 2010
+  - C#
 aliases: ["/2011/06/setting-an-application-page-title-from-code/"]
 ---
 

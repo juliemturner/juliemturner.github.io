@@ -2,7 +2,12 @@
 title: 'Harvesting your SharePoint Site Collections'
 date: Tue, 20 Mar 2018 11:36:31 +0000
 draft: false
-tags: ['REST', 'SharePoint Online', 'Development', 'Microsoft Graph API', 'PowerShell']
+tags:
+  - Microsoft 365
+  - Microsoft Graph
+  - REST
+  - PowerShell
+  - SharePoint
 aliases: ["/2018/03/harvesting-your-sharepoint-site-collections/"]
 bigimg: [{src: "harvestingsites.jpeg", desc: ""}]
 ---

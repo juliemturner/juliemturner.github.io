@@ -2,7 +2,6 @@
 title: 'Sympraxis Development Process - part 1'
 date: Tue, 16 Aug 2016 17:23:47 +0000
 draft: false
-tags: ['SharePoint Online', 'SharePoint', 'Sympraxis', 'GitHub', 'SPSave', 'TFS', 'gulp']
 aliases: ["/2016/08/sympraxis-development-process-part-1/"]
 ---
 

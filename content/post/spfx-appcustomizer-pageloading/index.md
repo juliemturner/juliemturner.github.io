@@ -2,7 +2,10 @@
 title: 'SharePoint Framework Application Customizer Cross-Site Page Loading'
 date: Thu, 05 Sep 2019 13:21:48 +0000
 draft: false
-tags: ['SharePoint Online', 'SPFx', 'TypeScript', 'Featured']
+tags: 
+  - Microsoft 365
+  - SharePoint Framework
+  - TypeScript
 aliases: ["/2019/09/sharepoint-framework-application-customizer-cross-site-page-loading/"]
 bigimg: [{src: "AppCustCrossSite_lg.png", desc: ""}]
 ---

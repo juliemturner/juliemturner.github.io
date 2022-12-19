@@ -2,7 +2,11 @@
 title: 'InfoPath - Show links to documents in a library from the form'
 date: Fri, 11 Jan 2013 20:00:38 +0000
 draft: false
-tags: ['REST', '2010', 'InfoPath', 'InfoPath', 'link', 'document', 'document library', 'form']
+tags: 
+  - SharePoint
+  - Server 2010
+  - InfoPath
+  - REST
 aliases: ["/2013/01/infopath-show-links-to-documents-in-a-library-from-the-form/"]
 ---
 

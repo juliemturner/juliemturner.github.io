@@ -2,7 +2,13 @@
 title: 'SharePoint time, is not your time, is not their time.'
 date: Mon, 17 Apr 2017 23:54:27 +0000
 draft: false
-tags: ['2013', 'REST', 'SharePoint Online', '2010', '2016', 'SharePoint Version', 'SharePoint Area', 'List', 'Library']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - Server 2016
+  - REST
+  - JavaScript
 aliases: ["/2017/04/sharepoint-time-is-not-your-time-is-not-their-time/"]
 bigimg: [{src: "clock.png", desc: ""}]
 ---

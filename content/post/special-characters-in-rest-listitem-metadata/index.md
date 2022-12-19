@@ -2,7 +2,12 @@
 title: 'Special Characters in REST ListItem Metadata'
 date: Mon, 12 Sep 2016 21:07:17 +0000
 draft: false
-tags: ['space', '2013', 'Javascript', 'REST', 'SharePoint Online', 'SharePoint', '2013', 'O365', 'REST', 'ListItem', 'JavaScript', 'ASCII', 'hex', 'special characters']
+tags: 
+  - SharePoint
+  - Server 2013
+  - Server 2016
+  - JavaScript
+  - REST
 aliases: ["/2016/09/special-characters-in-rest-listitem-metadata/"]
 ---
 

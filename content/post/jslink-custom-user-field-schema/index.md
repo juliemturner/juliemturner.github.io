@@ -2,7 +2,11 @@
 title: 'JSLink Custom User Field Schema'
 date: Fri, 28 Aug 2015 19:13:00 +0000
 draft: false
-tags: ['2013', 'SharePoint', '2013', 'O365', 'JSLink', 'JSLink', 'Field Schema']
+tags:
+  - SharePoint
+  - Server 2013
+  - Server 2016
+  - JSLink
 aliases: ["/2015/08/jslink-custom-user-field-schema-1/"]
 ---
 

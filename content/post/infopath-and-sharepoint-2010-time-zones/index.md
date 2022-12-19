@@ -2,7 +2,11 @@
 title: 'Quick Primer on InfoPath and SharePoint 2010 Time Zones'
 date: Thu, 31 Jan 2013 13:28:46 +0000
 draft: false
-tags: ['SharePoint', '2013', '2010', '2010', 'InfoPath', 'InfoPath', 'timezone']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - InfoPath
 aliases: ["/2013/01/quick-primer-on-infopath-and-sharepoint-2010-time-zones/"]
 ---
 

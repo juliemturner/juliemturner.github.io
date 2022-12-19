@@ -2,7 +2,10 @@
 title: 'SPFx Anchor Tags - Hitting the Target'
 date: Wed, 08 Aug 2018 18:17:18 +0000
 draft: false
-tags: ['Development', 'SPFx', 'HTML']
+tags: 
+  - SharePoint Framework
+  - Microsoft 365
+  - JavaScript
 aliases: ["/2018/12/resolve-to-log/"]
 bigimg: [{src: "SPFxAnchorTags_lg.jpeg", desc: ""}]
 ---

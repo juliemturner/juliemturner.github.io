@@ -2,7 +2,9 @@
 title: 'Maintain file version history when moving/copying files between SharePoint sites'
 date: Thu, 02 Jun 2011 13:54:43 +0000
 draft: false
-tags: ['2010', 'SPDocumentLibrary', 'SPDocumentLibrary', 'SPFileVersions', 'SPFile', 'History']
+tags: 
+  - SharePoint
+  - Server 2010
 aliases: ["/2011/06/maintain-file-version-history-when-movingcopying-files-between-sharepoint-sites/"]
 ---
 

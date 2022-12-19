@@ -2,7 +2,11 @@
 title: 'Tip: Implementing ''Nav'' Office Fabric UI React Component'
 date: Tue, 31 Jul 2018 23:55:05 +0000
 draft: false
-tags: ['Development', 'SPFx', 'TypeScript', 'Framework', 'ReactJS', 'Tips &amp; Tricks']
+tags: 
+  - Microsoft 365
+  - SharePoint Framework
+  - ReactJS
+  - TypeScript
 aliases: ["/2018/07/tip-implementing-nav-office-fabric-ui-react-component/"]
 bigimg: [{src: "TipNavComponent_lg.jpeg", desc: ""}]
 ---

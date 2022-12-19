@@ -2,7 +2,10 @@
 title: 'Send Email through Visual Studio Workflow in SharePoint 2013'
 date: Tue, 25 Aug 2015 20:23:34 +0000
 draft: false
-tags: ['2013', 'SharePoint', '2013', 'Workflow', 'Microsoft.SharePoint.DesignTime.Activities.Email', 'Visual Studio', 'error']
+tags: 
+  - SharePoint
+  - Server 2013
+  - Workflow
 aliases: ["/2015/08/send-email-through-visual-studio-workflow-in-sharepoint-2013/"]
 ---
 

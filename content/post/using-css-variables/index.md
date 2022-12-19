@@ -2,7 +2,11 @@
 title: 'Using CSS Variables to Morph Your SPFx Design at Run Time'
 date: Thu, 13 Jun 2019 16:16:33 +0000
 draft: false
-tags: ['Development', 'CSS/SCSS']
+tags: 
+  - Microsoft 365
+  - SharePoint Framework
+  - CSS
+  - SASS
 aliases: ["/2019/06/using-css-variables-to-morph-your-spfx-design-at-run-time/"]
 bigimg: [{src: "CSSVariables_lg.png", desc: ""}]
 ---

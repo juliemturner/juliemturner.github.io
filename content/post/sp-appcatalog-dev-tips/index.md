@@ -2,7 +2,9 @@
 title: 'SharePoint App Catalog Development Tips'
 date: Mon, 03 May 2021 18:39:33 +0000
 draft: false
-tags: ['ALM', 'Development', 'Featured', 'Framework']
+tags: 
+  - SharePoint
+  - Microsoft 365
 aliases: ["/2021/05/sharepoint-app-catalog-development-tips/"]
 bigimg: [{src: "AppCatalog101.jpeg", desc: ""}]
 ---

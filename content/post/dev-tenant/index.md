@@ -2,7 +2,9 @@
 title: "What is a 'Dev Tenant' and why would you want one?"
 date: Wed, 06 Jan 2021 15:53:37 +0000
 draft: false
-tags: ['SharePoint Online', 'Development', 'Featured']
+tags: 
+  - SharePoint
+  - Microsoft 365
 aliases: ["/2021/01/what-is-a-dev-tenant-and-why-would-you-want-one/"]
 bigimg: [{src: "M365DevProgram.png", desc: ""}]
 ---

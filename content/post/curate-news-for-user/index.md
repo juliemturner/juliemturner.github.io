@@ -2,7 +2,10 @@
 title: 'Curate the News: Social Following Sites on behalf of a user'
 date: Mon, 18 Feb 2019 13:51:20 +0000
 draft: false
-tags: ['SharePoint Online', 'Development', 'Language', 'C#', 'Social']
+tags: 
+  - SharePoint
+  - Microsoft 365
+  - C#
 aliases: ["/2019/02/curate-the-news-social-following-sites-on-behalf-of-a-user/"]
 bigimg: [{src: "followsite_lg.png", desc: ""}]
 ---

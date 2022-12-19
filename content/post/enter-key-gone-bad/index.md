@@ -2,7 +2,12 @@
 title: 'Enter key gone bad'
 date: Fri, 18 Mar 2016 16:12:50 +0000
 draft: false
-tags: ['2013', 'Javascript', 'SharePoint Online', 'O365', 'JavaScript', 'SharePoint 2013', 'SPO', 'SharePoint Online', 'Enter', 'edit mode', 'page']
+tags: 
+  - SharePoint
+  - Microsoft 365
+  - SharePoint Framework
+  - TypeScript
+  - JavaScript
 aliases: ["/2016/03/enter-key-gone-bad/"]
 ---
 

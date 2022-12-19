@@ -2,7 +2,11 @@
 title: 'JSLink Validation – from Basic to Advanced'
 date: Mon, 31 Aug 2015 13:30:00 +0000
 draft: false
-tags: ['2013', 'SharePoint', '2013', 'O365', 'JSLink', 'JSLink', 'Validation', '2016']
+tags:
+  - SharePoint
+  - Server 2013
+  - Server 2016
+  - JSLink
 aliases: ["/2015/08/jslink-validation-from-basic-to-advanced/"]
 ---
 

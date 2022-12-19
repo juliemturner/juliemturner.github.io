@@ -2,7 +2,11 @@
 title: 'Using SQL Reporting Services Report Viewer Web Part to display Access Services report.'
 date: Mon, 07 Nov 2011 16:25:31 +0000
 draft: false
-tags: ['2010', 'Access Services', 'SQL Reporting Services', 'Report Web Part']
+tags: 
+  - SharePoint
+  - Server 2010
+  - SQL Reporting Services
+  - Access Services
 aliases: ["/2011/11/using-sql-reporting-services-report-viewer-web-part-to-display-access-services-report/"]
 ---
 

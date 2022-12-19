@@ -2,7 +2,13 @@
 title: 'SharePoint + Flow (+ Azure Functions): Launching a Microsoft Flow from Client-Side Code'
 date: Wed, 05 Jul 2017 20:29:23 +0000
 draft: false
-tags: ['Javascript', 'SharePoint Online', 'Development', 'Language', 'Microsoft Flow', 'Azure Functions']
+tags: 
+  - Microsoft Flow
+  - PowerAutomate
+  - Azure Functions
+  - Microsoft 365
+  - JavaScript
+  - TypeScript
 aliases: ["/2017/07/sharepoint-flow-azure-functions-launching-a-microsoft-flow-from-client-side-code/"]
 bigimg: [{src: "sp_flow_azuref_featured.png", desc: ""}]
 ---

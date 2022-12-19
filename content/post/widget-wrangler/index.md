@@ -2,7 +2,13 @@
 title: 'Flexible SharePoint Development with Widget Wrangler'
 date: Wed, 13 Jan 2016 22:00:00 +0000
 draft: false
-tags: ['KnockoutJS', 'JQuery', '2013', 'Office Dev PnP', 'SharePoint Online', 'SharePoint', '2013', 'O365', 'JavaScript', 'Widget Wrangler', 'SharePoint Online', 'Widget Wrangler', 'library', 'framework', 'widget', 'pattern', 'AngularJS']
+tags: 
+  - SharePoint
+  - Server 2010
+  - Server 2013
+  - Server 2016
+  - JavaScript
+  - TypeScript
 aliases: ["/2016/01/widget-wrangler/"]
 ---
 

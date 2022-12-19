@@ -2,7 +2,9 @@
 title: 'Tip: React JS - Fragments streamline your DOM'
 date: Thu, 18 Jul 2019 14:04:15 +0000
 draft: false
-tags: ['Development', 'SPFx', 'TypeScript', 'ReactJS', 'Tips &amp; Tricks']
+tags: 
+  - ReactJS
+  - TypeScript
 aliases: ["/2019/07/react-js-fragments-streamline-your-dom/"]
 bigimg: [{src: "TipNavComponent_lg.png", desc: ""}]
 ---
