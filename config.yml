@@ -3,7 +3,7 @@ DefaultContentLanguage: "en"
 title: "Veni, Vidi, Vici"
 theme: "julieturner"
 disqusShortname: "veni-vidi-vici-1"
-googleAnalytics: "UA-84177830-1"
+#googleAnalytics: "UA-84177830-1"
 pygmentsStyle: "trac"
 pygmentsUseClasses: true
 pygmentsCodeFences: true
