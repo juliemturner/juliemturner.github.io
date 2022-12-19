@@ -39,7 +39,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: recursive
+          submodules: false
       - name: 🧵 Setup Pages
         id: pages
         uses: actions/configure-pages@v2
