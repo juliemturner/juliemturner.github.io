@@ -21,12 +21,6 @@
         {{ end -}}
         {{- with .Sitemap.ChangeFreq }}<changefreq>{{- . -}}</changefreq>{{- end -}}
         {{- if ge .Sitemap.Priority 0.0 -}}<priority>{{- .Sitemap.Priority -}}</priority>{{- end -}}
-        {{- if .IsTranslated -}}
-          {{- range .Translations -}}
-            <xhtml:link rel="alternate" hreflang="{{- .Lang -}}" href="{{- .Permalink -}}" />
-          {{- end -}}
-          <xhtml:link rel="alternate" hreflang="{{- .Lang -}}" href="{{- .Permalink -}}"/>
-        {{- end -}}
       </url>
     {{- end -}}
   {{- end -}}
