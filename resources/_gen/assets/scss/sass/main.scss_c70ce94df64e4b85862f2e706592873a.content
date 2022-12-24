@@ -2604,7 +2604,8 @@ a {
 
 .jt-sidebar {
   margin: 0 10px; }
-  .jt-sidebar img {
+  .jt-sidebar .jt-aside-headshot {
+    text-align: center;
     margin-bottom: 20px; }
   .jt-sidebar .jt-asideSection {
     margin: 20px 0; }

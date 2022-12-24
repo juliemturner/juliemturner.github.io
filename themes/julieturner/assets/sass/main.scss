@@ -268,7 +268,8 @@ a {
 .jt-sidebar {
   margin: 0 10px;
 
-  img {
+  .jt-aside-headshot {
+    text-align: center;
     margin-bottom: 20px;
   }
 
@@ -388,7 +389,7 @@ a {
 
   .jt-pager {
     display: block;
-    padding-left: 50px;    
+    padding-left: 50px;
     padding-right: 50px;
     margin: 10px 0 0;
     text-align: center;

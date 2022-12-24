@@ -29,7 +29,9 @@
 {{ end }}
 <div class="jt-asideSection">
   <h2>About Me</h2>
-  <img src="{{ .Site.Params.headshot | absURL }}" alt="{{ .Site.Author.name }} headshot" />
+  <div class="jt-aside-headshot">
+    <img src="{{ .Site.Params.headshot | absURL }}" alt="{{ .Site.Author.name }} headshot" />
+  </div>
   <div class="jt-highlight">{{ .Site.Author.name }}</div>
   <div class="jt-subhighlight">Partner/CTO</div>
   <img class="jt-sympimg" src="/img/SympraxisLogo.png" alt="Sympraxis Consulting Logo" />
