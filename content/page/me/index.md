@@ -4,19 +4,11 @@ date: Mon, 19 Sep 2022 17:06:28 +0000
 draft: false
 ---
 
-Julie Turner
+{{< figure src="github.png" alt="GitHub Logo" width="30px">}} [Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme")
 
-------------
+{{< figure src="greppericon.jpg" alt="Grepper Logo" width="30px">}} [Zen Developer](https://www.codegrepper.com/profile/julie-turner)
 
-|  |  |
-| -- | -- |
-| Sympraxis Consulting | {{< figure src="Sympraxis-Consulting_Logo-e1663605350572.png" alt="Sympraxis Consulting Logo" width="300px" >}} |
-| Partner/CTO |
-| {{< figure src="twitter.png" alt="Twitter Logo" width="30px">}} [jfj1997](https://twitter.com/jfj1997) | {{< figure src="linkedin.png" alt="LinkedIn Logo" width="30px">}} [juliemturner](https://www.linkedin.com/in/juliemturner/) |
-| {{< figure src="github.png" alt="GitHub Logo" width="30px">}} [Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme") | {{< figure src="greppericon.jpg" alt="Grepper Logo" width="30px">}} [Zen Developer](https://www.codegrepper.com/profile/julie-turner) |
-
-Podcasts/Video Shows
---------------------
+## Podcasts/Video Shows
 
 [CloudDev Clarity](https://symp.info/cdc_play)
 
@@ -26,8 +18,7 @@ This show is where Andrew Connell & Julie Turner can discuss, debate, and even d
 
 In the Browser Native series, co-hosts Julie Turner & Bob German explore features built into all modern browsers that you might have missed if you’ve been working within a particular framework or library. Each episode includes one or more samples where you can see the code and watch it run, so it’s easy to follow along. Please join us as we level up our skills together and learn about powerful capabilities that are browser native!
 
-Open Source Projects
---------------------
+## Open Source Projects
 
 PnPjs: [Documentation](https://pnp.github.io/pnpjs/)
 

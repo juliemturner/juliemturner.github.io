@@ -1,6 +1,10 @@
-<article class="post-preview">
+<article class="jt-article jt-post-preview">
+  {{ if .Params.bigimg }}{{ $.Scratch.Set "bigimg" .Params.bigimg }}{{ end }}
+  {{ $bigimg := $.Scratch.Get "bigimg" }}
+  {{ $img := index ($bigimg) 0 }}
+ 
     <a href="{{ .Permalink }}">
-        <h2 class="post-title">{{ .Title }}</h2>
+        <h2 class="jt-post-title">{{ .Title }}</h2>
         {{ if .Params.subtitle }}
         <h3 class="post-subtitle">
             {{ .Params.subtitle }}
@@ -16,24 +20,29 @@
         {{ end }}
     </a>
 
-    <p class="post-meta">
+    <p class="jt-post-meta">
         {{ partial "post_meta.html" . }}
     </p>
-    <div class="post-entry">
+
+    <div class="jt-post-entry">
+      <figure>
+        {{ with .Resources.GetMatch $img.src }}
+          {{ with .Resize "320x180" }}
+            <img class="jt-post-preview-img" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ .Title }} Preview Image" />
+          {{ end }}
+        {{ end }}        
+      </figure>
+      <p class="jt-post-preview">
         {{ if .Truncated }}
         {{ .Summary }}
         <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
         {{ else }}
         {{ .Content }}
         {{ end }}
+      </p>
     </div>
-
+    
     {{ if .Params.tags }}
-    <div class="blog-tags">
-        {{ range .Params.tags }}
-        <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
-        {{ end }}
-    </div>
+    {{ partial "taglist.html" . }}
     {{ end }}
-
 </article>

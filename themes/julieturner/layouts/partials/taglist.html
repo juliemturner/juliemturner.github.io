@@ -1,0 +1,30 @@
+{{/*
+  Display a collection of pills for tags.
+
+  {{ partial "tag-bubbles"
+    (dict
+      "ctx" .
+      "tags" .Params.tags
+      "omitTags" "one,two"
+      "alignClass" "justify-center"
+    )
+  }}
+
+  Parameters:
+    - `ctx`: current context
+    - `tags`: array of tags to display
+    - `omitTags`: (optional) CSV of tags to exclude from display
+    - `slignClass`: (optional) CSS class to add to UL for alignment
+*/}}
+{{- $tagInputArray := .Params.tags -}}
+{{- $tagArray := slice -}}
+{{- $tagArray = .Params.tags -}}
+<ul class="hoo-meta-list">
+  {{ range $tagArray }}
+  <li>
+    <a class="hoo-mtag" href="/tags/{{ . | urlize | lower }}" aria-label="View all posts tagged with '{{ . }}'">
+      <span class="hoo-mtag-lbl">{{ . }}</span>
+    </a>
+  </li>
+  {{ end }}
+</ul>

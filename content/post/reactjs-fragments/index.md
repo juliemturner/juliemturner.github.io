@@ -6,10 +6,10 @@ tags:
   - ReactJS
   - TypeScript
 aliases: ["/2019/07/react-js-fragments-streamline-your-dom/"]
-bigimg: [{src: "TipNavComponent_lg.png", desc: ""}]
+bigimg: [{src: "TipNavComponent_lg.jpeg", desc: ""}]
 ---
 
-This quick post is going to fall into my Tips & Tricks category as it’s information readily available but if you didn’t know to look for it you probably wouldn’t have found it. In version 16.2 React JS introduced the notion of "Fragments". A Fragment is basically an empty container that you can use in a react component to group a set of children together without adding additional nodes into the DOM. Prior to version 16.2 (and 16.0 – we’ll get to why in a moment), every component must return one and only one parent node. This makes a certain amount of sense, but there are situations where you want a component to return a set of siblings. So, to support this scenario you would artificially add a <div> element to your component to adhere to that requirement.
+This quick post is going to fall into my Tips & Tricks category as it’s information readily available but if you didn’t know to look for it you probably wouldn’t have found it. In version 16.2 React JS introduced the notion of "Fragments". A Fragment is basically an empty container that you can use in a react component to group a set of children together without adding additional nodes into the DOM. Prior to version 16.2 (and 16.0 – we’ll get to why in a moment), every component must return one and only one parent node. This makes a certain amount of sense, but there are situations where you want a component to return a set of siblings. So, to support this scenario you would artificially add a `<div>` element to your component to adhere to that requirement.
 
 ## Pre React JS 16.0 (aka, the old way)
 
@@ -44,8 +44,8 @@ In version 16.0 the framework introduced the idea of returning an array of eleme
 ```tsx
 public render(): React.ReactElement<IMyComponentProps> {
    return [
-      <p key=”firstP”>First Sibling</p>,
-      <p key=”secondP”>Second Sibling</p>
+      <p key="firstP">First Sibling</p>,
+      <p key="secondP">Second Sibling</p>
    ];
 }
 ```

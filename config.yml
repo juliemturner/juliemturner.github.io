@@ -20,9 +20,10 @@ lastmod:
   - date
 
 Params:
-  subtitle: "MUSINGS AND SOLUTIONS FOR SHAREPOINT, MICROSOFT 365, AND AZURE"
+  subtitle: "MUSINGS AND SOLUTIONS FOR MICROSOFT 365 AND AZURE"
   mainSections: ["post","posts"]
   logo: "img/venividivici_header.png"
+  headshot: "img/jturner.png"
   #favicon: "img/siteicon-julieturner-icon.png"
   dateFormat: "January 2, 2006"
   commit: false
@@ -35,6 +36,7 @@ Params:
   delayDisqus: true
   showRelatedPosts: true
   keyword: "Microsoft 365, SharePoint, Teams, Extensibility, Development, PnP"
+  #gcse: 974ede9cca686422e
   
 Author:
   # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")

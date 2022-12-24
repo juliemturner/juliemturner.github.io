@@ -7,11 +7,22 @@
 
 <body>
   <a rel="me" href="https://home.social/@sympjulie"></a>
-  {{ partial "nav.html" . }}
-  {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
-  {{ block "main" . }}{{ end }}
-  {{ partial "footer.html" . }}
-  {{ block "footer" . }}{{ end }}
+  <div class="jt-wrapper">
+    <header class="jt-header">
+      {{ partial "nav.html" . }}
+      {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+    </header>
+    <article class="jt-content">      
+      {{ block "main" . }}{{ end }}
+    </article>
+    <aside class="jt-sidebar">
+      {{ partial "aside.html" . }}
+    </aside>
+    <footer class="footer">
+      {{ partial "footer.html" . }}
+      {{ block "footer" . }}{{ end }}
+    </footer>
+  </div>
 </body>
 
 </html>

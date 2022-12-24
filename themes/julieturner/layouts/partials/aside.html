@@ -1,0 +1,45 @@
+{{ if $.Param "socialShare" }}
+{{ if ne .Type "page" }}
+  <div class="jt-asideSection">
+    {{ partial "share-links.html" . }}
+  </div>
+{{ end }}
+{{ end }}
+{{ if .Params.tags }}
+  <div class="jt-asideSection">
+    <h2>Tags</h2>
+    {{ partial "taglist.html" . }}
+  </div>
+{{ end }}
+{{ if .Site.Params.showRelatedPosts }}
+  {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+    {{ $.Scratch.Set "has_related" true }}
+  {{ end }}
+  {{ if $.Scratch.Get "has_related" }}
+    <div class="jt-asideSection">
+      <h2>{{ i18n "seeAlso" }}</h2>
+      <ul class="symp-list">
+      {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
+      {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+        <li>{{ partial "sympraxis_star.html" . }}<a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+{{ end }}
+<div class="jt-asideSection">
+  <h2>About Me</h2>
+  <img src="{{ .Site.Params.headshot | absURL }}" alt="{{ .Site.Author.name }} headshot" />
+  <div class="jt-highlight">{{ .Site.Author.name }}</div>
+  <div class="jt-subhighlight">Partner/CTO</div>
+  <img class="jt-sympimg" src="/img/SympraxisLogo.png" alt="Sympraxis Consulting Logo" />
+  <div class="jt-listcont">
+    <ul class="symp-list">
+      <li>{{ partial "sympraxis_star.html" . }}Microsoft MVP since 2017</li>
+      <li>{{ partial "sympraxis_star.html" . }}Microsoft 365 PnP Team member since 2019</li>
+      <li>{{ partial "sympraxis_star.html" . }}PnPjs maintainer</li>
+      <li>{{ partial "sympraxis_star.html" . }}HTWOO maintainer</li>
+      <li>{{ partial "sympraxis_star.html" . }}CloudDev Clarity co-host</li>
+    </ul>
+  </div>
+</div>

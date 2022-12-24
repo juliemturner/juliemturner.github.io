@@ -5,7 +5,7 @@ draft: false
 tags: 
   - SharePoint Framework
 aliases: ["/2019/04/tip-npm-version-isnt-creating-tag-for-your-project/"]
-bigimg: [{src: "TipNavComponent_kg.png", desc: ""}]
+bigimg: [{src: "TipNavComponent_lg.jpeg", desc: ""}]
 ---
 
 I love the new feature I picked up from my friend [Stefan Bauer](https://twitter.com/StfBauer) about using **npm version** to [upgrade the version of your SPFx solution](https://n8d.at/blog/use-npm-version-to-upgrade-version-of-your-spfx-solution/). It has made working as an individual and as a team contributor so much easier because it becomes obvious in your repositories history when versions of the project we're created and by whom.
