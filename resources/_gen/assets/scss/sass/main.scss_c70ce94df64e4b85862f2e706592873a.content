@@ -2624,7 +2624,8 @@ a {
     width: 80%;
     margin: 0 auto; }
   .jt-sidebar .symp-list {
-    list-style: none; }
+    list-style: none;
+    padding: 0; }
     .jt-sidebar .symp-list .sympstar {
       vertical-align: middle;
       padding-right: 10px; }
