@@ -434,6 +434,20 @@ a {
     }
   }
 
+  .jt-box {
+    figure {
+      margin: 0;
+
+      img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        border: 0;
+      }
+    }
+  }
+
   @media screen and (max-width: 800px) {
     .jt-article {
       padding: 0 5px;

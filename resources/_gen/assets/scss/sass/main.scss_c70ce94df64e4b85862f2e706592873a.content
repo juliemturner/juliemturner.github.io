@@ -2712,6 +2712,15 @@ a {
   .jt-content .jt-pager .next > span {
     float: right; }
 
+.jt-content .jt-box figure {
+  margin: 0; }
+  .jt-content .jt-box figure img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0; }
+
 @media screen and (max-width: 800px) {
   .jt-content .jt-article {
     padding: 0 5px;
