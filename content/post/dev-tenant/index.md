@@ -6,7 +6,7 @@ tags:
   - SharePoint
   - Microsoft 365
 aliases: ["/2021/01/what-is-a-dev-tenant-and-why-would-you-want-one/"]
-bigimg: [{src: "M365DevProgram.png", desc: ""}]
+bigimg: [{src: "Sandbox_header.jpeg", desc: ""}]
 ---
 
 When someone says to you, they are using their “dev tenant” what they’re probably referring to is their personal development “sandbox” they received as part of joining the Microsoft 365 developer program.
