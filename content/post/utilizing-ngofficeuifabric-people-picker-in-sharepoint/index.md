@@ -3,10 +3,8 @@ title: 'Utilizing ngOfficeUIFabric People Picker in SharePoint'
 date: Wed, 24 May 2017 12:41:14 +0000
 draft: false
 aliases: ["/2017/05/utilizing-ngofficeuifabric-people-picker-in-sharepoint/"]
-bigimg: [{src: "PeoplePickerUI.png", desc: ""}]
+bigimg: [{src: "ngOfficeUiFabric.png", desc: ""}]
 ---
-
-![ngOfficeUiFabric](ngOfficeUiFabric.png)
 
 One of the great _joys_ of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the Taxonomy Picker and the People Picker. If you’re sensing sarcasm, you would be correct. There are brave souls out there who recreated these components for us that utilize no less than five (and sometimes more) Microsoft Javascript libraries. The reality is, for the People Picker, which is what I’m going to be discussing today, you’re really looking for a type ahead input field that filters a list of people that you can retrieve from SharePoint. Sounds easy right… \*sigh\* if only.
 
@@ -125,7 +123,7 @@ var ensureUser = function(userName) {
 
 Now that we have all the back-end pieces put together we can get started with the user interface. The one bug that I still haven’t completely solved is that of a wrapping issue, you can see it in the screenshot below. I suspect that the issue is related to various SharePoint css attributes and I just haven’t found the right one to override. But it’s trivial so I’ve decided to move on without solving it for now. Eventually I’m going to get it!
 
-![PeoplePickerUI](PeoplePickerUI.png)
+{{< figure src="PeoplePickerUI.png" alt="PeoplePickerUI">}}
 
 Since I’m on the topic let’s start with a couple minor CSS overrides you’ll want to include within your form. I’d strongly suggest scoping them to your form as well as you wouldn’t want to upset SharePoint styling elsewhere.
 

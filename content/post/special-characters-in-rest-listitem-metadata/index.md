@@ -9,9 +9,8 @@ tags:
   - JavaScript
   - REST
 aliases: ["/2016/09/special-characters-in-rest-listitem-metadata/"]
+bigimg: [{src: "heximage.jpg", desc: ""}]
 ---
-
-![Heximage](heximage.jpg)
 
 I'm constantly trying to remember which way to encode content when making calls to the server while developing client side solutions for [SharePoint](http://en.wikipedia.org/wiki/SharePoint "SharePoint").  Usually it's some form of [JavaScript](http://en.wikipedia.org/wiki/JavaScript)'s [encodeURI()](http://www.w3schools.com/jsref/jsref_encodeuri.asp)/[encodeURIComponent()](http://www.w3schools.com/jsref/jsref_encodeuricomponent.asp) functions... but this latest one gave me a bit of trouble until I finally figured it out which encoding to use and, almost as important, when to apply it.
 

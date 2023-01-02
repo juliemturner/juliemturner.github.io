@@ -18,7 +18,7 @@ _(Cross posted at Bob German's blog, [Bob German's Vantage Point](http://bob1ger
 
 Here’s a quick update on the Widget Wrangler – the light-weight JavaScript framework that helps you build flexible widgets that can be used in [SharePoint](http://sharepoint.microsoft.com "Microsoft SharePoint") content editor web parts, add-in parts, or really pretty much everywhere.
 
-![WWChannel9](wwchannel9.jpg)
+{{< figure src="wwchannel9.jpg" alt="WWChannel9">}}
 
 The Widget Wrangler was featured in a webcast on Channel 9 today. The Office team’s [Vesa Juvonen](https://twitter.com/vesajuvonen) interviewed WW creators [Julie Turner](https://twitter.com/jfj1997) and [Bob German](https://twitter.com/Bob1German), who explained the framework and demonstrated how to use it with [AngularJS](http://www.angularjs.org/ "AngularJS"), [jQuery](http://jquery.com "JQuery"), and plain old [JavaScript](http://en.wikipedia.org/wiki/JavaScript "JavaScript"). Please check it out [here](https://channel9.msdn.com/blogs/OfficeDevPnP/PnP-Web-Cast-Introducing-Widget-Wrangler-for-SharePoint-development)!
 

@@ -113,7 +113,7 @@ So, I’m going to make a fairly quick comment here about require vs import. If 
 
 So now that we’re ready to go, I will start my "gulp watch" task first. Then I will start a second command window and start "npm run build" which will start the Webpack process. You will see that the system will then packages up all the files you referenced into in this case one bundled file.
 
-![webpackbundle](webpackbundle.png)
+{{< figure src="webpackbundle.png" alt="webpackbundle">}}
 
 ## Loading it on the page
 

@@ -45,13 +45,13 @@ $http({
 
 To keep with my lemon theme what might be considered lemons, in that you cannot execute actions as the user from a flow, we shall turn to lemonade, in that flow provides us developers with the perfect vehicle to execute work with elevated privileges. Given how much we can do through client-side code, all as the currently authenticated user, I'm personally quite happy with making this trade, especially with the addition of launching Azure functions as part of my flow. In my next scenario let's discuss the idea of adding a Help Desk Request widget to the home page of every site collection in SharePoint. This reusable bit of code would be an excellent candidate for an SPFx web part but to keep the complexity level down I’m going to discuss it from the perspective of creating a basic client-side web part using the standard methods I often discuss which is to say using a SEWP/CEWP to put a bit of HTML/CSS/JavaScript on the page. The solution will basically be a form with a button that allows the user to enter the issue and submit it to a Help Desk list in another site collection that is secured to those that run the help desk.
 
-![RequestForm](RequestForm.png)
+{{< figure src="RequestForm.png" alt="RequestForm">}}
 
 When the user clicks submit what we’d like to do is launch a flow that will insert an item into the Help Desk Request list, where the user that is submitting the issue doesn’t even have read rights. To do this I've decided to create another O365 user called “Help Desk" that will act on the behalf of the help desk. That user has been given contribute rights to the Help Desk Request list. Yes, I’m absolutely aware that taking this action will require another monthly fee for that user, and I have to say I really wish there was a “service” account level user that we could add that could access an email box and get access to SharePoint, etc, etc, that would either be free or available at a significantly discounted monthly rate… sadly there is not. _Note: Although there is the concept of an unlicensed user that is a service account per say, the level of privileges that user would then have is way too high. Further, flow will not recognize it as a valid connection._
 
 You could also do this with any other user that has access to the Help Desk Request list. However, please keep in mind that if that user ever leaves or their account is removed/deactivated for whatever reason your flow will stop working. At the very least you will want to make sure you share your flow with one or more other users so that if something happens there will be at least one other person with rights to the flow that can change the context of the actions.
 
-![FlowReqTrigger](FlowReqTrigger.png)
+{{< figure src="FlowReqTrigger.png" alt="FlowReqTrigger">}}
 
 First is the request trigger connection. I set this up with the following JSON payload where user is the user’s login name.
 
@@ -66,7 +66,7 @@ First is the request trigger connection. I set this up with the following JSON p
 
 Next I added the SharePoint "Create item" action and set the values of the item with variables from my request trigger body. Note that I've made sure the action is running under the helpdesk@sympraxisconsulting.com user. This way the user will have permissions to add the item to the list.
 
-![FlowCreateItem](FlowCreateItem.png)
+{{< figure src="FlowCreateItem.png" alt="FlowCreateItem">}}
 
 If you’re looking at the above images and wondering wait, there are more fields in my form/JSON payload than in my flow “Create item” step… your eyes are not deceiving you. Read on…
 
@@ -78,22 +78,22 @@ My good friend [Bob German](https://twitter.com/Bob1German) (partially due to my
 
 To create the connection you need a swagger file/URL which you can get by going to your azure function and checking out the API Definition tab (in preview as of this post). I had tried to use the "Export to PowerApps and Flow" tool there but couldn't get it to work, not that it won't be working by the time you read this. Also, as of this post you’re going to need to do a little tweaking to the "Definition" section, for some reason it doesn’t really get what it needs from the swagger. Here’s what it looked like for me, your mileage may vary.
 
-![FlowConnectorGeneral](FlowConnectorGeneral.png)
+{{< figure src="FlowConnectorGeneral.png" alt="FlowConnectorGeneral">}}
 
 In all my efforts trying to get this to work properly at some point switched from pointing at the API Definition URL to trying to build my own swagger file, in hindsight I think the URL worked just fine.
 
-![FlowConnectorSecurity](FlowConnectorSecurity.png)
+{{< figure src="FlowConnectorSecurity.png" alt="FlowConnectorSecurity">}}
 
 More kudos to Bob on helping me through the security part. He figured out that the API key parameter label needs to be “code”.
 
-![FlowConnectorsDef1](FlowConnectorsDef1.png)
+{{< figure src="FlowConnectorsDef1.png" alt="FlowConnectorsDef1">}}
 
 And again, during Bob's talk "Going with the Flow: Rationalizing the Workflow Options in SharePoint Online" he explained that to get the flow connector to understand my payload I needed to “Import from sample” which gives you a little flyout where you can specify how your REST call needs to look. Since I’m using the Body and not query string parameters my Request section is now all set for me.
 
-![FlowConnectorDef2](FlowConnectorDef2.png)
+{{< figure src="FlowConnectorDef2.png" alt="FlowConnectorDef2">}}
 
 Finally, my completed flow which I call exactly like the other simpler flow from the beginning of this post.
 
-![FinalFlow](FinalFlow.png)
+{{< figure src="FinalFlow.png" alt="FinalFlow">}}
 
 Hopefully a few of these scenarios will help you think through how you might make Microsoft Flow part of your SharePoint online solutions. Happy Coding!

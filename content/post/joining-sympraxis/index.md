@@ -5,7 +5,7 @@ draft: false
 aliases: ["/2016/05/the-man-with-the-bacon-covered-donut-could-not-be-ignored/"]
 ---
 
-![Maplebacondonuts2_bakedbyrachel](maplebacondonut.jpg)
+{{< figure src="(maplebacondonut.jpg" alt="Maplebacondonuts2_bakedbyrachel">}}
 
 I recently attended a multi-day event at the Microsoft campus in Redmond, WA.  Early in the morning and blurry-eyed from battling the time change, I found my way into the event room to see [Marc D. Anderson](https://twitter.com/sympmarc) in an aisle seat plugging away at his computer with a mouthwatering bacon covered donut sitting daintily on a paper napkin at his elbow… that, my friends, is a conversation starter!
 

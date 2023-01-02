@@ -19,7 +19,7 @@ In [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1
 
 ## The ADAL library for JavaScript
 
-![20170118_ADALLibs](20170118_ADALLibs.png)
+{{< figure src="20170118_ADALLibs.png" alt="20170118_ADALLibs">}}
 
 Finally, we get to the part where we talk about writing some code. ADAL stands for “Active Directory Authentication Library”. Based on the client you’re using and which authentication endpoint you’re using, there are a multitude of different examples and SDK’s available as you can see on the MSGraphAPI, [Getting Started](https://graph.microsoft.io/en-us/docs/get-started/get-started) page. Because we’re going to write client side code (aka JavaScript, either [transpiled](https://en.wikipedia.org/wiki/Source-to-source_compiler) from Typescript or native) and access via Implicit Flow to the MSGraphAPI, we’ll use the adal.js library. It comes in two parts, adal.js and adal-angular.js. If you’re going to use the [AngularJS](https://angularjs.org/) framework, you’ll want both pieces. If not, you can just include adal.js, but there will be more work to do to authenticate and get a token. You can find the source in the [ADAL GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-js) repo.
 

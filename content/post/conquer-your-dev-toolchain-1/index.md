@@ -30,7 +30,9 @@ My current plan (which may change) will be to add the following posts to this se
 
 ## Set up your Development Environment
 
-By now most of you have seen the toolchain comparison chart: ![Toolchain](Toolchain.png)
+By now most of you have seen the toolchain comparison chart:
+
+{{< figure src="Toolchain.png" alt="Toolchain">}}
 
 Image by [Voitanos'](http://bit.ly/2D1Jkob)
 

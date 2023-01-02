@@ -15,7 +15,7 @@ bigimg: [{src: "20170118_GraphExample.png", desc: ""}]
 
 ## Introduction
 
-![20170118_GraphExample](20170118_GraphExample.png)
+{{< figure src="20170118_GraphExample.png" alt="20170118_GraphExample">}}
 
 In [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1), I discussed the background and setup information you would need to successfully embark on a client site widget for SharePoint that accesses the Microsoft Graph API (MSGraphAPI). In [Part 2](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2), we went in depth to the various ways of utilizing the adal.js and adal-angular.js libraries for authentication. Now, here in Part 3 we’re going to get right into the nuts and bolts of a real solution that does the following:
 

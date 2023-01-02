@@ -18,15 +18,15 @@ My first thought was to make a secondary data connection to the document library
 
 The first step was to validate the URL for the REST service that I would add as a datasource in the InfoPath form.  To do this I used the URL `http://sp2010/test/\_vti\_bin/listdata.svc` where sp2010/test is the path to the site that housed the document library.  What resulted was this:
 
-![listdata.svc screenshot](listdata.gif)
+{{< figure src="listdata.gif" alt="listdata.svc">}}
 
 If you then modify the URL to put /TestDocuments after the service call... in other words: `http://sp2010/test/\_vti\_bin/listdata.svc/TestDocuments` you will see the contents of the Test Documents library.  There are a lot of references on the web for quering REST data so I won't go into it here suffice to say that the best way to figure out what you need to query is to view the source of the resulting page.  So when I showed the contents of the Test Document library I saw the following:
 
-![Test Document listing](test_document_listing.gif)
+{{< figure src="test_document_listing.gif" alt="Test Document listing">}}
 
 Then when I viewed the source of the page I could see that to filter for the Form field I would need to use "FormId" (I found out the hard way that this seems to be case sensitive as FormID didn't work).
 
-![Image3](image3.gif)
+{{< figure src="image3.gif" alt="Image3">}}
 
 Ergo, my final url to show all the documents filtered by the Form field (in this case where that value was 1) would be:  
 `http://sp2010/test/\_vti\_bin/listdata.svc/TestDocuments?$filter=FormId eq 1`
@@ -73,4 +73,4 @@ Ok, so here's what I did.
 
 Voila, publish the form and the list of documents will be displayed for the user that show the linked document in the browser when clicked on.
 
-![Image4](image4.gif)
+{{< figure src="image4.gif" alt="Image4">}}

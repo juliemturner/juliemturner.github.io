@@ -14,7 +14,7 @@ aliases: ["/2014/04/future-proof-javascript-dashboard-code-samples/"]
 
 To support my colleague [Bob German](http://blogs.msdn.com/b/bobgerman/ "Bob German") and his great talk on Future Proofing your [SharePoint](http://sharepoint.microsoft.com "Microsoft SharePoint") solutions I helped him by building a SharePoint charting dashboard that used client side scripting libraries to pull data from a SharePoint list and display it using commercially available client side charting library.  He has asked me to share those solutions and so finally here they are.  I really appreciate all of Bob's great feedback and hope these examples can help people out there get started on building their own dashboards.
 
-![ScreenShot_2010](screenshot_2010.png")
+{{< figure src="screenshot_2010.png" alt="ScreenShot_2010">}}
 
 For all the great information, please see Bob's article that talks about Future Proofing your apps at [http://blogs.msdn.com/b/bobgerman/archive/2013/10/05/future-proof-solutions-part-1-take-a-walk-on-the-client-side.aspx](http://blogs.msdn.com/b/bobgerman/archive/2013/10/05/future-proof-solutions-part-1-take-a-walk-on-the-client-side.aspx)
 

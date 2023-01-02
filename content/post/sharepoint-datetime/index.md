@@ -13,15 +13,13 @@ aliases: ["/2017/04/sharepoint-time-is-not-your-time-is-not-their-time/"]
 bigimg: [{src: "clock.png", desc: ""}]
 ---
 
-![clock](clock.png)
-
 If you develop client side solutions for SharePoint you’ve either run into this or you will run into the following scenario. SharePoint stores all its date/time fields in UTC time. The site collections, sites, and the users, can have their own time zone settings. If you’re using SharePoint out of the box because all the content is rendered on the server and pushed to the client with all the date/time translation has been done for you. This makes wonderful sense, except when you try and write JavaScript against those same data points. The REST endpoints that return the data for you give you the date string in a format that is specific to the regional settings of the person asking for them. Sadly, this doesn’t translate as well to JavaScript as you might like. I’ve set up a scenario to illustrate the point with a couple of manipulations you can make depending on your desired goals.
 
 ## Scenario
 
 I have two PC’s (ok, one is virtual 😊). I set my virtual machine’s time zone to Pacific Daylight Time (PDT) and my main machine is set to Eastern Daylight Time (EDT). Then I have a SharePoint site collection whose regional settings are set for Eastern Time (or UTC-5:00 aka EDT). I created a list with a title field, and two date fields one to show date/time and one to show just date. The date only field was to illustrate that the problem exists regardless of whether the user intentionally sets the time or not. I created an item in the list from my computer set to Eastern time… Then I went to my computer set to Pacific time and created a second item. I set the dates and times for both items the same from their respective UIs. Again, this is to illustrate that the local time of the computer has no bearing on what SharePoint sees the date/time as. Regardless of who entered the item the dates are displayed based on the regional settings effective on the site.
 
-![ListView](ListView.jpg)
+{{< figure src="ListView.jpg" alt="ListView">}}
 
 I’ve written some code that I’m going to expose using a CEWP… the code does the following things:
 
@@ -34,11 +32,11 @@ I’ve written some code that I’m going to expose using a CEWP… the code doe
 
 Ok, so let’s start with the computer in EDT and take a look at what our client side code does:
 
-![EDT](EDT.jpg)
+{{< figure src="EDT.jpg" alt="EDT">}}
 
 What you’re probably noticing right away is that everything looks great. It’s just what you’d expect. So, what’s the problem… well… if you’re developing client side code and all the time zone settings for all of your users and their computers are going to be in the same time zone… absolutely no problem at all. The tricky part begins when we look at the computer where the time zone of the computer is set to PDT.
 
-![PDT](PDT.jpg)
+{{< figure src="PDT.jpg" alt="PDT">}}
 
 Ok, so what happened here is that when the date strings were passed into JavaScripts Date() function, the browser is actually then converting that date into the local time of the computer. So 4/15/2017 12:00 am becomes 4/14/2017 9:00 pm (3 hours earlier). Again, this makes perfect sense, but if you want the user to experience dates independent of time zone, you’re in trouble. This can often happen if you’re building SharePoint “applications” date/times as fixed points in time that will be used as comparators. Ok, so let’s look at a couple of workarounds and depending on your scenario you’ll have to decide if either of them work for you. I’m not going to go into how those regional/personal settings work but I will provide you a link to where
 [Gregory Zelfond](https://twitter.com/gregoryzelfond), gives a nice explanation: [Setting proper SharePoint Time Zone for users](http://sharepointmaven.com/sharepoint-time-zone/).
@@ -55,7 +53,7 @@ The second, which I think is entirely more useful, is converting to UTC time whi
 
 For this solution, we’re going to need to make two REST calls the first will be to get the regional time zone of the web we’re working in. To do that you need to make a GET request to: **/\_api/Web/RegionalSettings/TimeZone** The response for this call is the following, where we will use the Bias, and DaylightBias to calculate the region the server is operating in so we can mimic the values the server displays:
 
-![RegionREST](RegionREST.jpg)
+{{< figure src="RegionREST.jpg" alt="RegionREST">}}
 
 The second is to get all the items in our test list. Below is the code to generate the various date/time values I outlined above. Keep in mind, this is only a small code snippet from inside the loop that is traversing the items returned from out afore mentioned list. \*Assume that **data** is an array of responses
 

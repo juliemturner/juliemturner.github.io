@@ -139,7 +139,7 @@ export default class AdvancedLoggingService implements LogListener {
 
 As a result, every time an error is logged a new entry is put in my **ApplicationLog** list.
 
-![ApplicationLog](ApplicationLog.png)
+{{< figure src="ApplicationLog.png" alt="ApplicationLog">}}
 
 ## Conclusion
 

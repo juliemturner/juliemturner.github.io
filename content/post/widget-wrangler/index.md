@@ -22,7 +22,7 @@ If you’re reading this blog, you probably know something about Microsoft Share
 
 This work comes out of projects that [Bob German](https://twitter.com/Bob1German) and I have done at [BlueMetal](http://www.bluemetal.com/); for example, I used widgets when I developed the web parts on the BlueMetal's Office 365 intranet. The approach was to use light branding with widgets, with each widget running in a content editor web part.
 
-![IntranetWidgets](intranetwidgets.png)
+{{< figure src="intranetwidgets.png" alt="IntranetWidgets">}}
 
 The widgets in the screen shot are:
 
@@ -124,7 +124,7 @@ You can find a simple AngularJS widget at [http://bit.ly/ww-ng1](http://bit.ly/w
 
 A more advanced example can be found at [http://bit.ly/ww-ng2](http://bit.ly/ww-ng2). This example shows a weather forecast, and demonstrates how to pass configuration information - in this case the location of the weather forecast - into the application via the ng-init directive in the view. It also shows how to use ng-include to place the view in an HTML template so it's shared by all instances of the widget.
 
-![WeatherWidgets](weatherwidgets.png)
+{{< figure src="weatherwidgets.png" alt="WeatherWidgets">}}
 
 Here is the markup for one of the weather widgets:
 
@@ -238,7 +238,7 @@ Notice how the binding function uses the new keyword to make a new ViewModel obj
 
 Here's an example that not only shows a jQuery widget, but demonstrates how to take existing jQuery code and make it into a Widget. In this case, it's based on [this jQuery UI example](https://jqueryui.com/slider/#colorpicker) of a color picker. The original sample includes several references to specific element ID's, so the code would need to be modified to handle more than one color picker on a page.
 
-![ColorWidgets](colorwidgets.png)
+{{< figure src="colorwidgets.png" alt="ColorWidgets">}}
 
 You can see the widget version at [http://bit.ly/ww-jq1](http://bit.ly/ww-jq1). As you can see, there are two instances of the widget on the page; all the code is shared yet they work independently. To make this work, the following code changes were needed:
 
@@ -254,7 +254,7 @@ Notice that it uses the new keyword in the binding function to create a new obje
 
 The Patterns and Practices library includes [an example](https://github.com/OfficeDev/PnP/tree/master/Samples/Provisioning.MicroSurvey) that shows how to use widgets in various kinds of SharePoint projects. The example is a Microsurvey that asks a single question, then shows a simple graph of all the responses to that question.
 
-![SurveyWidget](surveywidget.png)
+{{< figure src="surveywidget.png" alt="SurveyWidget">}}
 
 The example can be packaged and deployed three ways:
 
@@ -278,7 +278,7 @@ The Widget Wrangler is open source, and we welcome suggestions and pull requests
 
 The Widget Wrangler [main repo](http://www.github.com/Widget-Wrangler/ww) includes a test program that makes it easy to exercise the library with a large number of widgets on a page.
 
-![WidgetTester](tester.png)
+{{< figure src="tester.png" alt="WidgetTester">}}
 
 The test program is written in ASP.NET, and it dynamically generates test scripts and Angular applications that check to ensure that dependencies are loaded, and that track the elapsed time during the test. To run it, start the WWBase project in Visual Studio on the Test/TestPage.aspx page.
 

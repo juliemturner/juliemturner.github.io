@@ -18,23 +18,22 @@ The InfoPath form I created to test the scenario has 2 fields.  The first is se
 
 On the machine whose time zone is set to Hawaii, I created an instance of the InfoPath form.  Note that not only are the two fields set to the current Hawaii time but also the Created and Modified dates show as Hawaii time (Figure 1).
 
-  [![Image5](http://sharepointvenividivici.typepad.com/.a/6a0154324289e5970c017d40a30b96970c-500wi "Image5")](http://sharepointvenividivici.typepad.com/.a/6a0154324289e5970c017d40a30b96970c-popup)
+{{< figure src="image5.gif" alt="Image5">}}
 
 Figure 1: Form in Hawaii time zone from machine in Hawaii time zone.
 
 If I log into SharePoint as the same user but from the host machine whose time zone is set to EST I still see the exact same results.  Note the machine’s time is 12:35. (Figure 2)
 
-  [![Image6](http://sharepointvenividivici.typepad.com/.a/6a0154324289e5970c017c367492f5970b-500wi "Image6")](http://sharepointvenividivici.typepad.com/.a/6a0154324289e5970c017c367492f5970b-popup)
+{{< figure src="image6.gif" alt="Image6">}}
 
 Figure 2: Form in Hawaii time zone from machine in Eastern time zone
 
 Now, by logging into SharePoint as the user who changed the regional settings to Pacific time, I see something very different (Figure 3).  Note that the Created and Modified dates in the SharePoint list are adjusted to my regional settings which are Pacific time zone.  And when I open the form the refresh date time uses the now() function which uses my regional time zone setting to set that date/time.
 
-  [![Image7](http://sharepointvenividivici.typepad.com/.a/6a0154324289e5970c017ee817d9f5970d-500wi "Image7")](http://sharepointvenividivici.typepad.com/.a/6a0154324289e5970c017ee817d9f5970d-popup)
+{{< figure src="image7.gif" alt="Image7">}}
 
 Figure 3: Form in Hawaii time zone from machine in Eastern time zone as user in Pacific time zone.
 
-Conclusion
-----------
+## Conclusion
 
 If you need all the date/time stamps to appear the same regardless of the user’s location, then either override or leave the default regional settings for your web and make sure the users do not change the regional settings of the web.  If the users want to see the information converted to their own time zone, they should change their regional settings to their own time zone.

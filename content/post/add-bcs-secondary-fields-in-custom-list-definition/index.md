@@ -10,7 +10,15 @@ tags:
 aliases: ["/2011/05/add-bcs-secondary-fields-in-custom-list-definition/"]
 ---
 
-When working with BCS data and creating an external data column in a list or library it is often desirable to show some or all of the secondary fields. In the SharePoint UI, this is a simple task, completed by checking off the fields to capture for viewing, searching, filtering, and sorting later. ![bcssecondaryfields1](BCSSecondaryFields1.gif) However, when you're building your list or library using a custom list definition schema.xml file this is not as simple. After struggling a bit trying to code the XML myself, it dawned on me that I could mock up the field using the UI and then extract the properly formated field tags by getting the schemaxml property of the list. ![bcssecondaryfields2](BCSSecondaryFields2.gif) There are various ways to do this but I've found the simplest way it to use a tool like [SharePoint Manager](http://spm.codeplex.com/ "SharePoint Manager 2010")
+When working with BCS data and creating an external data column in a list or library it is often desirable to show some or all of the secondary fields. In the SharePoint UI, this is a simple task, completed by checking off the fields to capture for viewing, searching, filtering, and sorting later. 
+
+{{< figure src="BCSSecondaryFields1.gif" alt="BCSSecondaryFields1">}}
+
+However, when you're building your list or library using a custom list definition schema.xml file this is not as simple. After struggling a bit trying to code the XML myself, it dawned on me that I could mock up the field using the UI and then extract the properly formated field tags by getting the schemaxml property of the list. 
+
+{{< figure src="BCSSecondaryFields2.gif" alt="BCSSecondaryFields2">}}
+
+There are various ways to do this but I've found the simplest way it to use a tool like [SharePoint Manager](http://spm.codeplex.com/ "SharePoint Manager 2010")
 
 1. Browse to the list/library definition using SharePoint Manager
 2. Copy and paste the SchemaXML property into a text file
@@ -18,7 +26,9 @@ When working with BCS data and creating an external data column in a list or lib
 4. Open the XML file in Visual Studio (or some other XML editor). If using Visual Studio, select "Format Document" from the Edit/Advanced menu (Ctrl+E, D)
 5. Scroll down to find the external data field you created through the UI. You're looking for a `<Field>` tag with the Type attribute equal to "BusinessData" The next `<Field>` tag with Type="Note" will be the hidden field that stores the key value for the selected value. All the additional `<Field>` tags that follow will be the secondary fields you selected in the UI.
 
-![bcssecondaryfields3](BCSSecondaryFields3.gif) If you copy and paste those Field tags into your list definition schema file and remove the "SourceID" attribute, the list definition will generate a list with the appropriately defined external data column including the secondary fields. To dig a little deeper note that you could potentially do this by hand. Creating the field tags for the hidden primary key field and the additional secondary fields isn't all that difficult. Where this all gets tricky is trying to figure out how to format the SecondaryFieldBdcNames, SecondaryFieldWssNames, SecondaryFieldsWssStaticNames attributes of the primary "BusinessData" field tag. Below is our example field tag for the primary business data field.
+{{< figure src="BCSSecondaryFields3.gif" alt="BCSSecondaryFields3">}}
+
+If you copy and paste those Field tags into your list definition schema file and remove the "SourceID" attribute, the list definition will generate a list with the appropriately defined external data column including the secondary fields. To dig a little deeper note that you could potentially do this by hand. Creating the field tags for the hidden primary key field and the additional secondary fields isn't all that difficult. Where this all gets tricky is trying to figure out how to format the SecondaryFieldBdcNames, SecondaryFieldWssNames, SecondaryFieldsWssStaticNames attributes of the primary "BusinessData" field tag. Below is our example field tag for the primary business data field.
 
 ```html
 <Field Type="BusinessData" DisplayName="Order" Required="FALSE" ID="{5a261e1a-e157-436c-83a2-fda125d72266}"

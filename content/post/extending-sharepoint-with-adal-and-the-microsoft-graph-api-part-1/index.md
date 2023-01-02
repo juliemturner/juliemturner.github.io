@@ -39,8 +39,6 @@ When you utilize one of the aforementioned authentication choices you need to de
 
 ## Registering your Application
 
-----------------------------
-
 **Updated Guidance 2/9/2017** – Use the [https://portal.azure.com](https://portal.azure.com) vs <https://manage.windowsazure.com> to create your Application _This section has been re-written to use the newer portal. I was under the impression that by doing so I would be creating an application that was incompatible with ADAL.js… however, based on comments from [John Liu (@johnnliu)](https://twitter.com/johnnliu) as well as a conversation with [Yina Arenas (@yina\_arenas)](https://twitter.com/yina_arenas), Principal Program Manager Lead for the Microsoft Graph, it appears I was misguided. So, my error becomes your gain as I will attempt to completely document creating an application in the new portal that will work with ADAL.js, and has some added benefits to boot as many things are much simpler. That said, one thing remains the same, you still need to have access to the Azure portal for your tenant. Ergo, you’re going to have to find the individual who does and bake them cookies. Maybe a lot of cookies._ After launching the <https://portal.azure.com> site, I navigated to Active Directory, then I clicked on the “App registrations” heading. You can see here that the application I created in the old manage.windowsazure.com is still there (“ADALTest”) and a new one I created for this test called “ADALTest2” has been added - I did so by clicking “Add” at the top.
 
 {{< figure src="20170209_NewApp.png" alt="20170209_NewApp">}}

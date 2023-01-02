@@ -24,7 +24,7 @@ This post follows the lead set by [Mikael Svenson](https://twitter.com/mikaelsve
 
 What comes next is just the code, it’s almost ridiculously simple solution, but low and behold it works.
 
-![FollowSite](FollowSite.png)
+{{< figure src="FollowSite.png" alt="FollowSite">}}
 
 Once you add the site to the list, the site will show up as being followed when the user navigates to it, and after a short time news from that site will bubble up for the user when they visit the SharePoint home page.
 

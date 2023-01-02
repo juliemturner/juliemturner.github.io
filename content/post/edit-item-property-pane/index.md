@@ -15,11 +15,11 @@ It’s a great privilege and great fun to work with the exceptional team at [Shi
 
 In the custom web parts that are being built the UX team had decided upon a configuration that includes both a basic and advanced mode. The advanced mode, is sourcing the items to be displayed in the web part from a list. I’m not going to talk about that here, what I’m going to address is the idea of configuring all the items in the web part itself by the addition of a property panel specifically designed to add or edit one of those items. This is a separate property panel from the web part property panel in which you would configure overreaching properties of the web part, such as layout or title.
 
-![twoproppanes](twoproppanes.png)
+{{< figure src="twoproppanes.png" alt="twoproppanes">}}
 
 I’ve created a simple example (lacking in everything but the necessary functionality) to illustrate this concept by creating a webpart that displays a set of links. It doesn’t really matter how I render those links, could be buttons, unordered list, etc… the point is that I would have an array of link items that would be curated through the property panel not an external list. SharePoint’s own modern hero web part does this, so it shouldn’t be that hard, right?! It took our team member [Mike Tolly](https://twitter.com/mptolly) a good amount of reverse engineering to figure it out... and now his pain is our gain! Sorry Mike!!!
 
-![fullwebpart-1024x368.png](fullwebpart-1024x368.png)
+{{< figure src="fullwebpart-1024x368.png" alt="fullwebpart">}}
 
 Within our web part we build a React component that has a set of properties. Those properties include things like _linkItems_ which is the array of items I want to show, and functions for working on that array like _editItem_, _deleteItem_, and _rearrangItems_, etc… Below is the code from this simple example where inside of the class definition for my web part I've added a property for the _activeIndex_ of the item being edited, updated the render function to create my SpfxItemPropPane component, and created two separate property pane configurations in _getWebPartPropertyPaneConfiguration_ and _getItemPropertyPaneConfiguration_. The real meat of the solution is in the protected _getPropertyPaneConfiguration_ function where I make the decision to render the item property pane if the property pane is being called from code vs being called by the web part edit button. Obviously if you wanted even more item property panes you could add additional logic and properties to determine which property pane you were calling.
 

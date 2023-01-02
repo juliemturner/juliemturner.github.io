@@ -19,7 +19,7 @@ The answer, as usual, is it depends. It depends on what exactly you want to have
 
 Compared to the hoops we had to jump through for displaying the time, this can potentially be significantly easier, but it would depend on how you're collecting your dates. So let me show you an example.
 
-![sptimeupdate1](sptimeupdate.jpg)
+{{< figure src="sptimeupdate.jpg" alt="sptimeupdate1">}}
 
 Note the image above. The first two entries are from our previous blog post, so we’ll ignore those. The next one titled _“Item Mon Nov 06…. (Eastern Standard Time)”_ was the first test done with the time zone setting of the computer left at EST which matches the sites regional settings\*. In almost any way we would POST these dates they're going to work out ok, so I'm going to ignore that scenario. The next three entries are the interesting ones. After changing the OS's time zone to PST I then did REST POST call to create a new record in that list, the entry outlined with a red box. The date/time I used was the string value of the input box that I set to 11/6/2013 3:00 PM. In code that values looked like:
 

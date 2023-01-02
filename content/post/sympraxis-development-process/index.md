@@ -3,9 +3,8 @@ title: 'Sympraxis Development Process - part 1'
 date: Tue, 16 Aug 2016 17:23:47 +0000
 draft: false
 aliases: ["/2016/08/sympraxis-development-process-part-1/"]
+bigimg: [{src: "devprocess.png", desc: ""}]
 ---
-
-![DevProcess](devprocess.png)
 
 Marc and I discussed in our [August Sympraxis Newsletter](http://sympraxisconsulting.com/newsletters-archive/) starting a blog series to share what we’re learning while implementing a [SharePoint](http://sharepoint.microsoft.com "Microsoft SharePoint") client side development process.  So this is my first post on the topic, and here’s a [link](http://wp.me/p1IDpQ-6Cb) to his first post… it’s interesting to see how different our perspectives on the process were.
 

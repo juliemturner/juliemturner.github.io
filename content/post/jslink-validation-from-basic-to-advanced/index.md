@@ -64,7 +64,7 @@ _Note: If you’ve noticed I skipped line 4, more on that later._
 
 ### The Result
 
-![basic](basic.png)
+{{< figure src="basic.png" alt="basic">}}
 
 ## Custom
 
@@ -112,7 +112,7 @@ _(Optional)_ Depending on how you render the field you may have to add the follo
 
 ### The Result
 
-![custom](custom.png)
+{{< figure src="custom.png" alt="custom">}}
 
 ## Advanced
 
@@ -139,6 +139,6 @@ Modify the registration of the error callback, which causes your custom function
 
 ### The Result
 
-![advanced](advanced.png)
+{{< figure src="advanced.png" alt="advanced">}}
 
 So, as you can see custom form validation is extraordinarily powerful with Custom Templates and can allow you to really take SharePoint to the next level.

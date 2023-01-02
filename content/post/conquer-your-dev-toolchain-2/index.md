@@ -205,8 +205,7 @@ gulp.task("watchFlat", function(){
 
 Now if you run “gulp watchFolder” or “gulp watchFlat” from the command interface node will run your gulp package which will keep watch on your folder structure and when you save a file spsave will upload it to your SharePoint site and if you refresh the page you’re updated code will be available.
 
-Using WebDAV to upload your files into SharePoint – SharePoint 2010 and below
------------------------------------------------------------------------------
+## Using WebDAV to upload your files into SharePoint – SharePoint 2010 and below
 
 Before we had OneDrive in all its current synchronization support glory it was very common for organizations to use WebDAV to give their users access to their SharePoint libraries via the windows explorer. We can exploit that functionality within our development environment and the fact that Nodejs allows us to interact with the full file system since it’s running on our computer. Basically, anything we have access to we can access via our gulpfile. That said we’ll need slightly different tools for the process since instead of using a http post to upload our files to the SharePoint library we’re going to copy them to the server via WebDAV. First let’s modify our package.json file to include a new tool called vinyl-fs. This tool allows us to map files from a source location to a destination location. There are a lot of options that you can use with this package, and if you want to dig further in please take a look at the [documentation](https://www.npmjs.com/package/vinyl-fs). To modify the package.json file you can either execute the ‘npm i vinyl-fs –save-dev’ or modify your package.json file directly to add the file to your devDependencies section and then run ‘npm i’ which will install any missing packages. So in my package.json file devDependencies section I have added:
 
@@ -258,7 +257,6 @@ Before you run your watch make sure to update your settings.json file to put the
 "destFolder": “//sp2010dev/DavWWWRoot/Shared%20Documents”
 ```
 
-Up Next
--------
+## Up Next
 
 In the next installment I’ll be covering how to implement a basic version of [Webpack](https://webpack.js.org/) into your environment which will bundle all your html, css, and js into one file.
