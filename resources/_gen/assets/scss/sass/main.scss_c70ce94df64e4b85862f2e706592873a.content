@@ -2447,7 +2447,9 @@ div.hoo-buttoncontext-outer {
   :root {
     --jt-background: #000000;
     --jt-background2: #404040;
-    --jt-foreground: #FFFFFF; }
+    --jt-foreground: #FFFFFF;
+    --jt-highlight: #9ACE1D;
+    --jt-highlight2: #7940d5; }
     :root img {
       filter: brightness(0.8) contrast(1.2); } }
 
@@ -2713,14 +2715,15 @@ a {
   .jt-content .jt-pager .next > span {
     float: right; }
 
-.jt-content .jt-box figure {
-  margin: 0; }
-  .jt-content .jt-box figure img {
-    display: block;
-    margin: auto;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0; }
+.jt-content .jt-box {
+  margin: 20px 0; }
+  .jt-content .jt-box figure {
+    margin: 0; }
+    .jt-content .jt-box figure img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      border: 0; }
 
 @media screen and (max-width: 800px) {
   .jt-content .jt-article {

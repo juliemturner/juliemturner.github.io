@@ -438,6 +438,8 @@ a {
   }
 
   .jt-box {
+    margin: 20px 0;
+    
     figure {
       margin: 0;
 
@@ -445,7 +447,6 @@ a {
         display: block;
         margin: auto;
         max-width: 100%;
-        vertical-align: middle;
         border: 0;
       }
     }
