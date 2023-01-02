@@ -32,7 +32,7 @@ In your CSS (or SCSS) file you can define variables at the root of the page and 
 
 Now if I use that class on an HTML element I'll render the following
 
-![RootVariable](RootVariable.png)
+{{< figure src="RootVariable.png" alt="RootVariable">}}
 
 ## Creating and Scoping a CSS Variable to an element
 
@@ -55,7 +55,7 @@ CSS variables, as defined above are cascading. So that means that I can redefine
 
 Now if I add another couple of elements that use both .myClass and .myAltClass I'll render the following:
 
-![ScopedVariable](ScopedVariable.png)
+{{< figure src="ScopedVariable.png" alt="ScopedVariable">}}
 
 ## Utilizing web part properties to affect the values of the CSS Variables
 
@@ -107,7 +107,7 @@ Then the CSS for this project has the following class definitions which use thos
 
 What that gives me is a completely isolated implementation of my style, so when two instances of that same web part are on a page their height and width as I defined them in the CSS variable is isolated to that instance.
 
-![CSSVariableWebPart](CSSVariableWebPart.gif)
+{{< figure src="CSSVariableWebPart.gif" alt="CSSVariableWebPart">}}
 
 I hope you can think of other great ways to use this cool solution, sadly though I suppose the spoiler is that they are not supported in IE 11 ([https://caniuse.com/#search=css%20variable](https://caniuse.com/#search=css%20variable)).
 

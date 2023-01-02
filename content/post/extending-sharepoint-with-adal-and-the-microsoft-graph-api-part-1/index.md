@@ -13,7 +13,7 @@ aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-p
 bigimg: [{src: "20170209_AppProperties.png", desc: ""}]
 ---
 
-![20170118_graph_logo](20170118_graph_logo.png)
+{{< figure src="20170118_graph_logo.png" alt="20170118_graph_logo.png">}}
 
 When [Marc](http://sympmarc.com/) and I were at Ignite this past September, #SharePoint was the most tweeted hashtag. We heard a lot about the new SharePoint Framework (SPFx), which was clearly the focus for developers. But another oft-discussed technology topic centered on the expansion of the [Microsoft Graph API](https://graph.microsoft.io/en-us/) (MSGraphAPI). It’s clearly going to be the API of choice going forward to access all Office 365 content, but its maturity is still early days. At Ignite, Microsoft announced the beta endpoints for accessing SharePoint through the Microsoft Graph API. Overall I think this is a good thing, as the API has significantly better adherence to the [OData standard](http://www.odata.org/) compared to the SharePoint REST services. That said, as users of the SharePoint REST services we’re very used to the simplicity of those calls and we literally pay no attention to authentication if we’re operating on SharePoint pages. The tokens we need are already made available right on the page, we just pluck them out, and so there’s little effort. As the features and functionality of the MSGraphAPI leap ahead and we’re trying to extend the SharePoint UI to take advantages of all the new features and functionality, we’re going to have to become comfortable dealing with authentication issues so we can leverage all that power. As I worked to understand all the ways I could utilize the MSGraphAPI I realized that I was collecting a rather lengthy list of resources and reaching out to the various experts I know in the community to get clarification on what I was finding. It seemed appropriate to consolidate that information into a series of blog posts. Part 1 will cover all the background information on Azure Active Directory, authentication methods and flows. Part 2 will go into the SDK library for getting an authorization token. And Part 3 will bring it all together in a demo application that runs as a widget on a SharePoint page, but accesses the MSGraphAPI to create and manipulate an Excel document in a SharePoint library. As we move forward with other solutions based on the MSGraphAPI, I may do additional posts to demonstrate useful techniques. So, let’s begin. Our goal is to access a SharePoint document library and use the Excel API (included in the MSGraphAPI) that will allow us to manipulate Excel files in code. An example use-case for this solution is to generate an “export” of the data you’re tracking on your site so that others can do analysis on it for a data analytics project. Before we write any code, we need to do the following:
 
@@ -43,45 +43,45 @@ When you utilize one of the aforementioned authentication choices you need to de
 
 **Updated Guidance 2/9/2017** – Use the [https://portal.azure.com](https://portal.azure.com) vs <https://manage.windowsazure.com> to create your Application _This section has been re-written to use the newer portal. I was under the impression that by doing so I would be creating an application that was incompatible with ADAL.js… however, based on comments from [John Liu (@johnnliu)](https://twitter.com/johnnliu) as well as a conversation with [Yina Arenas (@yina\_arenas)](https://twitter.com/yina_arenas), Principal Program Manager Lead for the Microsoft Graph, it appears I was misguided. So, my error becomes your gain as I will attempt to completely document creating an application in the new portal that will work with ADAL.js, and has some added benefits to boot as many things are much simpler. That said, one thing remains the same, you still need to have access to the Azure portal for your tenant. Ergo, you’re going to have to find the individual who does and bake them cookies. Maybe a lot of cookies._ After launching the <https://portal.azure.com> site, I navigated to Active Directory, then I clicked on the “App registrations” heading. You can see here that the application I created in the old manage.windowsazure.com is still there (“ADALTest”) and a new one I created for this test called “ADALTest2” has been added - I did so by clicking “Add” at the top.
 
-![20170209_NewApp](20170209_NewApp.png)
+{{< figure src="20170209_NewApp.png" alt="20170209_NewApp">}}
 
 ### Configuration
 
 Once your application is created you need to set the properties and permissions. This is where things are slightly different from creating an application in the old portal. As you can see below you’ll get an “Application ID” assigned automatically. This takes the place of the client key from the old portal, this is confusing if you’ve done this in the old portal, but honestly given were using Implicit Flow it makes a whole lot more sense that you wouldn’t need a client secret because you’re technically not using one. Ok, so what you’ll need to do is give your application and App ID URI, I used the URL of my site collection. This URL can be used only once, so if I wanted to create a second app, I would need to give it a different URI. This is a much bigger discussion regarding governance, and reuse of these applications which I’m not going to go into now, but rest assured I will at some point when I’ve solidified my position.
 
-![20170209_AppProperties](20170209_AppProperties.png)
+{{< figure src="20170209_AppProperties.png" alt="20170209_AppProperties">}}
 
 You will also need to set up a “Reply URL”. In this case, because we will access the application from SharePoint, this needs to just be your SharePoint host name. I will cover the “Required permissions” section below. There’s also an “Owners” section and a “Keys” section. That “Keys” section is what threw me off originally, because in the old portal we used the key it generated as the client id, but as I said in the new portal we use the Application ID.
 
-![20170209_AppReplyURL](20170209_AppReplyURL.png)
+{{< figure src="20170209_AppReplyURL.png" alt="20170209_AppReplyURL">}}
 
 In addition, you will need your Tenant ID (Guid), in the old portal we got this from the URL, but in the new portal they’ve given us a nice little tool to get it. Go to the top right and click on the “?” and then choose “Show diagnostics”. That will bring up a new page that will show you a JSON object that has a tenant’s section, you’re going to want the guid for your domain’s tenant, although multiple other tenants may show up.
 
-![20170209_GetTenantID](20170209_GetTenantID.png)
+{{< figure src="20170209_GetTenantID.png" alt="20170209_GetTenantID">}}
 
-![20170209_TenantID](20170209_TenantID.png)
+{{< figure src="20170209_TenantID.png" alt="20170209_TenantID">}}
 
 ### Permissions
 
 One of the things that can be confusing about setting up your application in Azure AD is configuring the permissions scopes for the application itself. This [article](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes) gives you the full details on setting up the proper permissions based on what you need to access in the MSGraphAPI. It also includes several scenarios. For our scenario, which you’ll see in more detail in [Part 3](http://julieturner.net/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3-the-execution/), I only needed to grant the application the delegated permission “Have full access to all files user can access”. By default, the application has the “Sign in and read user profile” delegated permission for Windows Azure Active Directory. Since I do some testing by accessing the “me” endpoint, that gives me my user profile information I’m leaving this, but feel free to remove it if you’re not reading the user’s profile. So, you will first “add” the “Microsoft Graph” application to the “Required Permissions” section. Then click on it to see the available application and delegated permissions that can be assigned. The gotcha with permission in the new portal is that after you select the permissions you want and “save” the changes, you then need to do an additional step and “grant” them. You do so by click on the “Grant Permissions” button from the “Required Permissions” page.
 
-![20170209_AppPermissions](AppPermissions.png)
+{{< figure src="AppPermissions.png" alt="AppPermissions">}}
 
-![20170209_AppGraphPermissions](20170209_AppGraphPermissions.png)
+{{< figure src="20170209_AppGraphPermissions.png" alt="20170209_AppGraphPermissions">}}
 
 If after you’ve gotten through [Part 2](http://julieturner.net/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2-the-authorization/), you get the error “The user or administrator has not consented to use the application with ID….” in the browser console it most likely means that you forgot to do the “grant” step I outlined above.
 
-![20170209_NoGrantError](20170209_NoGrantError.png)
+{{< figure src="20170209_NoGrantError.png" alt="20170209_NoGrantError">}}
 
 ### Enabling Implicit Flow
 
 In the new portal, there’s a nice easy way to modify the manifest for your application to allow Implicit Flow. Click on the “Manifest” button for your application. A window will appear that gives you the JSON object that is the applications manifest.
 
-![20170209_EditManifest1](20170209_EditManifest1.png)
+{{< figure src="20170209_EditManifest1.png" alt="20170209_EditManifest1">}}
 
 Find the “oauth2AllowImplicitFlow” property and change its value to “true”. Then click “Save”.
 
-![20170209_EditManifest](http://julieturner.net/wp-content/uploads/2017/01/20170209_EditManifest.png)
+{{< figure src="20170209_EditManifest.png" alt="20170209_EditManifest.png">}}
 
 ## Summary
 
