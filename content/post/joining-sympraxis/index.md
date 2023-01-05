@@ -1,6 +1,7 @@
 ---
 title: 'The man with the “bacon covered donut” could not be ignored'
 date: Mon, 09 May 2016 14:00:00 +0000
+lastmod: Thu, 05 Jan 2023 21:22:00 +0000
 draft: false
 aliases: ["/2016/05/the-man-with-the-bacon-covered-donut-could-not-be-ignored/"]
 ---

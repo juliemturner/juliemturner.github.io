@@ -1,6 +1,7 @@
 ---
 title: 'Extending SharePoint with ADAL and the Microsoft Graph API – Part 1 (The Setup)'
 date: Tue, 24 Jan 2017 13:32:10 +0000
+lastmod: Thu, 05 Jan 2023 21:22:00 +0000
 draft: false
 tags: 
   - Microsoft 365
