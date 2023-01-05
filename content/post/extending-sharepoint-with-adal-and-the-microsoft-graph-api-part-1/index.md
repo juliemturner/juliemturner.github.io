@@ -63,7 +63,7 @@ In addition, you will need your Tenant ID (Guid), in the old portal we got this 
 
 One of the things that can be confusing about setting up your application in Azure AD is configuring the permissions scopes for the application itself. This [article](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes) gives you the full details on setting up the proper permissions based on what you need to access in the MSGraphAPI. It also includes several scenarios. For our scenario, which you’ll see in more detail in [Part 3](http://julieturner.net/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3-the-execution/), I only needed to grant the application the delegated permission “Have full access to all files user can access”. By default, the application has the “Sign in and read user profile” delegated permission for Windows Azure Active Directory. Since I do some testing by accessing the “me” endpoint, that gives me my user profile information I’m leaving this, but feel free to remove it if you’re not reading the user’s profile. So, you will first “add” the “Microsoft Graph” application to the “Required Permissions” section. Then click on it to see the available application and delegated permissions that can be assigned. The gotcha with permission in the new portal is that after you select the permissions you want and “save” the changes, you then need to do an additional step and “grant” them. You do so by click on the “Grant Permissions” button from the “Required Permissions” page.
 
-{{< figure src="AppPermissions.png" alt="AppPermissions">}}
+{{< figure src="20170209_AppPermissions.png" alt="AppPermissions">}}
 
 {{< figure src="20170209_AppGraphPermissions.png" alt="20170209_AppGraphPermissions">}}
 
