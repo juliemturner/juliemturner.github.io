@@ -37,6 +37,7 @@ Params:
   showRelatedPosts: true
   keyword: "Microsoft 365, SharePoint, Teams, Extensibility, Development, PnP"
   #gcse: 974ede9cca686422e
+  share_img: "VVV_OG_Image.png"
   
 Author:
   # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
