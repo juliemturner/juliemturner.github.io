@@ -6,7 +6,7 @@ tags:
   - Microsoft 365
   - SharePoint Framework
   - CSS
-  - SASS
+  - Sass
 aliases: ["/2019/06/using-css-variables-to-morph-your-spfx-design-at-run-time/"]
 bigimg: [{src: "CSSVariables_lg.png", desc: ""}]
 ---

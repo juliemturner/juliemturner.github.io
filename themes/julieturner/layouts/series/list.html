@@ -1,0 +1,33 @@
+{{ define "header" }}
+  <div class="jt-tags-heading">
+    <h1>Latest {{ .Page.Title }} topics</h1>
+    {{ if .Page.Description }}
+    <p>{{ .Page.Description}}</p>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ define "main" }}
+  {{ $paginator := .Paginate .Pages.ByDate }}
+    <div class="jt-container" role="main">
+      <div class="jt-posts-list">
+      {{ range $paginator.Pages }}
+        {{ partial "post_preview.html" .}}
+      {{ end }}
+      </div>
+      {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+      <ul class="jt-pager">
+        {{ if $paginator.HasPrev }}
+        <li class="previous">
+          <a href="{{ .Permalink }}page/{{ $paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
+        </li>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+        <li class="next">
+          <a href="{{ .Permalink }}page/{{ $paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+{{ end }}

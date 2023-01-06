@@ -127,10 +127,10 @@ Sass stands for “Syntactically Awesome Style Sheets” and its file extension 
 
 | | |
 | -- | -- |
-| [node-sass](https://www.npmjs.com/package/node-sass) | A dependency of sass-loader that must be manually included. |
+| [node-sass](https://www.npmjs.com/package/node-sass) | A dependency of Sass-loader that must be manually included. |
 | [sass-loader](https://www.npmjs.com/package/sass-loader) | Compiles the scss file into a css file so that webpack and include it in the bundle. |
 
-And then to our modules section of the webpack.config.js we need to add a rule for our scss files which is basically the same rules as css files but with the sass processor first (or last, processors work from last to first.. so the file will go through the sass-loader, then the css-loader, then the style-loader).
+And then to our modules section of the webpack.config.js we need to add a rule for our scss files which is basically the same rules as css files but with the Sass processor first (or last, processors work from last to first.. so the file will go through the sass-loader, then the css-loader, then the style-loader).
 
 ```json
 {

@@ -2604,6 +2604,11 @@ a {
     max-width: 800px;
     margin: 0 auto; }
 
+.jt-header .jt-tags-heading {
+  padding: 0px 20px; }
+  .jt-header .jt-tags-heading h1 {
+    margin: 0; }
+
 .jt-sidebar {
   margin: 0 10px; }
   .jt-sidebar .jt-aside-headshot {

@@ -1,0 +1,34 @@
+{{ define "header" }}
+  <div class="jt-tags-heading">
+    <h1>Latest {{ .Page.Title }} topics</h1>
+    {{ if .Page.Description }}
+    <p>{{ .Page.Description}}</p>
+    {{ end }}
+    <p>This listing is all the <span class="font-semibold">{{ .Page.Title }}</span> articles on this site.</p>
+  </div>
+{{ end }}
+
+{{ define "main" }}
+  <div class="jt-container" role="main">
+        <div class="jt-posts-list">
+          {{ range .Paginator.Pages }}
+            {{ partial "post_preview.html" .}}
+          {{ end }}
+        </div>
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+          <ul class="jt-pager">
+            {{ if .Paginator.HasPrev }}
+              <li class="previous">
+                <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
+              </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+              <li class="next">
+                <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+
+{{ end }}

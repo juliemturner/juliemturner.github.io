@@ -4,7 +4,7 @@ date: Wed, 05 Jul 2017 20:29:23 +0000
 draft: false
 tags: 
   - Microsoft Flow
-  - PowerAutomate
+  - Power Automate
   - Azure Functions
   - Microsoft 365
   - JavaScript

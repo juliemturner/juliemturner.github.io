@@ -1,0 +1,20 @@
+{{ define "header" }}
+  <div class="jt-tags-heading">
+    <h1>{{ .Page.Title }}</h1>
+    {{ if .Page.Description }}
+    <p>{{ .Page.Description}}</p>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ define "main" }}
+<div class="jt-article" role="main">
+  <article class="jt-tags-list">
+    {{ range .Site.Taxonomies.series }}
+      <h2>{{ .Page.Title }}</h2>
+      <p>{{ .Page.Description }}</p>
+      <a href="{{ .Page.Permalink }}" aria-label="View articles tagged with '{{ . }}'">View {{if gt .Count 1}}all {{end}}{{.Count}} article{{if gt .Count 1}}s{{end}} &rarr;</a>
+    {{ end }}
+  </article>
+</div>
+{{ end }}

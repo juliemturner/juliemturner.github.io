@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+{{ $data := .Data }}
+
+<div class="jt-article" role="main">
+    <article class="blog-post">
+        {{ range $key, $value := .Data.Terms.ByCount }}
+          <details>
+            <summary>
+              <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapse{{ $value.Name }}" data-parent="#accordion">
+                <div class="panel-heading" id="header{{ $value.Name }}">
+                  <h4 class="panel-title">
+                      {{ $value.Name }}
+                    <span class="badge">{{ $value.Count }}</span>
+                  </h4>
+                </div>
+              </a>
+              <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/" class="list-group-item view-all">View all</a>
+            </summary>
+            <div>
+                  {{ range $item := $value.WeightedPages }}
+                    <a href="{{$item.Permalink}}" class="list-group-item">{{ $item.Title }}</a>
+                  {{ end }}
+            </div>
+          </details>
+        {{ end }}
+    </article>
+</div>
+
+
+{{ end }}

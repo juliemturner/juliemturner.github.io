@@ -10,7 +10,7 @@ tags:
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
 aliases: ["/2017/08/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-4-the-extension/"]
-bigimg: [{src: "LeveragingGraphAPIPart4.png", desc: ""}]
+bigimg: [{src: "LeveragingGraphAPIPart4.jpeg", desc: ""}]
 ---
 
 ## Introduction
