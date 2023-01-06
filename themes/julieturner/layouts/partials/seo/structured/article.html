@@ -11,7 +11,7 @@
   "wordCount": {{ .WordCount }},
   "datePublished" : "{{ .PublishDate.Format "2006-01-02T15:04:05" }}",
   "dateModified" : "{{ .Date.Format "2006-01-02T15:04:05"  }}",
-  "image" : "{{ .Site.Params.logo | absURL }}",
+  "image" : "{{ .Site.Params.image | absURL }}",
   "keywords" : [ "{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}" ],
   "mainEntityOfPage" : "{{ .Permalink }}",
   "publisher" : {
@@ -19,7 +19,7 @@
     "name" : "{{ .Site.BaseURL }}",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "{{ .Site.Params.logo | absURL }}",
+        "url" : "{{ .Site.Params.image | absURL }}",
         "height" :  60 ,
         "width" :  60
     }

@@ -32,14 +32,14 @@
   {{- end }}
   "url" : "{{ .Permalink }}",
   "wordCount" : "{{ .WordCount }}",
-  "image" : "{{ .Site.Params.logo | absURL }}",
+  "image" : "{{ .Site.Params.image | absURL }}",
   "keywords" : [ "{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}" ],
   "publisher" : {
     "@type": "Organization",
     "name" : "{{ .Site.BaseURL }}",
     "logo" : {
         "@type" : "ImageObject",
-        "url" : "{{ .Site.Params.logo | absURL }}",
+        "url" : "{{ .Site.Params.image | absURL }}",
         "height" :  60 ,
         "width" :  60
     }

@@ -1,14 +1,12 @@
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="@{{ .Site.Autho.domain }}">
+  <meta property="twitter:url" content="{{ .Permalink | absLangURL }}">
 {{- with .Title | default .Site.Title }}
   <meta name="twitter:title" content="{{ . | truncate 70 }}" />
 {{- end }}
 {{- with .Description | default .Params.subtitle | default .Summary }}
   <meta name="twitter:description" content="{{ . | truncate 200 }}">
 {{- end }}
-{{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+{{- with .Params.share_img | default .Site.Params.image | default .Site.Params.logo }}
   <meta name="twitter:image" content="{{ . | absURL }}" />
-{{- end }}
-  <meta name="twitter:card" content="summary_large_image" />
-{{- with .Site.Author.twitter }}
-  <meta name="twitter:site" content="@{{ . }}" />
-  <meta name="twitter:creator" content="@{{ . }}" />
 {{- end }}
