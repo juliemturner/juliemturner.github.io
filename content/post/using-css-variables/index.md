@@ -107,7 +107,7 @@ Then the CSS for this project has the following class definitions which use thos
 
 What that gives me is a completely isolated implementation of my style, so when two instances of that same web part are on a page their height and width as I defined them in the CSS variable is isolated to that instance.
 
-{{< figure src="CSSVariableWebPart.gif" alt="CSSVariableWebPart">}}
+{{< figure src="CSSVariableWebPart_sm.gif" alt="CSSVariableWebPart">}}
 
 I hope you can think of other great ways to use this cool solution, sadly though I suppose the spoiler is that they are not supported in IE 11 ([https://caniuse.com/#search=css%20variable](https://caniuse.com/#search=css%20variable)).
 
