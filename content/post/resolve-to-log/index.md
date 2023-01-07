@@ -15,7 +15,7 @@ My Sympraxis partner [Marc Anderson](https://twitter.com/sympmarc) mentioned tha
 
 ## TL;DR
 
-Download the sample code from my [GitHub repo](https://github.com/juliemturner/Public-Samples) for three examples of how to use the [PnP Logging](https://pnp.github.io/pnpjs/logging/docs/) package.
+Download the sample code from my [GitHub repo](https://github.com/juliemturner/Public-Samples) for three examples of how to use the [PnP Logging](https://pnp.github.io/pnpjs/logging/) package.
 
 ## Why Log
 
@@ -43,7 +43,7 @@ And, make note that you can have more than one listener. For my advanced example
 
 ## Calling the Logger
 
-To call the logger you have a couple of different options. You can either use the **write** method, which will simply pass your information as a string to the message and if you choose a logging level. You can use the **writeJSON** method which allows you to pass a JSON object which will get converted to a string to serve as your message and optionally a logging level. And finally, the **log** method which will allow you to specify each property of the LogEntry. For more samples see the [official documentation](https://pnp.github.io/pnpjs/logging/docs/#writing-to-the-logger).
+To call the logger you have a couple of different options. You can either use the **write** method, which will simply pass your information as a string to the message and if you choose a logging level. You can use the **writeJSON** method which allows you to pass a JSON object which will get converted to a string to serve as your message and optionally a logging level. And finally, the **log** method which will allow you to specify each property of the LogEntry. For more samples see the [official documentation](https://pnp.github.io/pnpjs/logging/).
 
 ## Basic Logging
 

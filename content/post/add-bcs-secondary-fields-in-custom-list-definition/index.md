@@ -18,7 +18,7 @@ However, when you're building your list or library using a custom list definitio
 
 {{< figure src="BCSSecondaryFields2.gif" alt="BCSSecondaryFields2">}}
 
-There are various ways to do this but I've found the simplest way it to use a tool like [SharePoint Manager](http://spm.codeplex.com/ "SharePoint Manager 2010")
+There are various ways to do this but I've found the simplest way it to use a tool like [SharePoint Manager](https://spm.codeplex.com/ "SharePoint Manager 2010")
 
 1. Browse to the list/library definition using SharePoint Manager
 2. Copy and paste the SchemaXML property into a text file
@@ -33,7 +33,7 @@ If you copy and paste those Field tags into your list definition schema file and
 ```html
 <Field Type="BusinessData" DisplayName="Order" Required="FALSE" ID="{5a261e1a-e157-436c-83a2-fda125d72266}"
     StaticName="Order0" BaseRenderingType="Text" Name="Order0" ColName="nvarchar3" RowOrdinal="0"
-    Version="6" Group="" SystemInstance="MSSExternal" EntityNamespace="http://sharepoint/bidemo"
+    Version="6" Group="" SystemInstance="MSSExternal" EntityNamespace="https://sharepoint/bidemo"
     EntityName="Order" BdcField="OrderNumber" Profile="/\_layouts/ActionRedirect.aspx?EntityNamespace=http%3A%2F%2Fjturner%2Dsrv08r2%2Fbidemo&amp;EntityName=Order&amp;LOBSystemInstanceName=MSSExternal&amp;ItemID="
     HasActions="True"
     SecondaryFieldBdcNames="15%2014%2015%208%20CustomerRegion%20CustomerState%20CustomerTarget%20Product%2011"

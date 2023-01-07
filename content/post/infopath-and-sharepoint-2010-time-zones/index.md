@@ -10,7 +10,7 @@ tags:
 aliases: ["/2013/01/quick-primer-on-infopath-and-sharepoint-2010-time-zones/"]
 ---
 
-[InfoPath](http://office.microsoft.com/infopath/) functions such as Today() and Now() pick up the time zone based on the settings of the [SharePoint server](http://sharepoint.microsoft.com).  By default the web is set to the time zone of the server, which is thereby the default of any new sites created as well as new user profiles created.  For global organizations with users around the world, there are situations where you will want the automated date/time stamps to display the local time for the user rather than the server time.  This article will show you how to set that up.
+[InfoPath](https://office.microsoft.com/infopath/) functions such as Today() and Now() pick up the time zone based on the settings of the [SharePoint server](https://sharepoint.microsoft.com).  By default the web is set to the time zone of the server, which is thereby the default of any new sites created as well as new user profiles created.  For global organizations with users around the world, there are situations where you will want the automated date/time stamps to display the local time for the user rather than the server time.  This article will show you how to set that up.
 
 The time zone of the web can be changed in central administration.  The time zone of the site can be changed by going to site settings / regional settings.  In addition a user can change their personal time zone settings by going to “my settings / my regional settings”.
 

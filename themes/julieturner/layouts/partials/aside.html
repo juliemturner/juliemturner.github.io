@@ -5,6 +5,17 @@
   </div>
 {{ end }}
 {{ end }}
+{{ if eq .Type "page" }}
+<div class="jt-asideSection">
+  <h2>See a full listing of the sites:</h2>
+  <p>
+    <a href="/tags">Article Topics</a>
+  </p>
+  <p>
+    <a href="/series">Article Series</a>
+  </p>
+</div>
+{{ end }}
 {{ if .Params.tags }}
   <div class="jt-asideSection">
     <h2>Tags</h2>
@@ -28,7 +39,7 @@
   {{ end }}
 {{ end }}
 <div class="jt-asideSection">
-  <h2>About Me</h2>
+  <h2>About the Author</h2>
   <div class="jt-aside-headshot">
     <img src="{{ .Site.Params.headshot | absURL }}" alt="{{ .Site.Author.name }} headshot" />
   </div>

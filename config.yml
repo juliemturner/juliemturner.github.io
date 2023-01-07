@@ -43,7 +43,7 @@ Author:
   # Set only your "username" for default hosts and full URLs otherwise (e.g., "https://MyGitLab.org/username")
   name: "Julie Turner"
   domain: "julieturner.net"
-  website: "https://julieturner.net/page/me"
+  website: "https://julieturner.net/page/me/"
   #email: "youremail@domain.com"
   #facebook: "username"
   github: "juliemturner"

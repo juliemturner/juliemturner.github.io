@@ -39,7 +39,7 @@ What you’re probably noticing right away is that everything looks great. It’
 {{< figure src="PDT.jpg" alt="PDT">}}
 
 Ok, so what happened here is that when the date strings were passed into JavaScripts Date() function, the browser is actually then converting that date into the local time of the computer. So 4/15/2017 12:00 am becomes 4/14/2017 9:00 pm (3 hours earlier). Again, this makes perfect sense, but if you want the user to experience dates independent of time zone, you’re in trouble. This can often happen if you’re building SharePoint “applications” date/times as fixed points in time that will be used as comparators. Ok, so let’s look at a couple of workarounds and depending on your scenario you’ll have to decide if either of them work for you. I’m not going to go into how those regional/personal settings work but I will provide you a link to where
-[Gregory Zelfond](https://twitter.com/gregoryzelfond), gives a nice explanation: [Setting proper SharePoint Time Zone for users](http://sharepointmaven.com/sharepoint-time-zone/).
+[Gregory Zelfond](https://twitter.com/gregoryzelfond), gives a nice explanation: [Setting proper SharePoint Time Zone for users](https://sharepointmaven.com/sharepoint-time-zone/).
 
 ## Adjust date to time zone of “server”
 

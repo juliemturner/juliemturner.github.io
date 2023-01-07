@@ -13,7 +13,7 @@ aliases: ["/2016/03/enter-key-gone-bad/"]
 
 {{< figure src="editgonewrong.png" alt="EditGoneWrong">}}
 
-This morning I had an issue trying to implement a Phone Directory on a client’s home page.  The UI incorporated a First Name and a Last Name input box and a “Go” button.  But as we all know, users like to hit Enter, and we all want to try and support the best user experiences we can.  However, [SharePoint](http://sharepoint.microsoft.com "Microsoft SharePoint")'s default implementation of the Enter key can sometimes put the page in edit mode…
+This morning I had an issue trying to implement a Phone Directory on a client’s home page.  The UI incorporated a First Name and a Last Name input box and a “Go” button.  But as we all know, users like to hit Enter, and we all want to try and support the best user experiences we can.  However, [SharePoint](https://sharepoint.microsoft.com "Microsoft SharePoint")'s default implementation of the Enter key can sometimes put the page in edit mode…
 
 So how do you get around this… two things..
 

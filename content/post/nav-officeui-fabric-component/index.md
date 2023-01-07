@@ -22,35 +22,35 @@ This post is meant to be a quick supplement to the documentation provided by Mic
    links: [
   {
     name: 'Home',
-    url: 'http://example.com',
+    url: 'https://example.com',
     links: [
    {
      name: 'Activity',
-     url: 'http://msn.com',
+     url: 'https://msn.com',
      key: 'key1'
    },
    {
      name: 'News',
-     url: 'http://msn.com',
+     url: 'https://msn.com',
      key: 'key2'
    }
     ],
     isExpanded: true
   },
-  { name: 'Documents', url: 'http://example.com', key: 'key3', isExpanded: true },
-  { name: 'Pages', url: 'http://msn.com', key: 'key4' },
-  { name: 'Notebook', url: 'http://msn.com', key: 'key5' },
-  { name: 'Long Name Test for ellipse', url: 'http://msn.com', key: 'key6' },
+  { name: 'Documents', url: 'https://example.com', key: 'key3', isExpanded: true },
+  { name: 'Pages', url: 'https://msn.com', key: 'key4' },
+  { name: 'Notebook', url: 'https://msn.com', key: 'key5' },
+  { name: 'Long Name Test for ellipse', url: 'https://msn.com', key: 'key6' },
   {
     name: 'Edit',
-    url: 'http://cnn.com',
+    url: 'https://cnn.com',
     onClick: this._onClickHandler2,
     icon: 'Edit',
     key: 'key8'
   },
   {
     name: 'Delete',
-    url: 'http://cnn.com',
+    url: 'https://cnn.com',
     onClick: this._onClickHandler2,
     iconProps: { iconName: 'Delete' },
     key: 'key9'
@@ -79,25 +79,25 @@ Note in lines 28 and 34 I simply set the url to an empty string.  Then, later on
    links: [
   {
     name: 'Home',
-    url: 'http://example.com',
+    url: 'https://example.com',
     links: [
    {
      name: 'Activity',
-     url: 'http://msn.com',
+     url: 'https://msn.com',
      key: 'key1'
    },
    {
      name: 'News',
-     url: 'http://msn.com',
+     url: 'https://msn.com',
      key: 'key2'
    }
     ],
     isExpanded: true
   },
-  { name: 'Documents', url: 'http://example.com', key: 'key3', isExpanded: true },
-  { name: 'Pages', url: 'http://msn.com', key: 'key4' },
-  { name: 'Notebook', url: 'http://msn.com', key: 'key5' },
-  { name: 'Long Name Test for ellipse', url: 'http://msn.com', key: 'key6' },
+  { name: 'Documents', url: 'https://example.com', key: 'key3', isExpanded: true },
+  { name: 'Pages', url: 'https://msn.com', key: 'key4' },
+  { name: 'Notebook', url: 'https://msn.com', key: 'key5' },
+  { name: 'Long Name Test for ellipse', url: 'https://msn.com', key: 'key6' },
   {
     name: 'Edit',
     url: '',

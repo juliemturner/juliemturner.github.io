@@ -15,7 +15,7 @@ A quick post today to augment what's out there in the "Googleverse".  I needed 
 
 >WARNING, this code is not optimized for best practices but is generalized for reuse. As sample code, it may not work in all scenarios without modification.
 
->NOTE: this code requires jQuery to execute the AJAX calls and the promise__NOTE: The use of odata=verbose is no longer required and better practices would suggest that it should not be used in production. See this [post](http://sympmarc.com/2016/05/02/making-your-rest-calls-simpler-by-changing-the-metadata-setting/) from my partner Marc Anderson more information.
+>NOTE: this code requires jQuery to execute the AJAX calls and the promise__NOTE: The use of odata=verbose is no longer required and better practices would suggest that it should not be used in production. See this [post](https://sympmarc.com/2016/05/02/making-your-rest-calls-simpler-by-changing-the-metadata-setting/) from my partner Marc Anderson more information.
 
 This first function is what is used to create the document set folder. The function uses the folderName parameter as the title of the Document Set
 

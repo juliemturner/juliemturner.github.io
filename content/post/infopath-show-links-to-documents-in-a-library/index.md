@@ -10,17 +10,17 @@ tags:
 aliases: ["/2013/01/infopath-show-links-to-documents-in-a-library-from-the-form/"]
 ---
 
-I had an interesting client issue recently where the users were copying and pasting[](http://en.wikipedia.org/wiki/Cut%2C_copy%2C_and_paste "Cut, copy, and paste") the contents of entire e-mail messages into a text box inside an [InfoPath](http://office.microsoft.com/infopath/ "Microsoft InfoPath") form.  Although useful in that the information was captured with the form, the implementation was tedious at best when trying to find information potentially buried there.  Long story short by putting the e-mail messages in a document library that was linked to the InfoPath form library by the ID I was able to have a parent-child relationship.  The issue then was how to display those e-mails from within the form.
+I had an interesting client issue recently where the users were copying and pasting[](https://en.wikipedia.org/wiki/Cut%2C_copy%2C_and_paste "Cut, copy, and paste") the contents of entire e-mail messages into a text box inside an [InfoPath](https://office.microsoft.com/infopath/ "Microsoft InfoPath") form.  Although useful in that the information was captured with the form, the implementation was tedious at best when trying to find information potentially buried there.  Long story short by putting the e-mail messages in a document library that was linked to the InfoPath form library by the ID I was able to have a parent-child relationship.  The issue then was how to display those e-mails from within the form.
 
 Obviously the ideal solution was to be able to actually preview them, but barring the funds to take on a challenge like that, and very little hope that the exercise would be fruitful it was decided to try and at least show a list of the "messages" that were stored in the document library related to the form that was open.  Sounds simple I'm sure, and in the end it was fairly straight forward but a few little gotcha's had to be worked around.
 
-My first thought was to make a secondary data connection to the document library in question.  Unfortunately, I figured out rather quickly that getting the name of the file or the path to the file wasn't happening.  Enter [REST](http://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer") services for [SharePoint](http://sharepoint.microsoft.com "Microsoft SharePoint")... i.e. /\_vti\_bin/listdata.svc
+My first thought was to make a secondary data connection to the document library in question.  Unfortunately, I figured out rather quickly that getting the name of the file or the path to the file wasn't happening.  Enter [REST](https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer") services for [SharePoint](https://sharepoint.microsoft.com "Microsoft SharePoint")... i.e. /\_vti\_bin/listdata.svc
 
-The first step was to validate the URL for the REST service that I would add as a datasource in the InfoPath form.  To do this I used the URL `http://sp2010/test/\_vti\_bin/listdata.svc` where sp2010/test is the path to the site that housed the document library.  What resulted was this:
+The first step was to validate the URL for the REST service that I would add as a datasource in the InfoPath form.  To do this I used the URL `https://sp2010/test/\_vti\_bin/listdata.svc` where sp2010/test is the path to the site that housed the document library.  What resulted was this:
 
 {{< figure src="listdata.gif" alt="listdata.svc">}}
 
-If you then modify the URL to put /TestDocuments after the service call... in other words: `http://sp2010/test/\_vti\_bin/listdata.svc/TestDocuments` you will see the contents of the Test Documents library.  There are a lot of references on the web for quering REST data so I won't go into it here suffice to say that the best way to figure out what you need to query is to view the source of the resulting page.  So when I showed the contents of the Test Document library I saw the following:
+If you then modify the URL to put /TestDocuments after the service call... in other words: `https://sp2010/test/\_vti\_bin/listdata.svc/TestDocuments` you will see the contents of the Test Documents library.  There are a lot of references on the web for quering REST data so I won't go into it here suffice to say that the best way to figure out what you need to query is to view the source of the resulting page.  So when I showed the contents of the Test Document library I saw the following:
 
 {{< figure src="test_document_listing.gif" alt="Test Document listing">}}
 
@@ -29,7 +29,7 @@ Then when I viewed the source of the page I could see that to filter for the For
 {{< figure src="image3.gif" alt="Image3">}}
 
 Ergo, my final url to show all the documents filtered by the Form field (in this case where that value was 1) would be:  
-`http://sp2010/test/\_vti\_bin/listdata.svc/TestDocuments?$filter=FormId eq 1`
+`https://sp2010/test/\_vti\_bin/listdata.svc/TestDocuments?$filter=FormId eq 1`
 
 Ok, now I needed to be able to connect to the data from InfoPath.  That's a simple enough process, simply add a data connection for a REST Service.  Use the URL from above, but do not have it retrieve data by default.
 

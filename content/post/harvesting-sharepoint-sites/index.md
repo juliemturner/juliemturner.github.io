@@ -222,5 +222,3 @@ https://graph.microsoft.com/v1.0/groups/54e79fa1-0948-4a98-9914-199230818f49
 ```
 
 And then get other related group information including those outlined in the response above. Included in the members endpoint is the **userPrincipalName**, in the case of external users this property will have the **#Ext#** pattern, and therefore could be used to determine if there are external users in the group. That said it's a much more round about method then the properties you got from the TenantAdministration CSOM call detailed in the previous section.
-
-If as of the time you read this the group information for a site is still not available via the graph and you’re interested in having it please vote now on [UserVoice](https://officespdev.uservoice.com/forums/224641-feature-requests-and-feedback/suggestions/33659776-add-a-group-relationship-to-the-sharepoint-sites-s)

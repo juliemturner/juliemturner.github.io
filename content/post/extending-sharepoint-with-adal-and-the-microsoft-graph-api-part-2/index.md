@@ -27,7 +27,7 @@ Finally, we get to the part where we talk about writing some code. ADAL stands f
 
 One of the things that bothered me was the idea that the user would have to “log in” manually every time the ADAL library would need to authenticate them. In my mind, I envisioned a pop-up that would prompt them for credentials. In the scenario where you’re running this code on your on-premises server in a hybrid scenario, and haven’t set up federated sign-in to your O365 tenant that would be valid, however, in the most likely scenarios I can envision the code would be running in your SharePoint site in your O365 tenant… therefore asking the user to log in again would be annoying at best. Well, sure enough that’s not what happens, the library uses a hidden iframe on the page to make the call to get the user authenticated, since they are technically already authenticated to O365 this is just a matter of “confirming” it for lack of a better term. So, the page does flicker but otherwise this is unnoticeable to the user.
 
->Note: Thanks to [Wictor Wilen](http://twitter.com/wictor) for bringing up the issue with using adal.js in IE with a trusted site. Please check out this [issue](https://github.com/AzureAD/azure-activedirectory-library-for-js/issues/102), from the GitHub repo.
+>Note: Thanks to [Wictor Wilen](https://twitter.com/wictor) for bringing up the issue with using adal.js in IE with a trusted site. Please check out this [issue](https://github.com/AzureAD/azure-activedirectory-library-for-js/issues/102), from the GitHub repo.
 
 ### ADAL Config
 
@@ -42,7 +42,7 @@ A big part of utilizing the adal.js libraries is to get all the configuration se
 
 ### Using ADAL.js with No Framework
 
-The most tedious coding scenario with ADAL is utilizing it without the AngularJS add-on. I found this [blog article](http://nickvandenheuvel.eu/2016/01/06/authenticate-an-office-365-user-with-adal-js/) on how to do it, but unfortunately for me although it worked initially, when it came time to renew the token the ADAL library was throwing errors. After quite a bit of time on it, reviewing the adal-angular.js file and various other blog posts, I managed to work out a scenario that seems to work reliably. For simplicity's sake, I’m showing an entire html file including the JavaScript in one code snippet. I commented the code extensively but in a nutshell, we’ll do the following:
+The most tedious coding scenario with ADAL is utilizing it without the AngularJS add-on. I found this [blog article](https://nickvandenheuvel.eu/2016/01/06/authenticate-an-office-365-user-with-adal-js/) on how to do it, but unfortunately for me although it worked initially, when it came time to renew the token the ADAL library was throwing errors. After quite a bit of time on it, reviewing the adal-angular.js file and various other blog posts, I managed to work out a scenario that seems to work reliably. For simplicity's sake, I’m showing an entire html file including the JavaScript in one code snippet. I commented the code extensively but in a nutshell, we’ll do the following:
 
 * **1.** For simplicity code is executed on page load using jQuery's document.ready function. The goal of that bit of code is to determine if AAD is doing a callback and if so, let the adal.js library handle it.
   * **a.** If not a callback, check if the user is authenticated, if not, call the ADAL login function
@@ -192,7 +192,7 @@ function ($routeProvider, $httpProvider, adalProvider, $locationProvider) {
 
 ### Angular 1.5+ using Components
 
-Angular version 1.5 introduced a new concept called “Components” which was viewed widely as a superior architectural strategy for building Angular applications. So much so a very similar schema was adopted for Angular 2. With components, you generally do not use ngRoute. Further, with many [widget solutions](http://julieturner.net/2016/01/widget-wrangler/), routing is overkill. So, we need to consider another strategy for managing when the $http provider should include the token and, because ngRoute was making sure the user is authenticated for us (as I noted in the previous section), we’re going to need to handle that as well.
+Angular version 1.5 introduced a new concept called “Components” which was viewed widely as a superior architectural strategy for building Angular applications. So much so a very similar schema was adopted for Angular 2. With components, you generally do not use ngRoute. Further, with many [widget solutions](post/widget-wrangler/), routing is overkill. So, we need to consider another strategy for managing when the $http provider should include the token and, because ngRoute was making sure the user is authenticated for us (as I noted in the previous section), we’re going to need to handle that as well.
 
 For authentication, we’ll reuse the concepts we discussed in the “No Framework” section by making sure on page load we trap the callback and allow the ADAL.js library to handle it. Because this is a component there is the handy $onInit() function. That will work perfectly for our needs.
 
@@ -257,17 +257,17 @@ function geController($http, $q, adalProvider, \_CONFIG) {
 
 ## Summary
 
-Now we’ve completed Part 2, you should have everything you need to go off and start making calls to the MSGraphAPI. But, if you’re interested, [Part 3](http://julieturner.net/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3-the-execution/) will bring all of this together and show you how to create an Excel spreadsheet from scratch, add it to a SharePoint document library, and then manipulate it with the Excel API’s. Please stay tuned...
+Now we’ve completed Part 2, you should have everything you need to go off and start making calls to the MSGraphAPI. But, if you’re interested, [Part 3](/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3/) will bring all of this together and show you how to create an Excel spreadsheet from scratch, add it to a SharePoint document library, and then manipulate it with the Excel API’s. Please stay tuned...
 
 ## Resources
 
 ### OAuth Flows
 
-[Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs](http://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis) [Microsoft - Integrating applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications#updating-an-application) [Matt Velloso - Troubleshooting common Azure Active Directory Errors](http://www.matvelloso.com/2015/01/30/troubleshooting-common-azure-active-directory-errors/) [Microsoft - Should I use the v2.0 endpoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)
+[Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs](https://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis) [Microsoft - Integrating applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications#updating-an-application) [Matt Velloso - Troubleshooting common Azure Active Directory Errors](https://www.matvelloso.com/2015/01/30/troubleshooting-common-azure-active-directory-errors/) [Microsoft - Should I use the v2.0 endpoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)
 
 ### ADAL
 
-[GitHub - Azure Active Directory Library for JS](https://github.com/AzureAD/azure-activedirectory-library-for-js) [Cloud Identity - Introducing ADAL JS v1](http://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/) [Cloud Identity - ADAL JavaScript and AngularJS – Deep Dive](http://www.cloudidentity.com/blog/2014/10/28/adal-javascript-and-angularjs-deep-dive/) [Cloud Identity - Getting Acquainted with AuthenticationResult](http://www.cloudidentity.com/blog/2013/09/16/getting-acquainted-with-authenticationresult/) [Cloud Identity - Getting Acquainted with ADAL’s Token Cache](http://www.cloudidentity.com/blog/2013/10/01/getting-acquainted-with-adals-token-cache/) [Microsoft - Call the Microsoft Graph API using OAuth from your web part](https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part)
+[GitHub - Azure Active Directory Library for JS](https://github.com/AzureAD/azure-activedirectory-library-for-js) [Cloud Identity - Introducing ADAL JS v1](https://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/) [Cloud Identity - ADAL JavaScript and AngularJS – Deep Dive](https://www.cloudidentity.com/blog/2014/10/28/adal-javascript-and-angularjs-deep-dive/) [Cloud Identity - Getting Acquainted with AuthenticationResult](https://www.cloudidentity.com/blog/2013/09/16/getting-acquainted-with-authenticationresult/) [Cloud Identity - Getting Acquainted with ADAL’s Token Cache](https://www.cloudidentity.com/blog/2013/10/01/getting-acquainted-with-adals-token-cache/) [Microsoft - Call the Microsoft Graph API using OAuth from your web part](https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part)
 
 ### Microsoft Graph API
 
