@@ -150,3 +150,25 @@ private getAdal(url: string, endpoint: string, blob: boolean = false): angular.I
 ## Summary
 
 As you can see this is really clean and straight forward and pushes the complexities of accessing the MSGraph into the background so you can get on with creating a great solution. Happy Coding!
+
+## Resources
+
+### OAuth Flows
+
+* [Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs](https://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis)
+* [Microsoft - Integrating applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications#updating-an-application)
+* [Microsoft - Should I use the v2.0 endpoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)
+
+### ADAL
+
+* [GitHub - Azure Active Directory Library for JS](https://github.com/AzureAD/azure-activedirectory-library-for-js)
+* [Cloud Identity - Introducing ADAL JS v1](https://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/)
+* [Cloud Identity - ADAL JavaScript and AngularJS – Deep Dive](https://www.cloudidentity.com/blog/2014/10/28/adal-javascript-and-angularjs-deep-dive/)
+* [Cloud Identity - Getting Acquainted with AuthenticationResult](https://www.cloudidentity.com/blog/2013/09/16/getting-acquainted-with-authenticationresult/)
+* [Cloud Identity - Getting Acquainted with ADAL’s Token Cache](https://www.cloudidentity.com/blog/2013/10/01/getting-acquainted-with-adals-token-cache/)
+* [Microsoft - Call the Microsoft Graph API using OAuth from your web part](https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part)
+
+### Microsoft Graph API
+
+* [Microsoft – Microsoft Graph permission scopes](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes)
+* [Microsoft - App authentication with Microsoft Graph](https://graph.microsoft.io/en-us/docs/authorization/auth_overview)
