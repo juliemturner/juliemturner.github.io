@@ -2629,7 +2629,7 @@ pre code:not([data-lang]) {
     margin: 0; }
 
 .jt-sidebar {
-  margin: 0 10px; }
+  margin: 0 20px; }
   .jt-sidebar .jt-aside-headshot {
     text-align: center;
     margin-bottom: 20px; }
@@ -2677,9 +2677,20 @@ pre code:not([data-lang]) {
   padding: 0 20px; }
   .jt-content .jt-article.jt-post-preview {
     border-bottom: 1px solid #eee;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px; }
     .jt-content .jt-article.jt-post-preview a {
       text-decoration: none; }
+    .jt-content .jt-article.jt-post-preview .jt-post-subtitle {
+      margin: 0;
+      font-weight: 300;
+      margin-bottom: 10px; }
+    .jt-content .jt-article.jt-post-preview .jt-post-read-more {
+      font-weight: 800;
+      float: right; }
+    .jt-content .jt-article.jt-post-preview .jt-img-title {
+      width: 100%; }
   .jt-content .jt-article .jt-post-meta {
     margin-bottom: 10px; }
   .jt-content .jt-article .jt-post-entry {

@@ -307,7 +307,7 @@ pre {
 // ASIDE
 
 .jt-sidebar {
-  margin: 0 10px;
+  margin: 0 20px;
 
   .jt-aside-headshot {
     text-align: center;
@@ -389,9 +389,26 @@ pre {
     &.jt-post-preview {
       border-bottom: 1px solid #eee;
       padding-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
 
       a {
         text-decoration: none;
+      }
+
+      .jt-post-subtitle {
+        margin: 0;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+
+      .jt-post-read-more {
+        font-weight: 800;
+        float: right;
+      }
+
+      .jt-img-title {
+        width: 100%;
       }
     }
 
