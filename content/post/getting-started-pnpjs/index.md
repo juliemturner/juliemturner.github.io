@@ -196,7 +196,7 @@ import "@pnp/sp/lists"; // <- .lists; .getByTitle
 import "@pnp/sp/items"; // <- .items
 ```
 
-> Both .select and .expand are part of the root `SPQueryable` class that all the other methods inherit from.
+> Both .select and .expand are part of the root `SPQueryable` class, inherited from the Queryable class.
 
 ## Next Steps
 

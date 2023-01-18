@@ -54,7 +54,7 @@
 <!-- Hugo Version number -->
   {{ hugo.Generator -}}
 
-<!-- Cononical -->
+<!-- Canonical -->
 {{- $.Scratch.Set "permalink" .Permalink -}}
 {{- with .Params.SEO -}}
   {{- with .canonical -}}
@@ -75,13 +75,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
-
-  {{- if .Site.Params.useHLJS }}
-  <link rel="stylesheet" href="{{ "css/highlight.min.css" | absURL }}" />
-  {{- else -}}
+  
   <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
-  {{- end -}}
-  <link rel="stylesheet" href="{{ "css/codeblock.css" | absURL }}" />
   
 {{- if not .Site.IsServer -}}
   {{ template "_internal/google_analytics.html" . }}

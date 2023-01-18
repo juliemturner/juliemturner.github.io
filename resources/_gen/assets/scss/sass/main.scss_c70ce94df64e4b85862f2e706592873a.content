@@ -2496,10 +2496,14 @@ a {
     color: var(--jt-highlight2);
     text-decoration: underline; }
 
-code {
+code:not([data-lang]) {
   background-color: var(--jt-highlight);
   color: var(--jt-background);
-  padding: 0 5px; }
+  padding: 0 5px;
+  font-style: italic; }
+
+pre code:not([data-lang]) {
+  background-color: transparent; }
 
 .jt-wrapper {
   display: grid;
@@ -2633,7 +2637,8 @@ code {
     margin: 20px 0; }
   .jt-sidebar .jt-confEntry {
     display: block;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    text-decoration: none; }
     .jt-sidebar .jt-confEntry .jt-confImage {
       text-align: center; }
     .jt-sidebar .jt-confEntry .jt-confTitle {

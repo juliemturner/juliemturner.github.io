@@ -91,10 +91,17 @@ a {
   }
 }
 
-code {
+code:not([data-lang]) {
   background-color: var(--jt-highlight);
   color: var(--jt-background);
   padding: 0 5px;
+  font-style: italic;
+}
+
+pre {
+  code:not([data-lang]) {
+    background-color: transparent;
+  }
 }
 
 // BODY ROOT
@@ -314,6 +321,7 @@ code {
   .jt-confEntry {
     display: block;
     margin-bottom: 40px;
+    text-decoration: none;
 
     .jt-confImage {
       text-align: center;
