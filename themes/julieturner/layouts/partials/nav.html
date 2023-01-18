@@ -1,3 +1,4 @@
+{{ $icons := resources.Get "icons.svg" }}
 <nav class="jt-navbar">
   {{ if isset .Site.Params "logo" }}  
     <a class="jt-logo" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
@@ -26,7 +27,7 @@
       <li class="jt-nav-item">
         <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.showDialog()">
           <svg class="hoo-icon-svg icon-search" aria-hidden="true">
-            <use xlink:href="img/icons.svg#icon-search"></use>
+            <use xlink:href="{{ $icons.RelPermalink }}#icon-search"></use>
           </svg>
         </button>
       </li>
@@ -63,7 +64,7 @@
         <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.hideDialog()">
           <span class="hoo-icon">
             <svg class="hoo-icon-svg icon-close" aria-hidden="true">
-                <use xlink:href="img/icons.svg#icon-close"></use>
+                <use xlink:href="{{ $icons.RelPermalink }}#icon-close"></use>
             </svg>
         </span>
         </button>

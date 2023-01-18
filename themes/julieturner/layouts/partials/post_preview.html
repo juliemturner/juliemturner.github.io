@@ -27,7 +27,7 @@
     <div class="jt-post-entry">
       <figure>
         {{ with .Resources.GetMatch $img.src }}
-          {{ with .Resize "320x180" }}
+          {{ with .Resize "320x180 webp" }}
             <img class="jt-post-preview-img" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ .Title }} Preview Image" />
           {{ end }}
         {{ end }}        

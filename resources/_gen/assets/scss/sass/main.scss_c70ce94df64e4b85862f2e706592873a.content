@@ -2441,7 +2441,9 @@ div.hoo-buttoncontext-outer {
   --jt-background2: #e1e1e1;
   --jt-highlight: #482581;
   --jt-highlight2: #9ACE1D;
-  --jt-image-header: #FFFFFF; }
+  --jt-image-header: #FFFFFF;
+  --jt-brightness: brightness(.8);
+  --jt-contrast: contrast(1.2); }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -2449,9 +2451,9 @@ div.hoo-buttoncontext-outer {
     --jt-background2: #404040;
     --jt-foreground: #FFFFFF;
     --jt-highlight: #9ACE1D;
-    --jt-highlight2: #7940d5; }
+    --jt-highlight2: #9456FD; }
     :root img {
-      filter: brightness(0.8) contrast(1.2); } }
+      filter: var(--jt-brightness) var(--jt-contrast); } }
 
 *,
 *:before,
@@ -2616,6 +2618,14 @@ a {
     margin-bottom: 20px; }
   .jt-sidebar .jt-asideSection {
     margin: 20px 0; }
+  .jt-sidebar .jt-confEntry {
+    display: block;
+    margin-bottom: 40px; }
+    .jt-sidebar .jt-confEntry .jt-confImage {
+      text-align: center; }
+    .jt-sidebar .jt-confEntry .jt-confTitle {
+      font-size: 1.2rem;
+      text-align: center; }
   .jt-sidebar .jt-sympimg {
     max-width: 300px; }
   .jt-sidebar .jt-highlight {

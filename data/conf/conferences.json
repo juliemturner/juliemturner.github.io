@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "title": "Microsoft 365 Conference",
+      "subtitle": "May 2-4, 2023 - Las Vegas, NV",
+      "url": "https://m365conf.com/#!/register",
+      "img": {
+        "src": "conf/M365-May23-SpkrCodeBanner-Turner-2023-01-13_021.png", 
+        "alt": "Microsoft 365 Conference Speaker May 2023"
+      },
+      "expire": "2023-05-04T23:59:00Z"
+    },
+    {
+      "title": "European Collaboration Summit 2023",
+      "subtitle": "May 22-24, 2023 - Düsseldorf, Germany",
+      "url": "https://www.collabsummit.eu/en/tickets/",
+      "img": {
+        "src": "conf/ECS23_Julie_Turner.png", 
+        "alt": "European Collaboration Summit Speaker May 2023"
+      },
+      "expire": "2023-05-24T23:59:00Z"
+    },
+    {
+      "title": "365 EduCon - DC",
+      "subtitle": "June 12-16, 2023 - Washington, D.C.",
+      "url": "https://365educon.com/DC/index.php/tickets",
+      "img": {
+        "src": "conf/DC23-Turner.png", 
+        "alt": "365 EduCon Speaker June 2023"
+      },
+      "expire": "2023-05-16T23:59:00Z"
+    }
+  ]
+}

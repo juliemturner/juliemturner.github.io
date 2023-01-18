@@ -1,0 +1,20 @@
+<div class="jt-asideSection">
+  <h2>Join Me Live</h2>
+  {{ range . }} 
+    {{ $expire := time .expire }}
+    {{ if ge $expire now.Unix }}
+    <a class="jt-confEntry" href="{{ .url }}" target="_blank">
+      <div class="jt-confImage">
+        {{ $alt := .img.alt }}
+        {{ $img := resources.Get .img.src }}
+        {{ $img := $img.Resize "320x webp" }}
+        {{ with $img }} 
+          <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" />
+        {{ end }} 
+      </div>
+      <div class="jt-confTitle">{{ .title }}</div>
+      <div class="jt-confTitle">{{ .subtitle }}</div>
+    </a>
+    {{ end }}
+  {{ end }}
+</div>
