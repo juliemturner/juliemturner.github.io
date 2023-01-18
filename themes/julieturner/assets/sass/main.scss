@@ -46,6 +46,21 @@ body {
   }
 }
 
+blockquote {
+  color: var(--jt-foreground);
+  font-style: italic;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    blockquote {
+      border-left: 5px solid #444;
+    }
+  }
+}
+
 button {
   font-family: 'Gentium Plus', serif;
   font-size: 1.125rem;

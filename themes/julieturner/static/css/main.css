@@ -61,18 +61,7 @@ a:hover,
 a:focus {
   color: #0085a1;
 }
-blockquote {
-  color: #808080;
-  font-style: italic;
-}
-blockquote p:first-child {
-  margin-top: 0;
-}
-@media (prefers-color-scheme: dark) {
-  blockquote {
-    border-left: 5px solid #444;
-  }
-}
+
 hr.small {
   max-width: 100px;
   margin: 15px auto;

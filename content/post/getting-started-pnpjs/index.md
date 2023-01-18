@@ -11,7 +11,7 @@ bigimg: [{src: "pnpjs_header.jpg", desc: "microsoft graph api and sharepoint res
 
 ## Introduction
 
-As a co-maintainer of the PnPjs library I know we strive to improve the documentation constantly. That said, it seems inappropriate to editorialize documentation so from that idea this blog post has been formed as a way to communicate more than what the documentation can provide for those just starting out with the library. Let's drive right in.
+As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let's drive right in.
 
 ## What is PnPjs
 
