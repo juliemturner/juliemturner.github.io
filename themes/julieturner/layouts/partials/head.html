@@ -53,6 +53,19 @@
 {{- end -}}
 <!-- Hugo Version number -->
   {{ hugo.Generator -}}
+
+<!-- Cononical -->
+{{- $.Scratch.Set "permalink" .Permalink -}}
+{{- with .Params.SEO -}}
+  {{- with .canonical -}}
+    <link rel="canonical" href="{{ . }}">
+  {{- else -}}
+    <link rel="canonical" href="{{ $.Scratch.Get "permalink" }}">
+  {{- end -}}
+{{- else -}}
+  <link rel="canonical" href="{{ $.Scratch.Get "permalink" }}">
+{{- end -}}
+
 <!-- Links and stylesheets -->
   <link rel="alternate" href="{{ "index.xml" | absLangURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 

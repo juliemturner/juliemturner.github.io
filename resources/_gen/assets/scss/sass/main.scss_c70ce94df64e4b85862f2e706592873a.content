@@ -2496,6 +2496,11 @@ a {
     color: var(--jt-highlight2);
     text-decoration: underline; }
 
+code {
+  background-color: var(--jt-highlight);
+  color: var(--jt-background);
+  padding: 0 5px; }
+
 .jt-wrapper {
   display: grid;
   grid-gap: 10px; }
