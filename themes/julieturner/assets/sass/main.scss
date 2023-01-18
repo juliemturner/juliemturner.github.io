@@ -91,6 +91,12 @@ a {
   }
 }
 
+code {
+  background-color: var(--jt-highlight);
+  color: var(--jt-background);
+  padding: 0 5px;
+}
+
 // BODY ROOT
 
 .jt-wrapper {
