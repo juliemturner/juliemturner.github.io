@@ -12,7 +12,7 @@ tags:
 aliases: ["/2016/01/widget-wrangler/"]
 ---
 
-_(Cross posted at Bob German's blog, [Bob German's Vantage Point](https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/))_
+{{< crosspost src="https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/" name="Bob German's Vantage Point" >}}
 
 ## What’s a widget, and why should I care?
 

@@ -50,7 +50,15 @@ body {
 
 blockquote {
   color: var(--jt-foreground);
+  font-family: inherit;
+  font-size: 1rem;
   font-style: italic;
+  border-top: 1px solid var(--jt-background2);
+  border-bottom: 1px solid var(--jt-background2);
+  text-align: center;
+  padding: 1rem;
+  margin: 1.75rem 0;
+  line-height: normal;
 
   p:first-child {
     margin-top: 0;
@@ -98,6 +106,7 @@ code:not([data-lang]) {
   color: var(--jt-background);
   padding: 0 5px;
   font-style: italic;
+  font-size: 1rem;
 }
 
 pre {
@@ -106,13 +115,39 @@ pre {
   }
 }
 
-.symp-logo{
+.symp-logo {
   height: 58px;
   width: 300px;
   background-image: var(--symp-logo);
   background-repeat: no-repeat;
   text-align: center;
   display: inline-block;
+}
+
+.jt-crosspost {
+  background-color: var(--jt-background2);
+  border-radius: 5px;
+  margin: 20px 0;
+
+  p {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .jt-crosspost-icon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.jt-post-meta {
+  font-style: italic;
+  margin: 0 10px;
+  line-height: 2rem;
+
+  svg {
+    margin: 0 5px;
+  }
 }
 
 // BODY ROOT
@@ -136,8 +171,7 @@ pre {
   }
 
   .jt-wrapper {
-    //margin: 0 auto;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: minmax(200px, 3fr) minmax(350px, 1fr);
   }
 
   .jt-header,
@@ -160,6 +194,7 @@ pre {
     >* {
       width: auto;
       margin: 0;
+      max-width: 98vw;
     }
   }
 }
@@ -231,6 +266,7 @@ pre {
   // SINGLE PAGE
   .jt-article-header {
     background-size: cover;
+    width: 98vw;
 
     .jt-post-heading {
       width: 60vw;
@@ -252,32 +288,25 @@ pre {
           content: "";
         }
 
-        .jt-post-meta {
-          font-style: italic;
-          margin: 0 0 10px;
-        }
+
       }
     }
 
     @media screen and (max-width: 800px) {
       .jt-post-heading {
-        width: 100vw;
+        width: 98vw;
         margin: 0;
         padding: 0;
 
         .jt-title {
           background-color: rgba(0, 0, 0, 0.5);
-          padding: 10px;
+          padding: 20px;
           border-radius: 0;
 
           &>* {
             padding: 0;
           }
 
-          .jt-post-meta {
-            font-style: italic;
-            margin: 0 0 10px;
-          }
         }
       }
     }
@@ -381,8 +410,6 @@ pre {
       }
     }
   }
-
-
 }
 
 // CONTENET
@@ -470,16 +497,22 @@ pre {
         background-color: var(--jt-background);
       }
     }
+
+    .highlight {
+      .line {
+        overflow-wrap: anywhere;
+      }
+    }
   }
 
   .jt-pager {
     display: block;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 20px;
     margin: 10px 0 0;
     text-align: center;
     list-style: none;
-    width: 100%;
+    width: 98vw;
+    max-width: 120ch;
 
     &.jt-blog-pager {
       display: inline-block;
@@ -536,9 +569,9 @@ pre {
 
   @media screen and (max-width: 800px) {
     .jt-article {
-      padding: 0 5px;
+      padding: 0 20px;
       margin: 0;
-      max-width: 100vw;
+      max-width: 98vw;
 
       .jt-disqus-comments {
         margin-top: 30px;

@@ -9,6 +9,8 @@ aliases: ["/2021/01/what-is-a-dev-tenant-and-why-would-you-want-one/"]
 bigimg: [{src: "Sandbox_header.jpeg", desc: ""}]
 ---
 
+{{< crosspost src="https://pnp.github.io/blog/" name="Microsoft 365 Platform Community Blog" >}}
+
 When someone says to you, they are using their “dev tenant” what they’re probably referring to is their personal development “sandbox” they received as part of joining the Microsoft 365 developer program.
 
 {{< figure src="M365DevProgram.png" alt="Developer Program - Microsoft 365 Webpage">}}
@@ -31,4 +33,3 @@ By having these data packs, it can make testing various scenarios with your appl
 
 Something that may be confusing to some is the difference between the dev tenants and “Customer Digital Transform” tenants. The latter are Microsoft 365 tenants that you can provision if you are someone providing sales or guidance to customers using Microsoft 365. They are extremely useful as these tenants are fully scaled out demo environments that can help you quickly and effectively communicate how Microsoft 365 can benefit a customer and their specific needs. These tenants however have a limited lifespan (between 3 months and 1 year) and after that time the tenant is decommissioned and there is no way to get them back. So, although once you have one of these demo tenants you can deploy and develop inside them, as they are fully functional, just like Cinderella when times up, time is up! As we said earlier, if you’re actively using dev tenants, they will auto renew every 90 days. So, now that you're all up to speed, what are you waiting for?! Get your [dev tenant now](https://developer.microsoft.com/en-us/microsoft-365/dev-program) and get on your way to building some awesome solutions!
 
->This article was cross-posted on the [Microsoft 365 PnP Blog - Microsoft Tech community](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/what-is-a-dev-tenant-and-why-would-you-want-one/ba-p/2036610)

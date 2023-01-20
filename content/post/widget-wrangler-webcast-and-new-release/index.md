@@ -12,9 +12,9 @@ tags:
 aliases: ["/2016/03/widget-wrangler-webcast-and-new-release/"]
 ---
 
-## Widget Wrangler Webcast and New Release
+{{< crosspost src="https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/" name="Bob German's Vantage Point" >}}
 
-_(Cross posted at Bob German's blog, [Bob German's Vantage Point](https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/))_
+## Widget Wrangler Webcast and New Release
 
 Here’s a quick update on the Widget Wrangler – the light-weight JavaScript framework that helps you build flexible widgets that can be used in [SharePoint](https://sharepoint.microsoft.com "Microsoft SharePoint") content editor web parts, add-in parts, or really pretty much everywhere.
 

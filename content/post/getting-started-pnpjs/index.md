@@ -9,6 +9,8 @@ tags:
 bigimg: [{src: "pnpjs_header.jpg", desc: "microsoft graph api and sharepoint rest api endpoint"}]
 ---
 
+{{< crosspost src="https://pnp.github.io/blog/post/spfx-14-getting-started-with-pnpjs-spfx/" name="Microsoft 365 Platform Community Blog" >}}
+
 ## Introduction
 
 As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let's drive right in.

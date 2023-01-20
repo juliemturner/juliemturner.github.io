@@ -1,9 +1,8 @@
 {{ $icons := resources.Get "icons.svg" }}
 <nav class="jt-navbar">
   {{ if isset .Site.Params "logo" }}  
-    <a class="jt-logo" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
+    <a class="jt-logo" title="{{ .Site.Title }}" href="{{ "" | absLangURL }}" alt="Julie Turner development blog for Microsoft 365, SharePoint, Teams, and Azure">
       {{ partial "logo.html" . }}
-      {{/*  <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}" />  */}}
     </a>      
   {{ end }}
   <menu class="jt-nav-links">
