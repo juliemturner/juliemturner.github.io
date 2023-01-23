@@ -22,7 +22,7 @@
 <ul class="hoo-meta-list">
   {{ range $tagArray }}
   <li>
-    <a class="hoo-mtag" href="/tags/{{ replace . "#" "-sharp" | urlize | lower }}" aria-label="View all posts tagged with '{{ . }}'">
+    <a class="hoo-mtag" href="/tags/{{ replace . "#" "-sharp" | urlize | lower }}/" aria-label="View all posts tagged with '{{ . }}'">
       <span class="hoo-mtag-lbl">{{ . }}</span>
     </a>
   </li>
