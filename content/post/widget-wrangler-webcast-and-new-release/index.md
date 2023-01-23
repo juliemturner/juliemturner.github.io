@@ -1,6 +1,7 @@
 ---
 title: 'Widget Wrangler Webcast and New Release'
 date: Mon, 14 Mar 2016 20:36:26 +0000
+description: "Here’s a quick update on the Widget Wrangler – the light-weight JavaScript framework that helps you build flexible widgets that can be used in SharePoint content editor web parts, add-in parts, or really pretty much everywhere."
 draft: false
 tags: 
   - SharePoint

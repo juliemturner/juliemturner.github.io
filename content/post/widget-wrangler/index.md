@@ -1,6 +1,7 @@
 ---
 title: 'Flexible SharePoint Development with Widget Wrangler'
 date: Wed, 13 Jan 2016 22:00:00 +0000
+description: "A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a SharePoint add-in, or outside of SharePoint. If you're careful, you can reuse the same widget in all those contexts!"
 draft: false
 tags: 
   - SharePoint

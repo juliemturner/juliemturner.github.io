@@ -19,10 +19,10 @@
   {{- $title := printf "Overview of all pages with the %s #%s" .Data.Singular $.Title }}
   {{- $.Scratch.Set "Title" $title }}
 {{- else }}
-  {{- $.Scratch.Set "Description" ( .Description | default .Params.subtitle | default .Summary ) }}
+  {{/*  {{- $.Scratch.Set "Description" ( .Description | default .Params.subtitle | default .Summary ) }}  */}}
+  {{- $.Scratch.Set "Description" ( .Description | default .Summary ) }}
   {{- $.Scratch.Set "Title" ( .Title | default .Site.Title ) }}
 {{- end }}
-
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2P5EMX0ZL"></script>
@@ -50,19 +50,11 @@
   {{- /* GET DESCRIPTION */ -}}
   {{ with .Description }}
     {{ $headScratch.Set "pageDescription" . }}
-  {{ else }}
-    {{ with .Site.Params.description }}
-      {{ $headScratch.Set "pageDescription" . }}
-    {{ end }}
   {{ end }}
   {{ with .Params.SEO }}
     {{ with .Description }}
       {{ $headScratch.Set "pageDescription" . }}
-    {{ else }}
-      {{ if .IsPage }}{{ $headScratch.Set "pageDescription" .Summary }}{{ end }}
     {{ end }}
-  {{ else }}
-    {{ if .IsPage }}{{ $headScratch.Set "pageDescription" .Summary }}{{ end }}
   {{ end }}
   <title>{{- $headScratch.Get "pageTitle" -}}</title>
   <meta name="description" content="{{- $headScratch.Get "pageDescription" -}}" />

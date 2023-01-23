@@ -2,6 +2,7 @@ baseURL: 'https://juliemturner.github.io/'
 DefaultContentLanguage: "en"
 title: "Veni, Vidi, Vici"
 theme: "julieturner"
+summaryLength: 70
 disqusShortname: "veni-vidi-vici-1"
 #googleAnalytics: "UA-84177830-1"
 pygmentsStyle: "trac"

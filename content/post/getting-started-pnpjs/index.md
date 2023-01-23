@@ -1,6 +1,7 @@
 ---
 title: "Getting Started with PnPjs"
 date: 2023-01-17T15:08:31Z
+description: "As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let's drive right in."
 draft: false  
 tags: 
   - Microsoft 365
