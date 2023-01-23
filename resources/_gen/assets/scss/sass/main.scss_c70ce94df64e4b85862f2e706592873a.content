@@ -2606,6 +2606,17 @@ pre code:not([data-lang]) {
     width: 175px;
     vertical-align: middle; }
 
+figure {
+  margin: 0; }
+  figure img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    border: 0; }
+
+table td {
+  padding: 5px; }
+
 @media screen and (max-width: 800px) {
   .jt-navbar {
     display: block;
@@ -2796,13 +2807,6 @@ pre code:not([data-lang]) {
 
 .jt-content .jt-box {
   margin: 20px 0; }
-  .jt-content .jt-box figure {
-    margin: 0; }
-    .jt-content .jt-box figure img {
-      display: block;
-      margin: auto;
-      max-width: 100%;
-      border: 0; }
 
 @media screen and (max-width: 800px) {
   .jt-content .jt-article {

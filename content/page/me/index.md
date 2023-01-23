@@ -2,11 +2,15 @@
 title: 'Where to Find Me'
 date: Mon, 19 Sep 2022 17:06:28 +0000
 draft: false
+seo:
+  description: "Julie Turner Blog on Microsoft 365, SharePoint, Microsoft Teams, development and extensibility - about the author."
 ---
 
-{{< figure src="github.png" alt="GitHub Logo" width="30px">}} [Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme")
 
-{{< figure src="greppericon.jpg" alt="Grepper Logo" width="30px">}} [Zen Developer](https://www.codegrepper.com/profile/julie-turner)
+| | | |
+|----------|-------------|------|
+| {{< figure src="github-mark.png" alt="GitHub Logo" size="40x40" link="https://github.com/juliemturner/Public-Samples#readme" nomargin="true" background="white" >}} | [ Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme) |
+| {{< figure src="greppericon.jpg" alt="Grepper Logo" size="40x40" link="https://www.codegrepper.com/profile/julie-turner" nomargin="true" >}} | [ Zen Developer](https://www.codegrepper.com/profile/julie-turner) |
 
 ## Podcasts/Video Shows
 

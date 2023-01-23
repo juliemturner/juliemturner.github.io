@@ -1,18 +1,31 @@
-{{- $thumb := .Get "src" | default (printf "%s." (.Get "thumb") | replace (.Get "link") ".") }}
+{{- $headScratch := newScratch -}}
+{{- $headScratch.Set "img" ($.Page.Resources.GetMatch ($.Params.src)) -}}
+{{- $headScratch.Set "bgStyle" "{}" -}}
+{{ with $.Params.background }} {{ $headScratch.Set "bgStyle" (printf "{ background-color: %s}" $.Params.background )}} {{ end }}
+{{ with $.Params.size }} {{ $headScratch.Set "img" (($headScratch.Get "img").Resize (printf "%s webp" $.Params.size)) }} {{ end }}
+{{ $img := $headScratch.Get "img" }}
+{{ $bgStyle := $headScratch.Get "bgStyle" }}
+{{ with $.Params.nomargin }}
+<div>
+{{ else }}
 <div class="jt-box">
-  <figure>
-    <div class="img"{{ if .Parent }} style="background-image: url('{{ print .Site.BaseURL $thumb }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
-      <img itemprop="thumbnail" src="{{ $thumb }}" {{ with .Get "alt" | default (.Get "caption") | default $thumb }}alt="{{.}}"{{ end }}/><!-- <img> hidden if in .gallery -->
-    </div>
-    {{ with .Get "link" | default (.Get "src") }}<a href="{{.}}" itemprop="contentUrl"></a>{{ end }}
-    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+{{ end }}
+  <figure>    
+    {{ with $.Params.link }}
+      <a href="{{.}}" alt="{{ $.Params.caption }}">        
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Params.alt | default ($.Params.caption) }} Preview Image" />  
+      </a>
+    {{ else }}
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Params.alt | default ($.Params.caption) }} Preview Image" />  
+    {{ end }}
+    {{- with ($.Params.caption) }}
       <figcaption>
-        {{- with .Get "title" }}<h4>{{.}}</h4>{{ end }}
-        {{- if or (.Get "caption") (.Get "attr")}}
+        {{- if and ($.Params.caption) ($.Params.link) }}
           <p>
-            {{- .Get "caption" -}}
-            {{- with .Get "attrlink"}}<a href="{{.}}">{{ .Get "attr" }}</a>{{ else }}{{ .Get "attr"}}{{ end -}}
+            <a href="{{ $.Params.link }}">{{ $.Params.caption }}</a>
           </p>
+        {{- else }}
+          <p>{{ $.Params.caption }}</p>
         {{- end }}
       </figcaption>
     {{- end }}

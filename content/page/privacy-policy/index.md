@@ -2,6 +2,8 @@
 title: 'Privacy Policy'
 date: Fri, 18 May 2018 16:53:09 +0000
 draft: false
+seo:
+  description: "Julie Turner Blog on Microsoft 365, SharePoint, Microsoft Teams, development and extensibility - privacy policy."
 ---
 
 ### Embedded content from other websites
