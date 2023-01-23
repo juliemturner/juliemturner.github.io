@@ -38,19 +38,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <!-- Site Title, Description, Author, and Favicon -->
-{{- with ($.Scratch.Get "Title") }}
-  <title>{{ . }} - {{ $.Site.Title }}</title>
-{{- end }}
-{{- with ($.Scratch.Get "Description") }}
-  <meta name="description" content="{{ . }}">
-{{- end }}
+{{- if .IsHome -}}
+  <title>{{- .Site.Params.description -}}</title>
+  <meta name="description" content="{{ .Site.Params.description }}" />
+{{- else -}}
+  {{- $headScratch := newScratch -}}
+  {{- $headScratch.Set "page" . -}}
+  {{- /* GET TITLE */ -}}
+  {{- $headScratch.Set "pageTitle" .Title -}}
+  {{- /* if SEO set, use that instead */ -}}
+  {{- with .Params.SEO -}}{{- with .Title -}}{{- $headScratch.Set "pageTitle" . -}}{{- end -}}{{- end -}}
+  {{- /* GET DESCRIPTION */ -}}
+  {{ with .Description }}
+    {{ $headScratch.Set "pageDescription" . }}
+  {{ else }}
+    {{ with .Site.Params.description }}
+      {{ $headScratch.Set "pageDescription" . }}
+    {{ end }}
+  {{ end }}
+  {{ with .Params.SEO }}
+    {{ with .Description }}
+      {{ $headScratch.Set "pageDescription" . }}
+    {{ else }}
+      {{ if .IsPage }}{{ $headScratch.Set "pageDescription" .Summary }}{{ end }}
+    {{ end }}
+  {{ else }}
+    {{ if .IsPage }}{{ $headScratch.Set "pageDescription" .Summary }}{{ end }}
+  {{ end }}
+  <title>{{- $headScratch.Get "pageTitle" -}}</title>
+  <meta name="description" content="{{- $headScratch.Get "pageDescription" -}}" />
+{{- end -}}
+
 {{- with .Site.Author.name }}
-  <meta name="author" content="{{ . }}"/>
+<meta name="author" content="{{ . }}"/>
 {{- end }}
 {{- partial "seo/main.html" . }}  
 {{- with .Site.Params.favicon }}
-  <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
+<link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
 {{- end -}}
+
 <!-- Hugo Version number -->
   {{ hugo.Generator -}}
 

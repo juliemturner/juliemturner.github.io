@@ -21,6 +21,7 @@ lastmod:
 
 Params:
   subtitle: "MUSINGS AND SOLUTIONS FOR MICROSOFT 365 AND AZURE"
+  description: "Julie Turner Blog on Microsoft 365, SharePoint, Microsoft Teams, development and extensibility"
   mainSections: ["post","posts"]
   logo: "img/venividivici_header.png"
   headshot: "img/jturner.png"
