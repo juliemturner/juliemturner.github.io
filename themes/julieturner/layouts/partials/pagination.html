@@ -26,7 +26,7 @@
   {{ end }}  */}}
   <!-- Previous page. -->
   {{ if $paginator.HasPrev }}
-    <button class="hoo-button" onclick="jtBlogMain.navigate({{ $paginator.Prev.URL }})">
+    <button class="hoo-button" onclick="jtBlogMain.navigate('{{ $paginator.Prev.URL }}')">
       <span class="hoo-icon">
         <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
           <use xlink:href="{{ $icons.RelPermalink }}#icon-arrow-left"></use>
@@ -39,7 +39,7 @@
   {{ end }}
   <!-- Next page. -->
   {{ if $paginator.HasNext }}
-    <button class="hoo-button is-reversed" onclick="jtBlogMain.navigate({{ $paginator.Next.URL }})">
+    <button class="hoo-button is-reversed" onclick="jtBlogMain.navigate('{{ $paginator.Next.URL }}')">
       <span class="hoo-icon">
         <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
           <use xlink:href="{{ $icons.RelPermalink }}#icon-arrow-right"></use>

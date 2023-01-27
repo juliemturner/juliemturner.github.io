@@ -3126,6 +3126,9 @@ table td {
       font-size: 1.125rem; }
       .jt-content .jt-pager > .hoo-button .hoo-icon .hoo-icon-svg, .jt-content .jt-pager > .hoo-button .hoo-button-label .hoo-icon-svg {
         padding: 0; }
+    .jt-content .jt-pager > .hoo-button .hoo-icon {
+      width: unset;
+      height: unset; }
 
 .jt-content .jt-box {
   margin: 20px 0; }
