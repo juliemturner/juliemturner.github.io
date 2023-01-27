@@ -31,6 +31,11 @@
   }
 }
 
+:root{
+  --neutralSecondaryAlt: var(--jt-background2);
+  --neutralPrimary: var(--jt-highlight);
+}
+
 *,
 *:before,
 *:after {
@@ -523,49 +528,24 @@ table {
   }
 
   .jt-pager {
-    display: block;
-    padding: 0 20px;
-    margin: 10px 0 0;
-    text-align: center;
-    list-style: none;
-    width: 98vw;
-    max-width: 120ch;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 
     &.jt-blog-pager {
-      display: inline-block;
-      margin-top: 40px;
-      padding-left: 0;
-      padding-right: 0;
+      margin: 20px;
     }
 
-    li {
-      display: inline;
-    }
+    > .hoo-button{
+      padding: 10px;
+      width: 8rem;
 
-    li>a,
-    li>span {
-      display: inline-block;
-      font-size: 1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      touch-action: manipulation;
-      text-align: center;
-      white-space: nowrap;
-      cursor: pointer;
-      padding: 15px 25px;
-      border: 1px solid var(--jt-background2);
-      text-decoration: none;
-    }
-
-    .previous>a,
-    .previous>span {
-      float: left;
-    }
-
-    .next>a,
-    .next>span {
-      float: right;
+      .hoo-icon, .hoo-button-label {
+        font-size: 1.125rem;
+        .hoo-icon-svg {
+          padding: 0;
+        }
+      }
     }
   }
 

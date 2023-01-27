@@ -1,0 +1,62 @@
+{{ $icons := resources.Get "icons.svg" }}
+{{ $paginator := .Paginator }}
+
+<!-- Number of links either side of the current page. -->
+{{ $adjacent_links := 3 }}
+
+<!-- $max_links = ($adjacent_links * 2) + 1 -->
+{{ $max_links := (add (mul $adjacent_links 2) 1) }}
+
+<!-- $lower_limit = $adjacent_links + 1 -->
+{{ $lower_limit := (add $adjacent_links 1) }}
+
+<!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
+{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+
+<!-- If there's more than one page... -->
+{{ if gt $paginator.TotalPages 1 }}
+<div class="jt-pager jt-blog-pager">
+  {{/*  <!-- First page. -->
+  {{ if ne $paginator.PageNumber 1 }}
+  <li class="previous">
+    <a href="{{ $paginator.First.URL }}" data-toggle="tooltip" data-placement="top" title="">&larr; First</a>
+  </li>
+  {{ else }}
+    <p>No First</p>
+  {{ end }}  */}}
+  <!-- Previous page. -->
+  {{ if $paginator.HasPrev }}
+    <button class="hoo-button" onclick="jtBlogMain.navigate({{ $paginator.Prev.URL }})">
+      <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+          <use xlink:href="{{ $icons.RelPermalink }}#icon-arrow-left"></use>
+        </svg>
+      </span>
+      <span class="hoo-button-label">Previous</span>      
+    </button>
+  {{ else }}
+    <div></div>
+  {{ end }}
+  <!-- Next page. -->
+  {{ if $paginator.HasNext }}
+    <button class="hoo-button is-reversed" onclick="jtBlogMain.navigate({{ $paginator.Next.URL }})">
+      <span class="hoo-icon">
+        <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+          <use xlink:href="{{ $icons.RelPermalink }}#icon-arrow-right"></use>
+        </svg>
+      </span>
+      <span class="hoo-button-label">Next</span>
+    </button>
+  {{ else }}
+    <div></div>
+  {{ end }}
+  {{/*  <!-- Last page. -->
+  {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+  <li class="next">
+    <a href="{{ $paginator.Last.URL }}" data-toggle="tooltip" data-placement="top" title="">Last &rarr;</a>
+  </li>
+  {{ else }}
+    <p>No Last</p>
+  {{ end }}  */}}
+</div>
+{{ end }}

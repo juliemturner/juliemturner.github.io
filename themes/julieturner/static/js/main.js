@@ -1,4 +1,7 @@
 var jtBlogMain = {
+  navigate: function(url) {
+    document.location.href = url;
+  },
   showDialog: function() {
     let dialog = document.getElementsByClassName("hoo-mdldialog-outer");
     if(dialog != null){

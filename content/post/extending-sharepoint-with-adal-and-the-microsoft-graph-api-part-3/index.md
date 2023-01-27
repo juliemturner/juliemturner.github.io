@@ -17,7 +17,7 @@ bigimg: [{src: "20170118_GraphExample.png", desc: ""}]
 
 {{< figure src="20170118_GraphExample.png" alt="20170118_GraphExample">}}
 
-In [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1), I discussed the background and setup information you would need to successfully embark on a client site widget for SharePoint that accesses the Microsoft Graph API (MSGraphAPI). In [Part 2](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2), we went in depth to the various ways of utilizing the adal.js and adal-angular.js libraries for authentication. Now, here in Part 3 we’re going to get right into the nuts and bolts of a real solution that does the following:
+In [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1/), I discussed the background and setup information you would need to successfully embark on a client site widget for SharePoint that accesses the Microsoft Graph API (MSGraphAPI). In [Part 2](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2/), we went in depth to the various ways of utilizing the adal.js and adal-angular.js libraries for authentication. Now, here in Part 3 we’re going to get right into the nuts and bolts of a real solution that does the following:
 
 * Utilizes a third-party JavaScript library to create an Excel file
 * Uses the MSGraphAPI to upload the file into a SharePoint document library
@@ -27,7 +27,7 @@ To be fair the third party library we’re using can manipulate the Excel file, 
 
 ## Setup
 
-In [Part 2](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1), I gave three different examples of configuring and utilizing the ADAL library. The first step would be to create your “solution” and configure ADAL appropriately depending on whether you’re going to use AngularJS with ngRoute or Components or something else. I’m assuming you know how to implement one or the other of those patterns so I will only be including the code for the functions themselves in the text and not the overall project. Keep in mind I wrote my code using AngularJS so if you see a reference to “vm.”, in the code, that’s a reference to a UI binding property.
+In [Part 2](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1/), I gave three different examples of configuring and utilizing the ADAL library. The first step would be to create your “solution” and configure ADAL appropriately depending on whether you’re going to use AngularJS with ngRoute or Components or something else. I’m assuming you know how to implement one or the other of those patterns so I will only be including the code for the functions themselves in the text and not the overall project. Keep in mind I wrote my code using AngularJS so if you see a reference to “vm.”, in the code, that’s a reference to a UI binding property.
 
 The MSGraphAPI root URL for the SharePoint library requires a couple of components that you’re going to have to gather together. The first is the site collection id, which is a GUID you can get by pasting ```https://{your tenant}.sharepoint.com/{your site collection}/\_api/site/id``` in a browser. The second is the GUID of the library you want to access. You can get that most easily by navigating to the settings page of the library and decoding it from the URL.
 

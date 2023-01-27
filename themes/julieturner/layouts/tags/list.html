@@ -10,25 +10,11 @@
 
 {{ define "main" }}
   <div class="jt-container" role="main">
-        <div class="jt-posts-list">
-          {{ range .Paginator.Pages }}
-            {{ partial "post_preview.html" .}}
-          {{ end }}
-        </div>
-        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-          <ul class="jt-pager">
-            {{ if .Paginator.HasPrev }}
-              <li class="previous">
-                <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
-              </li>
-            {{ end }}
-            {{ if .Paginator.HasNext }}
-              <li class="next">
-                <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
-              </li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </div>
-
+    <div class="jt-posts-list">
+      {{ range .Paginator.Pages }}
+        {{ partial "post_preview.html" .}}
+      {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+  </div>
 {{ end }}

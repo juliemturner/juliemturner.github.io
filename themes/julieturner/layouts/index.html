@@ -4,9 +4,10 @@
         {{ range $pag.Pages }}
         {{ partial "post_preview" . }}
         {{ end }}
+        {{ partial "pagination.html" . }}
       </div>
 
-      {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+      {{/*  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
       <ul class="jt-pager">
         {{ if .Paginator.HasPrev }}
         <li class="previous">
@@ -19,5 +20,5 @@
         </li>
         {{ end }}
       </ul>
-      {{ end }}
+      {{ end }}  */}}
 {{ end }}

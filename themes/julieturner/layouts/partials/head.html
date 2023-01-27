@@ -50,6 +50,8 @@
   {{- /* GET DESCRIPTION */ -}}
   {{ with .Description }}
     {{ $headScratch.Set "pageDescription" . }}
+  {{ else }}
+    {{ $headScratch.Set "pageDescription" .Summary }}
   {{ end }}
   {{ with .Params.SEO }}
     {{ with .Description }}
