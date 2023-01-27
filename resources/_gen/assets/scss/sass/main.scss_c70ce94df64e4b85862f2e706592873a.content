@@ -2859,6 +2859,16 @@ code:not([data-lang]) {
 pre code:not([data-lang]) {
   background-color: transparent; }
 
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute; }
+
 .symp-logo {
   height: 58px;
   width: 300px;
@@ -2887,7 +2897,9 @@ pre code:not([data-lang]) {
 
 .jt-wrapper {
   display: grid;
-  grid-gap: 10px; }
+  grid-gap: 10px;
+  max-width: 1920px;
+  margin-inline: auto; }
 
 @media screen and (min-width: 800px) {
   /* no grid support? */
@@ -2970,8 +2982,7 @@ table td {
     margin: 0; } }
 
 .jt-header .jt-article-header {
-  background-size: cover;
-  width: 98vw; }
+  background-size: cover; }
   .jt-header .jt-article-header .jt-post-heading {
     width: 60vw;
     margin-right: auto;
@@ -3004,8 +3015,8 @@ table td {
     padding: 20px 0; }
     .jt-header .jt-article-header .jt-page-heading .jt-title {
       text-align: center; }
-      .jt-header .jt-article-header .jt-page-heading .jt-title h1 {
-        margin: 0; }
+      .jt-header .jt-article-header .jt-page-heading .jt-title svg {
+        height: min(10vw, 200px); }
   .jt-header .jt-article-header.home .jt-title {
     max-width: 800px;
     margin: 0 auto; }
@@ -3122,9 +3133,11 @@ table td {
   .jt-content .jt-pager > .hoo-button {
     padding: 10px;
     width: 9rem; }
-    .jt-content .jt-pager > .hoo-button .hoo-icon, .jt-content .jt-pager > .hoo-button .hoo-button-label {
+    .jt-content .jt-pager > .hoo-button .hoo-icon,
+    .jt-content .jt-pager > .hoo-button .hoo-button-label {
       font-size: 1.125rem; }
-      .jt-content .jt-pager > .hoo-button .hoo-icon .hoo-icon-svg, .jt-content .jt-pager > .hoo-button .hoo-button-label .hoo-icon-svg {
+      .jt-content .jt-pager > .hoo-button .hoo-icon .hoo-icon-svg,
+      .jt-content .jt-pager > .hoo-button .hoo-button-label .hoo-icon-svg {
         padding: 0; }
     .jt-content .jt-pager > .hoo-button .hoo-icon {
       width: unset;

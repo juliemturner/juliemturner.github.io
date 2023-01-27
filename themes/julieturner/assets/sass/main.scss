@@ -31,7 +31,7 @@
   }
 }
 
-:root{
+:root {
   --neutralSecondaryAlt: var(--jt-background2);
   --neutralPrimary: var(--jt-highlight);
 }
@@ -120,6 +120,17 @@ pre {
   }
 }
 
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
 .symp-logo {
   height: 58px;
   width: 300px;
@@ -160,6 +171,8 @@ pre {
 .jt-wrapper {
   display: grid;
   grid-gap: 10px;
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 @media screen and (min-width: 800px) {
@@ -288,7 +301,6 @@ table {
   // SINGLE PAGE
   .jt-article-header {
     background-size: cover;
-    width: 98vw;
 
     .jt-post-heading {
       width: 60vw;
@@ -309,8 +321,6 @@ table {
         .jt-post-subheading {
           content: "";
         }
-
-
       }
     }
 
@@ -342,8 +352,8 @@ table {
       .jt-title {
         text-align: center;
 
-        h1 {
-          margin: 0;
+        svg {
+          height: #{"min(10vw, 200px)"};
         }
       }
     }
@@ -537,12 +547,14 @@ table {
       max-width: 120ch;
     }
 
-    > .hoo-button{
+    >.hoo-button {
       padding: 10px;
       width: 9rem;
 
-      .hoo-icon, .hoo-button-label {
+      .hoo-icon,
+      .hoo-button-label {
         font-size: 1.125rem;
+
         .hoo-icon-svg {
           padding: 0;
         }
