@@ -3117,7 +3117,8 @@ table td {
   flex-wrap: nowrap;
   justify-content: space-between; }
   .jt-content .jt-pager.jt-blog-pager {
-    margin: 20px; }
+    margin: 20px;
+    max-width: 120ch; }
   .jt-content .jt-pager > .hoo-button {
     padding: 10px;
     width: 8rem; }
