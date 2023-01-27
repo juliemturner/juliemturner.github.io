@@ -3,13 +3,44 @@
   <article role="main" class="blog-post">
     {{ .Content }}
   </article>
+
+  {{ if ne .Type "page" }}    
+    {{ $icons := resources.Get "icons.svg" }}
+    <div class="jt-pager">
+      {{ if .PrevInSection }}
+        <button class="hoo-button" title="{{ .PrevInSection.Title }}" onclick="jtBlogMain.navigate('{{ .PrevInSection.Permalink }}')" > 
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+              <use xlink:href="{{ $icons.RelPermalink }}#icon-arrow-left"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Previous Post</span>      
+        </button>
+      {{ else }}
+        <div></div>
+      {{ end }}
+      {{ if .NextInSection }}
+        <button class="hoo-button is-reversed" title="{{ .NextInSection.Title }}" onclick="jtBlogMain.navigate('{{ .NextInSection.Permalink }}')">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+              <use xlink:href="{{ $icons.RelPermalink }}#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Next Post</span>
+        </button>
+      {{ else }}
+        <div></div>
+      {{ end }}
+    </div>
+  {{ end }}
+
   {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
     {{ if .Site.DisqusShortname }}
       {{ if .Site.Params.delayDisqus }}
       <div class="jt-disqus-comments">                  
-        <button onclick="jtBlogMain.showComments(event, {{ .Site.DisqusShortname }})">
+        <button onclick="jtBlogMain.showComments(event, '{{ .Site.DisqusShortname }}')">
           {{ i18n "show" }} 
-          <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}">{{ i18n "comments" }}</span>
+          <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink '/' }}">{{ i18n "comments" }}</span>
         </button>
         <div id="disqus_thread"></div>
         <script type="text/javascript">

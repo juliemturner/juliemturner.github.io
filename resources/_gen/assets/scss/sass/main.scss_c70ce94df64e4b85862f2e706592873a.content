@@ -3121,7 +3121,7 @@ table td {
     max-width: 120ch; }
   .jt-content .jt-pager > .hoo-button {
     padding: 10px;
-    width: 8rem; }
+    width: 9rem; }
     .jt-content .jt-pager > .hoo-button .hoo-icon, .jt-content .jt-pager > .hoo-button .hoo-button-label {
       font-size: 1.125rem; }
       .jt-content .jt-pager > .hoo-button .hoo-icon .hoo-icon-svg, .jt-content .jt-pager > .hoo-button .hoo-button-label .hoo-icon-svg {
