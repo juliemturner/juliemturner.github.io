@@ -10,7 +10,7 @@ tags:
 aliases: ["/2015/08/sharepoint-2013-jslink-all-fields-rendered/"]
 ---
 
-While creating a custom Client Template using JSLink, I came up against the issue of knowing when all the fields were rendered on the form.  To explain where the issue arises let me first take just a moment to explain when building a custom template for this type of form, where you want to manipulate the fields, you have available to you both a Pre and Post Render function.  What that does is fire the function attached to it either pre or post **each** custom field rendering being executed.
+While creating a custom Client Template using [JSLink](../jslink-validation-from-basic-to-advanced/), I came up against the issue of knowing when all the fields were rendered on the form.  To explain where the issue arises let me first take just a moment to explain when building a custom template for this type of form, where you want to manipulate the fields, you have available to you both a Pre and Post Render function.  What that does is fire the function attached to it either pre or post **each** custom field rendering being executed.
 
 The reason I bring this up is that there could be some misconception that it fires before field rendering starts and after all field rendering is complete, but that’s not the case. So if your form has 10 fields, these functions will each fire 10 times.  I also found document.ready to be unreliable as it often fired before all the fields were rendered, and further, if I needed to make decisions based on the context of the form, I would no longer have access to that information.
 

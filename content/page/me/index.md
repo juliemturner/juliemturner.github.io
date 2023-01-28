@@ -4,6 +4,7 @@ date: Mon, 19 Sep 2022 17:06:28 +0000
 draft: false
 seo:
   description: "Julie Turner Blog on Microsoft 365, SharePoint, Microsoft Teams, development and extensibility - about the author."
+aliases: ["/author/jturnerwp/"]
 ---
 
 
