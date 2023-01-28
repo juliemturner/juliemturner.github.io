@@ -32,13 +32,13 @@ As I mentioned, the most popular use of this library is with those accessing it 
 
 ### Establishing a configuration file
 
-So to get started let's assume that you have used `yo @microsoft/sharepoint` to spin up a SPFx web part. Let's also be a little more complicated than the online sample and assume you want to make calls to both the SharePoint REST APIs and the Microsoft Graph APIs. You next step would be to install the modules for graph and sp by using the following command line command which will add both of these packages to your package.json.
+So to get started let's assume that you have used `yo @microsoft/sharepoint` to spin up a SPFx web part. Let's also be a little more complicated than the online sample and assume you want to make calls to both the SharePoint REST APIs and the Microsoft Graph APIs. Your next step would be to install the modules for `graph` and `sp` by using the following command line command which will add both of these packages to your package.json.
 
 ```cmd
 npm i @pnp/sp @pnp/graph --save
 ```
 
-Now that we have the packages installed we'll make use of them by creating a set of functions or service to consolidate our calls and centralize creating the SharePoint Factory Interface (SPFI) and the Graph Factory Interface (GraphFI). In the example below I'm going to walk you through creating a set of functions that will allow you to isolate your api requests. You could also do a more advanced service implementation (which is essentially building a specific type of class) that amounts to the same thing but allows some architectural differences that may be beneficial to a more advanced implementation.
+Now that we have the packages installed we'll make use of them by creating a set of functions (or service) to consolidate our calls and centralize creating the SharePoint Factory Interface (SPFI) and the Graph Factory Interface (GraphFI). In the example below I'm going to walk you through creating a set of functions that will allow you to isolate your api requests. You could also do a more advanced service implementation (which is essentially building a specific type of class) that amounts to the same thing but allows some architectural differences that may be beneficial to a more advanced implementation.
 
 In the root `src` directory of you SPFx web part, create a new file with a `.ts` extension to create your data class. I'll call mine `pnpjsConfig.ts`.
 
@@ -64,9 +64,9 @@ import "@pnp/sp/batching";
 import "@pnp/graph/users";
 ```
 
-First we're importing the WebPartContext from the sp-webpart-base module so that we can pass that into our factory interfaces. Next we need to import both the SPFI and GraphFI interfaces and factories as well as the SPFx behavior for both modules. Note that we're using the `as` keyword so that we can make the names of the behaviors unique; SPFx becomes spSPFx and graphSPFx. After that we just want to add imports for the individual modules we're going to be using in our project. By limiting the imports that we use (vs importing @pnp/sp in it's entirety for example) we reduce the build size of our finished solution. My list of imports is an example you should add to and remove as is appropriate.
+First we're importing the `WebPartContext` from the `sp-webpart-base` module so that we can pass that into our factory interfaces. Next we need to import both the `SPFI` and `GraphFI` interfaces and factories as well as the `SPFx` behavior for both modules. Note that we're using the `as` keyword so that we can make the names of the behaviors unique; SPFx becomes spSPFx and graphSPFx. After that we just want to add imports for the individual modules we're going to be using in our project. By limiting the imports that we use (vs importing @pnp/sp in it's entirety for example) we reduce the build size of our finished solution. My list of imports is an example you should add to and remove as is appropriate.
 
-Next we're going to create some global variables for storing the instances of the SPFI and GraphFI interfaces. After that we're going to create two functions one to get the SharePoint factory interface and one to get the Graph factory interface. Note that they both take the WebPartContext as an optional parameter. When it's passed in we assume we're creating the factory interfaces and create it assigning it to the global variables we've declared in the same file. As long as the page doesn't refresh those global variables will have an valid object. Either way the function returns the current interface that can then be acted upon. 
+Next we're going to create some global variables for storing the instances of the SPFI and GraphFI interfaces. After that we're going to create two functions one to get the SharePoint factory interface and one to get the Graph factory interface. Note that they both take the `WebPartContext` as an optional parameter. When it's passed in we assume we're creating the factory interfaces and create it assigning it to the global variables we've declared in the same file. As long as the page doesn't refresh those global variables will have an valid object. Either way the function returns the current interface that can then be acted upon. 
 
 >Please also note that we're exporting a const that is the getSP and getGraph methods, this makes those methods global on the page so there is only one instance. This may or may not be a problem if you intend to have multiple instances of web parts on the page that implement these same methods.
 
@@ -100,7 +100,7 @@ The next step is to add calls from the SPFx onInit method to create the interfac
 
 {{< figure src="directory_structure_2.png" alt="Modifying the root web part class instance">}}
 
-In the `onInit` method we're going to make calls to our `getSP` and `getGraph` functions passing in the this.context property which is a `WebPartContext`. Once that's done those getSPand getGraph functions will return a valid factory interfaces for PnPjs that can then be use to make calls for get and retrieve data as needed.
+In the `onInit` method we're going to make calls to our `getSP` and `getGraph` functions passing in the `this.context` property which is a `WebPartContext`. Once that's done those getSPand getGraph functions will return a valid factory interfaces for PnPjs that can then be use to make calls for get and retrieve data as needed.
 
 ```ts
 // Import the getGraph and getSP functions from pnpjsConfig.ts file.
@@ -181,7 +181,7 @@ private _readAllFilesSize = async (): Promise<void> => {
   }
 ```
 
-Note that the example above uses the `this._sp` factory interface and then chains the methods together to retrieve the data we need. It uses the await keyword because for the most part all methods that return data return `promises` so using await makes sure the resulting variable is the resolved promise. For example:
+Note that the example above uses the `this._sp` factory interface and then chains the methods together to retrieve the data we need. It uses the `await` keyword because for the most part all methods that return data return `promises` so using await makes sure the resulting variable is the resolved promise. Breaking down this sample, this is what each section means:
 
 - .web [start at the current web]
 - .lists [all the lists in the web]
@@ -191,7 +191,7 @@ Note that the example above uses the `this._sp` factory interface and then chain
 - .expand("File/Length) [knowing that File is a lookup field also get the Length property for each file in this library]
 - () [Invoke the method to retrieve the data]
 
-Another important point to make is that in our pnpjsConfig.ts file we imported methods to support all the methods we were going to use to make this call. This example specifically requires the following imports:
+Another important point to make is that in our `pnpjsConfig.ts` file we imported methods to support all the methods we were going to use to make this call. This example specifically requires the following imports:
 
 ```ts
 import "@pnp/sp/webs"; // <- .web
