@@ -21,8 +21,9 @@ lastmod:
   - date
 
 Params:
+  seotitle: "Veni, Vidi, Vici - Julie Turner M365 Development Blog"
   subtitle: "MUSINGS AND SOLUTIONS FOR MICROSOFT 365 AND AZURE"
-  description: "Julie Turner Blog on Microsoft 365, SharePoint, Microsoft Teams, development and extensibility"
+  description: "Julie Turner Blog on Microsoft 365 (O365), SharePoint, Microsoft Teams, development and extensibility expert with SharePoint Framework (SPFx)"
   mainSections: ["post","posts"]
   logo: "img/venividivici_header.png"
   headshot: "img/jturner.png"

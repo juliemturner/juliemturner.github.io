@@ -11,6 +11,7 @@ tags:
   - JavaScript
   - TypeScript
 aliases: ["/2016/01/widget-wrangler/"]
+bigimg: [{src: "colorwidgets.png", desc: ""}]
 ---
 
 {{< crosspost src="https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/" name="Bob German's Vantage Point" >}}
@@ -121,9 +122,9 @@ To get around this limitation and allow many widgets on a page, the Widget Wrang
 
 (NOTE: If you want to use Widget Wrangler in a page that already uses AngularJS, ensure that the widget doesn't overlap the existing Angular application - i.e. it can't be inside the element that is decorated with ng-app. Also ensure the versions of Angular are the same or similar enough that both the SPA and widget(s) will work with either one.)
 
-You can find a simple AngularJS widget at [https://bit.ly/ww-ng1](https://bit.ly/ww-ng1). This sample uses [Plunker](https://plnkr.co/) so you can run and experiment with the code right in your web browser. In this sample you'll see two instances of a Hello World widget which vary only in their view so one of them says goodbye instead of hello. This shows how to embed the view right into the widget so you can make each instance render differently.
+You can find a simple AngularJS widget at [Widget Wrangler Angular Sample 1: Hello Angular](https://plnkr.co/edit/54Yo5W5FoXX7fDL8KAWI?preview). This sample uses [Plunker](https://plnkr.co/) so you can run and experiment with the code right in your web browser. In this sample you'll see two instances of a Hello World widget which vary only in their view so one of them says goodbye instead of hello. This shows how to embed the view right into the widget so you can make each instance render differently.
 
-A more advanced example can be found at [https://bit.ly/ww-ng2](https://bit.ly/ww-ng2). This example shows a weather forecast, and demonstrates how to pass configuration information - in this case the location of the weather forecast - into the application via the ng-init directive in the view. It also shows how to use ng-include to place the view in an HTML template so it's shared by all instances of the widget.
+A more advanced example can be found at [Widget Wrangler Angular Sample 2: Weather Widget](https://plnkr.co/edit/aQQdgPwxz6waSJzZeY6W?preview). This example shows a weather forecast, and demonstrates how to pass configuration information - in this case the location of the weather forecast - into the application via the ng-init directive in the view. It also shows how to use ng-include to place the view in an HTML template so it's shared by all instances of the widget.
 
 {{< figure src="weatherwidgets.png" alt="WeatherWidgets">}}
 
@@ -185,13 +186,13 @@ The Angular controller includes a function to fetch the weather forecast as soon
 }()); 
 ```
 
-A third example at [https://bit.ly/ww-ng3](https://bit.ly/ww-ng3) shows how to connect two Angular widgets. This is accomplished via a service that relays messages in the form of JavaScript objects from senders to receivers over named channels.
+A third example at [Widget Wrangler Angular Sample 3: Connected Widgets](https://plnkr.co/edit/qMFVtB8dPRKwvfw1Ewnj?preview) shows how to connect two Angular widgets. This is accomplished via a service that relays messages in the form of JavaScript objects from senders to receivers over named channels.
 
 If you look at the code you may notice that this service communicates via a shared object that hangs off the window object. Normally in Angular a service could store such an object locally, and the service (declared as a factory) would be shared by all who reference it. But that doesn't work here since each widget is a completely separate Angular application. Modules, services, etc. with the same names are all isolated completely within each widget, and Angular does a great job keeping them separate. In the sample, each sender and receiver widget gets its own service instance, so information is shared outside of Angular in the window object.
 
 ### Knockout Widgets
 
-KnockoutJS is another great example of an MVVM style JavaScript library. There's an example of simple Knockout widgets at[https://bit.ly/ww-ko1](https://bit.ly/ww-ko1). There are two instances of the widget on the page to demonstrate isolation; here is one of the widgets:
+KnockoutJS is another great example of an MVVM style JavaScript library. There's an example of simple Knockout widgets at [Widget Wrangler Knockout Sample](https://plnkr.co/edit/0TTsn9?preview). There are two instances of the widget on the page to demonstrate isolation; here is one of the widgets:
 
 ```html
 <div>
@@ -241,7 +242,7 @@ Here's an example that not only shows a jQuery widget, but demonstrates how to t
 
 {{< figure src="colorwidgets.png" alt="ColorWidgets">}}
 
-You can see the widget version at [https://bit.ly/ww-jq1](https://bit.ly/ww-jq1). As you can see, there are two instances of the widget on the page; all the code is shared yet they work independently. To make this work, the following code changes were needed:
+You can see the widget version at [Widget Wrangler jQuery Sample](https://plnkr.co/edit/qGA1xA?preview). As you can see, there are two instances of the widget on the page; all the code is shared yet they work independently. To make this work, the following code changes were needed:
 
 * Change the element ID's to classes, so it's legal to have more than one
 * Add a bootstrap function similar to the Knockout example, that creates a new "controller" for each widget instance
@@ -249,7 +250,7 @@ You can see the widget version at [https://bit.ly/ww-jq1](https://bit.ly/ww-jq1)
 
 ### Plain JavaScript Widgets
 
-Sometimes less is more, and plain JavaScript is better and faster than using even a light-weight library like jQuery. If you want to use Widget Wrangler on its own, without any other libraries, check out the example at [https://bit.ly/ww-js1](https://bit.ly/ww-js1). This is a widget that Ford Prefect would love!
+Sometimes less is more, and plain JavaScript is better and faster than using even a light-weight library like jQuery. If you want to use Widget Wrangler on its own, without any other libraries, check out the example at [Widget Wrangler Plain JS Sample](https://plnkr.co/edit/9bytEO?preview). This is a widget that Ford Prefect would love!
 
 Notice that it uses the new keyword in the binding function to create a new object for each widget instance. It also generates a unique index for each instance that's used in a button click attribute. This index is passed into the click event handler to allow it to find the correct instance when the event fires.
 

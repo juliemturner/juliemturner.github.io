@@ -9,6 +9,8 @@ tags:
   - TypeScript
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
+SEO:
+  title: "Part 3 (The Execution) - Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3-the-execution/"]
 bigimg: [{src: "20170118_GraphExample.png", desc: ""}]
 ---
@@ -61,7 +63,7 @@ var createFile = function () {
     var xlsBuffer = createXlsx();
     //Save the file to the SP Doc Library
     saveXlsx(xlsBuffer).then(function (response) {
-        vm.message = "File: " + fileName + " was written succesfully.";
+        vm.message = "File: " + fileName + " was written successfully.";
         tempID = response.data.id;
         //Get an array of worksheets in the XLSX file.
         return getWorksheets();
@@ -229,8 +231,8 @@ I’m excited to be able to provide this coverage of the process of utilizing th
 ### OAuth Flows
 
 * [Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs](https://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis)
-* [Microsoft - Integrating applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications#updating-an-application)
-* [Microsoft - Should I use the v2.0 endpoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)
+* [Microsoft - Integrating applications with Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#updating-an-application)
+* [Microsoft - Should I use the v2.0 endpoint?](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-overview#restrictions-on-libraries-amp-sdks)
 
 ### ADAL
 
@@ -243,5 +245,4 @@ I’m excited to be able to provide this coverage of the process of utilizing th
 
 ### Microsoft Graph API
 
-* [Microsoft – Microsoft Graph permission scopes](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes)
-* [Microsoft - App authentication with Microsoft Graph](https://graph.microsoft.io/en-us/docs/authorization/auth_overview)
+* [Microsoft Graph Documentation](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)

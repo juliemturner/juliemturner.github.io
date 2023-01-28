@@ -11,6 +11,7 @@ tags:
   - JavaScript
   - TypeScript
 aliases: ["/2016/03/widget-wrangler-webcast-and-new-release/"]
+bigimg: [{src: "wwchannel9.jpg", desc: ""}]
 ---
 
 {{< crosspost src="https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/" name="Bob German's Vantage Point" >}}
@@ -21,7 +22,7 @@ Here’s a quick update on the Widget Wrangler – the light-weight JavaScript f
 
 {{< figure src="wwchannel9.jpg" alt="WWChannel9">}}
 
-The Widget Wrangler was featured in a webcast on Channel 9 today. The Office team’s [Vesa Juvonen](https://twitter.com/vesajuvonen) interviewed WW creators [Julie Turner](https://twitter.com/jfj1997) and [Bob German](https://twitter.com/Bob1German), who explained the framework and demonstrated how to use it with [AngularJS](https://www.angularjs.org/ "AngularJS"), [jQuery](https://jquery.com "JQuery"), and plain old [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript"). Please check it out [here](https://channel9.msdn.com/blogs/OfficeDevPnP/PnP-Web-Cast-Introducing-Widget-Wrangler-for-SharePoint-development)!
+The Widget Wrangler was featured in a webcast on Channel 9 today (_Video has been removed_). The Office team’s [Vesa Juvonen](https://twitter.com/vesajuvonen) interviewed WW creators [Julie Turner](https://twitter.com/jfj1997) and [Bob German](https://twitter.com/Bob1German), who explained the framework and demonstrated how to use it with [AngularJS](https://angularjs.org/ "AngularJS"), [jQuery](https://jquery.com "JQuery"), and plain old [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript").
 
 Also today we’re pleased to announce the release of Widget Wrangler version 1.0.1. This new version is backward compatible with the old one; the new release includes:
 

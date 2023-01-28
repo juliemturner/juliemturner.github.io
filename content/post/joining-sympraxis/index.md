@@ -4,10 +4,8 @@ date: Mon, 09 May 2016 14:00:00 +0000
 lastmod: Thu, 05 Jan 2023 21:22:00 +0000
 draft: false
 aliases: ["/2016/05/the-man-with-the-bacon-covered-donut-could-not-be-ignored/"]
+bigimg: [{src: "maplebacondonut.jpg", desc: "Maplebacondonuts2_bakedbyrachel"}]
 ---
-
-{{< figure src="maplebacondonut.jpg" alt="Maplebacondonuts2_bakedbyrachel">}}
-
 I recently attended a multi-day event at the Microsoft campus in Redmond, WA.  Early in the morning and blurry-eyed from battling the time change, I found my way into the event room to see [Marc D. Anderson](https://twitter.com/sympmarc) in an aisle seat plugging away at his computer with a mouthwatering bacon covered donut sitting daintily on a paper napkin at his elbow… that, my friends, is a conversation starter!
 
 Sometimes in life, things are just obvious really quickly.  I had met Marc years ago through our mutual friend [Sadie Van Buren](https://twitter.com/Sadalit) but really didn’t get to know him very well, as is the case with many developer types, I’m way more comfortable talking to my computer than I am talking to people… and I do, sadly, literally talk to my computer as many of my current and former colleagues can attest to.

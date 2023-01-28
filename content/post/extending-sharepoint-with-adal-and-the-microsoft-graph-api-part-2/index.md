@@ -9,19 +9,21 @@ tags:
   - TypeScript
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
+SEO:
+  title: "Part 2 (The Authorization) - Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2-the-authorization/"]
 bigimg: [{src: "20170118_ADALLibs.png", desc: ""}]
 ---
 
 ## Introduction
 
-In [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1) of this series I covered all the setup needed to start your Microsoft Graph API (MSGraphAPI) client side widget. In Part 2, we’re going to dive into the many ways to use adal.js and its counterpart adal-angular.js. I’ve included the same resources I included in [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1), under the section for ADAL you’ll find a lot of references to Cloud Identity blog by Vittorio Bertocci a Principal Program Manager at Microsoft who has blogged extensively on the library, explaining in depth the technical workings of it. I encourage you to read those posts I’ve included below to get a complete understanding of the library. Also, included in the references is a post about utilizing ADAL in the SharePoint Framework (SPFx). As is, ADAL was never meant to be used as part of a widget architecture as ADAL isn’t a singleton, so if you have multiple web parts on your page all referencing ADAL you’re going to have issues. The post “[Call the MSGraphAPI using OAuth from your web part](https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part)” gives you an extension that will help isolate ADAL so that you can utilize it as part of a more strongly developed widget pattern. Since my demo is just that, and since my solution will be the only one running on the page that uses the ADAL library I’m not going to address those modifications here. But, I encourage you do so if that is part of your use case.
+In [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1/) of this series I covered all the setup needed to start your Microsoft Graph API (MSGraphAPI) client side widget. In Part 2, we’re going to dive into the many ways to use adal.js and its counterpart adal-angular.js. I’ve included the same resources I included in [Part 1](../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1/), under the section for ADAL you’ll find a lot of references to Cloud Identity blog by Vittorio Bertocci who has blogged extensively on the library, explaining in depth the technical workings of it. I encourage you to read those posts I’ve included below to get a complete understanding of the library. Also, included in the references is a post about utilizing ADAL in the SharePoint Framework (SPFx). As is, ADAL was never meant to be used as part of a widget architecture as ADAL isn’t a singleton, so if you have multiple web parts on your page all referencing ADAL you’re going to have issues. The post `Call the MSGraphAPI using OAuth from your web part` _(no longer available)_ gives you an extension that will help isolate ADAL so that you can utilize it as part of a more strongly developed widget pattern. Since my demo is just that, and since my solution will be the only one running on the page that uses the ADAL library I’m not going to address those modifications here. But, I encourage you do so if that is part of your use case.
 
 ## The ADAL library for JavaScript
 
 {{< figure src="20170118_ADALLibs.png" alt="20170118_ADALLibs">}}
 
-Finally, we get to the part where we talk about writing some code. ADAL stands for “Active Directory Authentication Library”. Based on the client you’re using and which authentication endpoint you’re using, there are a multitude of different examples and SDK’s available as you can see on the MSGraphAPI, [Getting Started](https://graph.microsoft.io/en-us/docs/get-started/get-started) page. Because we’re going to write client side code (aka JavaScript, either [transpiled](https://en.wikipedia.org/wiki/Source-to-source_compiler) from Typescript or native) and access via Implicit Flow to the MSGraphAPI, we’ll use the adal.js library. It comes in two parts, adal.js and adal-angular.js. If you’re going to use the [AngularJS](https://angularjs.org/) framework, you’ll want both pieces. If not, you can just include adal.js, but there will be more work to do to authenticate and get a token. You can find the source in the [ADAL GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-js) repo.
+Finally, we get to the part where we talk about writing some code. ADAL stands for “Active Directory Authentication Library”. Based on the client you’re using and which authentication endpoint you’re using, there are a multitude of different examples and SDK’s available as you can see on the MSGraphAPI, [Getting Started](https://developer.microsoft.com/en-us/graph/quick-start) page. Because we’re going to write client side code (aka JavaScript, either [transpiled](https://en.wikipedia.org/wiki/Source-to-source_compiler) from Typescript or native) and access via Implicit Flow to the MSGraphAPI, we’ll use the adal.js library. It comes in two parts, adal.js and adal-angular.js. If you’re going to use the [AngularJS](https://angularjs.org/) framework, you’ll want both pieces. If not, you can just include adal.js, but there will be more work to do to authenticate and get a token. You can find the source in the [ADAL GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-js) repo.
 
 ### User Authentication
 
@@ -264,8 +266,8 @@ Now we’ve completed Part 2, you should have everything you need to go off and 
 ### OAuth Flows
 
 * [Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs](https://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis)
-* [Microsoft - Integrating applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications#updating-an-application)
-* [Microsoft - Should I use the v2.0 endpoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)
+* [Microsoft - Integrating applications with Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#updating-an-application)
+* [Microsoft - Should I use the v2.0 endpoint?](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-overview#restrictions-on-libraries-amp-sdks)
 
 ### ADAL
 
@@ -278,5 +280,4 @@ Now we’ve completed Part 2, you should have everything you need to go off and 
 
 ### Microsoft Graph API
 
-* [Microsoft – Microsoft Graph permission scopes](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes)
-* [Microsoft - App authentication with Microsoft Graph](https://graph.microsoft.io/en-us/docs/authorization/auth_overview)
+* [Microsoft Graph Documentation](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)

@@ -1,6 +1,7 @@
 ---
 title: 'Future Proof - Javascript Dashboard Code Samples'
 date: Sat, 05 Apr 2014 19:29:51 +0000
+expirydate: 2023-01-01T00:00:00Z 
 draft: false
 tags: 
   - SharePoint

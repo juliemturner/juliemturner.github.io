@@ -16,7 +16,7 @@ One of the things I’ve been working on lately is harvesting a complete listing
 
 ## Site Collection Details - PowerShell
 
-The SharePoint Online commandlets provide extremely basic information about a site collection through [Get-SPOSite](https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/get-sposite?view=sharepoint-ps).
+The SharePoint Online commandlets provide extremely basic information about a site collection through [Get-SPOSite](https://learn.microsoft.com/en-us/powershell/module/sharepoint-online/get-sposite?view=sharepoint-ps).
 
 ```powershell
 Get-SPOSite -Limit All -Detailed
@@ -36,7 +36,7 @@ Metadata returned
 
 ## Site Collection Details - PnPPowerShell/CSOM
 
-If the information in the previous call isn’t enough for you or if PowerShell is not really the right language for your solution, then you have the alternative option of SharePoint PnP PowerShell which leverages the Tenant Administration CSOM. For a full list of properties that are returned see the documentation: [Powershell](https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/Set-SPOSite?view=sharepoint-ps)/[CSOM](https://msdn.microsoft.com/en-us/library/microsoft.online.sharepoint.tenantadministration.siteproperties_members.aspx)
+If the information in the previous call isn’t enough for you or if PowerShell is not really the right language for your solution, then you have the alternative option of SharePoint PnP PowerShell which leverages the Tenant Administration CSOM. For a full list of properties that are returned see the documentation: [Powershell](https://learn.microsoft.com/en-us/powershell/module/sharepoint-online/Set-SPOSite?view=sharepoint-ps)/[CSOM](https://learn.microsoft.com/en-us/previous-versions/office/sharepoint-csom/dn159168(v=office.15))
 
 ```powershell
 Get-PnPTenantSite -Detailed
@@ -140,7 +140,7 @@ using (ClientContext ctx = new ClientContext(tenantUrl))
 
 ## Microsoft Graph - What’s available now
 
-As the Microsoft Graph is an ever changing API that’s constantly being expanded I’m obviously going to be writing this as a primer as of the date of publication so please make sure you’re referencing the [graph documentation](https://developer.microsoft.com/en-us/graph/docs) to verify what might have changed. Of what we have outlined above you can get some very basic information about a site collection from the graph by making a REST call to:
+As the Microsoft Graph is an ever changing API that’s constantly being expanded I’m obviously going to be writing this as a primer as of the date of publication so please make sure you’re referencing the [graph documentation](https://learn.microsoft.com/en-us/graph/overview) to verify what might have changed. Of what we have outlined above you can get some very basic information about a site collection from the graph by making a REST call to:
 
 ```text
 <https://graph.microsoft.com/v1.0/sites/contoso.sharepoint.com:/sites/1drvteam>
@@ -148,7 +148,7 @@ As the Microsoft Graph is an ever changing API that’s constantly being expande
 
 where 'contoso.sharepoint.com' is your tenant and '/sites/1drvteam' is the relative path to the site collection you're harvesting.
 
->There are several other ways to can formulate the call for site information see this [reference](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/site_get) for more details.
+>There are several other ways to can formulate the call for site information see this [reference](https://learn.microsoft.com/en-us/graph/api/site-get?view=graph-rest-1.0&tabs=http) for more details.
 
 ```json
 {

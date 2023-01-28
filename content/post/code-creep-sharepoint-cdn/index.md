@@ -10,6 +10,7 @@ tags:
   - TypeScript
   - JavaScript
 aliases: ["/2016/09/code-creep-sharepoint-cdn/"]
+bigimg: [{src: "MajorVersion_User.png", desc: ""}]
 ---
 
 ### _Centralizing your SharePoint client side code_

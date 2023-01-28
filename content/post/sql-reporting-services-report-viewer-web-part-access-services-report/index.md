@@ -7,6 +7,8 @@ tags:
   - Server 2010
   - SQL Reporting Services
   - Access Services
+SEO:
+  title: "SQL Reporting Services Report Viewer with Access Services"
 aliases: ["/2011/11/using-sql-reporting-services-report-viewer-web-part-to-display-access-services-report/"]
 ---
 

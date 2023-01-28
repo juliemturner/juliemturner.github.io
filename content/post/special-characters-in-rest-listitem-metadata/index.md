@@ -26,7 +26,7 @@ List with **internal** name "Client\_Information" would look like:
 and a list with **internal** name "Client Information" would look like:  
 `item.__metadata: {"type": "SP.Data.Client_x0020_InformationListItem"}`
 
-_Here's one reference to an [ASCII chart](https://www.ascii.cl/htmlcodes.htm) but there's hundreds available._
+_Here's one reference to an [ASCII chart](https://ascii.cl/htmlcodes.htm) but there's hundreds available._
 
 Now, when you're making your REST call, in the [URL](https://en.wikipedia.org/wiki/Uniform_Resource_Locator "Uniform Resource Locator") you would use the lists **display** name (because that's what getbytitle expects) and it would look something like:
 

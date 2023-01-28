@@ -9,6 +9,8 @@ tags:
   - Microsoft 365
   - JavaScript
   - TypeScript
+SEO:
+  title: "SharePoint/Azure Functions: Launching PowerAutomate Flow from code"
 aliases: ["/2017/07/sharepoint-flow-azure-functions-launching-a-microsoft-flow-from-client-side-code/"]
 bigimg: [{src: "sp_flow_azuref_featured.png", desc: ""}]
 ---
@@ -21,7 +23,7 @@ One of the most common uses of workflow, at least for me with my clients, is to 
 
 Ok, so let’s say you’d like to send an email notification from your client-side application running in SharePoint. The idea is that you would want to hand over to flow the information about how to compose the email and then it would do the rest. As my 5-year-old likes to say, easy peasy lemon squeezy. There’s even a walk-through of doing just this from Irina Gorbach on the Microsoft Flow Blog [Calling Microsoft Flow from your application](https://flow.microsoft.com/en-us/blog/call-flow-restapi/)
 
-To add to that post just a bit, the Request connector has a section for advanced parameters. The "Method" by default is a "POST", you can certainly specify this strictly if you want. If you’re not passing parameters in your scenario and only want to use a GET, you’d have that option. Also, depending on your application there is a second parameter called “Relative path”. That’s used to specify your parameter on the path and use the “GET” method, this could be used for advanced routing in SPA applications. A more in-depth post in the Azure Logic Apps documentation can help you understand this scenario better [Call, trigger, or nest workflows with HTTP endpoints in logic apps](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-http-endpoint)
+To add to that post just a bit, the Request connector has a section for advanced parameters. The "Method" by default is a "POST", you can certainly specify this strictly if you want. If you’re not passing parameters in your scenario and only want to use a GET, you’d have that option. Also, depending on your application there is a second parameter called “Relative path”. That’s used to specify your parameter on the path and use the “GET” method, this could be used for advanced routing in SPA applications. A more in-depth post in the Azure Logic Apps documentation can help you understand this scenario better [Call, trigger, or nest workflows with HTTP endpoints in logic apps](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-http-endpoint)
 
 Also, you may want to consider adding a "Response" action, also outlined in the afore mentioned Azure Logic Apps documentation, to your flow as the Azure post indicates to tell your client-side code what happened. If you don’t it will return a status 202 - Accepted by default. Just to reiterate, once you have the flow done, you simply add an ajax/$http/{your favorite implementation of XMLHttpRequest} request to your client-side code, like you would to make any other REST call. Unlike with SharePoint calls though you will not need to add tokens to the header to make a POST call. Using AngularJS $http provider, the call would look like:
 

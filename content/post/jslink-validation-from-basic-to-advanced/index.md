@@ -62,7 +62,7 @@ And then lastly, we attach the validation set to the field. In the case of this 
 
 _Note: If you’ve noticed I skipped line 4, more on that later._
 
-### The Result
+### The Basic Result
 
 {{< figure src="basic.png" alt="basic">}}
 
@@ -100,7 +100,7 @@ Modify the RegisterValidator call
 3: validators.RegisterValidator(new taskOwnerValidator());
 ```
 
-_(Optional)_ Depending on how you render the field you may have to add the following code. What I mean by that is if you use one of [these](https://code.msdn.microsoft.com/office/Sample-8-List-add-and-edit-d228b751) OOB field rendering functions you do not need this line, if you develop your own layout then you will need this to “attach” the error message to the right object in the DOM. In this example my custom people picker field is rendering html wrapped with ```<div id=”TaskOwnerDiv”></div>```. So I need to reference the div’s ID in the SPFormControl\_AppendValidationErrorMessage call.
+_(Optional)_ Depending on how you render the field you may have to add the following code. What I mean by that is if you use one of [these](https://learn.microsoft.com/en-us/samples/browse/) OOB field rendering functions you do not need this line, if you develop your own layout then you will need this to “attach” the error message to the right object in the DOM. In this example my custom people picker field is rendering html wrapped with ```<div id=”TaskOwnerDiv”></div>```. So I need to reference the div’s ID in the SPFormControl\_AppendValidationErrorMessage call.
 
 ```js
 4:  formCtx.registerValidationErrorCallback(formCtx.fieldName, 
@@ -110,7 +110,7 @@ _(Optional)_ Depending on how you render the field you may have to add the follo
 );
 ```
 
-### The Result
+### The Custom Result
 
 {{< figure src="custom.png" alt="custom">}}
 
@@ -137,7 +137,7 @@ Modify the registration of the error callback, which causes your custom function
 4: formCtx.registerValidationErrorCallback(formCtx.fieldName, My.CustomError);
 ```
 
-### The Result
+### The Advanced Result
 
 {{< figure src="advanced.png" alt="advanced">}}
 

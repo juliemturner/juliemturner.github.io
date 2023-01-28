@@ -23,7 +23,7 @@ Logging information from your application to the browser console about what’s 
 
 ## Types of logging
 
-If you look at the documentation PnPJS Logging supports a default **ConsoleListener**, a **FunctionListener**, and the ability to pass in your own implementation of a listener that inherits from **LogListener**. Each one honors the _Active Log Level_ which will then only execute the log method when the call's error level is greater to or equal to the set level. This is something you could easily set as a web part property or a [Tenant property](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/tenant-properties) so that you could get more of less information as the situation warrants.
+If you look at the documentation PnPJS Logging supports a default **ConsoleListener**, a **FunctionListener**, and the ability to pass in your own implementation of a listener that inherits from **LogListener**. Each one honors the _Active Log Level_ which will then only execute the log method when the call's error level is greater to or equal to the set level. This is something you could easily set as a web part property or a [Tenant property](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/tenant-properties?tabs=sprest) so that you could get more of less information as the situation warrants.
 
 ## Starting Point
 

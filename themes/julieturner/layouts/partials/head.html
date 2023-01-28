@@ -38,7 +38,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Site Title, Description, Author, and Favicon -->
 {{- if .IsHome -}}
-  <title>{{- .Site.Params.description -}}</title>
+  <title>{{ .Site.Params.seotitle }}</title>
   <meta name="description" content="{{ .Site.Params.description }}" />
 {{- else -}}
   {{- $headScratch := newScratch -}}
@@ -58,8 +58,8 @@
       {{ $headScratch.Set "pageDescription" . }}
     {{ end }}
   {{ end }}
-  <title>{{- $headScratch.Get "pageTitle" -}}</title>
-  <meta name="description" content="{{- $headScratch.Get "pageDescription" -}}" />
+  <title>{{($headScratch.Get "pageTitle") | truncate 60 }}</title>
+  <meta name="description" content="{{($headScratch.Get "pageDescription") | truncate 160 }}" />
 {{- end -}}
 
 {{- with .Site.Author.name }}

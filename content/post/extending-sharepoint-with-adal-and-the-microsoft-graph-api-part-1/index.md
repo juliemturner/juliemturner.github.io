@@ -10,20 +10,22 @@ tags:
   - TypeScript
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
+SEO:
+  title: "Part 1 (The Setup) - Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1-the-setup/"]
 bigimg: [{src: "20170209_AppProperties.png", desc: ""}]
 ---
 
 {{< figure src="20170118_graph_logo.png" alt="20170118_graph_logo.png">}}
 
-When [Marc](https://sympmarc.com/) and I were at Ignite this past September, #SharePoint was the most tweeted hashtag. We heard a lot about the new SharePoint Framework (SPFx), which was clearly the focus for developers. But another oft-discussed technology topic centered on the expansion of the [Microsoft Graph API](https://graph.microsoft.io/en-us/) (MSGraphAPI). It’s clearly going to be the API of choice going forward to access all Office 365 content, but its maturity is still early days. At Ignite, Microsoft announced the beta endpoints for accessing SharePoint through the Microsoft Graph API. Overall I think this is a good thing, as the API has significantly better adherence to the [OData standard](https://www.odata.org/) compared to the SharePoint REST services. That said, as users of the SharePoint REST services we’re very used to the simplicity of those calls and we literally pay no attention to authentication if we’re operating on SharePoint pages. The tokens we need are already made available right on the page, we just pluck them out, and so there’s little effort.
+When [Marc](https://sympmarc.com/) and I were at Ignite this past September, #SharePoint was the most tweeted hashtag. We heard a lot about the new SharePoint Framework (SPFx), which was clearly the focus for developers. But another oft-discussed technology topic centered on the expansion of the [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0) (MSGraphAPI). It’s clearly going to be the API of choice going forward to access all Office 365 content, but its maturity is still early days. At Ignite, Microsoft announced the beta endpoints for accessing SharePoint through the Microsoft Graph API. Overall I think this is a good thing, as the API has significantly better adherence to the [OData standard](https://www.odata.org/) compared to the SharePoint REST services. That said, as users of the SharePoint REST services we’re very used to the simplicity of those calls and we literally pay no attention to authentication if we’re operating on SharePoint pages. The tokens we need are already made available right on the page, we just pluck them out, and so there’s little effort.
 
 As the features and functionality of the MSGraphAPI leap ahead and we’re trying to extend the SharePoint UI to take advantages of all the new features and functionality, we’re going to have to become comfortable dealing with authentication issues so we can leverage all that power. As I worked to understand all the ways I could utilize the MSGraphAPI I realized that I was collecting a rather lengthy list of resources and reaching out to the various experts I know in the community to get clarification on what I was finding. It seemed appropriate to consolidate that information into a series of blog posts. Part 1 will cover all the background information on Azure Active Directory, authentication methods and flows. Part 2 will go into the SDK library for getting an authorization token. And Part 3 will bring it all together in a demo application that runs as a widget on a SharePoint page, but accesses the MSGraphAPI to create and manipulate an Excel document in a SharePoint library.
 
 As we move forward with other solutions based on the MSGraphAPI, I may do additional posts to demonstrate useful techniques. So, let’s begin. Our goal is to access a SharePoint document library and use the Excel API (included in the MSGraphAPI) that will allow us to manipulate Excel files in code. An example use-case for this solution is to generate an “export” of the data you’re tracking on your site so that others can do analysis on it for a data analytics project. Before we write any code, we need to do the following:
 
 1. Select an authentication method
-2. Determine the type of flow (small “f”, not the [Flow](https://flow.microsoft.com/) automation tool) you will use to get an access token that you can utilize to authenticate with a resource that trusts Azure Active Directory.
+2. Determine the type of flow (small “f”, not the [Power Automate Flow](https://powerautomate.microsoft.com/en-us/)) you will use to get an access token that you can utilize to authenticate with a resource that trusts Azure Active Directory.
 3. Register your application with Azure Active Directory to define your set up and the permissions it needs.
 4. Select the SDK library that is right for your project based on the Operating System or Access Application (e.g.., web browser) and development language.
 
@@ -36,7 +38,7 @@ There are two authentication choices when trying to access the MSGraphAPI from c
 * To authenticate users with personal Microsoft accounts, such as live.com or outlook.com accounts, AND authenticate users with enterprise (that is, work or school) accounts, use the Azure Active Directory (Azure AD) v2.0 endpoint.
 * To authenticate users with enterprise (that is, work or school) accounts ONLY, use Azure AD.
 
-The second one of these, “authenticating users with enterprise accounts” is the one that is appropriate for our scenario. The “[App Authentication with Microsoft Graph](https://graph.microsoft.io/en-us/docs/authorization/auth_overview)” will walk you through a more extensive decision matrix about which endpoint is right for you, so if you have a more complicated scenario than what I’m focused on, e.g.., authenticating users to your application that isn’t hosted in SharePoint and utilizes live.com or outlook.com accounts, please review that documentation. You’re also going to want to review “[Should I use the v2.0 endoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)” as well, as there are a significant number of restrictions that may affect you.
+The second one of these, “authenticating users with enterprise accounts” is the one that is appropriate for our scenario. The “[Microsoft Graph authentication and authorization overview](https://learn.microsoft.com/en-us/graph/auth/?context=graph%2Fapi%2F1.0&view=graph-rest-1.0)” will walk you through a more extensive decision matrix about which endpoint is right for you, so if you have a more complicated scenario than what I’m focused on, e.g.., authenticating users to your application that isn’t hosted in SharePoint and utilizes live.com or outlook.com accounts, please review that documentation.
 
 ## Implicit Flow (aka Implicit Grant Flow)
 
@@ -68,7 +70,7 @@ In addition, you will need your Tenant ID (Guid), in the old portal we got this 
 
 ### Permissions
 
-One of the things that can be confusing about setting up your application in Azure AD is configuring the permissions scopes for the application itself. This [article](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes) gives you the full details on setting up the proper permissions based on what you need to access in the MSGraphAPI. It also includes several scenarios. For our scenario, which you’ll see in more detail in [Part 3](/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3/), I only needed to grant the application the delegated permission “Have full access to all files user can access”. By default, the application has the “Sign in and read user profile” delegated permission for Windows Azure Active Directory. Since I do some testing by accessing the “me” endpoint, that gives me my user profile information I’m leaving this, but feel free to remove it if you’re not reading the user’s profile. So, you will first “add” the “Microsoft Graph” application to the “Required Permissions” section. Then click on it to see the available application and delegated permissions that can be assigned. The gotcha with permission in the new portal is that after you select the permissions you want and “save” the changes, you then need to do an additional step and “grant” them. You do so by click on the “Grant Permissions” button from the “Required Permissions” page.
+One of the things that can be confusing about setting up your application in Azure AD is configuring the permissions scopes for the application itself. This [article](https://learn.microsoft.com/en-us/graph/permissions-overview?context=graph%2Fapi%2F1.0&view=graph-rest-1.0&tabs=http) gives you the full details on setting up the proper permissions based on what you need to access in the MSGraphAPI. It also includes several scenarios. For our scenario, which you’ll see in more detail in [Part 3](/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3/), I only needed to grant the application the delegated permission “Have full access to all files user can access”. By default, the application has the “Sign in and read user profile” delegated permission for Windows Azure Active Directory. Since I do some testing by accessing the “me” endpoint, that gives me my user profile information I’m leaving this, but feel free to remove it if you’re not reading the user’s profile. So, you will first “add” the “Microsoft Graph” application to the “Required Permissions” section. Then click on it to see the available application and delegated permissions that can be assigned. The gotcha with permission in the new portal is that after you select the permissions you want and “save” the changes, you then need to do an additional step and “grant” them. You do so by click on the “Grant Permissions” button from the “Required Permissions” page.
 
 {{< figure src="20170209_AppPermissions.png" alt="AppPermissions">}}
 
@@ -97,8 +99,8 @@ I hope that this part can help others understand the various building blocks of 
 ### OAuth Flows
 
 * [Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs](https://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis)
-* [Microsoft - Integrating applications with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications#updating-an-application)
-* [Microsoft - Should I use the v2.0 endpoint?](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations#restrictions-on-libraries-amp-sdks)
+* [Microsoft - Integrating applications with Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#updating-an-application)
+* [Microsoft - Should I use the v2.0 endpoint?](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-overview#restrictions-on-libraries-amp-sdks)
 
 ### ADAL
 
@@ -111,5 +113,4 @@ I hope that this part can help others understand the various building blocks of 
 
 ### Microsoft Graph API
 
-* [Microsoft – Microsoft Graph permission scopes](https://graph.microsoft.io/en-us/docs/authorization/permission_scopes)
-* [Microsoft - App authentication with Microsoft Graph](https://graph.microsoft.io/en-us/docs/authorization/auth_overview)
+* [Microsoft Graph Documentation](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)
