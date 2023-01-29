@@ -57,7 +57,7 @@ function uiRouteConfiguration($stateProvider: angular.ui.IStateProvider, $urlRou
 
 **The second** aspect is making sure the user is logged in when the page is loaded. When using ngRoute it’s imperative that on any route that will utilize the adal tokens the application make sure the user is logged in first. Given a user could navigate directly to a route then you needed to manage for that. When using the UI router, you only have 1 route and many views. So, I only need to make sure the “container” or “main” view verifies the user’s login. This simplifies things a lot, but I still want to make that implementation as modular as possible. In this case I’m going to implement the verification function in my view model and then call it from the main components $onInit function (part of AngularJS components, introduced in v1.5) which loads when the component is first run. That way I can trap the various page loads that happen during the implicit flow process.
 
->Note: This code is using AngularJS $q, depending on your implementation you may want to consider a more modern [async/await](https://blog.mariusschulz.com/2016/12/09/typescript-2-1-async-await-for-es3-es5) implementation
+>Note: This code is using AngularJS $q, depending on your implementation you may want to consider a more modern [async/await](https://mariusschulz.com/blog/compiling-async-await-to-es3-es5-in-typescript) implementation
 
 ### View
 

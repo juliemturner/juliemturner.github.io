@@ -96,7 +96,7 @@ var createFile = function () {
 
 ## Creating the Excel File
 
-As I said earlier, we’re going to utilize a third-party library to create the Excel file. To me this seems like obvious missing functionality from the MSGraphAPI, but there may be reasons for this of which I’m unaware. So until it’s added, we can use [SheetJS/js-xlsx](https://github.com/SheetJS/js-xlsx). The documentation provides a nice simple example for creating a valid xlsx document.
+As I said earlier, we’re going to utilize a third-party library to create the Excel file. To me this seems like obvious missing functionality from the MSGraphAPI, but there may be reasons for this of which I’m unaware. So until it’s added, we can use [SheetJS/js-xlsx](https://github.com/SheetJS/sheetjs). The documentation provides a nice simple example for creating a valid xlsx document.
 
 ```javascript
 var sheet\_from\_array\_of\_arrays = function (data, opts) {

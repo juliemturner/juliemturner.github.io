@@ -18,7 +18,7 @@ bigimg: [{src: "colorwidgets.png", desc: ""}]
 
 ## What’s a widget, and why should I care?
 
-In economics, a [widget](https://en.wikipedia.org/wiki/Widget_(economics)) is a name for a generic gadget or manufactured good; on the web, a [widget](https://en.wikipedia.org/wiki/Web_widget) is a generic piece of web functionality running on a page. What makes widgets special is that, unlike controls in ASP.NET or directives in [AngularJS](https://www.angularjs.org/ "AngularJS"), widgets are generally released separately from the web page that hosts them, and are often deployed by end users.
+In economics, a [widget](https://en.wikipedia.org/wiki/Widget_(economics)) is a name for a generic gadget or manufactured good; on the web, a [widget](https://en.wikipedia.org/wiki/Web_widget) is a generic piece of web functionality running on a page. What makes widgets special is that, unlike controls in ASP.NET or directives in [AngularJS](https://angularjs.org/ "AngularJS"), widgets are generally released separately from the web page that hosts them, and are often deployed by end users.
 
 If you’re reading this blog, you probably know something about Microsoft SharePoint, and this might sound familiar. A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a SharePoint add-in, or outside of SharePoint. If you're careful, you can reuse the same widget in all those contexts!
 
@@ -54,8 +54,7 @@ Any snippet of HTML with JavaScript can be considered a widget, however good wid
 
 ## Introducing Widget Wrangler
 
-Today my colleague [Bob German](https://twitter.com/Bob1German) and I are pleased to announce a new, light-weight JavaScript library for managing widgets called the Widget Wrangler. It's available now [on Github](https://github.com/Widget-Wrangler/ww) for your widget wrangling pleasure. It's also part of the new [JavaScript Core](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.JavaScript) in the January 2015 release of Microsoft's [OfficeDev Patterns and Practices](https://github.com/OfficeDev/PnP) library (hence the file name _pnp-ww.js_).
-
+Today my colleague [Bob German](https://twitter.com/Bob1German) and I are pleased to announce a new, light-weight JavaScript library for managing widgets called the Widget Wrangler. It's available now [on Github](https://github.com/Widget-Wrangler/ww) for your widget wrangling pleasure.
 Widget Wrangler:
 
 * Helps avoid interference with the hosting page and other widgets
@@ -106,7 +105,7 @@ Widget Wrangler has no dependencies on SharePoint or other script libraries, and
 
 Widget Wrangler tries to load the scripts needed by each widget as efficiently as possible, and will only load each script once even if it's used in multiple widgets. (NOTE: The current implementation determines what scripts are the same using their URL; a future version may be smart enough to identify multiple versions of common libraries at different URL's.) Use the "priority" property in the ww-appscripts attribute to control parallel script loading; for example all priority 0 scripts will load in parallel, followed by priority 1 scripts, etc. Priority numbers must begin at 0 and must be contiguous (i.e. 0, 1, 2...) In the example above, script.js depends on AngularJS, so AngularJS is given priority 0 (and loads first), and script.js is loaded only when Angular (and any other priority 0) scripts are loaded.
 
-The main repository for the Widget Wrangler is [here](https://github.com/Widget-Wrangler/ww); it's also a part of the OfficeDev Patterns and Practices Library [here](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.JavaScript). Please use the main repository for access to the Widget Wrangler tester and for pull requests.
+The main repository for the Widget Wrangler is [here](https://github.com/Widget-Wrangler/ww).
 
 [Widget-Wrangler GitHub Repository](https://github.com/Widget-Wrangler/ww/)
 
@@ -254,8 +253,6 @@ Sometimes less is more, and plain JavaScript is better and faster than using eve
 
 Notice that it uses the new keyword in the binding function to create a new object for each widget instance. It also generates a unique index for each instance that's used in a button click attribute. This index is passed into the click event handler to allow it to find the correct instance when the event fires.
 
-The Patterns and Practices library includes [an example](https://github.com/OfficeDev/PnP/tree/master/Samples/Provisioning.MicroSurvey) that shows how to use widgets in various kinds of SharePoint projects. The example is a Microsurvey that asks a single question, then shows a simple graph of all the responses to that question.
-
 {{< figure src="surveywidget.png" alt="SurveyWidget">}}
 
 The example can be packaged and deployed three ways:
@@ -278,7 +275,7 @@ The Widget Wrangler is open source, and we welcome suggestions and pull requests
 4. Matches AngularJS 1.x browser support
 5. Is tested and works well with SharePoint Online and SharePoint 2013 or greater, however it in no way depends on SharePoint
 
-The Widget Wrangler [main repo](https://www.github.com/Widget-Wrangler/ww) includes a test program that makes it easy to exercise the library with a large number of widgets on a page.
+The Widget Wrangler [main repo](https://github.com/Widget-Wrangler/ww) includes a test program that makes it easy to exercise the library with a large number of widgets on a page.
 
 {{< figure src="tester.png" alt="WidgetTester">}}
 

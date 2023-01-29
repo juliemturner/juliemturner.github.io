@@ -12,7 +12,7 @@ aliases: ["/2016/08/sympraxis-development-process-part-1/"]
 bigimg: [{src: "devprocess.png", desc: ""}]
 ---
 
-Marc and I discussed in our August Sympraxis Newsletter starting a blog series to share what we’re learning while implementing a [SharePoint](https://sharepoint.microsoft.com "Microsoft SharePoint") client side development process.  So this is my first post on the topic, and here’s a [link](https://wp.me/p1IDpQ-6Cb) to his first post… it’s interesting to see how different our perspectives on the process were.
+Marc and I discussed in our August Sympraxis Newsletter starting a blog series to share what we’re learning while implementing a [SharePoint](https://sharepoint.microsoft.com "Microsoft SharePoint") client side development process.  So this is my first post on the topic, and here’s a [link](https://sympmarc.com/2016/08/16/sharepoint-client-side-development-pipeline-introduction/) to his first post… it’s interesting to see how different our perspectives on the process were.
 
 In all my previous experience I’ve either been in a team or in a regulated industry or both.  All of these scenarios dictate that you have at least some process in place and in the case of the regulated pharma industry, rigorous processes in place.
 

@@ -7,6 +7,8 @@ tags:
   - SharePoint Framework
   - PnPjs
   - TypeScript
+seo:
+  title: "Resolve to Log: Methods for tracking client-side code errors"
 aliases: ["/2018/12/resolve-to-log/"]
 bigimg: [{src: "PnPLogging_lg.png", desc: ""}]
 ---

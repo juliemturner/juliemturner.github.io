@@ -41,7 +41,7 @@ mySpfxProject
 |--------{all the other spfx files}
 ```
 
-And voila, [npm version](https://docs.npmjs.com/cli/v9/commands/npm-version) will now create the appropriate tag.
+And voila, [npm version](https://docs.npmjs.com/cli/v9/commands/npm-version/) will now create the appropriate tag.
 
 Keep in mind that the tag is for the entire repo, so if you have multiple solutions in the same repo that have different versions you may want to manually apply your tags in a different way. Which is probably why the feature works the way it does in the first place.
 

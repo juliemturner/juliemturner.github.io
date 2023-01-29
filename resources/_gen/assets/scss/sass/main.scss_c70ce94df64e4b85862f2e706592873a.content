@@ -3078,6 +3078,8 @@ table td {
     padding-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px; }
+    .jt-content .jt-article.jt-post-preview .jt-post-preview {
+      min-height: 174px; }
     .jt-content .jt-article.jt-post-preview a {
       text-decoration: none; }
     .jt-content .jt-article.jt-post-preview .jt-post-subtitle {

@@ -11,7 +11,7 @@ aliases: ["/author/jturnerwp/"]
 | | | |
 |----------|-------------|------|
 | {{< figure src="github-mark.png" alt="GitHub Logo" size="40x40" link="https://github.com/juliemturner/Public-Samples#readme" nomargin="true" background="white" >}} | [ Sample Code from Talks and Blog Posts](https://github.com/juliemturner/Public-Samples#readme) |
-| {{< figure src="greppericon.jpg" alt="Grepper Logo" size="40x40" link="https://www.grepper.com/profile/julie-turner" nomargin="true" >}} | [ Zen Developer](https://www.codegrepper.com/profile/julie-turner) |
+| {{< figure src="greppericon.jpg" alt="Grepper Logo" size="40x40" link="https://www.grepper.com/profile/julie-turner" nomargin="true" >}} | [ Zen Developer](https://www.grepper.com/profile/julie-turner) |
 
 ## Podcasts/Video Shows
 
