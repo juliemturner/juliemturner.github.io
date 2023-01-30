@@ -6,6 +6,8 @@ tags:
   - SharePoint Framework
   - Microsoft 365
   - JavaScript
+seo:
+  title: "SharePoint Framework (SPFx) Anchor (a) Tags - Julie Turner"
 aliases: ["/2018/12/resolve-to-log/"]
 bigimg: [{src: "SPFxAnchorTags_lg.jpeg", desc: ""}]
 ---

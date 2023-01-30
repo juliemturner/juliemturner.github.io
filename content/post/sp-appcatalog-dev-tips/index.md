@@ -5,6 +5,8 @@ draft: false
 tags: 
   - SharePoint
   - Microsoft 365
+seo:
+  title: "SharePoint App Catalog Development Tips - Julie Turner"
 aliases: ["/2021/05/sharepoint-app-catalog-development-tips/"]
 bigimg: [{src: "AppCatalog101.jpeg", desc: ""}]
 ---
