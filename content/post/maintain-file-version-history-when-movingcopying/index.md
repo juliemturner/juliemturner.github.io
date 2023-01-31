@@ -5,6 +5,7 @@ draft: false
 tags: 
   - SharePoint
   - Server 2010
+  - C#
 SEO:
   title: "Maintain file version history moving/copying between SharePoint sites"
 aliases: ["/2011/06/maintain-file-version-history-when-movingcopying-files-between-sharepoint-sites/"]
@@ -39,7 +40,7 @@ for (int i = 0; i <= countVersions; i++)
    {
  //This section captures all the versions of the document and gathers the properties
  //we need to add to the SPFileCollection.  Note we're getting the modified information
- //and the comments seperately as well as checking if the version is a major version
+ //and the comments separately as well as checking if the version is a major version
  //(more on that later).  I'm also getting a stream object to the file which is more efficient
  //than getting a byte array for large files but you could obviously do that as well.
  //Again note I'm converting the created time to local time.

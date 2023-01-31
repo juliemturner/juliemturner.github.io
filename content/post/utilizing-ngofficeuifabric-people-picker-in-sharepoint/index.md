@@ -2,6 +2,8 @@
 title: 'Utilizing ngOfficeUIFabric People Picker in SharePoint'
 date: Wed, 24 May 2017 12:41:14 +0000
 draft: false
+tags:
+  - JavaScript
 aliases: ["/2017/05/utilizing-ngofficeuifabric-people-picker-in-sharepoint/"]
 bigimg: [{src: "ngOfficeUiFabric.png", desc: ""}]
 ---

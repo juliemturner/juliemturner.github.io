@@ -1,5 +1,6 @@
 ---
 title: 'Greetings from New Hampshire, Where I’m Co-Authoring a Document'
+description: "Julie Turner and Marc D Andersons step-by-step overview of the Microsoft 365 document co-authoring experience"
 date: Fri, 03 Feb 2017 16:05:47 +0000
 draft: false
 tags: 
