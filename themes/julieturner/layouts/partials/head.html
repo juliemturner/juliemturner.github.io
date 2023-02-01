@@ -98,6 +98,10 @@
   <!-- Code Highlighting -->
   <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
   
+<!-- RSS Feed -->
+{{ if .Site.Params.rss }}
+<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/feed.xml" title="{{ .Site.Title }}">
+{{ end }}
 {{- if not .Site.IsServer -}}
   {{ template "_internal/google_analytics.html" . }}
 {{- end -}}
