@@ -100,7 +100,7 @@
   
 <!-- RSS Feed -->
 {{ if .Site.Params.rss }}
-<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/feed.xml" title="{{ .Site.Title }}">
+<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}feed.xml" title="{{ .Site.Title }}">
 {{ end }}
 {{- if not .Site.IsServer -}}
   {{ template "_internal/google_analytics.html" . }}
