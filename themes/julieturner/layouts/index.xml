@@ -8,7 +8,7 @@
     <language>{{.Site.LanguageCode}}</language>
     <managingEditor>{{ .Site.Author.name }}</managingEditor>
     <webMaster>{{ .Site.Author.name }}</webMaster>
-    <copyright>{{ .Site.Copyright }}</copyright>
+    <copyright>&nbsp;&bull;&nbsp;&copy;{{ .Site.LastChange.Format "2006" }} {{ .Site.Copyright }}</copyright>
     {{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     {{ end }}

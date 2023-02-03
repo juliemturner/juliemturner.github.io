@@ -9,7 +9,7 @@ pygmentsUseClasses: true
 pygmentsCodeFences: true
 pygmentsCodefencesGuessSyntax: true
 rssLimit: 20
-copyright: "2023 Julie Turner All rights reserved"
+copyright: "Julie Turner ~ All rights reserved"
 languageCode: en-us
 
 outputs:
@@ -33,6 +33,7 @@ lastmod:
 Params:
   seotitle: "Julie Turner M365 Development Blog - Veni, Vidi, Vici"
   subtitle: "MUSINGS AND SOLUTIONS FOR MICROSOFT 365 AND AZURE"
+  since: "2011"
   description: "Julie Turner Blog on Microsoft 365 (O365), SharePoint, Microsoft Teams, development and extensibility expert with SharePoint Framework (SPFx)"
   mainSections: ["post","webinars"]
   logo: "img/venividivici_header.png"
