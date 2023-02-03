@@ -4,11 +4,12 @@ title: "Veni, Vidi, Vici"
 theme: "julieturner"
 summaryLength: 70
 disqusShortname: "veni-vidi-vici-1"
-#googleAnalytics: "UA-84177830-1"
 pygmentsStyle: "trac"
 pygmentsUseClasses: true
 pygmentsCodeFences: true
 pygmentsCodefencesGuessSyntax: true
+rssLimit: 20
+copyright: "2023 Julie Turner All rights reserved"
 
 permalinks: 
   webinars: /post/:filename
@@ -49,7 +50,7 @@ Author:
   name: "Julie Turner"
   domain: "julieturner.net"
   website: "https://julieturner.net/page/me/"
-  #email: "youremail@domain.com"
+  email: "julie.turner@sympraxisconsulting.com"
   #facebook: "username"
   github: "juliemturner"
   #gitlab: "username"
