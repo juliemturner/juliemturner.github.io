@@ -11,6 +11,11 @@ pygmentsCodefencesGuessSyntax: true
 rssLimit: 20
 copyright: "2023 Julie Turner All rights reserved"
 
+outputs:
+  home:
+  - HTML
+  - RSS
+
 permalinks: 
   webinars: /post/:filename
 
