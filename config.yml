@@ -10,6 +10,7 @@ pygmentsCodeFences: true
 pygmentsCodefencesGuessSyntax: true
 rssLimit: 20
 copyright: "2023 Julie Turner All rights reserved"
+languageCode: en-us
 
 outputs:
   home:

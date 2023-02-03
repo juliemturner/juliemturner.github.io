@@ -1,9 +1,3 @@
-{{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-{{ $limit := .Site.Config.Services.RSS.Limit }}
-{{ $pages := $pag.Pages }}
-{{ if ge $limit 1 }}
-{{ $pages := $pag.Pages | first $limit }}
-{{ end }}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -20,6 +14,13 @@
     {{ end }}
     {{ with .OutputFormats.Get "RSS" }}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+
+    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    {{ $limit := .Site.Config.Services.RSS.Limit }}
+    {{ $pages := $pag.Pages }}
+    {{ if ge $limit 1 }}
+      {{ $pages := $pag.Pages | first $limit }}
     {{ end }}
     {{ range $pages }}
     <item>
