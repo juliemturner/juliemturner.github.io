@@ -11,7 +11,7 @@ tags:
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
 SEO:
-  title: "Part 1 (The Setup) - Extending SharePoint with the Microsoft Graph"
+  title: "Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1-the-setup/"]
 bigimg: [{src: "20170209_AppProperties.png", desc: ""}]
 ---
