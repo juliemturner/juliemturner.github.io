@@ -8,7 +8,7 @@ tags:
   - JavaScript
 seo:
   title: "SharePoint Framework (SPFx) Anchor (a) Tags - Julie Turner"
-aliases: ["/2018/12/resolve-to-log/"]
+aliases: ["/2018/08/spfx-anchor-tags-hitting-the-target/","/2018/08/spfx-anchor-tags-hitting-the-target/%20aa","/2018/08/spfx-anchor-tags-hitting-the-target"]
 bigimg: [{src: "SPFxAnchorTags_lg.jpeg", desc: ""}]
 ---
 
