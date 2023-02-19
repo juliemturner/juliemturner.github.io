@@ -9,6 +9,8 @@ tags:
   - Server 2016
   - REST
   - JavaScript
+SEO:
+  title: "How to update SharePoint datetime in javascript with localization"
 aliases: ["/2017/11/sharepoint-rest-datetime-updates/"]
 bigimg: [{src: "sptimeupdate_header.png", desc: ""}]
 ---

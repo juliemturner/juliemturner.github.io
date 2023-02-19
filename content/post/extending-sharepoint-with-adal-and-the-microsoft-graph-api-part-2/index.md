@@ -10,7 +10,7 @@ tags:
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
 SEO:
-  title: "Part 2 (The Authorization) - Extending SharePoint with the Microsoft Graph"
+  title: "Authorization - Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2-the-authorization/"]
 bigimg: [{src: "20170118_ADALLibs.png", desc: ""}]
 ---

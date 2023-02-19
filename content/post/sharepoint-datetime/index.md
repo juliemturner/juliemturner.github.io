@@ -9,6 +9,8 @@ tags:
   - Server 2016
   - REST
   - JavaScript
+SEO:
+  title: "How to work with SharePoint datetime localization in javascript"
 aliases: ["/2017/04/sharepoint-time-is-not-your-time-is-not-their-time/"]
 bigimg: [{src: "clock.png", desc: ""}]
 ---

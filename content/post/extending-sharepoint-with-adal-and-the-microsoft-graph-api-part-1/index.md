@@ -9,7 +9,7 @@ tags:
   - REST
   - TypeScript
   - JavaScript
-series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
+series: ["Getting Started - Extending SharePoint with ADAL and the Microsoft Graph API"]
 SEO:
   title: "Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1-the-setup/"]
