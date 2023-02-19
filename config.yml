@@ -17,9 +17,6 @@ outputs:
   - HTML
   - RSS
 
-permalinks: 
-  webinars: /post/:filename
-
 taxonomies:
   series: 'series'
   tag: 'tags'
