@@ -1,11 +1,14 @@
 ---
-title: 'SharePoint Framework Application Customizer Cross-Site Page Loading'
+title: SharePoint Framework Application Customizer Cross-Site Page Loading
 date: Thu, 05 Sep 2019 13:21:48 +0000
 draft: false
 tags: 
   - Microsoft 365
   - SharePoint Framework
   - TypeScript
+seo:
+  title: SharePoint Framework Application Customizer Cross-Site Loading
+  description: Properly load an application customizer into modern SharePoint pages can be difficult. Outlines better practices to optimizing loading with the OnInit function firing multiple times. 
 aliases: ["/2019/09/sharepoint-framework-application-customizer-cross-site-page-loading/"]
 bigimg: [{src: "AppCustCrossSite_lg.png", desc: ""}]
 ---

@@ -7,6 +7,8 @@ tags:
   - Server 2013
   - Server 2016
   - JSLink
+seo:
+  title: JSLink Validation – from Basic to Advanced by Julie Turner
 aliases: ["/2015/08/jslink-validation-from-basic-to-advanced/"]
 ---
 

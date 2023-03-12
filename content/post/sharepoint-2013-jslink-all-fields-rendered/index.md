@@ -7,6 +7,8 @@ tags:
   - JSLink
   - Server 2013
   - Server 2016
+seo:
+  title: SharePoint 2013 JSLink - All Fields Rendered by Julie Turner
 aliases: ["/2015/08/sharepoint-2013-jslink-all-fields-rendered/"]
 ---
 

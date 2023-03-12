@@ -1,5 +1,5 @@
 ---
-title: 'SharePoint time, is not your time, is not their time.'
+title: How to work with SharePoint datetime localization/timezones in JavaScript
 date: Mon, 17 Apr 2017 23:54:27 +0000
 draft: false
 tags: 
@@ -9,8 +9,9 @@ tags:
   - Server 2016
   - REST
   - JavaScript
-SEO:
-  title: "How to work with SharePoint datetime localization in javascript"
+seo:
+  title: How to work with SharePoint datetime localization/timezones in JavaScript
+  description: SharePoint stores all its date/time fields in UTC time. How do you deal with localizing that data when writing client-side solutions in JavaScript/TypeScript.
 aliases: ["/2017/04/sharepoint-time-is-not-your-time-is-not-their-time/"]
 bigimg: [{src: "clock.png", desc: ""}]
 ---

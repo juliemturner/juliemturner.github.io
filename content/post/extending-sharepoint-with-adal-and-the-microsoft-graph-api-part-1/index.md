@@ -1,5 +1,5 @@
 ---
-title: 'Extending SharePoint with ADAL and the Microsoft Graph API – Part 1 (The Setup)'
+title: 'Getting Started: Extending SharePoint with ADAL and the Microsoft Graph API – Part 1'
 date: Tue, 24 Jan 2017 13:32:10 +0000
 lastmod: Thu, 05 Jan 2023 21:22:00 +0000
 draft: false
@@ -9,9 +9,9 @@ tags:
   - REST
   - TypeScript
   - JavaScript
-series: ["Getting Started - Extending SharePoint with ADAL and the Microsoft Graph API"]
-SEO:
-  title: "Extending SharePoint with the Microsoft Graph"
+series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
+seo:
+  title: "Getting Started - Extending SharePoint with the Microsoft Graph"
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1-the-setup/"]
 bigimg: [{src: "20170209_AppProperties.png", desc: ""}]
 ---

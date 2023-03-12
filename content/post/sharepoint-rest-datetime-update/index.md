@@ -1,5 +1,5 @@
 ---
-title: 'SharePoint REST Date/Time Updates'
+title: 'SharePoint REST Date/Time field Item Updates'
 date: Mon, 06 Nov 2017 20:25:15 +0000
 draft: false
 tags: 
@@ -10,7 +10,7 @@ tags:
   - REST
   - JavaScript
 SEO:
-  title: "How to update SharePoint datetime in javascript with localization"
+  title: "SharePoint REST Date/Time field Item Updates by Julie Turner"
 aliases: ["/2017/11/sharepoint-rest-datetime-updates/"]
 bigimg: [{src: "sptimeupdate_header.png", desc: ""}]
 ---

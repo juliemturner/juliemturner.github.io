@@ -4,5 +4,5 @@ description: React is a free and open-source front-end JavaScript library for bu
 date: Thu, 05 Jan 2023 21:22:00 +0000
 lastmod: Thu, 05 Jan 2023 21:22:00 +0000
 SEO:
-  title: List of articles tagged 'ReactJS'
+  title: Articles covering ReactJS topics by Julie Turner
 ---

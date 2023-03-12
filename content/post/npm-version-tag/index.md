@@ -1,9 +1,12 @@
 ---
-title: "Tip: 'npm version' isn't creating tag for your project"
+title: "Tip: How to use 'npm version' to create a version tag for your source code"
 date: Mon, 08 Apr 2019 23:33:40 +0000
 draft: false
 tags: 
   - SharePoint Framework
+seo:
+  title: How to use 'npm version' to create a version tag for your source code
+  description: Complicated project file structures, where package.json is in a subfolder below the .git folder, you need a workaround to have npm version script create a version tag.
 aliases: ["/2019/04/tip-npm-version-isnt-creating-tag-for-your-project/"]
 bigimg: [{src: "TipNavComponent_lg.jpeg", desc: ""}]
 ---

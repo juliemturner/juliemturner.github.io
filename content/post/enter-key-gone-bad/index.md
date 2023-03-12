@@ -8,6 +8,9 @@ tags:
   - SharePoint Framework
   - TypeScript
   - JavaScript
+seo:
+  title: Enter key behavior on SharePoint Page Changing to Edit Mode
+  description: When writing client-side code, how to keep the user pressing the Enter key from putting SharePoint page in edit mode.
 aliases: ["/2016/03/enter-key-gone-bad/"]
 ---
 

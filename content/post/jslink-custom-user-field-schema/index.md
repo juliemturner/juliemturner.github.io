@@ -7,6 +7,8 @@ tags:
   - Server 2013
   - Server 2016
   - JSLink
+seo:
+  title: SharePoint 2013 JSLink Custom User Field Schema by Julie Turner
 aliases: ["/2015/08/jslink-custom-user-field-schema-1/"]
 ---
 

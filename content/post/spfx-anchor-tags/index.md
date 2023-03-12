@@ -7,7 +7,8 @@ tags:
   - Microsoft 365
   - JavaScript
 seo:
-  title: "SharePoint Framework (SPFx) Anchor (a) Tags - Julie Turner"
+  title: "SPFx Anchor Tags - Hitting the Target by Julie Turner"
+  description: Issues with using anchor tags (a) in SharePoint Framework (SPFx) web parts or application customizer solutions that won't honor target="blank" property.
 aliases: ["/2018/08/spfx-anchor-tags-hitting-the-target/","/2018/08/spfx-anchor-tags-hitting-the-target/%20aa","/2018/08/spfx-anchor-tags-hitting-the-target"]
 bigimg: [{src: "SPFxAnchorTags_lg.jpeg", desc: ""}]
 ---

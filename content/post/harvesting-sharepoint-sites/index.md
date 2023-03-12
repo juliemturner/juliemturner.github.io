@@ -8,6 +8,9 @@ tags:
   - REST
   - PowerShell
   - SharePoint
+seo:
+  title: Harvesting your Microsoft 365 SharePoint Site Collections by Julie Turner
+  description: Getting a complete listing of all the site collections in a tenant using PowerShell or CSOM by Julie Turner
 aliases: ["/2018/03/harvesting-your-sharepoint-site-collections/"]
 bigimg: [{src: "harvestingsites.jpeg", desc: ""}]
 ---

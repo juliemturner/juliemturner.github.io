@@ -1,5 +1,5 @@
 ---
-title: 'Code Creep - SharePoint "CDN"'
+title: 'Code Creep: SharePoint "CDN" with Document Libraries'
 date: Tue, 06 Sep 2016 14:00:00 +0000
 draft: false
 tags: 
@@ -9,6 +9,8 @@ tags:
   - Server 2016
   - TypeScript
   - JavaScript
+seo:
+  title: Code Creep - SharePoint "CDN" with Document Libraries by Julie Turner
 aliases: ["/2016/09/code-creep-sharepoint-cdn/"]
 bigimg: [{src: "MajorVersion_User.png", desc: ""}]
 ---

@@ -1,5 +1,5 @@
 ---
-title: 'Extending SharePoint with ADAL and the Microsoft Graph API – Part 2 (The Authorization)'
+title: 'ADAL authorization: Extending SharePoint with the Microsoft Graph – Part 2'
 date: Thu, 26 Jan 2017 14:02:36 +0000
 draft: false
 tags: 
@@ -9,8 +9,9 @@ tags:
   - TypeScript
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
-SEO:
-  title: "Authorization - Extending SharePoint with the Microsoft Graph"
+seo:
+  title: ADAL authorization - Extending SharePoint with the Microsoft Graph
+  description: Further streamline the implementation of ADAL, in AngularJS specifically, but with broader implications to any web based framework.
 aliases: ["/2017/01/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2-the-authorization/"]
 bigimg: [{src: "20170118_ADALLibs.png", desc: ""}]
 ---

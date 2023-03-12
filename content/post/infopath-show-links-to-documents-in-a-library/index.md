@@ -7,6 +7,8 @@ tags:
   - Server 2010
   - InfoPath
   - REST
+seo:
+  title: InfoPath - Show links to documents in a library from the form
 aliases: ["/2013/01/infopath-show-links-to-documents-in-a-library-from-the-form/"]
 ---
 

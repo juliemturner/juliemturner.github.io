@@ -5,6 +5,9 @@ draft: false
 tags: 
   - ReactJS
   - TypeScript
+seo:
+  title: React JS tip, using Fragments streamline your DOM by Julie Turner
+  description: React JS v16.2 introduced "Fragments" which is an empty container that you can use in a react component to group a set of children together with no additional DOM nodes.
 aliases: ["/2019/07/react-js-fragments-streamline-your-dom/"]
 bigimg: [{src: "TipNavComponent_lg.jpeg", desc: ""}]
 ---

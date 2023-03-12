@@ -1,5 +1,5 @@
 ---
-title: 'Extending SharePoint with ADAL and the Microsoft Graph API – Part 4 (The Extension)'
+title: 'Streamline ADAL implementation: Extending SharePoint with the Microsoft Graph – Part 4'
 date: Wed, 30 Aug 2017 13:25:59 +0000
 draft: false
 tags: 
@@ -9,8 +9,9 @@ tags:
   - TypeScript
   - JavaScript
 series: ["Extending SharePoint with ADAL and the Microsoft Graph API"]
-SEO:
-  title: "Extending SharePoint with the Microsoft Graph"
+seo:
+  title: Streamline ADAL implementation - Extending SharePoint with the Microsoft Graph
+  description: Further streamline the implementation of ADAL, in AngularJS specifically, but with broader implications to any web based framework.
 aliases: ["/2017/08/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-4-the-extension/"]
 bigimg: [{src: "LeveragingGraphAPIPart4.jpeg", desc: ""}]
 ---

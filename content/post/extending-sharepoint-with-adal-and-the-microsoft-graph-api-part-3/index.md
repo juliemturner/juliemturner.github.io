@@ -1,5 +1,5 @@
 ---
-title: 'Extending SharePoint with ADAL and the Microsoft Graph API - Part 3 (The Execution)'
+title: 'Getting Results: Extending SharePoint with ADAL and the Microsoft Graph API - Part 3'
 date: Tue, 31 Jan 2017 14:56:05 +0000
 draft: false
 tags: 
