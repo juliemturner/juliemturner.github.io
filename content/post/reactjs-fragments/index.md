@@ -88,7 +88,7 @@ public render(): React.ReactElement<IMyComponentProps> {
 
 The resulting HTML is just as streamlined without the extra work of adding brackets and keys.
 
-You can find the full details by checking out this post from the React JS blog: [React v16.2.0: Improved Support for Fragments](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html)
+You can find the full details by checking out this post from the React JS blog: [React v16.2.0: Improved Support for Fragments](https://legacy.reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html)
 
 With regard to SharePoint Framework as best as I can tell, by doing a little [CLI for Microsoft 365](https://github.com/pnp/cli-microsoft365) sleuthing, the move from React 15.x directly to 16.3.2 happened in version 1.6, so that means since that version we've had the ability to do React.Fragments.
 

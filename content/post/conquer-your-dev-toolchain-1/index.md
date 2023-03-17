@@ -36,7 +36,7 @@ By now most of you have seen the toolchain comparison chart:
 
 Image by [Voitanos'](https://www.voitanos.io/)
 
-To start off you need to install [NodeJS](https://nodejs.org/en/) for the toolchain. It’s basically a runtime version of Chrome’s JavaScript engine which allows you to run JavaScript-based code the same way you’d execute a C# console application and that’s why the image above depicts it as the equivalent of the .NET framework.
+To start off you need to install [NodeJS](https://nodejs.org/en) for the toolchain. It’s basically a runtime version of Chrome’s JavaScript engine which allows you to run JavaScript-based code the same way you’d execute a C# console application and that’s why the image above depicts it as the equivalent of the .NET framework.
 
 One of the mistakes I made when I first started working with this toolchain was that I only installed NodeJS. Let me be clear: this is one of those places where _it depends_. I’m a consultant, I do a lot of different projects for a lot of different people and not all of them are even on SharePoint, let alone the SharePoint Framework. I benefit significantly from using a tool called the [Node Version Manager](https://github.com/nvm-sh/nvm/blob/master/README.md) (NVM). In the [Voitanos'](https://www.voitanos.io/) resource I point you to above, Andrew Connell explains in detail how to install NVM depending on if you’re on a Mac or a PC.
 
