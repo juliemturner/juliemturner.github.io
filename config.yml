@@ -89,7 +89,7 @@ menu:
     url: ""
     weight: 1
   - name: "About"
-    url: "page/me/"
+    url: "me/"
     weight: 3
   - name: "Privacy Policy"
     url: "page/privacy-policy/"
