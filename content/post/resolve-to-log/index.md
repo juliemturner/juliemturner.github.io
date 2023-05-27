@@ -49,7 +49,7 @@ To call the logger you have a couple of different options. You can either use th
 
 ## Basic Logging
 
-For basic logging we’re just using the functionality as is, by utilizing a ConsoleListner, setting the logging level, and noting that anything we “Log” is getting written to the browser’s console.
+For basic logging we’re just using the functionality as is, by utilizing a ConsoleListener, setting the logging level, and noting that anything we “Log” is getting written to the browser’s console.
 
 ## Custom Logging
 
@@ -108,7 +108,7 @@ export default class AdvancedLoggingService implements LogListener {
   }
 
   private async init(currentUser: string): Promise<void> {
-    //Implement an asyncronous call to ensure the user is part of the web where the ApplicationLog list is and get their user id.
+    //Implement an asynchronous call to ensure the user is part of the web where the ApplicationLog list is and get their user id.
     try {
       let userResult = await this._web.ensureUser(`i:0#.f|membership|${currentUser}`);
       this._userId = userResult.data.Id;
