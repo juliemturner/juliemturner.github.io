@@ -1,6 +1,7 @@
 ---
 title: 'Console Log Better Practices with PnPjs V3'
 date: Sat, 27 May 2023 09:51:56 +0000
+description: 'The @pnp/logging package powerful and helpful, but more than needed for many applications. If you are not taking much advantage of its additional functionality and are taking overhead you don’t need, you can move all your code to use console log directly'
 draft: false
 tags:
   - Microsoft 365
