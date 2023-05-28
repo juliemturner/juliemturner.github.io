@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap');
-@import "./_htwoo";
+@import "./_htwoo_min";
 
 :root {
   //TEMP FONT SIZE
@@ -115,6 +115,11 @@ code:not([data-lang]) {
 }
 
 pre {
+  white-space: pre-wrap;
+  color: #323130;
+  background-color: #faf9f8;
+  overflow-wrap: break-word;
+
   code:not([data-lang]) {
     background-color: transparent;
   }

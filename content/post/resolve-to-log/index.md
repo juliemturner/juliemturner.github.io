@@ -13,6 +13,8 @@ aliases: ["/2018/12/resolve-to-log/"]
 bigimg: [{src: "PnPLogging_lg.png", desc: ""}]
 ---
 
+{{< updatepost src="../bettter-practices-soncole-log-pnpjs" name="Console Log Better Practices with PnPjs V3" >}}
+
 My Sympraxis partner [Marc Anderson](https://twitter.com/sympmarc) mentioned that we’ve been talking about [PnPJS packages](https://pnp.github.io/pnpjs/) for SharePoint Framework a lot lately and called out that I would be blogging about utilizing the logging package in his post [Using PnPJS and Async/Await to Really Simplify Your API Calls](https://sympmarc.com/2018/12/12/using-pnpjs-and-async-await-to-really-simplify-your-api-calls/). If you haven’t checked it out and aren’t using PnPJS and the Async/Await method instead of Promises in your SharePoint Framework solutions, you should give it a read.
 
 ## TL;DR
