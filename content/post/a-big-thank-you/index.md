@@ -5,7 +5,7 @@ date: Thu, 02 Mar 2017 14:17:41 +0000
 draft: false
 tags:
   - General
-aliases: ["2017/03/a-big-thank-you/"]
+aliases: ["/2017/03/a-big-thank-you/"]
 bigimg: [{src: "MVP_Logo.png", desc: ""}]
 ---
 

@@ -10,7 +10,7 @@ tags:
   - JavaScript
   - TypeScript
 SEO:
-  title: "SharePoint/Azure Functions: Launching PowerAutomate Flow from code"
+  title: "SharePoint-Azure Functions: Launching PowerAutomate Flow from code"
 aliases: ["/2017/07/sharepoint-flow-azure-functions-launching-a-microsoft-flow-from-client-side-code/"]
 bigimg: [{src: "sp_flow_azuref_featured.png", desc: ""}]
 ---
