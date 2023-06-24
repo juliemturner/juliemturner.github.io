@@ -10,17 +10,10 @@
   },
   "description" : "{{ if .Description }}{{ .Description | plainify }}{{ else }}{{if .IsPage}}{{ .Summary | plainify  }}{{ end }}{{ end }}",
   "inLanguage" : "{{ .Lang }}",
-  {{ if .Params.author -}}
-    "author": {
-      "@type": "Person",
-      "name": "{{ .Params.author }}"
+  "author": {
+    "@type": "Person",
+    "name" : "{{ if .Params.author -}}{{ .Params.author }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}"
   },
-  {{- else if .Site.Author.name -}}
-    "author": {
-      "@type": "Person",
-      "name": "{{ .Site.Author.name }}"
-  },
-  {{- end }}
   "copyrightYear" : "{{ .Site.Params.since }} - {{ .Site.LastChange.Format "2006" }}",
   {{ if not .PublishDate.IsZero -}}
     "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}",
@@ -36,7 +29,8 @@
   "keywords" : [ "{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}" ],
   "publisher" : {
     "@type": "Organization",
-    "name" : "{{ .Site.BaseURL }}",
+    "name": "{{ .Site.Title }}",
+    "url" : "{{ .Site.BaseURL }}",
     "logo" : {
         "@type" : "ImageObject",
         "url" : "{{ .Site.Params.image | absURL }}",

@@ -2,8 +2,8 @@
 {
   "@context": "http://schema.org",
   "@type": "Organization",
-  "name": "{{ .Site.Params.organizationName }}",
-  "url": "{{ .Site.BaseURL }}"
+  "name": "{{ .Site.Title }}",
+  "url" : "{{ .Site.BaseURL }}",
   {{ with .Site.Params.socialProfiles }}, "sameAs": {{ . }}{{ end }}
   {{ with .Site.Params.organizationLogo }}, "logo": "{{ . }}"{{ end }}
   {{ with .Site.Params.organizationAddress }}, "address": "{{ . }}"{{ end }}
