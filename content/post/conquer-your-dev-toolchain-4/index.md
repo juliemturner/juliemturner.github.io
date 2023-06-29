@@ -118,7 +118,7 @@ Now if I run an “npm i” all these dependencies will be loaded into my node\_
 
 ### SASS/SCSS
 
-Sass stands for “Syntactically Awesome Style Sheets” and its file extension is _scss_. Once I tried Sass I’ve never looked back as it makes those things that you should be able to do in stylesheets easy by providing features like variables, nesting, partials, inheritance, and operators. If you've never tried it check out the [Sass site](https://sass-lang.com/guide) for some easy getting started snippets. To include Sass files in your project you need to include a few modules to help Webpack out.
+Sass stands for “Syntactically Awesome Style Sheets” and its file extension is _scss_. Once I tried Sass I’ve never looked back as it makes those things that you should be able to do in stylesheets easy by providing features like variables, nesting, partials, inheritance, and operators. If you've never tried it check out the [Sass site](https://sass-lang.com/guide/) for some easy getting started snippets. To include Sass files in your project you need to include a few modules to help Webpack out.
 
 ```json
 "node-sass": "~4.7.2",
