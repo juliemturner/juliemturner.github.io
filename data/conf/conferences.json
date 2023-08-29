@@ -29,6 +29,26 @@
         "alt": "365 EduCon Speaker June 2023"
       },
       "expire": "2023-06-16T23:59:00Z"
+    },
+    {
+      "title": "CollabDays New England",
+      "subtitle": "October 21, 2023 - Burlington, MA",
+      "url": "https://www.collabdays.org/2023-ne/register/",
+      "img": {
+        "src": "conf/CDNE_M365_2023.png", 
+        "alt": "CollabDays New England 202"
+      },
+      "expire": "2023-10-21T23:59:00Z"
+    },
+    {
+      "title": "365 EduCon - Chicago",
+      "subtitle": "October 30 - November 3, 2023 - Chicago, IL",
+      "url": "https://365educon.com/Chicago/tickets",
+      "img": {
+        "src": "", 
+        "alt": ""
+      },
+      "expire": "2023-11-3T23:59:00Z"
     }
   ]
 }
