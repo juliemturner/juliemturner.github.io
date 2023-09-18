@@ -1,7 +1,7 @@
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
-  "@type": "Article",
+  "@type": "Person",
   "author": {
     "@type": "Person",
     "name" : "{{ if .Params.author -}}{{ .Params.author }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}"
