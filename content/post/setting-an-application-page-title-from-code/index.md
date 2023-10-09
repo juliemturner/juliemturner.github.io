@@ -11,7 +11,7 @@ aliases: ["/2011/06/setting-an-application-page-title-from-code/"]
 
 I'm currently dealing with a requirement where I need to the set an application page's title from the code behind. By default the form has a ContentPlaceHolder control with a ContentPlaceHolderID="PlaceHolderPageTitle" which in the master page is the text that will fall in the header's title tag. Unfortunately, _<asp:Content>_ controls are not added to the hierarchy at runtime so I can't access it directly.
 
-There are good ways to modify this title on the client side with Javascript but client side code doesn't really suit my needs as the title will come from some custom manipulation that's better done on the server. It did cross my mind that I could do this minipulation and then post it back in script to have it update but it seemed kind of like taking the long way around. Anyway, long story short I found a way to access that title in the Page\_Load event but if anyone out there has any better ideas I'd love to hear them.
+There are good ways to modify this title on the client side with Javascript but client side code doesn't really suit my needs as the title will come from some custom manipulation that's better done on the server. It did cross my mind that I could do this manipulation and then post it back in script to have it update but it seemed kind of like taking the long way around. Anyway, long story short I found a way to access that title in the Page\_Load event but if anyone out there has any better ideas I'd love to hear them.
 
 ```C#
 using System.Web.UI.HtmlControls;

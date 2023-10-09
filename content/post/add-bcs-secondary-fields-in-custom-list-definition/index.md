@@ -10,11 +10,11 @@ tags:
 aliases: ["/2011/05/add-bcs-secondary-fields-in-custom-list-definition/"]
 ---
 
-When working with BCS data and creating an external data column in a list or library it is often desirable to show some or all of the secondary fields. In the SharePoint UI, this is a simple task, completed by checking off the fields to capture for viewing, searching, filtering, and sorting later. 
+When working with BCS data and creating an external data column in a list or library it is often desirable to show some or all of the secondary fields. In the SharePoint UI, this is a simple task, completed by checking off the fields to capture for viewing, searching, filtering, and sorting later.
 
 {{< figure src="BCSSecondaryFields1.gif" alt="BCSSecondaryFields1">}}
 
-However, when you're building your list or library using a custom list definition schema.xml file this is not as simple. After struggling a bit trying to code the XML myself, it dawned on me that I could mock up the field using the UI and then extract the properly formated field tags by getting the schemaxml property of the list. 
+However, when you're building your list or library using a custom list definition schema.xml file this is not as simple. After struggling a bit trying to code the XML myself, it dawned on me that I could mock up the field using the UI and then extract the properly formatted field tags by getting the schemaxml property of the list.
 
 {{< figure src="BCSSecondaryFields2.gif" alt="BCSSecondaryFields2">}}
 
@@ -22,7 +22,7 @@ There are various ways to do this but I've found the simplest way it to use a to
 
 1. Browse to the list/library definition using SharePoint Manager
 2. Copy and paste the SchemaXML property into a text file
-3. Save the text file with an XML extention
+3. Save the text file with an XML extension
 4. Open the XML file in Visual Studio (or some other XML editor). If using Visual Studio, select "Format Document" from the Edit/Advanced menu (Ctrl+E, D)
 5. Scroll down to find the external data field you created through the UI. You're looking for a `<Field>` tag with the Type attribute equal to "BusinessData" The next `<Field>` tag with Type="Note" will be the hidden field that stores the key value for the selected value. All the additional `<Field>` tags that follow will be the secondary fields you selected in the UI.
 

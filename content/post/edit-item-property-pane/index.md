@@ -69,7 +69,7 @@ export default class SpfxItemPropPaneWebPart extends BaseClientSideWebPart {
 
   //Function to display the property pane.
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    //isRenderedByWebPart is true when the property pane is being opened becuase of a code call and false if it's being opened due to the user clicking the web parts edit icon.
+    //isRenderedByWebPart is true when the property pane is being opened because of a code call and false if it's being opened due to the user clicking the web parts edit icon.
     if(this.context.propertyPane.isRenderedByWebPart()) return this.getItemPropertyPaneConfiguration();
     return this.getWebPartPropertyPaneConfiguration();
   }
@@ -138,7 +138,7 @@ export default class SpfxItemPropPane extends React.Component {
     super();
   }
 
-  //Calls the editItem function defined whyen the component was declared (adding a new item)
+  //Calls the editItem function defined when the component was declared (adding a new item)
   public addBox(event){    
     this.props.editItem(-1);
   }

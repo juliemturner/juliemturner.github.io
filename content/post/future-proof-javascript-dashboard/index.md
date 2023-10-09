@@ -24,7 +24,7 @@ For all the great information, please see Bob's article that talks about Future 
 * 2010 Sample: [https://code.msdn.microsoft.com/Future-Proof-Javascript-90b223e2](https://code.msdn.microsoft.com/Future-Proof-Javascript-90b223e2 "https://code.msdn.microsoft.com/Future-Proof-Javascript-90b223e2")
 * 2013 Sample: [https://code.msdn.microsoft.com/2013-Javascript-Dashboard-5f0ca16a](https://code.msdn.microsoft.com/2013-Javascript-Dashboard-5f0ca16a "https://code.msdn.microsoft.com/2013-Javascript-Dashboard-5f0ca16a")
 
-**More Future Proof Code Samples from Bob German**
+## More Future Proof Code Samples from Bob German
 
 * For 2010 - [https://code.msdn.microsoft.com/SharePoint-Provisioning-88f963ab](https://code.msdn.microsoft.com/SharePoint-Provisioning-88f963ab)
 * For 2013 - [https://code.msdn.microsoft.com/SharePoint-Provisioning-416ddb5f](https://code.msdn.microsoft.com/SharePoint-Provisioning-416ddb5f)

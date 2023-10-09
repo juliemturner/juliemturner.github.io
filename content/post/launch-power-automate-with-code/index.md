@@ -66,7 +66,7 @@ First is the request trigger connection. I set this up with the following JSON p
 }
 ```
 
-Next I added the SharePoint "Create item" action and set the values of the item with variables from my request trigger body. Note that I've made sure the action is running under the helpdesk@sympraxisconsulting.com user. This way the user will have permissions to add the item to the list.
+Next I added the SharePoint "Create item" action and set the values of the item with variables from my request trigger body. Note that I've made sure the action is running under the <helpdesk@sympraxisconsulting.com> user. This way the user will have permissions to add the item to the list.
 
 {{< figure src="FlowCreateItem.png" alt="FlowCreateItem">}}
 

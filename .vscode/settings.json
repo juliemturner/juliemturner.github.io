@@ -1,3 +1,17 @@
 {
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "cSpell.words": [
+    "bigimg",
+    "crosspost",
+    "customizers",
+    "expirydate",
+    "graphfi",
+    "Klindt",
+    "Kokkarinen",
+    "lastmod",
+    "pnpjs",
+    "SPFI",
+    "spfx",
+    "webpart"
+  ]
 }

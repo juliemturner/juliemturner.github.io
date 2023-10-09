@@ -12,9 +12,9 @@ SEO:
 aliases: ["/2011/11/using-sql-reporting-services-report-viewer-web-part-to-display-access-services-report/"]
 ---
 
-As you may or may not be aware when an Access database is published to a SharePoint site the reports in the database are converted into SQL Reporting Services reports.  Great, you think... that should mean you can host the report elsewhere in the SharePoint higherarchy simply by using the SQL Reporting Services Report Viewer Web Part.  And in fact, you can, it's just a little tricky getting it configured.  Certainly not anything you can't overcome but hopefully by posting this information it'll help save some time.
+As you may or may not be aware when an Access database is published to a SharePoint site the reports in the database are converted into SQL Reporting Services reports.  Great, you think... that should mean you can host the report elsewhere in the SharePoint hierarchy simply by using the SQL Reporting Services Report Viewer Web Part.  And in fact, you can, it's just a little tricky getting it configured.  Certainly not anything you can't overcome but hopefully by posting this information it'll help save some time.
 
-So first, we need to create the page that we're going to put our report on.  Next, you're going to want to insert a SQL Reporting Services Report Viewer Web Part.  And finally, we need to configure it, which includes setting the location of the report as well as any report aparameters.
+So first, we need to create the page that we're going to put our report on.  Next, you're going to want to insert a SQL Reporting Services Report Viewer Web Part.  And finally, we need to configure it, which includes setting the location of the report as well as any report parameters.
 
 ## Configuring the Web Part
 
