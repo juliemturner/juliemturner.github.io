@@ -48,7 +48,7 @@ Ok, now we need to fill in the onPostRenderTemplate function.  Primarily, we ne
 } 
 ```
 
-The answer is JavaScript prototype function keys which seems to be fairly well [supported](https://kangax.github.io/compat-table/es5/#Object.keys "supported").
+The answer is JavaScript prototype function keys which seems to be fairly well `supported`(_link no longer available_).
 
 > The `**Object.keys()**` method returns an array of a given object's own enumerable properties, in the same order as that provided by a [`for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in "The for..in statement iterates over the enumerable properties of an object, in arbitrary order. For each distinct property, statements can be executed.") loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
 
