@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL Reporting Services on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/sql-reporting-services/</link>
+    <description>Recent content in SQL Reporting Services on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/sql-reporting-services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using SQL Reporting Services Report Viewer Web Part to display Access Services report.</title>
+      <link>https://juliemturner.net/post/sql-reporting-services-report-viewer-web-part-access-services-report/</link>
+      <pubDate>Mon, 07 Nov 2011 16:25:31 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sql-reporting-services-report-viewer-web-part-access-services-report/</guid>
+      <description>As you may or may not be aware when an Access database is published to a SharePoint site the reports in the database are converted into SQL Reporting Services reports. Great, you think&amp;hellip; that should mean you can host the report elsewhere in the SharePoint hierarchy simply by using the SQL Reporting Services Report Viewer Web Part. And in fact, you can, it&amp;rsquo;s just a little tricky getting it configured. Certainly not anything you can&amp;rsquo;t overcome but hopefully by posting this information it&amp;rsquo;ll help save some time.</description>
+    </item>
+    
+  </channel>
+</rss>

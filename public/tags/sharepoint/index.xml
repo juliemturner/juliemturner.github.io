@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SharePoint on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/sharepoint/</link>
+    <description>Recent content in SharePoint on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/sharepoint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SharePoint App Catalog Development Tips</title>
+      <link>https://juliemturner.net/post/sp-appcatalog-dev-tips/</link>
+      <pubDate>Mon, 03 May 2021 18:39:33 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sp-appcatalog-dev-tips/</guid>
+      <description>After several years of building SharePoint Framework solutions on an almost daily basis you get to the point where you’ve managed to find some things that work pretty well. I recently started a new project and after sharing them with the team realized that maybe these tips would be useful to others and so thought to consolidate them into a list.
+Change the default view for the tenant app catalog Probably not the oddest, but certainly in a top 10 oddest OOB settings in SharePoint, is the list view settings for the default view in the tenant app catalog for SharePoint apps which groups by Product ID.</description>
+    </item>
+    
+    <item>
+      <title>What is a &#39;Dev Tenant&#39; and why would you want one?</title>
+      <link>https://juliemturner.net/post/dev-tenant/</link>
+      <pubDate>Wed, 06 Jan 2021 15:53:37 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/dev-tenant/</guid>
+      <description>This content has also been posted on Microsoft 365 Platform Community Blog.When someone says to you, they are using their “dev tenant” what they’re probably referring to is their personal development “sandbox” they received as part of joining the Microsoft 365 developer program.
+By visiting Developer Program - Microsoft 365 and selecting “Join Now” you’ll be walked through a wizard that will help you provision your very own Microsoft 365 tenant.</description>
+    </item>
+    
+    <item>
+      <title>Curate the News: Social Following Sites on behalf of a user</title>
+      <link>https://juliemturner.net/post/curate-news-for-user/</link>
+      <pubDate>Mon, 18 Feb 2019 13:51:20 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/curate-news-for-user/</guid>
+      <description>Curate the News Social Following Sites on behalf of a user The impetus for this post was the desire to follow a site for a batch of users. Why? Well, the news that shows up on the SharePoint home page stems from news posted to sites you follow. So as an organization, especially a large one, if you want to somewhat curate what news gets pushed to your users you need to make sure they’re following the sites that have the news you want them to see.</description>
+    </item>
+    
+    <item>
+      <title>Managing the Unified Group in Office 365 for SharePoint and Beyond</title>
+      <link>https://juliemturner.net/post/managing-unifed-group/</link>
+      <pubDate>Tue, 10 Apr 2018 13:24:04 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/managing-unifed-group/</guid>
+      <description>Introduction Azure Active Directory (AAD) Unified Groups, or better known as Office365 Groups, the security principal that underlies modern SharePoint team sites, Teams, Outlook Groups, Planner, etc. is a very powerful management construct that is the glue that holds the Office 365 security pyramid together. Basically, a Unified Group has both an Owners group and a Members group and by adding users (either users in your tenant or external users – with a Microsoft based work and school account or a personal account) you can create a construct that allows you to work across many of the vast product offerings in Office 365.</description>
+    </item>
+    
+    <item>
+      <title>Harvesting your SharePoint Site Collections</title>
+      <link>https://juliemturner.net/post/harvesting-sharepoint-sites/</link>
+      <pubDate>Tue, 20 Mar 2018 11:36:31 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/harvesting-sharepoint-sites/</guid>
+      <description>One of the things I’ve been working on lately is harvesting a complete listing of all the site collections in a tenant, including as much metadata as possible. Some of the metadata I’m looking for revolves around adding governance to managing your catalog of sites, especially in a large tenant. For sure I think the SharePoint product group has visibility into the needs here but to get full fidelity might take significantly longer than you can wait.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint – Part 4</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</link>
+      <pubDate>Tue, 16 Jan 2018 14:43:38 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</guid>
+      <description>For this last post I want to take what we’ve learned and add the final pieces that have you creating web parts in the same way you would modern SPFx web parts and solutions. We’re going to start by discussing TypeScript and then briefly touch on Sass and how to include these languages into your new Webpack/Gulp environment.
+TypeScript is becoming almost ubiquitous in modern web development. The pros are numerous, my favorites are the ability to write code to target older browser with modern capabilities, and the ability to use a version of intellisense to validate your objects properties and methods.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 3</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</link>
+      <pubDate>Thu, 11 Jan 2018 14:29:46 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</guid>
+      <description>In our last post I went through the gulp process we were implementing to watch our files and upload them into an appropriate SharePoint library so that we can test our work inside SharePoint regardless of if SharePoint was version 2007 or SharePoint Online. Now we’re going to take things further and formalize our process. One of the tools the SharePoint Framework (SPFx) uses is Webpack. Webpack’s main goal is to take the many files that you create as a developer and bundle them all together into one JavaScript file.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 2</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</link>
+      <pubDate>Tue, 09 Jan 2018 14:47:29 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</guid>
+      <description>In the first post in this series I discussed some of the benefits of formalizing your client-side development process and then a bit about starting the process of tooling up. A common scenario to develop our own client-side solutions in SharePoint is to point a Content Editor (CEWP) or Script Editor (SEWP) web part at our custom html, css, and js files that are sitting in a document library somewhere in our environment.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 1</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</link>
+      <pubDate>Fri, 05 Jan 2018 16:20:59 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</guid>
+      <description>Last year, around this time, Marc and I agreed we should write a blog series on our development process. As often happens good intentions get buried in other commitments, but I’ve finally managed to circle back on this topic which I’m finding has become more important than ever. Over the last year the SharePoint Framework has taken off. Although it still doesn’t support the paradigm that I most often am developing for - the full-page app hosted in SharePoint - I still think it’s a great model for development.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint REST Date/Time field Item Updates</title>
+      <link>https://juliemturner.net/post/sharepoint-rest-datetime-update/</link>
+      <pubDate>Mon, 06 Nov 2017 20:25:15 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sharepoint-rest-datetime-update/</guid>
+      <description>A recent comment on my blog post “SharePoint time, is not your time, is not their time.” has prompted me to create a short addendum post that specifically references updates and how your thinking might differ from displaying SharePoint date/time values. To recap our example, I was discussing how to manipulate the date values to have your client-side code mimic (or not) the regional settings of your SharePoint site. The question was raised about how to deal with dates when doing POST to a SharePoint list or library from your client-side code.</description>
+    </item>
+    
+    <item>
+      <title>Azure Function Development-Deployment Strategy</title>
+      <link>https://juliemturner.net/post/azure-function-development-deployment-strategy/</link>
+      <pubDate>Tue, 05 Sep 2017 15:15:50 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/azure-function-development-deployment-strategy/</guid>
+      <description>There will be some that find what I’m about to say entirely obvious. For those that don’t this is a great way to think about development when the terminology changes but really everything stayed the same. Azure Functions are billed as “serverless computing”, and as I’m sure most of you have figured out already, all this really means is that the Azure extrapolates the complexity of managing the hardware and infrastructure that allows your code to execute.</description>
+    </item>
+    
+    <item>
+      <title>Creating a property pane for editing items in your SPFx web parts</title>
+      <link>https://juliemturner.net/post/edit-item-property-pane/</link>
+      <pubDate>Mon, 17 Jul 2017 12:34:43 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/edit-item-property-pane/</guid>
+      <description>It’s a great privilege and great fun to work with the exceptional team at Shire now part of Takeda that’s building a bleeding edge intranet to support their now 24,000 employees and growing. The team is exploring some very new territory and learning a lot along the way. During last weeks webinar, Microsoft’s Mark Kashman promised we’d post some of the lessons learned in the project. It’s my pleasure to share with the greater world a tidbit of that knowledge in the form of how to create a property pane for an individual item, not just the web part using the SharePoint Framework (SPFx).</description>
+    </item>
+    
+    <item>
+      <title>How to work with SharePoint datetime localization/timezones in JavaScript</title>
+      <link>https://juliemturner.net/post/sharepoint-datetime/</link>
+      <pubDate>Mon, 17 Apr 2017 23:54:27 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sharepoint-datetime/</guid>
+      <description>If you develop client side solutions for SharePoint you’ve either run into this or you will run into the following scenario. SharePoint stores all its date/time fields in UTC time. The site collections, sites, and the users, can have their own time zone settings. If you’re using SharePoint out of the box because all the content is rendered on the server and pushed to the client with all the date/time translation has been done for you.</description>
+    </item>
+    
+    <item>
+      <title>Greetings from New Hampshire, Where I’m Co-Authoring a Document</title>
+      <link>https://juliemturner.net/post/coauthoring-a-document/</link>
+      <pubDate>Fri, 03 Feb 2017 16:05:47 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/coauthoring-a-document/</guid>
+      <description>As Marc said in his post on this experience, which of course he published before me, he and I needed to do some work on a Word document together today. We started by emailing, but almost immediately realized we should just share it on our OneDrive. I was in browser at the time, but have since continued to co-author it in Word on my desktop. I’m not going to lie, I’ve had problems with the co-authoring experience in the past, but was keeping an open mind since Marc and I recently “upgraded” (not sure that’s the right word) to the “First Release for Current Channel (Office Insider Slow)” version of Office 2016.</description>
+    </item>
+    
+    <item>
+      <title>Use REST to create SharePoint Document Set (and set metadata)</title>
+      <link>https://juliemturner.net/post/sp-docset-metadata-rest/</link>
+      <pubDate>Mon, 14 Nov 2016 20:16:14 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sp-docset-metadata-rest/</guid>
+      <description>A quick post today to augment what&amp;rsquo;s out there in the &amp;ldquo;Googleverse&amp;rdquo;. I needed to create a Document Set in client side code, and went out to find the appropriate calls to make that happen. To update the metadata on the folder you create (which is all a Document Set really is under the covers), you simply make an &amp;ldquo;almost&amp;rdquo; normal list item update call. So the following is the various &amp;ldquo;functions&amp;rdquo; you need and how to string them together to do this task.</description>
+    </item>
+    
+    <item>
+      <title>Special Characters in REST ListItem Metadata</title>
+      <link>https://juliemturner.net/post/special-characters-in-rest-listitem-metadata/</link>
+      <pubDate>Mon, 12 Sep 2016 21:07:17 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/special-characters-in-rest-listitem-metadata/</guid>
+      <description>I&amp;rsquo;m constantly trying to remember which way to encode content when making calls to the server while developing client side solutions for SharePoint. Usually it&amp;rsquo;s some form of JavaScript&amp;rsquo;s encodeURI()/encodeURIComponent() functions&amp;hellip; but this latest one gave me a bit of trouble until I finally figured it out which encoding to use and, almost as important, when to apply it.
+When making RESTful calls to update or create data in a SharePoint list you must include the &amp;ldquo;__metadata&amp;rdquo; (two underscores followed by &amp;lsquo;metadata&amp;rsquo;) property in the information object you send on the data property of the call.</description>
+    </item>
+    
+    <item>
+      <title>Code Creep: SharePoint &#34;CDN&#34; with Document Libraries</title>
+      <link>https://juliemturner.net/post/code-creep-sharepoint-cdn/</link>
+      <pubDate>Tue, 06 Sep 2016 14:00:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/code-creep-sharepoint-cdn/</guid>
+      <description>Centralizing your SharePoint client side code “Code Creep”… no it’s not the latest thriller movie out of Hollywood, although it probably could be. I’m referring to the sprawl of client side code files that are stored when implementing client side web parts or &amp;ldquo;widgets&amp;rdquo; in SharePoint. A common solution for implementing &amp;ldquo;widgets&amp;rdquo; in SharePoint is to store the files in a document library, linking to them with a CEWP that will then run and render your “widget”.</description>
+    </item>
+    
+    <item>
+      <title>Sympraxis Development Process</title>
+      <link>https://juliemturner.net/post/sympraxis-development-process/</link>
+      <pubDate>Tue, 16 Aug 2016 17:23:47 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sympraxis-development-process/</guid>
+      <description>Marc and I discussed in our August Sympraxis Newsletter starting a blog series to share what we’re learning while implementing a SharePoint client side development process. So this is my first post on the topic, and here’s a link to his first post… it’s interesting to see how different our perspectives on the process were.
+In all my previous experience I’ve either been in a team or in a regulated industry or both.</description>
+    </item>
+    
+    <item>
+      <title>Enter key gone bad</title>
+      <link>https://juliemturner.net/post/enter-key-gone-bad/</link>
+      <pubDate>Fri, 18 Mar 2016 16:12:50 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/enter-key-gone-bad/</guid>
+      <description>This morning I had an issue trying to implement a Phone Directory on a client’s home page. The UI incorporated a First Name and a Last Name input box and a “Go” button. But as we all know, users like to hit Enter, and we all want to try and support the best user experiences we can. However, SharePoint&amp;rsquo;s default implementation of the Enter key can sometimes put the page in edit mode…</description>
+    </item>
+    
+    <item>
+      <title>Widget Wrangler Webcast and New Release</title>
+      <link>https://juliemturner.net/post/widget-wrangler-webcast-and-new-release/</link>
+      <pubDate>Mon, 14 Mar 2016 20:36:26 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/widget-wrangler-webcast-and-new-release/</guid>
+      <description>This content has also been posted on Bob German&amp;#39;s Vantage Point.Widget Wrangler Webcast and New Release Here’s a quick update on the Widget Wrangler – the light-weight JavaScript framework that helps you build flexible widgets that can be used in SharePoint content editor web parts, add-in parts, or really pretty much everywhere.
+The Widget Wrangler was featured in a webcast on Channel 9 today (Video has been removed). The Office team’s Vesa Juvonen interviewed WW creators Julie Turner and Bob German, who explained the framework and demonstrated how to use it with AngularJS, jQuery, and plain old JavaScript.</description>
+    </item>
+    
+  </channel>
+</rss>

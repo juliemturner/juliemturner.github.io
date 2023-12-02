@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PowerShell on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/powershell/</link>
+    <description>Recent content in PowerShell on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harvesting your SharePoint Site Collections</title>
+      <link>https://juliemturner.net/post/harvesting-sharepoint-sites/</link>
+      <pubDate>Tue, 20 Mar 2018 11:36:31 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/harvesting-sharepoint-sites/</guid>
+      <description>One of the things I’ve been working on lately is harvesting a complete listing of all the site collections in a tenant, including as much metadata as possible. Some of the metadata I’m looking for revolves around adding governance to managing your catalog of sites, especially in a large tenant. For sure I think the SharePoint product group has visibility into the needs here but to get full fidelity might take significantly longer than you can wait.</description>
+    </item>
+    
+  </channel>
+</rss>

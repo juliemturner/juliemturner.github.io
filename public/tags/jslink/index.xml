@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JSLink on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/jslink/</link>
+    <description>Recent content in JSLink on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/jslink/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JSLink Validation – from Basic to Advanced</title>
+      <link>https://juliemturner.net/post/jslink-validation-from-basic-to-advanced/</link>
+      <pubDate>Mon, 31 Aug 2015 13:30:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/jslink-validation-from-basic-to-advanced/</guid>
+      <description>Custom field validation using JSLink is an extremely powerful beast. In this post I’m going to make an effort to demystify the different levels of validation you can put into your custom template and how to put it together. Everything I’m about to cover has been covered before in different ways and in different combinations. My hope is that this will help separate out what’s needed and what’s not depending on your scenario… so to that end I’ll cover three scenarios.</description>
+    </item>
+    
+    <item>
+      <title>JSLink Custom User Field Schema</title>
+      <link>https://juliemturner.net/post/jslink-custom-user-field-schema/</link>
+      <pubDate>Fri, 28 Aug 2015 19:13:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/jslink-custom-user-field-schema/</guid>
+      <description>I had the requirement of setting the default value of a person field to the current user. After looking around in the great wide internet I found a very helpful article by Glenn Reian article by Glenn Reian which got me started.
+Where I ran into a problem was that my user field had customized settings that weren&amp;rsquo;t being pulled through into the custom implementation of my people picker. As it turns out the issue was with the schema that is passed to the SPClientPeoplePicker_InitStandaloneControlWrapper function.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint 2013 JSLink - All Fields Rendered</title>
+      <link>https://juliemturner.net/post/sharepoint-2013-jslink-all-fields-rendered/</link>
+      <pubDate>Wed, 26 Aug 2015 19:41:41 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sharepoint-2013-jslink-all-fields-rendered/</guid>
+      <description>While creating a custom Client Template using JSLink, I came up against the issue of knowing when all the fields were rendered on the form. To explain where the issue arises let me first take just a moment to explain when building a custom template for this type of form, where you want to manipulate the fields, you have available to you both a Pre and Post Render function. What that does is fire the function attached to it either pre or post each custom field rendering being executed.</description>
+    </item>
+    
+  </channel>
+</rss>

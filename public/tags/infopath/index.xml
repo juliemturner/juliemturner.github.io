@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>InfoPath on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/infopath/</link>
+    <description>Recent content in InfoPath on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/infopath/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quick Primer on InfoPath and SharePoint 2010 Time Zones</title>
+      <link>https://juliemturner.net/post/infopath-and-sharepoint-2010-time-zones/</link>
+      <pubDate>Thu, 31 Jan 2013 13:28:46 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/infopath-and-sharepoint-2010-time-zones/</guid>
+      <description>InfoPath decrepcated functions such as Today() and Now() pick up the time zone based on the settings of the SharePoint server. By default the web is set to the time zone of the server, which is thereby the default of any new sites created as well as new user profiles created. For global organizations with users around the world, there are situations where you will want the automated date/time stamps to display the local time for the user rather than the server time.</description>
+    </item>
+    
+    <item>
+      <title>InfoPath - Show links to documents in a library from the form</title>
+      <link>https://juliemturner.net/post/infopath-show-links-to-documents-in-a-library/</link>
+      <pubDate>Fri, 11 Jan 2013 20:00:38 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/infopath-show-links-to-documents-in-a-library/</guid>
+      <description>I had an interesting client issue recently where the users were copying and pasting the contents of entire e-mail messages into a text box inside an InfoPath decrepcated form. Although useful in that the information was captured with the form, the implementation was tedious at best when trying to find information potentially buried there. Long story short by putting the e-mail messages in a document library that was linked to the InfoPath form library by the ID I was able to have a parent-child relationship.</description>
+    </item>
+    
+  </channel>
+</rss>

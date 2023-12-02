@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2P5EMX0ZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2P5EMX0ZL');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+  
+  <title>Utilizing ngOfficeUIFabric People Picker in SharePoint</title>
+  <meta name="description" content="One of the great joys of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the …" />
+<meta name="author" content="Julie Turner"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Veni, Vidi, Vici",
+    
+    "url": "https:\/\/juliemturner.net\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Veni, Vidi, Vici",
+  "url" : "https:\/\/juliemturner.net\/",
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/post\/utilizing-ngofficeuifabric-people-picker-in-sharepoint\/",
+          "name": "Utilizing ng office uifabric people picker in share point"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "author": {
+    "@type": "Person",
+    "name" : "Julie Turner"
+  },
+  "headline": "Utilizing ngOfficeUIFabric People Picker in SharePoint",
+  "description" : "One of the great joys of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the Taxonomy Picker and the People Picker. If you’re sensing sarcasm, you would be correct. There are brave souls out there who recreated these components for us that utilize no less than five (and sometimes more) Microsoft Javascript libraries. The reality is, for the People Picker, which is what I’m going to be discussing today, you’re really looking for a type ahead input field that filters a list of people that you can retrieve from SharePoint.",
+  "inLanguage" : "en",
+  "wordCount":  1809 ,
+  "datePublished" : "2017-05-24T12:41:14",
+  "dateModified" : "2017-05-24T12:41:14",
+  "image" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+  "keywords" : [ "JavaScript" ],
+  "mainEntityOfPage" : "https:\/\/juliemturner.net\/post\/utilizing-ngofficeuifabric-people-picker-in-sharepoint\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name": "Veni, Vidi, Vici",
+    "url" : "https:\/\/juliemturner.net\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+<meta property="og:url" content="https://juliemturner.net/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Utilizing ngOfficeUIFabric People Picker in SharePoint" />
+<meta property="og:description" content="One of the great joys of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the Taxonomy Picker and the People Picker. If you’re sensing sarcasm, you would be correct. There are brave souls out there who recreated these components for us that utilize no less than five (and sometimes more) Microsoft Javascript libraries. The reality is, for the People Picker, which is what I’m going to be discussing today, you’re really looking for a type ahead input field that filters a list of people that you can retrieve from SharePoint.">
+<meta property="og:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+<meta property="og:site_name" content="Veni, Vidi, Vici" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="julieturner.net">
+  <meta property="twitter:url" content="https://juliemturner.net/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/">
+  <meta name="twitter:title" content="Utilizing ngOfficeUIFabric People Picker in SharePoint" />
+  <meta name="twitter:description" content="One of the great joys of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the Taxonomy Picker and the People Picker. If …">
+  <meta name="twitter:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+  <meta name="generator" content="Hugo 0.111.3"><link rel="canonical" href="https://juliemturner.net/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/">
+  <link rel="alternate" href="https://juliemturner.net/index.xml" type="application/rss+xml" title="Veni, Vidi, Vici">
+
+  
+  <link rel="stylesheet" href="/sass/main.6773b8d3eb0c22652f9b8b334cc7d1738b1b87e527c955fc4871ca37b0915dab.css" integrity="sha256-Z3O40&#43;sMImUvm4szTMfRc4sbh&#43;UnyVX8SHHKN7CRXas=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://juliemturner.net/css/syntax.css" />
+  
+
+
+  
+</head>
+
+<body>
+  <a rel="me" href="https://home.social/@sympjulie"></a>
+  <div class="jt-wrapper">
+    <header class="jt-header">
+      
+<nav class="jt-navbar">
+    
+    <a class="jt-logo" title="Veni, Vidi, Vici" href="https://juliemturner.net/" alt="Julie Turner development blog for Microsoft 365, SharePoint, Teams, and Azure">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img">
+  <title></title>
+  <path
+    d="m46.9 133.7.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.2 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.7 3h-3.9l-42.2 66.6-5 1.1zM135.2 119.7l-.7 3.6c-9.9 6.9-18.4 10.4-25.4 10.4-4.4 0-8-1.6-10.8-4.7-2.8-3.1-4.2-7.1-4.2-12.1 0-8.8 3.4-17.1 10.1-24.9 6.8-7.8 14-11.7 21.6-11.7 2.8 0 5 .9 6.8 2.8 1.7 1.9 2.6 4.3 2.6 7.3 0 6-3.1 11.2-9.2 15.5-6.1 4.3-13.5 6.5-22 6.5v2.1c0 9.1 3.3 13.7 10 13.7 5.9.1 12.9-2.7 21.2-8.5zm-31-10c7-.6 12.5-2.4 16.4-5.4 3.9-3 5.9-7 5.9-11.8 0-4.8-1.7-7.2-5.2-7.2-3.8 0-7.4 2.5-10.9 7.5-3.5 4.9-5.6 10.5-6.2 16.9zM149.4 133.1l3.5-14.5 4.6-23.2c.7-3.6 1.1-5.9 1.1-7 0-1.9-.9-2.9-2.8-2.9-3.1 0-7.7 3.4-14 10.3l.8-4.3c6.8-7.4 13-11.1 18.4-11.1 4.5 0 6.8 2.3 6.8 7 0 1.6-.4 4.3-1.1 8l-2.3 11.6h.7c3.9-8 8.3-14.4 13.3-19.3 4.9-4.9 9.5-7.3 13.8-7.3 5.1 0 7.7 2.8 7.7 8.5 0 1.8-.3 4.1-.8 6.8l-4.6 22.9c-.7 3.6-1.1 6-1.1 7 0 2 .9 3 2.8 3 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.3-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-8l4.6-23c.4-1.8.6-3.3.6-4.5 0-2.5-.9-3.8-2.8-3.8-6 0-14.3 9.5-24.9 28.4l-3.4 16.8-9.9.6zM246.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM248 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM348.3 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM427.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM468.4 107.1h-.8c-3.6 7.9-7.9 14.3-12.8 19.2-4.9 4.9-9.6 7.4-13.9 7.4-6.6 0-9.9-4.1-9.9-12.4 0-5.6 1.6-11.5 4.9-17.7 3.2-6.2 7.4-11.3 12.6-15.5 3.4-2.8 6.9-4.7 10.3-5.6 3.4-1 8.4-1.4 15-1.4 1.8-6.2 3.8-10.9 5.8-14.2 2-3.3 4.8-6.3 8.4-9.2 6.2-4.9 13-7.3 20.5-7.3 3.1 0 5.9.3 8.4 1l-6.4 6.7c-3.7-1.6-6.9-2.4-9.5-2.4-5 0-8.8 1.8-11.3 5.5-2.5 3.6-4.8 10.5-6.8 20.5l-7.4 37.2c-.8 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.5.4-4.2 1.1-8l2.2-11.8zm3.8-18.8c-3.9-1.8-7.8-2.6-11.7-2.6-5.7 0-10.2 3.6-13.6 10.8-4 8.5-6.1 16.2-6.1 22.9 0 4.9 1.5 7.4 4.4 7.4 2.7 0 6.6-2.8 11.6-8.5 5.1-5.7 9.5-12.1 13.3-19.4l2.1-10.6z" />
+  <path
+    d="m528 118.3-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM529.4 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM629.6 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM709 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM754 119.6l-.7 3.7c-10.3 6.9-18.7 10.4-25.2 10.4-4.5 0-8.2-1.5-10.9-4.6-2.8-3.1-4.1-7.1-4.1-12.2 0-9.1 3.4-17.5 10.3-25.1 6.9-7.6 14.5-11.4 22.7-11.4 3.6 0 7.2.8 10.8 2.4l-3.1 12.1h-2.9l.1-.7c.3-1.5.5-2.5.5-3.2 0-4.3-2.9-6.5-8.8-6.5-5.5 0-10.1 2.9-13.8 8.8-3.7 5.9-5.5 13.3-5.5 22.1 0 8.5 3.2 12.7 9.5 12.7 6 .1 13.1-2.8 21.1-8.5zM797.7 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4z" />
+</svg>
+    </a>      
+  
+  <menu class="jt-nav-links">
+    
+      
+        <li class="jt-nav-item">
+          <a title="Blog" href="/">Blog</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="About" href="/me/">About</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="Privacy Policy" href="/page/privacy-policy/">Privacy Policy</a>
+        </li>
+      
+    
+    
+  </menu>
+</nav>
+
+
+
+
+
+<dialog class="hoo-mdldialog-outer">
+  <div class="hoo-mdldialog" style="--lqdDialogHeight: 60vh; --lqdDialogWidth: 60vw;">
+    <div class="hoo-dlgheader">
+      <div class="hoo-dlgheader-title"><h2>Search Veni, Vidi, Vici</h2></div>
+      <div class="hoo-dlgheader-closer">
+        <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.hideDialog()">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="/icons.svg#icon-close"></use>
+            </svg>
+        </span>
+        </button>
+      </div>
+    </div>
+    <div class="hoo-dlgcontent">
+      <gcse:search></gcse:search>
+    </div>
+  </div>
+</dialog>
+      
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+    <div class="jt-article-header" style="background-image: url('ngOfficeUiFabric.png');">
+      
+      <div class="jt-post-heading">
+        <div class="jt-title">
+        <h1>Utilizing ngOfficeUIFabric People Picker in SharePoint</h1>
+          
+          
+            <div class="jt-post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on May 24, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1809&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Julie Turner
+    
+  
+</div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  
+
+    </header>
+    <article class="jt-content">      
+      
+<div class="jt-article" role="main">  
+  <article role="main" class="blog-post">
+    <p>One of the great <em>joys</em> of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the Taxonomy Picker and the People Picker. If you’re sensing sarcasm, you would be correct. There are brave souls out there who recreated these components for us that utilize no less than five (and sometimes more) Microsoft Javascript libraries. The reality is, for the People Picker, which is what I’m going to be discussing today, you’re really looking for a type ahead input field that filters a list of people that you can retrieve from SharePoint. Sounds easy right… *sigh* if only.</p>
+<p>If you&rsquo;ve started using the new SharePoint Framework (SPFx) there is a big push to use the <a href="https://dev.office.com/fabric">OfficeUIFabric</a>. This framework provides not only styling but components that mimic what we’re given out of the box. Unfortunately, if you’re not a <a href="https://react.dev/">React</a> framework user it seems that the investment by Microsoft is significantly lacking. I suppose this makes sense. Regardless, a team of non-Microsoft people embarked on a community project to create an AngularJS version of this library, <a href="https://ngofficeuifabric.com/">ngOfficeUIFabric</a>. Although it has some issues, overall it seems to work pretty well, but given it took me a bit to figure out what does and doesn’t work and exactly the best way to wire it up I thought I’d share my findings. This is where you can find the online <a href="https://ngofficeuifabric.com/demos/uifPeoplePicker/">demo</a> for the people picker.</p>
+<p>The idea, is to provide a function that either returns a list of people that match the query string (or not, there really is no requirement) or a promise to return a list of people. It supports Angular’s ng-model directive as well as ng-disabled. Obvious missing components are the ability to specify whether the field should be multiselect or not (it’s always multiselect), and the ability to trigger any functions on selection or selection change, I believe this is potentially a bug. Never fear dear reader, we can get around these limitations for the most part and the ability to avoid seventeen million additional libraries is a huge plus. Further, the architecture will certainly work in modern… so for all you brave SPFx coders out there you can take the same principles and apply them to the React component or even this Angular component depending on which framework (you want to use).</p>
+<p>Ok, let’s get down to brass tacks…</p>
+<h2 id="data-source">Data Source</h2>
+<p>The people picker component wants an array of objects with the following attributes. We’ll call that object “Person”</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">initials</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">primaryText</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">secondaryText</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">presence</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">group</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">icon</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="kc">null</span><span class="p">};</span>
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initials</td>
+<td>Used in lieu of a users picture with a background color.</td>
+</tr>
+<tr>
+<td>primaryText</td>
+<td>The primary display text identifier of the user/group.</td>
+</tr>
+<tr>
+<td>secondaryText</td>
+<td>Some secondary information you want to highlight about the user/group.</td>
+</tr>
+<tr>
+<td>presence</td>
+<td>Text value, available options are available,  busy,  away,  blocked,  dnd,  offline</td>
+</tr>
+<tr>
+<td>group</td>
+<td>The results group you want to display the person in when the results of the search are displayed.  This takes the form of an object with the following properties { name: &ldquo;Results&rdquo;, order: 0 }</td>
+</tr>
+<tr>
+<td>color</td>
+<td>If there is no image, this will be the background color for the users “Initials” block.  Available options are lightBlue,  blue,  darkBlue,  teal,  lightGreen,  green,  darkGreen,  lightPink,  pink,  magenta,  purple,  black,  orange,  red,  darkRed</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>This is the URL to a thumbnail image of the user, if provided this will be used in lieu of the initials and color attribute.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Ideally this would be the id for the user in your site collection, but in lieu of that it’s a good option to use the users account name, or fully qualified domain name.</td>
+</tr>
+</tbody>
+</table>
+<p>Now that we understand what structure the data needs to take, we need to go get it. To my mind there are two ways to solve this problem, the first, and probably the easiest would be to use Search. By which I mean the <a href="https://dev.office.com/sharepoint/docs/general-development/sharepoint-search-rest-api-overview">Search REST endpoint</a> in SharePoint. That will be the direction I’ll take for this post, that said, you could always leverage my previous <a href="/series/extending-sharepoint-with-adal-and-the-microsoft-graph-api/">series</a> on utilizing the Microsoft Graph API inside SharePoint and use that to get the results. That would have the distinct advantage of being able to provide significantly more interesting information about the user if you needed it.. like manager assuming your user data is complete and up to date {insert plug for <a href="https://hyperfish.com/">Hyperfish</a> here}.</p>
+<blockquote>
+<p>Note: NGFPP.currentSite is the url for the current site collection</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getPerson</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">accountName</span><span class="p">,</span> <span class="nx">department</span><span class="p">,</span> <span class="nx">pictureUrl</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">var</span> <span class="nx">newPerson</span> <span class="o">=</span> <span class="p">{</span><span class="nx">initials</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">primaryText</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">secondaryText</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">presence</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">group</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">icon</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">id</span><span class="o">:</span> <span class="kc">null</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//My results group name will be called ‘Results’ for all the people found by search
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kd">var</span> <span class="nx">resultsGroup</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;Results&#34;</span><span class="p">,</span> <span class="nx">order</span><span class="o">:</span> <span class="mi">0</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//Use a regex to get an array of the first letters of the users names
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kd">var</span> <span class="nx">userInitials</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\\b\\w/g</span><span class="p">)</span> <span class="o">||</span> <span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//Create a string of the initials
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="kd">var</span> <span class="nx">userInitialsResult</span> <span class="o">=</span> <span class="p">((</span><span class="nx">userInitials</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">userInitials</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">)).</span><span class="nx">toUpperCase</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">initials</span> <span class="o">=</span> <span class="nx">userInitialsResult</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">primaryText</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//This could be whatever you want
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">secondaryText</span> <span class="o">=</span> <span class="nx">department</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//Since I don&#39;t have real information I felt offline was the best policy
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">presence</span> <span class="o">=</span> <span class="s1">&#39;offline&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">group</span> <span class="o">=</span> <span class="nx">resultsGroup</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//I just like orange, you may want to randomize the available choices
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span><span class="p">(</span><span class="nx">pictureUrl</span> <span class="o">!=</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">pictureUrl</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">newPerson</span><span class="p">.</span><span class="nx">icon</span> <span class="o">=</span> <span class="nx">pictureUrl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="c1">//If you have the id, use it, otherwise you&#39;ll need to resolve the account name.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="nx">newPerson</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span> <span class="o">||</span> <span class="nx">accountName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="nx">newPerson</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">getPeopleSearch</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">queryString</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">$http</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">           <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json;odata=verbose&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s1">&#39;accept&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json;odata=verbose&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">       <span class="p">},</span>
+</span></span><span class="line"><span class="cl">       <span class="nx">url</span><span class="o">:</span> <span class="nx">NGFPP</span><span class="p">.</span><span class="nx">currentSite</span> <span class="o">+</span> <span class="s2">&#34;/\_api/search/query?querytext=&#39;&#34;</span> <span class="o">+</span> <span class="nx">queryString</span> <span class="o">+</span> <span class="s2">&#34;\*&#39;&amp;sourceid=&#39;B09A7990-05EA-4AF9-81EF-EDFAB16C4E31&#39;&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">       <span class="k">if</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">d</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">PrimaryQueryResult</span><span class="p">.</span><span class="nx">RelevantResults</span><span class="p">.</span><span class="nx">Table</span><span class="p">.</span><span class="nx">Rows</span><span class="p">.</span><span class="nx">results</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span><span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">]);}</span>
+</span></span><span class="line"><span class="cl">           <span class="kd">var</span> <span class="nx">queryResults</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">d</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">PrimaryQueryResult</span><span class="p">.</span><span class="nx">RelevantResults</span><span class="p">.</span><span class="nx">Table</span><span class="p">.</span><span class="nx">Rows</span><span class="p">.</span><span class="nx">results</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">           <span class="k">if</span><span class="p">(</span><span class="nx">queryResults</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">               <span class="kd">var</span> <span class="nx">searchResult</span> <span class="o">=</span> <span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">               <span class="kd">var</span> <span class="nx">formattedPeople</span> <span class="o">=</span> <span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">               <span class="c1">//AccountName //Department //Path //PictureURL //PreferredName
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">queryResults</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">                   <span class="c1">// Normalize the fields so that we can easily get the values by the key name
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                   <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">queryResults</span><span class="err">\</span><span class="p">[</span><span class="nx">i</span><span class="err">\</span><span class="p">].</span><span class="nx">Cells</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">                       <span class="nx">searchResult</span><span class="err">\</span><span class="p">[</span><span class="nx">queryResults</span><span class="err">\</span><span class="p">[</span><span class="nx">i</span><span class="err">\</span><span class="p">].</span><span class="nx">Cells</span><span class="p">.</span><span class="nx">results</span><span class="err">\</span><span class="p">[</span><span class="nx">j</span><span class="err">\</span><span class="p">].</span><span class="nx">Key</span><span class="err">\</span><span class="p">]</span> <span class="o">=</span> <span class="nx">queryResults</span><span class="err">\</span><span class="p">[</span><span class="nx">i</span><span class="err">\</span><span class="p">].</span><span class="nx">Cells</span><span class="p">.</span><span class="nx">results</span><span class="err">\</span><span class="p">[</span><span class="nx">j</span><span class="err">\</span><span class="p">].</span><span class="nx">Value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                  <span class="c1">//Create a new person object with the resulting values
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                   <span class="kd">var</span> <span class="nx">newPerson</span> <span class="o">=</span> <span class="nx">getPerson</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">searchResult</span><span class="p">.</span><span class="nx">PreferredName</span><span class="p">,</span> <span class="nx">searchResult</span><span class="p">.</span><span class="nx">AccountName</span><span class="p">,</span> <span class="nx">searchResult</span><span class="p">.</span><span class="nx">Department</span><span class="p">,</span> <span class="nx">searchResult</span><span class="p">.</span><span class="nx">PictureURL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">           <span class="c1">//Add the new person to the results array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                  <span class="nx">formattedPeople</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newPerson</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">               <span class="p">}</span>
+</span></span><span class="line"><span class="cl">               <span class="c1">//Return the results array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">formattedPeople</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">           <span class="p">}</span>
+</span></span><span class="line"><span class="cl">       <span class="p">},</span>
+</span></span><span class="line"><span class="cl">       <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">           <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Error retrieving user search.&#34;</span><span class="p">,</span> <span class="p">{</span><span class="nb">Error</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">data</span><span class="p">)});</span>
+</span></span><span class="line"><span class="cl">           <span class="nx">d</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">       <span class="p">});</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>Now, as you can see from a Search query I’m not going to be able to get the user&rsquo;s id which would be needed to set the value of a person field. In this scenario, I’m specifically attempting to get all the available users from our directory, not only the ones that have actually logged into our SharePoint site. So, before I’ll be able to create/update an item in a list I’ll need to convert that person’s id (account name) into an actual id from the hidden users list in the Site Collection. For that we can use the <a href="https://msdn.microsoft.com/en-us/library/office/dn499819.aspx#bk_WebEnsureUser">ensureuser</a> REST endpoint which is analogous to its CSOM cousin.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">ensureUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userName</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span><span class="nx">logonName</span><span class="o">:</span> <span class="nx">userName</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">$http</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/json;odata=verbose&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;Accept&#34;</span><span class="o">:</span> <span class="s2">&#34;application/json;odata=verbose&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;X-RequestDigest&#34;</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;\_\_REQUESTDIGEST&#34;</span><span class="p">)</span><span class="err">\</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="err">\</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">url</span><span class="o">:</span>  <span class="nx">NGFPP</span><span class="p">.</span><span class="nx">currentSite</span> <span class="o">+</span> <span class="s2">&#34;/\_api/web/ensureuser&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="ui">UI</h2>
+<p>Now that we have all the back-end pieces put together we can get started with the user interface. The one bug that I still haven’t completely solved is that of a wrapping issue, you can see it in the screenshot below. I suspect that the issue is related to various SharePoint css attributes and I just haven’t found the right one to override. But it’s trivial so I’ve decided to move on without solving it for now. Eventually I’m going to get it!</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/PeoplePickerUI.png" width="1029" height="362" alt="PeoplePickerUI Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Since I’m on the topic let’s start with a couple minor CSS overrides you’ll want to include within your form. I’d strongly suggest scoping them to your form as well as you wouldn’t want to upset SharePoint styling elsewhere.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">ms-PeoplePicker</span> <span class="nt">input</span><span class="err">\</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">button</span><span class="err">\</span><span class="o">],</span> <span class="p">.</span><span class="nc">ms-PeoplePicker</span> <span class="nt">input</span><span class="err">\</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">reset</span><span class="err">\</span><span class="o">],</span> <span class="p">.</span><span class="nc">ms-PeoplePicker</span> <span class="nt">input</span><span class="err">\</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="err">\</span><span class="o">],</span> <span class="nt">button</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">min-width</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="kc">inherit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">ms-PeoplePicker</span> <span class="p">.</span><span class="nc">ms-PeoplePicker-searchField</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now onto the HTML, here’s a small snippet of a table that I created for the “form”. I’m only showing the row for the People Picker in it. Of note, uif-people is linked to a variable on my controller that is assigned the function and the ng-model is linked to an empty array that can receive the selected “Person” items from the source array. In my example, I’ve decided to use the compact type and include a search delay… these are options and I’d encourage you to look over the <a href="https://ngofficeuifabric.com/demos/uifPeoplePicker/">demo’s</a> to decide what’s right for you.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Assigned To:<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">uif-people-picker</span> <span class="na">uif-people</span><span class="o">=</span><span class="s">&#34;vm.getPeopleSearchResults&#34;</span> <span class="na">ng-model</span><span class="o">=</span><span class="s">&#34;vm.Issue.AssignedTo&#34;</span> <span class="na">uif-type</span><span class="o">=</span><span class="s">&#34;compact&#34;</span> <span class="na">uif-search-delay</span><span class="o">=</span><span class="s">&#34;300&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Search Sympraxis Employees&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">uif-people-search-more</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">uif-primary-text</span> <span class="na">uif-search-for-text</span><span class="o">=</span><span class="s">&#34;You are searching for: &#34;</span><span class="p">&gt;</span>Search Sympraxis employees
+</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="nt">uif-primary-text</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">uif-people-search-more</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">uif-people-picker</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="controller">Controller</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">myAppCtrl</span><span class="p">(</span><span class="nx">$timeout</span><span class="p">,</span> <span class="nx">$q</span><span class="p">,</span> <span class="nx">ngfppService</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//The Model
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">self</span><span class="p">.</span><span class="nx">Issue</span> <span class="o">=</span> <span class="p">{</span><span class="nx">Title</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">BusinessUnit</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">Category</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">AssignedToId</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">AssignedTo</span><span class="o">:</span> <span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">],</span> <span class="nx">Status</span><span class="o">:</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span> <span class="nx">Comment</span><span class="o">:</span> <span class="kc">null</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//Function to get search results for the query value
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">self</span><span class="p">.</span><span class="nx">getPeopleSearchResults</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//If no query string then just return empty array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">((</span><span class="nx">query</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="o">||</span> <span class="nx">query</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">ngfppService</span><span class="p">.</span><span class="nx">getPeopleSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//resolve the search results
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//return a promise
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//Function to save the new item.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">self</span><span class="p">.</span><span class="nx">save</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//Call the ensureuser REST Endpoint for the value of the people picker field 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">ngfppService</span><span class="p">.</span><span class="nx">ensureUser</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">Issue</span><span class="p">.</span><span class="nx">AssignedTo</span><span class="err">\</span><span class="p">[</span><span class="mi">0</span><span class="err">\</span><span class="p">].</span><span class="nx">id</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Assign the resulting Id, to the person fields internal Id field
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">self</span><span class="p">.</span><span class="nx">Issue</span><span class="p">.</span><span class="nx">AssignedToId</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">d</span><span class="p">.</span><span class="nx">Id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">delete</span> <span class="nx">self</span><span class="p">.</span><span class="nx">Issue</span><span class="p">.</span><span class="nx">AssignedTo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Call the save function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">return</span> <span class="nx">ngfppService</span><span class="p">.</span><span class="nx">saveIssue</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">Issue</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">self</span><span class="p">.</span><span class="nx">Issue</span> <span class="o">=</span> <span class="p">{</span><span class="nx">Title</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">BusinessUnit</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">Category</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">AssignedToId</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">AssignedTo</span><span class="o">:</span> <span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">],</span> <span class="nx">Status</span><span class="o">:</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span> <span class="nx">Comment</span><span class="o">:</span> <span class="kc">null</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="single-user-hack">Single User Hack</h2>
+<p>One of the missing components of the solution is the ability to limit the user to selecting only one value. The work around I came up with, which I completely admit is a hack, was to implement a $watchCollection. This way when I see the model change I can determine if more than one item is selected and if so replace the originally selected item with the newly selected item. I’ve found in implementation this looks very smooth to the user so I’m happy with it as a work around. To add this to the above controller you would do the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">$scope</span><span class="p">.</span><span class="nx">$watchCollection</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">Issue</span><span class="p">.</span><span class="nx">AssignedTo</span><span class="p">;},</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span> <span class="o">!==</span> <span class="nx">oldValue</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">Issue</span><span class="p">.</span><span class="nx">AssignedTo</span> <span class="o">=</span> <span class="err">\</span><span class="p">[</span><span class="nx">newValue</span><span class="err">\</span><span class="p">[(</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="err">\</span><span class="p">]</span><span class="err">\</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><h2 id="summary">Summary</h2>
+<p>So even with its flaws I’m moving forward with the implementation simply because it feels like a significantly cleaner solution. If someone out there takes this on and solves the css issues before I do PLEASE let me know and I’ll update the post with your solution. Hopefully I’ll figure it out soon!</p>
+<h2 id="resources">Resources</h2>
+<p>The complete code is available on my <a href="https://github.com/juliemturner/Public-Samples">GitHub</a> repo if you’re interested in looking at the complete solution.</p>
+
+  </article>
+
+      
+    
+    <div class="jt-pager">
+      
+        <button class="hoo-button" title="How to work with SharePoint datetime localization/timezones in JavaScript" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/sharepoint-datetime\/')" > 
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Previous Post</span>      
+        </button>
+      
+      
+        <button class="hoo-button is-reversed" title="SharePoint &#43; Flow (&#43; Azure Functions): Launching a Microsoft Flow from Client-Side Code" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/launch-power-automate-with-code\/')">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Next Post</span>
+        </button>
+      
+    </div>
+  
+
+  
+    
+      
+      <div class="jt-disqus-comments">                  
+        <button onclick="jtBlogMain.showComments(event, 'veni-vidi-vici-1')">
+          Show 
+          <span class="disqus-comment-count" data-disqus-url="https://juliemturner.net/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/">comments</span>
+        </button>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_config = function () {
+          this.page.url = 'https:\/\/juliemturner.net\/post\/utilizing-ngofficeuifabric-people-picker-in-sharepoint';
+        };
+      </script>
+      </div>
+      
+    
+  
+</div>
+
+    </article>
+    <aside class="jt-sidebar">
+      
+
+  <div class="jt-asideSection">
+    
+<h2>Share this post</h2>
+
+<ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="//twitter.com/share?url=https%3a%2f%2fjuliemturner.net%2fpost%2futilizing-ngofficeuifabric-people-picker-in-sharepoint%2f&amp;text=Utilizing%20ngOfficeUIFabric%20People%20Picker%20in%20SharePoint&amp;via=jfj1997"
+      target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjuliemturner.net%2fpost%2futilizing-ngofficeuifabric-people-picker-in-sharepoint%2f" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//reddit.com/submit?url=https%3a%2f%2fjuliemturner.net%2fpost%2futilizing-ngofficeuifabric-people-picker-in-sharepoint%2f&amp;title=Utilizing%20ngOfficeUIFabric%20People%20Picker%20in%20SharePoint" target="_blank" title="Share on Reddit">
+      <i class="fab fa-reddit jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjuliemturner.net%2fpost%2futilizing-ngofficeuifabric-people-picker-in-sharepoint%2f&amp;title=Utilizing%20ngOfficeUIFabric%20People%20Picker%20in%20SharePoint" target="_blank"
+      title="Share on LinkedIn">
+      <i class="fab fa-linkedin jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//toot.kytta.dev/?text=Check%20out%20this%20article%20Utilizing%20ngOfficeUIFabric%20People%20Picker%20in%20SharePoint%20at%20https%3a%2f%2fjuliemturner.net%2fpost%2futilizing-ngofficeuifabric-people-picker-in-sharepoint%2f" target="_blank"
+      title="Share on Mastodon">
+      <i class="fab fa-mastodon jt-mtag-icon"></i>
+    </a>
+  </li>
+</ul>
+
+  </div>
+
+
+
+
+  <div class="jt-asideSection">
+    <h2>Tags</h2>
+    <ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/javascript/" aria-label="View all posts tagged with 'JavaScript'">
+      <span class="hoo-mtag-lbl">JavaScript</span>
+    </a>
+  </li>
+  
+</ul>
+  </div>
+
+
+  
+    
+  
+  
+    <div class="jt-asideSection">
+      <h2>See also</h2>
+      <ul class="symp-list">
+      
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/better-practices-console-log-pnpjs/">Console Log Better Practices with PnPjs V3</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/spfx-anchor-tags/">SPFx Anchor Tags - Hitting the Target</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/conquer-your-dev-toolchain-4/">Conquer your dev toolchain in &#39;Classic&#39; SharePoint – Part 4</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/conquer-your-dev-toolchain-3/">Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 3</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/conquer-your-dev-toolchain-2/">Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 2</a></li>
+      
+      </ul>
+    </div>
+  
+
+<div class="jt-asideSection">
+  <h2>About the Author</h2>
+  <div class="jt-aside-headshot">
+    <img src="https://juliemturner.net/img/jturner.png" alt="Julie Turner headshot" />
+  </div>
+  <div class="jt-highlight">Julie Turner</div>
+  <div class="jt-subhighlight">Partner/CTO</div>
+  <div class="jt-subhighlight">
+    <a href="https://sympraxisconsulting.com" target="_blank">
+      <div class="symp-logo"></div>
+    </a>
+  </div>
+  <div class="jt-listcont">
+    <ul class="symp-list">
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span>Microsoft MVP since 2017</li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/" target="_blank">Microsoft 365 PnP Team member since 2019</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/pnpjs/" target="_blank">PnPjs maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://lab.n8d.studio/htwoo/" target="_blank">HTWOO maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/portfolio/clouddev-clarity/" target="_blank">CloudDev Clarity co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://officedev.github.io/browser-native/" target="_blank">Browser Native co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/ask-sympraxis/" target="_blank">Ask Sympraxis Bi-Weekly Videocast</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="jt-asideSection">
+  <h2>Join Me Live</h2>
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+  
+</div>
+
+
+    </aside>
+    <footer class="footer">
+      
+        <ul class="hoo-meta-list">
+          
+          <li>
+            
+              <a href="mailto:julie.turner@sympraxisconsulting.com"
+                title="Email me">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://github.com/juliemturner"
+                title="GitHub">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://twitter.com/jfj1997"
+                title="Twitter">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://linkedin.com/in/juliemturner"
+                title="LinkedIn">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://www.youtube.com/user/username"
+                title="Youtube">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+            <a rel="me"href="#ZgotmplZ"
+              title="Mastodon">
+              
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          
+            
+          
+        </ul>
+        <p class="jt-copyright">
+          &nbsp;&copy;
+          2011 - 2023
+          Julie Turner ~ All rights reserved
+        </p>
+
+
+<script src="https://juliemturner.net/js/solid.min.js"></script>
+<script src="https://juliemturner.net/js/brands.min.js"></script>
+<script src="https://juliemturner.net/js/fontawesome.min.js"></script>
+
+<script src="https://juliemturner.net/js/main.js"></script>
+
+
+
+
+
+<script id="dsq-count-scr" src="//veni-vidi-vici-1.disqus.com/count.js" async></script>
+
+
+      
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2P5EMX0ZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2P5EMX0ZL');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+  
+  <title>Quick Primer on InfoPath and SharePoint 2010 Time Zones</title>
+  <meta name="description" content="InfoPath decrepcated functions such as Today() and Now() pick up the time zone based on the settings of the SharePoint server. By default the web is set to …" />
+<meta name="author" content="Julie Turner"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Veni, Vidi, Vici",
+    
+    "url": "https:\/\/juliemturner.net\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Veni, Vidi, Vici",
+  "url" : "https:\/\/juliemturner.net\/",
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/post\/infopath-and-sharepoint-2010-time-zones\/",
+          "name": "Quick primer on info path and share point 2010 time zones"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "author": {
+    "@type": "Person",
+    "name" : "Julie Turner"
+  },
+  "headline": "Quick Primer on InfoPath and SharePoint 2010 Time Zones",
+  "description" : "InfoPath decrepcated functions such as Today() and Now() pick up the time zone based on the settings of the SharePoint server. By default the web is set to the time zone of the server, which is thereby the default of any new sites created as well as new user profiles created. For global organizations with users around the world, there are situations where you will want the automated date\/time stamps to display the local time for the user rather than the server time.",
+  "inLanguage" : "en",
+  "wordCount":  517 ,
+  "datePublished" : "2013-01-31T13:28:46",
+  "dateModified" : "2013-01-31T13:28:46",
+  "image" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+  "keywords" : [ "SharePoint, Server 2010, Server 2013, InfoPath" ],
+  "mainEntityOfPage" : "https:\/\/juliemturner.net\/post\/infopath-and-sharepoint-2010-time-zones\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name": "Veni, Vidi, Vici",
+    "url" : "https:\/\/juliemturner.net\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+<meta property="og:url" content="https://juliemturner.net/post/infopath-and-sharepoint-2010-time-zones/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Quick Primer on InfoPath and SharePoint 2010 Time Zones" />
+<meta property="og:description" content="InfoPath decrepcated functions such as Today() and Now() pick up the time zone based on the settings of the SharePoint server. By default the web is set to the time zone of the server, which is thereby the default of any new sites created as well as new user profiles created. For global organizations with users around the world, there are situations where you will want the automated date/time stamps to display the local time for the user rather than the server time.">
+<meta property="og:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+<meta property="og:site_name" content="Veni, Vidi, Vici" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="julieturner.net">
+  <meta property="twitter:url" content="https://juliemturner.net/post/infopath-and-sharepoint-2010-time-zones/">
+  <meta name="twitter:title" content="Quick Primer on InfoPath and SharePoint 2010 Time Zones" />
+  <meta name="twitter:description" content="InfoPath decrepcated functions such as Today() and Now() pick up the time zone based on the settings of the SharePoint server. By default the web is set to the time zone of the server, which is …">
+  <meta name="twitter:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+  <meta name="generator" content="Hugo 0.111.3"><link rel="canonical" href="https://juliemturner.net/post/infopath-and-sharepoint-2010-time-zones/">
+  <link rel="alternate" href="https://juliemturner.net/index.xml" type="application/rss+xml" title="Veni, Vidi, Vici">
+
+  
+  <link rel="stylesheet" href="/sass/main.6773b8d3eb0c22652f9b8b334cc7d1738b1b87e527c955fc4871ca37b0915dab.css" integrity="sha256-Z3O40&#43;sMImUvm4szTMfRc4sbh&#43;UnyVX8SHHKN7CRXas=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://juliemturner.net/css/syntax.css" />
+  
+
+
+  
+</head>
+
+<body>
+  <a rel="me" href="https://home.social/@sympjulie"></a>
+  <div class="jt-wrapper">
+    <header class="jt-header">
+      
+<nav class="jt-navbar">
+    
+    <a class="jt-logo" title="Veni, Vidi, Vici" href="https://juliemturner.net/" alt="Julie Turner development blog for Microsoft 365, SharePoint, Teams, and Azure">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img">
+  <title></title>
+  <path
+    d="m46.9 133.7.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.2 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.7 3h-3.9l-42.2 66.6-5 1.1zM135.2 119.7l-.7 3.6c-9.9 6.9-18.4 10.4-25.4 10.4-4.4 0-8-1.6-10.8-4.7-2.8-3.1-4.2-7.1-4.2-12.1 0-8.8 3.4-17.1 10.1-24.9 6.8-7.8 14-11.7 21.6-11.7 2.8 0 5 .9 6.8 2.8 1.7 1.9 2.6 4.3 2.6 7.3 0 6-3.1 11.2-9.2 15.5-6.1 4.3-13.5 6.5-22 6.5v2.1c0 9.1 3.3 13.7 10 13.7 5.9.1 12.9-2.7 21.2-8.5zm-31-10c7-.6 12.5-2.4 16.4-5.4 3.9-3 5.9-7 5.9-11.8 0-4.8-1.7-7.2-5.2-7.2-3.8 0-7.4 2.5-10.9 7.5-3.5 4.9-5.6 10.5-6.2 16.9zM149.4 133.1l3.5-14.5 4.6-23.2c.7-3.6 1.1-5.9 1.1-7 0-1.9-.9-2.9-2.8-2.9-3.1 0-7.7 3.4-14 10.3l.8-4.3c6.8-7.4 13-11.1 18.4-11.1 4.5 0 6.8 2.3 6.8 7 0 1.6-.4 4.3-1.1 8l-2.3 11.6h.7c3.9-8 8.3-14.4 13.3-19.3 4.9-4.9 9.5-7.3 13.8-7.3 5.1 0 7.7 2.8 7.7 8.5 0 1.8-.3 4.1-.8 6.8l-4.6 22.9c-.7 3.6-1.1 6-1.1 7 0 2 .9 3 2.8 3 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.3-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-8l4.6-23c.4-1.8.6-3.3.6-4.5 0-2.5-.9-3.8-2.8-3.8-6 0-14.3 9.5-24.9 28.4l-3.4 16.8-9.9.6zM246.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM248 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM348.3 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM427.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM468.4 107.1h-.8c-3.6 7.9-7.9 14.3-12.8 19.2-4.9 4.9-9.6 7.4-13.9 7.4-6.6 0-9.9-4.1-9.9-12.4 0-5.6 1.6-11.5 4.9-17.7 3.2-6.2 7.4-11.3 12.6-15.5 3.4-2.8 6.9-4.7 10.3-5.6 3.4-1 8.4-1.4 15-1.4 1.8-6.2 3.8-10.9 5.8-14.2 2-3.3 4.8-6.3 8.4-9.2 6.2-4.9 13-7.3 20.5-7.3 3.1 0 5.9.3 8.4 1l-6.4 6.7c-3.7-1.6-6.9-2.4-9.5-2.4-5 0-8.8 1.8-11.3 5.5-2.5 3.6-4.8 10.5-6.8 20.5l-7.4 37.2c-.8 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.5.4-4.2 1.1-8l2.2-11.8zm3.8-18.8c-3.9-1.8-7.8-2.6-11.7-2.6-5.7 0-10.2 3.6-13.6 10.8-4 8.5-6.1 16.2-6.1 22.9 0 4.9 1.5 7.4 4.4 7.4 2.7 0 6.6-2.8 11.6-8.5 5.1-5.7 9.5-12.1 13.3-19.4l2.1-10.6z" />
+  <path
+    d="m528 118.3-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM529.4 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM629.6 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM709 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM754 119.6l-.7 3.7c-10.3 6.9-18.7 10.4-25.2 10.4-4.5 0-8.2-1.5-10.9-4.6-2.8-3.1-4.1-7.1-4.1-12.2 0-9.1 3.4-17.5 10.3-25.1 6.9-7.6 14.5-11.4 22.7-11.4 3.6 0 7.2.8 10.8 2.4l-3.1 12.1h-2.9l.1-.7c.3-1.5.5-2.5.5-3.2 0-4.3-2.9-6.5-8.8-6.5-5.5 0-10.1 2.9-13.8 8.8-3.7 5.9-5.5 13.3-5.5 22.1 0 8.5 3.2 12.7 9.5 12.7 6 .1 13.1-2.8 21.1-8.5zM797.7 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4z" />
+</svg>
+    </a>      
+  
+  <menu class="jt-nav-links">
+    
+      
+        <li class="jt-nav-item">
+          <a title="Blog" href="/">Blog</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="About" href="/me/">About</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="Privacy Policy" href="/page/privacy-policy/">Privacy Policy</a>
+        </li>
+      
+    
+    
+  </menu>
+</nav>
+
+
+
+
+
+<dialog class="hoo-mdldialog-outer">
+  <div class="hoo-mdldialog" style="--lqdDialogHeight: 60vh; --lqdDialogWidth: 60vw;">
+    <div class="hoo-dlgheader">
+      <div class="hoo-dlgheader-title"><h2>Search Veni, Vidi, Vici</h2></div>
+      <div class="hoo-dlgheader-closer">
+        <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.hideDialog()">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="/icons.svg#icon-close"></use>
+            </svg>
+        </span>
+        </button>
+      </div>
+    </div>
+    <div class="hoo-dlgcontent">
+      <gcse:search></gcse:search>
+    </div>
+  </div>
+</dialog>
+      
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+    <div class="jt-article-header" >
+      
+      <div class="jt-post-heading">
+        <div class="jt-title">
+        <h1>Quick Primer on InfoPath and SharePoint 2010 Time Zones</h1>
+          
+          
+            <div class="jt-post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 31, 2013
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;517&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Julie Turner
+    
+  
+</div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  
+
+    </header>
+    <article class="jt-content">      
+      
+<div class="jt-article" role="main">  
+  <article role="main" class="blog-post">
+    <p><a href="https://www.microsoft.com/en-us/microsoft-365/blog/2014/01/31/update-on-infopath-and-sharepoint-forms/">InfoPath</a> <em>decrepcated</em> functions such as Today() and Now() pick up the time zone based on the settings of the <a href="https://sharepoint.microsoft.com">SharePoint server</a>.  By default the web is set to the time zone of the server, which is thereby the default of any new sites created as well as new user profiles created.  For global organizations with users around the world, there are situations where you will want the automated date/time stamps to display the local time for the user rather than the server time.  This article will show you how to set that up.</p>
+<p>The time zone of the web can be changed in central administration.  The time zone of the site can be changed by going to site settings / regional settings.  In addition a user can change their personal time zone settings by going to “my settings / my regional settings”.</p>
+<p>The InfoPath form I created to test the scenario has 2 fields.  The first is set by default using the now() function when the form is created, the second is set by an action on form load, again using the now() function.  The first field is also used to name the form when it’s first submitted.  Using the magic of VMs, I set the time zone of the host machine and the site settings to be Hawaii time zone (GMT-10).  I then have a separate test user whose regional settings I set to Pacific (GMT-8) and am using the browser on a machine whose time zone is set to EST (GMT-5).</p>
+<p>On the machine whose time zone is set to Hawaii, I created an instance of the InfoPath form.  Note that not only are the two fields set to the current Hawaii time but also the Created and Modified dates show as Hawaii time (Figure 1).</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/infopath-and-sharepoint-2010-time-zones/image5.gif" width="500" height="156" alt="Image5 Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Figure 1: Form in Hawaii time zone from machine in Hawaii time zone.</p>
+<p>If I log into SharePoint as the same user but from the host machine whose time zone is set to EST I still see the exact same results.  Note the machine’s time is 12:35. (Figure 2)</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/infopath-and-sharepoint-2010-time-zones/image6.gif" width="500" height="131" alt="Image6 Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Figure 2: Form in Hawaii time zone from machine in Eastern time zone</p>
+<p>Now, by logging into SharePoint as the user who changed the regional settings to Pacific time, I see something very different (Figure 3).  Note that the Created and Modified dates in the SharePoint list are adjusted to my regional settings which are Pacific time zone.  And when I open the form the refresh date time uses the now() function which uses my regional time zone setting to set that date/time.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/infopath-and-sharepoint-2010-time-zones/image7.gif" width="500" height="142" alt="Image7 Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Figure 3: Form in Hawaii time zone from machine in Eastern time zone as user in Pacific time zone.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>If you need all the date/time stamps to appear the same regardless of the user’s location, then either override or leave the default regional settings for your web and make sure the users do not change the regional settings of the web.  If the users want to see the information converted to their own time zone, they should change their regional settings to their own time zone.</p>
+
+  </article>
+
+      
+    
+    <div class="jt-pager">
+      
+        <button class="hoo-button" title="InfoPath - Show links to documents in a library from the form" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/infopath-show-links-to-documents-in-a-library\/')" > 
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Previous Post</span>      
+        </button>
+      
+      
+        <button class="hoo-button is-reversed" title="Send Email through Visual Studio Workflow in SharePoint 2013" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/send-email-through-visual-studio-workflow-in-sharepoint-2013\/')">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Next Post</span>
+        </button>
+      
+    </div>
+  
+
+  
+    
+      
+      <div class="jt-disqus-comments">                  
+        <button onclick="jtBlogMain.showComments(event, 'veni-vidi-vici-1')">
+          Show 
+          <span class="disqus-comment-count" data-disqus-url="https://juliemturner.net/post/infopath-and-sharepoint-2010-time-zones/">comments</span>
+        </button>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_config = function () {
+          this.page.url = 'https:\/\/juliemturner.net\/post\/infopath-and-sharepoint-2010-time-zones';
+        };
+      </script>
+      </div>
+      
+    
+  
+</div>
+
+    </article>
+    <aside class="jt-sidebar">
+      
+
+  <div class="jt-asideSection">
+    
+<h2>Share this post</h2>
+
+<ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="//twitter.com/share?url=https%3a%2f%2fjuliemturner.net%2fpost%2finfopath-and-sharepoint-2010-time-zones%2f&amp;text=Quick%20Primer%20on%20InfoPath%20and%20SharePoint%202010%20Time%20Zones&amp;via=jfj1997"
+      target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjuliemturner.net%2fpost%2finfopath-and-sharepoint-2010-time-zones%2f" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//reddit.com/submit?url=https%3a%2f%2fjuliemturner.net%2fpost%2finfopath-and-sharepoint-2010-time-zones%2f&amp;title=Quick%20Primer%20on%20InfoPath%20and%20SharePoint%202010%20Time%20Zones" target="_blank" title="Share on Reddit">
+      <i class="fab fa-reddit jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjuliemturner.net%2fpost%2finfopath-and-sharepoint-2010-time-zones%2f&amp;title=Quick%20Primer%20on%20InfoPath%20and%20SharePoint%202010%20Time%20Zones" target="_blank"
+      title="Share on LinkedIn">
+      <i class="fab fa-linkedin jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//toot.kytta.dev/?text=Check%20out%20this%20article%20Quick%20Primer%20on%20InfoPath%20and%20SharePoint%202010%20Time%20Zones%20at%20https%3a%2f%2fjuliemturner.net%2fpost%2finfopath-and-sharepoint-2010-time-zones%2f" target="_blank"
+      title="Share on Mastodon">
+      <i class="fab fa-mastodon jt-mtag-icon"></i>
+    </a>
+  </li>
+</ul>
+
+  </div>
+
+
+
+
+  <div class="jt-asideSection">
+    <h2>Tags</h2>
+    <ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/sharepoint/" aria-label="View all posts tagged with 'SharePoint'">
+      <span class="hoo-mtag-lbl">SharePoint</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/server-2010/" aria-label="View all posts tagged with 'Server 2010'">
+      <span class="hoo-mtag-lbl">Server 2010</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/server-2013/" aria-label="View all posts tagged with 'Server 2013'">
+      <span class="hoo-mtag-lbl">Server 2013</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/infopath/" aria-label="View all posts tagged with 'InfoPath'">
+      <span class="hoo-mtag-lbl">InfoPath</span>
+    </a>
+  </li>
+  
+</ul>
+  </div>
+
+
+  
+    
+  
+  
+    <div class="jt-asideSection">
+      <h2>See also</h2>
+      <ul class="symp-list">
+      
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/sp-appcatalog-dev-tips/">SharePoint App Catalog Development Tips</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/dev-tenant/">What is a &#39;Dev Tenant&#39; and why would you want one?</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/curate-news-for-user/">Curate the News: Social Following Sites on behalf of a user</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/managing-unifed-group/">Managing the Unified Group in Office 365 for SharePoint and Beyond</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/harvesting-sharepoint-sites/">Harvesting your SharePoint Site Collections</a></li>
+      
+      </ul>
+    </div>
+  
+
+<div class="jt-asideSection">
+  <h2>About the Author</h2>
+  <div class="jt-aside-headshot">
+    <img src="https://juliemturner.net/img/jturner.png" alt="Julie Turner headshot" />
+  </div>
+  <div class="jt-highlight">Julie Turner</div>
+  <div class="jt-subhighlight">Partner/CTO</div>
+  <div class="jt-subhighlight">
+    <a href="https://sympraxisconsulting.com" target="_blank">
+      <div class="symp-logo"></div>
+    </a>
+  </div>
+  <div class="jt-listcont">
+    <ul class="symp-list">
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span>Microsoft MVP since 2017</li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/" target="_blank">Microsoft 365 PnP Team member since 2019</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/pnpjs/" target="_blank">PnPjs maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://lab.n8d.studio/htwoo/" target="_blank">HTWOO maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/portfolio/clouddev-clarity/" target="_blank">CloudDev Clarity co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://officedev.github.io/browser-native/" target="_blank">Browser Native co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/ask-sympraxis/" target="_blank">Ask Sympraxis Bi-Weekly Videocast</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="jt-asideSection">
+  <h2>Join Me Live</h2>
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+  
+</div>
+
+
+    </aside>
+    <footer class="footer">
+      
+        <ul class="hoo-meta-list">
+          
+          <li>
+            
+              <a href="mailto:julie.turner@sympraxisconsulting.com"
+                title="Email me">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://github.com/juliemturner"
+                title="GitHub">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://twitter.com/jfj1997"
+                title="Twitter">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://linkedin.com/in/juliemturner"
+                title="LinkedIn">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://www.youtube.com/user/username"
+                title="Youtube">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+            <a rel="me"href="#ZgotmplZ"
+              title="Mastodon">
+              
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          
+            
+          
+        </ul>
+        <p class="jt-copyright">
+          &nbsp;&copy;
+          2011 - 2023
+          Julie Turner ~ All rights reserved
+        </p>
+
+
+<script src="https://juliemturner.net/js/solid.min.js"></script>
+<script src="https://juliemturner.net/js/brands.min.js"></script>
+<script src="https://juliemturner.net/js/fontawesome.min.js"></script>
+
+<script src="https://juliemturner.net/js/main.js"></script>
+
+
+
+
+
+<script id="dsq-count-scr" src="//veni-vidi-vici-1.disqus.com/count.js" async></script>
+
+
+      
+    </footer>
+  </div>
+</body>
+
+</html>

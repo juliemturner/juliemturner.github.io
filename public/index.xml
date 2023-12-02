@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/</link>
+    <description>Julie Turner Blog on Microsoft 365 (O365), SharePoint, Microsoft Teams, development and extensibility expert with SharePoint Framework (SPFx)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Julie Turner</managingEditor>
+    <webMaster>Julie Turner</webMaster>
+    <copyright>2023 Julie Turner ~ All rights reserved</copyright>
+    
+    <lastBuildDate>Fri, 01 Dec 2023 21:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://juliemturner.net/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    
+    
+    
+      
+    
+    
+    <item>
+      <title>hTWOo-React 2.1.0 Spotlight: Dialogs</title>
+      <link>https://juliemturner.net/post/htwoo-210-dialogs/</link>
+      <pubDate>Fri, 01 Dec 2023 21:00:00 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/htwoo-210-dialogs/</guid>
+      <description>We&amp;rsquo;ve just released the latest version of hTWOo-React, version 2.1. I&amp;rsquo;m going to be posting various updates highlighting some of the new updates over the next several weeks, so please check back or follow me on LinkedIn for more updates. For more information on hTWOo-React check out our documentation. For an overview of hTWOo please see this previous post or visit our hTWOo page.
+Dialogs in SPFx just got EASY My absolute favorite update to hTWOo-Core 2.</description>
+    </item>
+    
+    <item>
+      <title>Console Log Better Practices with PnPjs V3</title>
+      <link>https://juliemturner.net/post/better-practices-console-log-pnpjs/</link>
+      <pubDate>Sat, 27 May 2023 09:51:56 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/better-practices-console-log-pnpjs/</guid>
+      <description>I was recently asked by a conference attendee to help him understand when to use the @pnp/logging package that we ship with PnPjs.
+This is an excellent question, and I&amp;rsquo;ve addressed it somewhat before in a previous post called Resolve to Log. All of the guidance I included about the package in that post still applies, however the examples references V2 of the library. To recap there is the ability to create a ConsoleLogger, a FunctionalLogger, or a custom listener class and then register that listener to the PnPjs timeline via the PnPLogging behavior.</description>
+    </item>
+    
+    <item>
+      <title>Intro to hTWOo-React: Microsoft Fluent UI React alternative</title>
+      <link>https://juliemturner.net/post/intro-htwoo-react/</link>
+      <pubDate>Mon, 06 Feb 2023 23:01:00 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/intro-htwoo-react/</guid>
+      <description>Getting Stared with hTWOo-React presentation This PnP Community demo is taken from the Viva Connections &amp;amp; SharePoint Framework Bi-weekly sync call recorded on January 12, 2023.
+I recently had the opportunity to present a &amp;ldquo;Getting Started with hTWOo React&amp;rdquo; session on the bi-weekly Viva Connections &amp;amp; SharePoint Framework call. I always love being able to present the fun stuff I&amp;rsquo;m working on to the rest of the community. For those of you who are not familiar, hTWOo is an open source alternative for Microsoft’s Fluent UI Web Design system.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with PnPjs</title>
+      <link>https://juliemturner.net/post/getting-started-pnpjs/</link>
+      <pubDate>Tue, 17 Jan 2023 15:08:31 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/getting-started-pnpjs/</guid>
+      <description>This content has also been posted on Microsoft 365 Platform Community Blog.Introduction As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let&amp;rsquo;s drive right in.
+What is PnPjs PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint App Catalog Development Tips</title>
+      <link>https://juliemturner.net/post/sp-appcatalog-dev-tips/</link>
+      <pubDate>Mon, 03 May 2021 18:39:33 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/sp-appcatalog-dev-tips/</guid>
+      <description>After several years of building SharePoint Framework solutions on an almost daily basis you get to the point where you’ve managed to find some things that work pretty well. I recently started a new project and after sharing them with the team realized that maybe these tips would be useful to others and so thought to consolidate them into a list.
+Change the default view for the tenant app catalog Probably not the oddest, but certainly in a top 10 oddest OOB settings in SharePoint, is the list view settings for the default view in the tenant app catalog for SharePoint apps which groups by Product ID.</description>
+    </item>
+    
+    <item>
+      <title>What is a &#39;Dev Tenant&#39; and why would you want one?</title>
+      <link>https://juliemturner.net/post/dev-tenant/</link>
+      <pubDate>Wed, 06 Jan 2021 15:53:37 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/dev-tenant/</guid>
+      <description>This content has also been posted on Microsoft 365 Platform Community Blog.When someone says to you, they are using their “dev tenant” what they’re probably referring to is their personal development “sandbox” they received as part of joining the Microsoft 365 developer program.
+By visiting Developer Program - Microsoft 365 and selecting “Join Now” you’ll be walked through a wizard that will help you provision your very own Microsoft 365 tenant.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint Framework Application Customizer Cross-Site Page Loading</title>
+      <link>https://juliemturner.net/post/spfx-appcustomizer-pageloading/</link>
+      <pubDate>Thu, 05 Sep 2019 13:21:48 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/spfx-appcustomizer-pageloading/</guid>
+      <description>I suspect, like Elio Struyf and Velin Georgiev before him, we&amp;rsquo;re all suffering from PTSD trying to properly load an application customizer into modern pages. It all started with an issue posted in the sp-dev-docs repo that was about partial page load across site collections but devolved into and issue with the OnInit function firing multiple times. Velin’s post describing his solution to the issue starts with a masterful breakdown of the page loading cycle and his need to track page hits.</description>
+    </item>
+    
+    <item>
+      <title>Tip: React JS - Fragments streamline your DOM</title>
+      <link>https://juliemturner.net/post/reactjs-fragments/</link>
+      <pubDate>Thu, 18 Jul 2019 14:04:15 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/reactjs-fragments/</guid>
+      <description>This quick post is going to fall into my Tips &amp;amp; Tricks category as it’s information readily available but if you didn’t know to look for it you probably wouldn’t have found it. In version 16.2 React JS introduced the notion of &amp;ldquo;Fragments&amp;rdquo;. A Fragment is basically an empty container that you can use in a react component to group a set of children together without adding additional nodes into the DOM.</description>
+    </item>
+    
+    <item>
+      <title>Using CSS Variables to Morph Your SPFx Design at Run Time</title>
+      <link>https://juliemturner.net/post/using-css-variables/</link>
+      <pubDate>Thu, 13 Jun 2019 16:16:33 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/using-css-variables/</guid>
+      <description>I learned about CSS Variables from Stefan Bauer and his post CSS Variables support for SPFx projects through spfx-uifabric-themes. In a nutshell, this npm package, which I’ve started using regularly, transforms the current theme colors available to the SPFx web part into variables that can be used within your SCSS/CSS files. This intrigued me as it’s a native browser capability that&amp;rsquo;s been around since 2015 and because it means that you can affect the styling at run-time vs build-time… which translated means that lots of things you would normally think you’d need script for you can now do with a crafty use of CSS and some variables.</description>
+    </item>
+    
+    <item>
+      <title>Tip: How to use &#39;npm version&#39; to create a version tag for your source code</title>
+      <link>https://juliemturner.net/post/npm-version-tag/</link>
+      <pubDate>Mon, 08 Apr 2019 23:33:40 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/npm-version-tag/</guid>
+      <description>I love the new feature I picked up from my friend Stefan Bauer about using npm version to upgrade the version of your SPFx solution. It has made working as an individual and as a team contributor so much easier because it becomes obvious in your repositories history when versions of the project we&amp;rsquo;re created and by whom.
+I was struggling though because some of my more complicated projects, although set up the same way, were functioning with the exception that the git tags were not getting being created.</description>
+    </item>
+    
+  </channel>
+</rss>

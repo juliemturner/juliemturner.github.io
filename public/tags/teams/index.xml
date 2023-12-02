@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft Teams on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/teams/</link>
+    <description>Recent content in Microsoft Teams on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/teams/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a property pane for editing items in your SPFx web parts</title>
+      <link>https://juliemturner.net/post/edit-item-property-pane/</link>
+      <pubDate>Mon, 17 Jul 2017 12:34:43 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/edit-item-property-pane/</guid>
+      <description>It’s a great privilege and great fun to work with the exceptional team at Shire now part of Takeda that’s building a bleeding edge intranet to support their now 24,000 employees and growing. The team is exploring some very new territory and learning a lot along the way. During last weeks webinar, Microsoft’s Mark Kashman promised we’d post some of the lessons learned in the project. It’s my pleasure to share with the greater world a tidbit of that knowledge in the form of how to create a property pane for an individual item, not just the web part using the SharePoint Framework (SPFx).</description>
+    </item>
+    
+  </channel>
+</rss>

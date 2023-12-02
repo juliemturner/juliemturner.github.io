@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2P5EMX0ZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2P5EMX0ZL');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+  
+  <title>Flexible SharePoint Development with Widget Wrangler</title>
+  <meta name="description" content="A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a …" />
+<meta name="author" content="Julie Turner"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Veni, Vidi, Vici",
+    
+    "url": "https:\/\/juliemturner.net\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Veni, Vidi, Vici",
+  "url" : "https:\/\/juliemturner.net\/",
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/post\/widget-wrangler\/",
+          "name": "Flexible share point development with widget wrangler"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "author": {
+    "@type": "Person",
+    "name" : "Julie Turner"
+  },
+  "headline": "Flexible SharePoint Development with Widget Wrangler",
+  "description" : "A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a SharePoint add-in, or outside of SharePoint. If you\u0027re careful, you can reuse the same widget in all those contexts!",
+  "inLanguage" : "en",
+  "wordCount":  3103 ,
+  "datePublished" : "2016-01-13T22:00:00",
+  "dateModified" : "2016-01-13T22:00:00",
+  "image" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+  "keywords" : [ "SharePoint, Server 2010, Server 2013, Server 2016, JavaScript, TypeScript" ],
+  "mainEntityOfPage" : "https:\/\/juliemturner.net\/post\/widget-wrangler\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name": "Veni, Vidi, Vici",
+    "url" : "https:\/\/juliemturner.net\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+<meta property="og:url" content="https://juliemturner.net/post/widget-wrangler/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flexible SharePoint Development with Widget Wrangler" />
+<meta property="og:description" content="A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a SharePoint add-in, or outside of SharePoint. If you&#39;re careful, you can reuse the same widget in all those contexts!">
+<meta property="og:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+<meta property="og:site_name" content="Veni, Vidi, Vici" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="julieturner.net">
+  <meta property="twitter:url" content="https://juliemturner.net/post/widget-wrangler/">
+  <meta name="twitter:title" content="Flexible SharePoint Development with Widget Wrangler" />
+  <meta name="twitter:description" content="A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a SharePoint add-in, or outside of SharePoint. If …">
+  <meta name="twitter:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+  <meta name="generator" content="Hugo 0.111.3"><link rel="canonical" href="https://juliemturner.net/post/widget-wrangler/">
+  <link rel="alternate" href="https://juliemturner.net/index.xml" type="application/rss+xml" title="Veni, Vidi, Vici">
+
+  
+  <link rel="stylesheet" href="/sass/main.6773b8d3eb0c22652f9b8b334cc7d1738b1b87e527c955fc4871ca37b0915dab.css" integrity="sha256-Z3O40&#43;sMImUvm4szTMfRc4sbh&#43;UnyVX8SHHKN7CRXas=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://juliemturner.net/css/syntax.css" />
+  
+
+
+  
+</head>
+
+<body>
+  <a rel="me" href="https://home.social/@sympjulie"></a>
+  <div class="jt-wrapper">
+    <header class="jt-header">
+      
+<nav class="jt-navbar">
+    
+    <a class="jt-logo" title="Veni, Vidi, Vici" href="https://juliemturner.net/" alt="Julie Turner development blog for Microsoft 365, SharePoint, Teams, and Azure">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img">
+  <title></title>
+  <path
+    d="m46.9 133.7.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.2 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.7 3h-3.9l-42.2 66.6-5 1.1zM135.2 119.7l-.7 3.6c-9.9 6.9-18.4 10.4-25.4 10.4-4.4 0-8-1.6-10.8-4.7-2.8-3.1-4.2-7.1-4.2-12.1 0-8.8 3.4-17.1 10.1-24.9 6.8-7.8 14-11.7 21.6-11.7 2.8 0 5 .9 6.8 2.8 1.7 1.9 2.6 4.3 2.6 7.3 0 6-3.1 11.2-9.2 15.5-6.1 4.3-13.5 6.5-22 6.5v2.1c0 9.1 3.3 13.7 10 13.7 5.9.1 12.9-2.7 21.2-8.5zm-31-10c7-.6 12.5-2.4 16.4-5.4 3.9-3 5.9-7 5.9-11.8 0-4.8-1.7-7.2-5.2-7.2-3.8 0-7.4 2.5-10.9 7.5-3.5 4.9-5.6 10.5-6.2 16.9zM149.4 133.1l3.5-14.5 4.6-23.2c.7-3.6 1.1-5.9 1.1-7 0-1.9-.9-2.9-2.8-2.9-3.1 0-7.7 3.4-14 10.3l.8-4.3c6.8-7.4 13-11.1 18.4-11.1 4.5 0 6.8 2.3 6.8 7 0 1.6-.4 4.3-1.1 8l-2.3 11.6h.7c3.9-8 8.3-14.4 13.3-19.3 4.9-4.9 9.5-7.3 13.8-7.3 5.1 0 7.7 2.8 7.7 8.5 0 1.8-.3 4.1-.8 6.8l-4.6 22.9c-.7 3.6-1.1 6-1.1 7 0 2 .9 3 2.8 3 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.3-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-8l4.6-23c.4-1.8.6-3.3.6-4.5 0-2.5-.9-3.8-2.8-3.8-6 0-14.3 9.5-24.9 28.4l-3.4 16.8-9.9.6zM246.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM248 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM348.3 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM427.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM468.4 107.1h-.8c-3.6 7.9-7.9 14.3-12.8 19.2-4.9 4.9-9.6 7.4-13.9 7.4-6.6 0-9.9-4.1-9.9-12.4 0-5.6 1.6-11.5 4.9-17.7 3.2-6.2 7.4-11.3 12.6-15.5 3.4-2.8 6.9-4.7 10.3-5.6 3.4-1 8.4-1.4 15-1.4 1.8-6.2 3.8-10.9 5.8-14.2 2-3.3 4.8-6.3 8.4-9.2 6.2-4.9 13-7.3 20.5-7.3 3.1 0 5.9.3 8.4 1l-6.4 6.7c-3.7-1.6-6.9-2.4-9.5-2.4-5 0-8.8 1.8-11.3 5.5-2.5 3.6-4.8 10.5-6.8 20.5l-7.4 37.2c-.8 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.5.4-4.2 1.1-8l2.2-11.8zm3.8-18.8c-3.9-1.8-7.8-2.6-11.7-2.6-5.7 0-10.2 3.6-13.6 10.8-4 8.5-6.1 16.2-6.1 22.9 0 4.9 1.5 7.4 4.4 7.4 2.7 0 6.6-2.8 11.6-8.5 5.1-5.7 9.5-12.1 13.3-19.4l2.1-10.6z" />
+  <path
+    d="m528 118.3-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM529.4 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM629.6 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM709 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM754 119.6l-.7 3.7c-10.3 6.9-18.7 10.4-25.2 10.4-4.5 0-8.2-1.5-10.9-4.6-2.8-3.1-4.1-7.1-4.1-12.2 0-9.1 3.4-17.5 10.3-25.1 6.9-7.6 14.5-11.4 22.7-11.4 3.6 0 7.2.8 10.8 2.4l-3.1 12.1h-2.9l.1-.7c.3-1.5.5-2.5.5-3.2 0-4.3-2.9-6.5-8.8-6.5-5.5 0-10.1 2.9-13.8 8.8-3.7 5.9-5.5 13.3-5.5 22.1 0 8.5 3.2 12.7 9.5 12.7 6 .1 13.1-2.8 21.1-8.5zM797.7 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4z" />
+</svg>
+    </a>      
+  
+  <menu class="jt-nav-links">
+    
+      
+        <li class="jt-nav-item">
+          <a title="Blog" href="/">Blog</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="About" href="/me/">About</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="Privacy Policy" href="/page/privacy-policy/">Privacy Policy</a>
+        </li>
+      
+    
+    
+  </menu>
+</nav>
+
+
+
+
+
+<dialog class="hoo-mdldialog-outer">
+  <div class="hoo-mdldialog" style="--lqdDialogHeight: 60vh; --lqdDialogWidth: 60vw;">
+    <div class="hoo-dlgheader">
+      <div class="hoo-dlgheader-title"><h2>Search Veni, Vidi, Vici</h2></div>
+      <div class="hoo-dlgheader-closer">
+        <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.hideDialog()">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="/icons.svg#icon-close"></use>
+            </svg>
+        </span>
+        </button>
+      </div>
+    </div>
+    <div class="hoo-dlgcontent">
+      <gcse:search></gcse:search>
+    </div>
+  </div>
+</dialog>
+      
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+    <div class="jt-article-header" style="background-image: url('colorwidgets.png');">
+      
+      <div class="jt-post-heading">
+        <div class="jt-title">
+        <h1>Flexible SharePoint Development with Widget Wrangler</h1>
+          
+          
+            <div class="jt-post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 13, 2016
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;15&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3103&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Julie Turner
+    
+  
+</div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  
+
+    </header>
+    <article class="jt-content">      
+      
+<div class="jt-article" role="main">  
+  <article role="main" class="blog-post">
+    <div class="jt-crosspost">
+  <p>
+    <span class="jt-crosspost-icon"><i class="fas fa-signs-post"></i></span>
+    <span>This content has also been posted on <a href='https://bob1german.com/2016/01/13/flexible-sharepoint-development-with-widget-wrangler/' target="_blank">Bob German&#39;s Vantage Point</a>.</span>
+  </p>
+</div>
+<h2 id="whats-a-widget-and-why-should-i-care">What’s a widget, and why should I care?</h2>
+<p>In economics, a <a href="https://en.wikipedia.org/wiki/Widget_(economics)">widget</a> is a name for a generic gadget or manufactured good; on the web, a <a href="https://en.wikipedia.org/wiki/Web_widget">widget</a> is a generic piece of web functionality running on a page. What makes widgets special is that, unlike controls in ASP.NET or directives in <a href="https://angularjs.org/" title="AngularJS">AngularJS</a>, widgets are generally released separately from the web page that hosts them, and are often deployed by end users.</p>
+<p>If you’re reading this blog, you probably know something about Microsoft SharePoint, and this might sound familiar. A widget is a lot like a web part, only much lighter weight. In fact, widgets can easily be hosted in content editor web parts, on a list form, in a SharePoint add-in, or outside of SharePoint. If you&rsquo;re careful, you can reuse the same widget in all those contexts!</p>
+<p>This work comes out of projects that <a href="https://twitter.com/Bob1German">Bob German</a> and I have done at <a href="https://www.bluemetal.com/">BlueMetal</a>; for example, I used widgets when I developed the web parts on the BlueMetal&rsquo;s Office 365 intranet. The approach was to use light branding with widgets, with each widget running in a content editor web part.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/widget-wrangler/intranetwidgets.png" width="500" height="482" alt="IntranetWidgets Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>The widgets in the screen shot are:</p>
+<ol>
+<li>News feed (driven by SharePoint content)</li>
+<li>My Clients and Projects (shows links to the user&rsquo;s current consulting projects)</li>
+<li>Tabbed Calendar, Community, and Discussions (driven by SharePoint content)</li>
+<li>Tabbed New Hires and Anniversary carousel (driven by SharePoint content)</li>
+<li>Twitter feed</li>
+</ol>
+<p>They&rsquo;re all written in HTML and JavaScript, and work equally well on premises or in Office 365. Each widget is an AngularJS application that can be versioned independently and dropped on any page in SharePoint. But, unlike Add-in parts, there are no IFrames. The widgets don&rsquo;t have to run in content editor web parts - they can run on any web page, so they&rsquo;re much more flexible.</p>
+<p>So the answer to the question, &ldquo;Why should I care?&rdquo; is because widgets give you:</p>
+<ul>
+<li><strong>Flexibility:</strong> Widgets can be versioned independently and moved around freely on web pages in and out of SharePoint</li>
+<li><strong>Reusability:</strong> Widgets allow one code set to run in a web part, on a SharePoint form or page, or outside of SharePoint</li>
+<li><strong>Maintainability:</strong> Widgets written in an MV* framework like Angular or Knockout are easier to test and maintain</li>
+</ul>
+<p>Any snippet of HTML with JavaScript can be considered a widget, however good widgets have additional attributes:</p>
+<ul>
+<li>
+<p>They&rsquo;re isolated so they won&rsquo;t interfere with the web page that hosts them, or with other widgets on the page. Ideally multiple copies of a widget can run on a page with no interference.</p>
+</li>
+<li>
+<p>They load efficiently so users don&rsquo;t have to wait a long time for them to render on the page.</p>
+</li>
+<li>
+<p>They&rsquo;re self contained so they can be reused easily. A widget that depends on various script tags, CSS files, and other elements on a page is more brittle and harder to reuse than a widget that is contained within a single HTML element.</p>
+</li>
+<li>
+<p>They&rsquo;re developed using the power of modern JavaScript frameworks such as AngularJS for supportability and testability. (This is purely optional, however, and this article will also explore widgets written in jQuery or plain JavaScript.)</p>
+</li>
+</ul>
+<h2 id="introducing-widget-wrangler">Introducing Widget Wrangler</h2>
+<p>Today my colleague <a href="https://twitter.com/Bob1German">Bob German</a> and I are pleased to announce a new, light-weight JavaScript library for managing widgets called the Widget Wrangler. It&rsquo;s available now <a href="https://github.com/Widget-Wrangler/ww">on Github</a> for your widget wrangling pleasure.
+Widget Wrangler:</p>
+<ul>
+<li>Helps avoid interference with the hosting page and other widgets</li>
+<li>Loads scripts efficiently across all widgets on the page</li>
+<li>Allows widgets written with MV* frameworks such as AngularJS and KnockOut, as well as plain old javascript.</li>
+<li>Helps isolate your code and UI for easy portability to multiple platforms and environments</li>
+</ul>
+<p>A widget consists of a single HTML element (the <em>widget root</em> - usually a <code>&lt;div&gt;</code>) that contains HTML for the widget, and a script tag that references the Widget Wrangler. The script tag includes custom attributes that tell Widget Wrangler what JavaScript to load and how to &ldquo;boot&rdquo; the widget.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ng-controller</span><span class="o">=</span><span class="s">&#34;main as vm&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello {{vm.name}}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;pnp-ww.js&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appname</span><span class="o">=</span><span class="s">&#34;HelloWorld&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-apptype</span><span class="o">=</span><span class="s">&#34;Angular&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appscripts</span><span class="o">=</span><span class="s">&#39;[{&#34;src&#34;: &#34;angular.min.js&#34;, &#34;priority&#34;:0},
+</span></span></span><span class="line"><span class="cl"><span class="s">  {&#34;src&#34;: &#34;script.js&#34;, &#34;priority&#34;:1}
+</span></span></span><span class="line"><span class="cl"><span class="s">  ]&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>The Widget Wrangler (pnp-ww.js) will load in-line, and will take care of loading the scripts the widget needs (in this case Angular and script.js) and bootstrapping the AngularJS application. The custom attributes tell Widget Wrangler how to load the widget:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ww-appname</td>
+<td>yes</td>
+<td>Used to create a name for the app. In the case of an Angular widget, this is the module that will be passed to the angular.bootstrap function when starting the widget.</td>
+</tr>
+<tr>
+<td>ww-apptype</td>
+<td>no</td>
+<td>Currently &quot;Angular&quot; is the only supported framework that will auto-bind upon load completion.</td>
+</tr>
+<tr>
+<td>ww-appbind</td>
+<td>no</td>
+<td>The function to be executed when all the script files have completed loading.</td>
+</tr>
+<tr>
+<td>ww-appscripts</td>
+<td>yes</td>
+<td>A <a href="https://json.org/" title="JSON">JSON</a> object that defines the javascript files the widget needs in order to run</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>NOTE: It is necessary to specify ww-apptype (for an Angular widget) OR ww-appbind (to do the binding yourself).</p>
+</blockquote>
+<p>The ww-appscripts element contains a JSON object that tells Widget Wrangler what scripts to load before bootstrapping the widget. This is a collection of objects in which each object contains properties as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>yes</td>
+<td>URL of the script to be loaded; this can be absolute, relative to the page, or by using a tilde prefix, relative to the pnp-ww.js script (for example, src=~/myscript.js)</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>yes</td>
+<td>An integer indicating the order in which the script should be loaded; first priority 0 scripts will be loaded, then priority 1, etc. Priorities must begin at 0 and not skip any numbers, and scripts in the collection are expected to be in priority order. Multiple scripts can be declared at the same priority level in order to load them concurrently.</td>
+</tr>
+</tbody>
+</table>
+<p>A widget can either run as an AngularJS application, which is bound to the widget root, or using a custom binding function specified in the ww-appbind attribute. In the latter case, the widget root DOM element is passed to the binding function so the widget can access the browser DOM relative to the widget root instead of having to find it on the page. This helps to isolate the widget. For example, it&rsquo;s common practice to hard-code an HTML element ID and then find it with jQuery; this works fine for one widget, but prevents multiple widgets with the same ID.</p>
+<p>Widget Wrangler has no dependencies on SharePoint or other script libraries, and works with the same browsers as AngularJS. IE8, which is only supported by a special build of AngularJS 1.3/1.4, is not currently supported - ergo it will not work with SharePoint 2010 which forces the pages to run in IE8 emulation mode. Widget Wrangler works with the same browsers as SharePoint 2013.</p>
+<p>Widget Wrangler tries to load the scripts needed by each widget as efficiently as possible, and will only load each script once even if it&rsquo;s used in multiple widgets. (NOTE: The current implementation determines what scripts are the same using their URL; a future version may be smart enough to identify multiple versions of common libraries at different URL&rsquo;s.) Use the &ldquo;priority&rdquo; property in the ww-appscripts attribute to control parallel script loading; for example all priority 0 scripts will load in parallel, followed by priority 1 scripts, etc. Priority numbers must begin at 0 and must be contiguous (i.e. 0, 1, 2&hellip;) In the example above, script.js depends on AngularJS, so AngularJS is given priority 0 (and loads first), and script.js is loaded only when Angular (and any other priority 0) scripts are loaded.</p>
+<p>The main repository for the Widget Wrangler is <a href="https://github.com/Widget-Wrangler/ww">here</a>.</p>
+<p><a href="https://github.com/Widget-Wrangler/ww/">Widget-Wrangler GitHub Repository</a></p>
+<h2 id="widgets-and-javascript-frameworks">Widgets and JavaScript Frameworks</h2>
+<p>Widgets can be written using any number of JavaScript frameworks; this section will explore some of the most popular.</p>
+<h3 id="angularjs-widgets">AngularJS Widgets</h3>
+<p>AngularJS is a favorite framework to use with widgets, mainly because of its MV* design pattern and rich selection of services and directives. However AngularJS was really designed for single-page applications (SPAs) that take over an entire web page. A typical AngularJS application is &ldquo;auto-bootstrapped&rdquo; using the ng-app directive; while this is fine for SPAs, the <a href="https://docs.angularjs.org/api/ng/directive/ngApp#!">documentation</a> clearly states that you can only have one ng-app directive on a page.</p>
+<p>To get around this limitation and allow many widgets on a page, the Widget Wrangler uses the angular.bootstrap() function; there is no hard limit on the number of Angular apps that can run on a page using this method.</p>
+<p>(NOTE: If you want to use Widget Wrangler in a page that already uses AngularJS, ensure that the widget doesn&rsquo;t overlap the existing Angular application - i.e. it can&rsquo;t be inside the element that is decorated with ng-app. Also ensure the versions of Angular are the same or similar enough that both the SPA and widget(s) will work with either one.)</p>
+<p>You can find a simple AngularJS widget at <a href="https://plnkr.co/edit/54Yo5W5FoXX7fDL8KAWI?preview">Widget Wrangler Angular Sample 1: Hello Angular</a>. This sample uses <a href="https://plnkr.co/">Plunker</a> so you can run and experiment with the code right in your web browser. In this sample you&rsquo;ll see two instances of a Hello World widget which vary only in their view so one of them says goodbye instead of hello. This shows how to embed the view right into the widget so you can make each instance render differently.</p>
+<p>A more advanced example can be found at <a href="https://plnkr.co/edit/aQQdgPwxz6waSJzZeY6W?preview">Widget Wrangler Angular Sample 2: Weather Widget</a>. This example shows a weather forecast, and demonstrates how to pass configuration information - in this case the location of the weather forecast - into the application via the ng-init directive in the view. It also shows how to use ng-include to place the view in an HTML template so it&rsquo;s shared by all instances of the widget.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/widget-wrangler/weatherwidgets.png" width="381" height="511" alt="WeatherWidgets Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Here is the markup for one of the weather widgets:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- Weather widget for Boston, MA --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;weather&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ng-controller</span><span class="o">=</span><span class="s">&#34;main as vm&#34;</span> <span class="na">ng-init</span><span class="o">=</span><span class="s">&#34;vm.query=&#39;Boston, MA&#39;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{vm.City}} Weather<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ng-include</span><span class="o">=</span><span class="s">&#34;&#39;weatherDisplay.html&#39;&#34;</span> <span class="na">ng-show</span><span class="o">=</span><span class="s">&#34;vm.ValidDataLoaded&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;error&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {{vm.error}}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;pnp-ww.js&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appName</span><span class="o">=</span><span class="s">&#34;WeatherApp&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appType</span><span class="o">=</span><span class="s">&#34;Angular&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appScripts</span><span class="o">=</span><span class="s">&#39;[{&#34;src&#34;: &#34;https://ajax.googleapis.com/ajax/libs/angularjs  
+</span></span></span><span class="line"><span class="cl"><span class="s">  /1.4.5/angular.min.js&#34;, &#34;priority&#34;:0},
+</span></span></span><span class="line"><span class="cl"><span class="s">  {&#34;src&#34;: &#34;script.js&#34;, &#34;priority&#34;:1},
+</span></span></span><span class="line"><span class="cl"><span class="s">  {&#34;src&#34;: &#34;weatherService.js&#34;, &#34;priority&#34;:2}
+</span></span></span><span class="line"><span class="cl"><span class="s">  ]&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>The Angular controller includes a function to fetch the weather forecast as soon as Angular processes the ng-init binding:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">angular</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;WeatherApp&#39;</span><span class="p">,</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;$scope&#39;</span><span class="p">,</span> <span class="s1">&#39;weatherService&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">,</span> <span class="nx">weatherService</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">$scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">query</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weatherService</span><span class="p">.</span><span class="nx">GetWeather</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Copy data from the service into the model
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">vm</span><span class="p">.</span><span class="nx">City</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">City</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">Condition</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Condition</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">Description</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Description</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">IconUrl</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">IconUrl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">Temperatures</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Temperatures</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">Wind</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Wind</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">Gusts</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Gusts</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">Humidity</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">Humidity</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// If we got this far, we have good data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">vm</span><span class="p">.</span><span class="nx">ValidDataLoaded</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">vm</span><span class="p">.</span><span class="nx">ValidDataLoaded</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]);</span> <span class="c1">// End Controller()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}());</span> 
+</span></span></code></pre></div><p>A third example at <a href="https://plnkr.co/edit/qMFVtB8dPRKwvfw1Ewnj?preview">Widget Wrangler Angular Sample 3: Connected Widgets</a> shows how to connect two Angular widgets. This is accomplished via a service that relays messages in the form of JavaScript objects from senders to receivers over named channels.</p>
+<p>If you look at the code you may notice that this service communicates via a shared object that hangs off the window object. Normally in Angular a service could store such an object locally, and the service (declared as a factory) would be shared by all who reference it. But that doesn&rsquo;t work here since each widget is a completely separate Angular application. Modules, services, etc. with the same names are all isolated completely within each widget, and Angular does a great job keeping them separate. In the sample, each sender and receiver widget gets its own service instance, so information is shared outside of Angular in the window object.</p>
+<h3 id="knockout-widgets">Knockout Widgets</h3>
+<p>KnockoutJS is another great example of an MVVM style JavaScript library. There&rsquo;s an example of simple Knockout widgets at <a href="https://plnkr.co/edit/0TTsn9?preview">Widget Wrangler Knockout Sample</a>. There are two instances of the widget on the page to demonstrate isolation; here is one of the widgets:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Knockout Widget 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Enter a secret message:
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&#34;textInput: message, event: {keyup: messageChanged}&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;hidden&#34;</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&#34;css: { hidden: hideMessage }&#34;</span><span class="p">&gt;&lt;</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  (psssst - don&#39;t tell other widgets, but the message was:
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;secret&#34;</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&#34;text: message&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  )
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;pnp-ww.js&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appName</span><span class="o">=</span><span class="s">&#34;MyWidget&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appBind</span><span class="o">=</span><span class="s">&#34;myWidget.Load&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">ww-appScripts</span><span class="o">=</span><span class="s">&#39;[{&#34;src&#34;: &#34;https://cdnjs.cloudflare.com/ajax/libs/knockout/  
+</span></span></span><span class="line"><span class="cl"><span class="s">  3.4.0/knockout-min.js&#34;, &#34;priority&#34;:0},
+</span></span></span><span class="line"><span class="cl"><span class="s">  {&#34;src&#34;: &#34;script.js&#34;, &#34;priority&#34;:1}
+</span></span></span><span class="line"><span class="cl"><span class="s">  ]&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+</span></span></code></pre></div><p>Notice that this time the ww-appBind attribute is specified; this contains the binding function myWidget.Load. script.js contains this function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">myWidget</span> <span class="o">=</span> <span class="nx">myWidget</span> <span class="o">||</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Prototype for a ViewModel
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">myWidget</span><span class="p">.</span><span class="nx">vm</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">hideMessage</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">messageChanged</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">hideMessage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">myWidget</span><span class="p">.</span><span class="nx">Load</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Make a new ViewModel for each widget instance
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="k">new</span> <span class="nx">myWidget</span><span class="p">.</span><span class="nx">vm</span><span class="p">(),</span> <span class="nx">element</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></div><p>Notice how the binding function uses the new keyword to make a new ViewModel object for each widget; without this, isolation would be lost and all the widgets would share the same ViewModel and data.</p>
+<h3 id="jquery-widgets">jQuery Widgets</h3>
+<p>Here&rsquo;s an example that not only shows a jQuery widget, but demonstrates how to take existing jQuery code and make it into a Widget. In this case, it&rsquo;s based on <a href="https://jqueryui.com/slider/#colorpicker">this jQuery UI example</a> of a color picker. The original sample includes several references to specific element ID&rsquo;s, so the code would need to be modified to handle more than one color picker on a page.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/widget-wrangler/colorwidgets.png" width="500" height="366" alt="ColorWidgets Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>You can see the widget version at <a href="https://plnkr.co/edit/qGA1xA?preview">Widget Wrangler jQuery Sample</a>. As you can see, there are two instances of the widget on the page; all the code is shared yet they work independently. To make this work, the following code changes were needed:</p>
+<ul>
+<li>Change the element ID&rsquo;s to classes, so it&rsquo;s legal to have more than one</li>
+<li>Add a bootstrap function similar to the Knockout example, that creates a new &ldquo;controller&rdquo; for each widget instance</li>
+<li>When the widget bootstraps, pass the element into the jQuery code and reference the elements relative to the element. For example, <code>$('#red')</code> becomes <code>$(element).find('.red')</code></li>
+</ul>
+<h3 id="plain-javascript-widgets">Plain JavaScript Widgets</h3>
+<p>Sometimes less is more, and plain JavaScript is better and faster than using even a light-weight library like jQuery. If you want to use Widget Wrangler on its own, without any other libraries, check out the example at <a href="https://plnkr.co/edit/9bytEO?preview">Widget Wrangler Plain JS Sample</a>. This is a widget that Ford Prefect would love!</p>
+<p>Notice that it uses the new keyword in the binding function to create a new object for each widget instance. It also generates a unique index for each instance that&rsquo;s used in a button click attribute. This index is passed into the click event handler to allow it to find the correct instance when the event fires.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/widget-wrangler/surveywidget.png" width="500" height="304" alt="SurveyWidget Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>The example can be packaged and deployed three ways:</p>
+<ul>
+<li>As a SharePoint Hosted Add-in</li>
+<li>Directly in a SharePoint site using drag-and-drop deployment by and end user</li>
+<li>Directly in a SharePoint site using PowerShell deployment from a central site, so a single copy of the solution can be used in many sites. This has the advantage that the solution can be updated in one place and the change will be immediately available in all sites.</li>
+</ul>
+<p>The solution includes a web part and custom new, edit, and display forms for managing the list of questions. It&rsquo;s also smart enough to deploy its own list storage using JavaScript, so the questions and answers lists are generated the first time the solution is used.</p>
+<p>Widgets allow a high degree of reuse in this example. For example, the code to display a question is written as a widget; it appears in the web part (or add-in part), and in the New and Edit forms. Thus one copy of the widget is used in 3 places, reducing code duplication and allowing all of them to be updated by editing the common code.</p>
+<p>For a deep dive on the Microsurvey sample, including a quick introduction to AngularJS, check out Bob&rsquo;s Collab365 talk,<a href="https://youtu.be/bWWCrlfwnlY">Building Flexible SharePoint Solutions with AngularJS</a>. This will show you various ways of using and deploying widgets in SharePoint, however it uses the precursor to Widget Wrangler, which was called InitUI.js. The sample code in github has since been updated to use Widget Wrangler.</p>
+<p>The Widget Wrangler is open source, and we welcome suggestions and pull requests at <a href="https://github.com/Widget-Wrangler/ww">https://github.com/Widget-Wrangler/ww</a>. (Please submit pull requests against the dev branch!) If you&rsquo;re thinking of contributing, please keep these points in mind. Widget Wrangler:</p>
+<ol>
+<li>Has no dependencies on any other scripts or frameworks</li>
+<li>Is easy to use</li>
+<li>Minimizes impact on the overall page when several instances are present</li>
+<li>Matches AngularJS 1.x browser support</li>
+<li>Is tested and works well with SharePoint Online and SharePoint 2013 or greater, however it in no way depends on SharePoint</li>
+</ol>
+<p>The Widget Wrangler <a href="https://github.com/Widget-Wrangler/ww">main repo</a> includes a test program that makes it easy to exercise the library with a large number of widgets on a page.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/widget-wrangler/tester.png" width="500" height="305" alt="WidgetTester Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>The test program is written in ASP.NET, and it dynamically generates test scripts and Angular applications that check to ensure that dependencies are loaded, and that track the elapsed time during the test. To run it, start the WWBase project in Visual Studio on the Test/TestPage.aspx page.</p>
+<p>Enter your scenario in the text box on the left side of the page. Each line in the scenario is a widget entered in the form:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">AppName:Script1,Script2 
+</span></span></code></pre></div><p>In this example the tester will fabricate two scripts, and set up the Widget Wrangler to first load Script1, then Script2, and then bootstrap the application called AppName. Here&rsquo;s the widget the test program would generate for this line in a scenario:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">ng-controller</span><span class="o">=</span><span class="s">&#34;main as vm&#34;</span>   
+</span></span><span class="line"><span class="cl">         <span class="na">ng-class</span><span class="o">=</span><span class="s">&#34;{&#39;passed&#39;: vm.passed, &#39;failed&#39;: !vm.passed}&#34;</span>   
+</span></span><span class="line"><span class="cl">         <span class="na">ng-init</span><span class="o">=</span><span class="s">&#34;vm.counter=&#39;1&#39;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Widget {{vm.counter}} {{vm.appName}} {{vm.message}} {{vm.highlight}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">src</span><span class="o">=</span><span class="s">&#34;../pnp-ww.js&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">ww-appname</span><span class="o">=</span><span class="s">&#34;AppName&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">ww-apptype</span><span class="o">=</span><span class="s">&#34;Angular&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="na">ww-appscripts</span><span class="o">=</span><span class="s">&#39;[{&#34;src&#34;: &#34;https://ajax.googleapis.com/ajax/libs/  
+</span></span></span><span class="line"><span class="cl"><span class="s">angularjs/1.3.15/angular.min.js&#34;, &#34;priority&#34;:0},
+</span></span></span><span class="line"><span class="cl"><span class="s">{&#34;src&#34;: &#34;testScript.js.aspx?name=Script1&#34;, &#34;priority&#34;:1},  
+</span></span></span><span class="line"><span class="cl"><span class="s">        {&#34;src&#34;: &#34;testScript.js.aspx?name=Script2&amp;dependsOn=Script1&#34;, &#34;priority&#34;:2},
+</span></span></span><span class="line"><span class="cl"><span class="s">{&#34;src&#34;: &#34;testApp.js.aspx?name=AppName&amp;dependsOn=Script1,Script2&#34;,  
+</span></span></span><span class="line"><span class="cl"><span class="s"> &#34;priority&#34;:3}]&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+</span></span></code></pre></div><p>You can test parallel script loading by using parenthesis; for example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">MyApp:(S1,S2),S3 
+</span></span></code></pre></div><p>will generate a widget that loads scripts S1 and S2 in parallel, then loads S3 when both of those have loaded.</p>
+<p>The test program shows an index for each widget to demonstrate that each one is isolated, and a blinking asterisk to show that the data binding continues to work after all the widgets are loaded. On the right of the screen, you can see a log of scripts loaded and the timings.</p>
+<p>Here are some of the enhancement ideas on our backlog; please comment and help us set our priorities!</p>
+<ul>
+<li>Smarter detection of duplicate or already loaded scripts (e.g. AngularJS loaded from two different URL&rsquo;s)</li>
+<li>Version number checking for libraries such as Angular and jQuery, so a widget can declare the range of versions it supports; possible co-existence of multiple library versions (See this <a href="https://plnkr.co/edit/UafWw8A5UucH3VlWr1z5?p=info">proof of concept</a>)</li>
+<li>Angular 2.0 support</li>
+<li>Diagnostic widget you can add to a page to show load sequence, timings, and exceptions</li>
+<li>IE 8 support (to have parity with SharePoint 2013 browser support)</li>
+</ul>
+
+  </article>
+
+      
+    
+    <div class="jt-pager">
+      
+        <button class="hoo-button" title="JSLink Validation – from Basic to Advanced" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/jslink-validation-from-basic-to-advanced\/')" > 
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Previous Post</span>      
+        </button>
+      
+      
+        <button class="hoo-button is-reversed" title="Widget Wrangler Webcast and New Release" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/widget-wrangler-webcast-and-new-release\/')">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Next Post</span>
+        </button>
+      
+    </div>
+  
+
+  
+    
+      
+      <div class="jt-disqus-comments">                  
+        <button onclick="jtBlogMain.showComments(event, 'veni-vidi-vici-1')">
+          Show 
+          <span class="disqus-comment-count" data-disqus-url="https://juliemturner.net/post/widget-wrangler/">comments</span>
+        </button>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_config = function () {
+          this.page.url = 'https:\/\/juliemturner.net\/post\/widget-wrangler';
+        };
+      </script>
+      </div>
+      
+    
+  
+</div>
+
+    </article>
+    <aside class="jt-sidebar">
+      
+
+  <div class="jt-asideSection">
+    
+<h2>Share this post</h2>
+
+<ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="//twitter.com/share?url=https%3a%2f%2fjuliemturner.net%2fpost%2fwidget-wrangler%2f&amp;text=Flexible%20SharePoint%20Development%20with%20Widget%20Wrangler&amp;via=jfj1997"
+      target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjuliemturner.net%2fpost%2fwidget-wrangler%2f" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//reddit.com/submit?url=https%3a%2f%2fjuliemturner.net%2fpost%2fwidget-wrangler%2f&amp;title=Flexible%20SharePoint%20Development%20with%20Widget%20Wrangler" target="_blank" title="Share on Reddit">
+      <i class="fab fa-reddit jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjuliemturner.net%2fpost%2fwidget-wrangler%2f&amp;title=Flexible%20SharePoint%20Development%20with%20Widget%20Wrangler" target="_blank"
+      title="Share on LinkedIn">
+      <i class="fab fa-linkedin jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//toot.kytta.dev/?text=Check%20out%20this%20article%20Flexible%20SharePoint%20Development%20with%20Widget%20Wrangler%20at%20https%3a%2f%2fjuliemturner.net%2fpost%2fwidget-wrangler%2f" target="_blank"
+      title="Share on Mastodon">
+      <i class="fab fa-mastodon jt-mtag-icon"></i>
+    </a>
+  </li>
+</ul>
+
+  </div>
+
+
+
+
+  <div class="jt-asideSection">
+    <h2>Tags</h2>
+    <ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/sharepoint/" aria-label="View all posts tagged with 'SharePoint'">
+      <span class="hoo-mtag-lbl">SharePoint</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/server-2010/" aria-label="View all posts tagged with 'Server 2010'">
+      <span class="hoo-mtag-lbl">Server 2010</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/server-2013/" aria-label="View all posts tagged with 'Server 2013'">
+      <span class="hoo-mtag-lbl">Server 2013</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/server-2016/" aria-label="View all posts tagged with 'Server 2016'">
+      <span class="hoo-mtag-lbl">Server 2016</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/javascript/" aria-label="View all posts tagged with 'JavaScript'">
+      <span class="hoo-mtag-lbl">JavaScript</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/typescript/" aria-label="View all posts tagged with 'TypeScript'">
+      <span class="hoo-mtag-lbl">TypeScript</span>
+    </a>
+  </li>
+  
+</ul>
+  </div>
+
+
+  
+    
+  
+  
+    <div class="jt-asideSection">
+      <h2>See also</h2>
+      <ul class="symp-list">
+      
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/better-practices-console-log-pnpjs/">Console Log Better Practices with PnPjs V3</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/sp-appcatalog-dev-tips/">SharePoint App Catalog Development Tips</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/dev-tenant/">What is a &#39;Dev Tenant&#39; and why would you want one?</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/spfx-appcustomizer-pageloading/">SharePoint Framework Application Customizer Cross-Site Page Loading</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/reactjs-fragments/">Tip: React JS - Fragments streamline your DOM</a></li>
+      
+      </ul>
+    </div>
+  
+
+<div class="jt-asideSection">
+  <h2>About the Author</h2>
+  <div class="jt-aside-headshot">
+    <img src="https://juliemturner.net/img/jturner.png" alt="Julie Turner headshot" />
+  </div>
+  <div class="jt-highlight">Julie Turner</div>
+  <div class="jt-subhighlight">Partner/CTO</div>
+  <div class="jt-subhighlight">
+    <a href="https://sympraxisconsulting.com" target="_blank">
+      <div class="symp-logo"></div>
+    </a>
+  </div>
+  <div class="jt-listcont">
+    <ul class="symp-list">
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span>Microsoft MVP since 2017</li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/" target="_blank">Microsoft 365 PnP Team member since 2019</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/pnpjs/" target="_blank">PnPjs maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://lab.n8d.studio/htwoo/" target="_blank">HTWOO maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/portfolio/clouddev-clarity/" target="_blank">CloudDev Clarity co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://officedev.github.io/browser-native/" target="_blank">Browser Native co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/ask-sympraxis/" target="_blank">Ask Sympraxis Bi-Weekly Videocast</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="jt-asideSection">
+  <h2>Join Me Live</h2>
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+  
+</div>
+
+
+    </aside>
+    <footer class="footer">
+      
+        <ul class="hoo-meta-list">
+          
+          <li>
+            
+              <a href="mailto:julie.turner@sympraxisconsulting.com"
+                title="Email me">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://github.com/juliemturner"
+                title="GitHub">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://twitter.com/jfj1997"
+                title="Twitter">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://linkedin.com/in/juliemturner"
+                title="LinkedIn">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://www.youtube.com/user/username"
+                title="Youtube">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+            <a rel="me"href="#ZgotmplZ"
+              title="Mastodon">
+              
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          
+            
+          
+        </ul>
+        <p class="jt-copyright">
+          &nbsp;&copy;
+          2011 - 2023
+          Julie Turner ~ All rights reserved
+        </p>
+
+
+<script src="https://juliemturner.net/js/solid.min.js"></script>
+<script src="https://juliemturner.net/js/brands.min.js"></script>
+<script src="https://juliemturner.net/js/fontawesome.min.js"></script>
+
+<script src="https://juliemturner.net/js/main.js"></script>
+
+
+
+
+
+<script id="dsq-count-scr" src="//veni-vidi-vici-1.disqus.com/count.js" async></script>
+
+
+      
+    </footer>
+  </div>
+</body>
+
+</html>

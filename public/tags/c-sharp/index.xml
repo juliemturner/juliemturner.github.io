@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/c-sharp/</link>
+    <description>Recent content in C# on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/c-sharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Curate the News: Social Following Sites on behalf of a user</title>
+      <link>https://juliemturner.net/post/curate-news-for-user/</link>
+      <pubDate>Mon, 18 Feb 2019 13:51:20 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/curate-news-for-user/</guid>
+      <description>Curate the News Social Following Sites on behalf of a user The impetus for this post was the desire to follow a site for a batch of users. Why? Well, the news that shows up on the SharePoint home page stems from news posted to sites you follow. So as an organization, especially a large one, if you want to somewhat curate what news gets pushed to your users you need to make sure they’re following the sites that have the news you want them to see.</description>
+    </item>
+    
+    <item>
+      <title>Managing the Unified Group in Office 365 for SharePoint and Beyond</title>
+      <link>https://juliemturner.net/post/managing-unifed-group/</link>
+      <pubDate>Tue, 10 Apr 2018 13:24:04 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/managing-unifed-group/</guid>
+      <description>Introduction Azure Active Directory (AAD) Unified Groups, or better known as Office365 Groups, the security principal that underlies modern SharePoint team sites, Teams, Outlook Groups, Planner, etc. is a very powerful management construct that is the glue that holds the Office 365 security pyramid together. Basically, a Unified Group has both an Owners group and a Members group and by adding users (either users in your tenant or external users – with a Microsoft based work and school account or a personal account) you can create a construct that allows you to work across many of the vast product offerings in Office 365.</description>
+    </item>
+    
+    <item>
+      <title>Setting an Application Page Title from code</title>
+      <link>https://juliemturner.net/post/setting-an-application-page-title-from-code/</link>
+      <pubDate>Wed, 15 Jun 2011 21:02:25 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/setting-an-application-page-title-from-code/</guid>
+      <description>I&amp;rsquo;m currently dealing with a requirement where I need to the set an application page&amp;rsquo;s title from the code behind. By default the form has a ContentPlaceHolder control with a ContentPlaceHolderID=&amp;ldquo;PlaceHolderPageTitle&amp;rdquo; which in the master page is the text that will fall in the header&amp;rsquo;s title tag. Unfortunately, asp:Content controls are not added to the hierarchy at runtime so I can&amp;rsquo;t access it directly.
+There are good ways to modify this title on the client side with Javascript but client side code doesn&amp;rsquo;t really suit my needs as the title will come from some custom manipulation that&amp;rsquo;s better done on the server.</description>
+    </item>
+    
+    <item>
+      <title>Maintain file version history when moving/copying files between SharePoint sites</title>
+      <link>https://juliemturner.net/post/maintain-file-version-history-when-movingcopying/</link>
+      <pubDate>Thu, 02 Jun 2011 13:54:43 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/maintain-file-version-history-when-movingcopying/</guid>
+      <description>I&amp;rsquo;m working on a requirement to copy files from one document library to another document library in a sub-site. I figured this wouldn&amp;rsquo;t be horribly difficult to do but turns out it&amp;rsquo;s not as simple as you might think and for some reason, although I found many questions about how to do it, I found very few answers. From the things I&amp;rsquo;ve read out there it&amp;rsquo;s apparently relatively easy if you&amp;rsquo;re moving documents within the same site&amp;hellip; apparently the Move method works and I read where someone suggesting using SPExport and SPImport.</description>
+    </item>
+    
+    <item>
+      <title>Add BCS Secondary Fields to a custom list definition</title>
+      <link>https://juliemturner.net/post/add-bcs-secondary-fields-in-custom-list-definition/</link>
+      <pubDate>Thu, 12 May 2011 19:15:37 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/add-bcs-secondary-fields-in-custom-list-definition/</guid>
+      <description>When working with BCS data and creating an external data column in a list or library it is often desirable to show some or all of the secondary fields. In the SharePoint UI, this is a simple task, completed by checking off the fields to capture for viewing, searching, filtering, and sorting later.
+However, when you&amp;rsquo;re building your list or library using a custom list definition schema.xml file this is not as simple.</description>
+    </item>
+    
+  </channel>
+</rss>

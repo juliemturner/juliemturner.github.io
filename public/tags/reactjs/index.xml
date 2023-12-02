@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ReactJS on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/reactjs/</link>
+    <description>Recent content in ReactJS on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tip: React JS - Fragments streamline your DOM</title>
+      <link>https://juliemturner.net/post/reactjs-fragments/</link>
+      <pubDate>Thu, 18 Jul 2019 14:04:15 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/reactjs-fragments/</guid>
+      <description>This quick post is going to fall into my Tips &amp;amp; Tricks category as it’s information readily available but if you didn’t know to look for it you probably wouldn’t have found it. In version 16.2 React JS introduced the notion of &amp;ldquo;Fragments&amp;rdquo;. A Fragment is basically an empty container that you can use in a react component to group a set of children together without adding additional nodes into the DOM.</description>
+    </item>
+    
+    <item>
+      <title>Tip: Implementing &#39;Nav&#39; Office Fabric UI React Component</title>
+      <link>https://juliemturner.net/post/nav-officeui-fabric-component/</link>
+      <pubDate>Tue, 31 Jul 2018 23:55:05 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/nav-officeui-fabric-component/</guid>
+      <description>This post is meant to be a quick supplement to the documentation provided by Microsoft around the Nav component of the Fluent UI. This Nav component gives you a control that you either create URL links or maybe more commonly, support navigation via code. For general links, where the URL is either a route or some other page, the implementation of the INavLinkGroup[] and INavLink is quite straight forward, just provide a Key, Name, and URL with a couple other optional parameters.</description>
+    </item>
+    
+  </channel>
+</rss>

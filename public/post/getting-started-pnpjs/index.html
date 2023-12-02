@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2P5EMX0ZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2P5EMX0ZL');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+  
+  <title>Getting Started with PnPjs</title>
+  <meta name="description" content="As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes …" />
+<meta name="author" content="Julie Turner"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Veni, Vidi, Vici",
+    
+    "url": "https:\/\/juliemturner.net\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Veni, Vidi, Vici",
+  "url" : "https:\/\/juliemturner.net\/",
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/post\/getting-started-pnpjs\/",
+          "name": "Getting started with pn pjs"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "author": {
+    "@type": "Person",
+    "name" : "Julie Turner"
+  },
+  "headline": "Getting Started with PnPjs",
+  "description" : "As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let\u0027s drive right in.",
+  "inLanguage" : "en",
+  "wordCount":  2080 ,
+  "datePublished" : "2023-01-17T15:08:31",
+  "dateModified" : "2023-01-17T15:08:31",
+  "image" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+  "keywords" : [ "Microsoft 365, Typescript, PnPjs" ],
+  "mainEntityOfPage" : "https:\/\/juliemturner.net\/post\/getting-started-pnpjs\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name": "Veni, Vidi, Vici",
+    "url" : "https:\/\/juliemturner.net\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+<meta property="og:url" content="https://juliemturner.net/post/getting-started-pnpjs/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Getting Started with PnPjs" />
+<meta property="og:description" content="As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let&#39;s drive right in.">
+<meta property="og:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+<meta property="og:site_name" content="Veni, Vidi, Vici" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="julieturner.net">
+  <meta property="twitter:url" content="https://juliemturner.net/post/getting-started-pnpjs/">
+  <meta name="twitter:title" content="Getting Started with PnPjs" />
+  <meta name="twitter:description" content="As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your …">
+  <meta name="twitter:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+  <meta name="generator" content="Hugo 0.111.3"><link rel="canonical" href="https://juliemturner.net/post/getting-started-pnpjs/">
+  <link rel="alternate" href="https://juliemturner.net/index.xml" type="application/rss+xml" title="Veni, Vidi, Vici">
+
+  
+  <link rel="stylesheet" href="/sass/main.6773b8d3eb0c22652f9b8b334cc7d1738b1b87e527c955fc4871ca37b0915dab.css" integrity="sha256-Z3O40&#43;sMImUvm4szTMfRc4sbh&#43;UnyVX8SHHKN7CRXas=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://juliemturner.net/css/syntax.css" />
+  
+
+
+  
+</head>
+
+<body>
+  <a rel="me" href="https://home.social/@sympjulie"></a>
+  <div class="jt-wrapper">
+    <header class="jt-header">
+      
+<nav class="jt-navbar">
+    
+    <a class="jt-logo" title="Veni, Vidi, Vici" href="https://juliemturner.net/" alt="Julie Turner development blog for Microsoft 365, SharePoint, Teams, and Azure">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img">
+  <title></title>
+  <path
+    d="m46.9 133.7.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.2 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.7 3h-3.9l-42.2 66.6-5 1.1zM135.2 119.7l-.7 3.6c-9.9 6.9-18.4 10.4-25.4 10.4-4.4 0-8-1.6-10.8-4.7-2.8-3.1-4.2-7.1-4.2-12.1 0-8.8 3.4-17.1 10.1-24.9 6.8-7.8 14-11.7 21.6-11.7 2.8 0 5 .9 6.8 2.8 1.7 1.9 2.6 4.3 2.6 7.3 0 6-3.1 11.2-9.2 15.5-6.1 4.3-13.5 6.5-22 6.5v2.1c0 9.1 3.3 13.7 10 13.7 5.9.1 12.9-2.7 21.2-8.5zm-31-10c7-.6 12.5-2.4 16.4-5.4 3.9-3 5.9-7 5.9-11.8 0-4.8-1.7-7.2-5.2-7.2-3.8 0-7.4 2.5-10.9 7.5-3.5 4.9-5.6 10.5-6.2 16.9zM149.4 133.1l3.5-14.5 4.6-23.2c.7-3.6 1.1-5.9 1.1-7 0-1.9-.9-2.9-2.8-2.9-3.1 0-7.7 3.4-14 10.3l.8-4.3c6.8-7.4 13-11.1 18.4-11.1 4.5 0 6.8 2.3 6.8 7 0 1.6-.4 4.3-1.1 8l-2.3 11.6h.7c3.9-8 8.3-14.4 13.3-19.3 4.9-4.9 9.5-7.3 13.8-7.3 5.1 0 7.7 2.8 7.7 8.5 0 1.8-.3 4.1-.8 6.8l-4.6 22.9c-.7 3.6-1.1 6-1.1 7 0 2 .9 3 2.8 3 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.3-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-8l4.6-23c.4-1.8.6-3.3.6-4.5 0-2.5-.9-3.8-2.8-3.8-6 0-14.3 9.5-24.9 28.4l-3.4 16.8-9.9.6zM246.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM248 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM348.3 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM427.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM468.4 107.1h-.8c-3.6 7.9-7.9 14.3-12.8 19.2-4.9 4.9-9.6 7.4-13.9 7.4-6.6 0-9.9-4.1-9.9-12.4 0-5.6 1.6-11.5 4.9-17.7 3.2-6.2 7.4-11.3 12.6-15.5 3.4-2.8 6.9-4.7 10.3-5.6 3.4-1 8.4-1.4 15-1.4 1.8-6.2 3.8-10.9 5.8-14.2 2-3.3 4.8-6.3 8.4-9.2 6.2-4.9 13-7.3 20.5-7.3 3.1 0 5.9.3 8.4 1l-6.4 6.7c-3.7-1.6-6.9-2.4-9.5-2.4-5 0-8.8 1.8-11.3 5.5-2.5 3.6-4.8 10.5-6.8 20.5l-7.4 37.2c-.8 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.5.4-4.2 1.1-8l2.2-11.8zm3.8-18.8c-3.9-1.8-7.8-2.6-11.7-2.6-5.7 0-10.2 3.6-13.6 10.8-4 8.5-6.1 16.2-6.1 22.9 0 4.9 1.5 7.4 4.4 7.4 2.7 0 6.6-2.8 11.6-8.5 5.1-5.7 9.5-12.1 13.3-19.4l2.1-10.6z" />
+  <path
+    d="m528 118.3-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM529.4 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM629.6 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM709 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM754 119.6l-.7 3.7c-10.3 6.9-18.7 10.4-25.2 10.4-4.5 0-8.2-1.5-10.9-4.6-2.8-3.1-4.1-7.1-4.1-12.2 0-9.1 3.4-17.5 10.3-25.1 6.9-7.6 14.5-11.4 22.7-11.4 3.6 0 7.2.8 10.8 2.4l-3.1 12.1h-2.9l.1-.7c.3-1.5.5-2.5.5-3.2 0-4.3-2.9-6.5-8.8-6.5-5.5 0-10.1 2.9-13.8 8.8-3.7 5.9-5.5 13.3-5.5 22.1 0 8.5 3.2 12.7 9.5 12.7 6 .1 13.1-2.8 21.1-8.5zM797.7 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4z" />
+</svg>
+    </a>      
+  
+  <menu class="jt-nav-links">
+    
+      
+        <li class="jt-nav-item">
+          <a title="Blog" href="/">Blog</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="About" href="/me/">About</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="Privacy Policy" href="/page/privacy-policy/">Privacy Policy</a>
+        </li>
+      
+    
+    
+  </menu>
+</nav>
+
+
+
+
+
+<dialog class="hoo-mdldialog-outer">
+  <div class="hoo-mdldialog" style="--lqdDialogHeight: 60vh; --lqdDialogWidth: 60vw;">
+    <div class="hoo-dlgheader">
+      <div class="hoo-dlgheader-title"><h2>Search Veni, Vidi, Vici</h2></div>
+      <div class="hoo-dlgheader-closer">
+        <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.hideDialog()">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="/icons.svg#icon-close"></use>
+            </svg>
+        </span>
+        </button>
+      </div>
+    </div>
+    <div class="hoo-dlgcontent">
+      <gcse:search></gcse:search>
+    </div>
+  </div>
+</dialog>
+      
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+    <div class="jt-article-header" style="background-image: url('pnpjs_header.jpg');">
+      
+      <div class="jt-post-heading">
+        <div class="jt-title">
+        <h1>Getting Started with PnPjs</h1>
+          
+          
+            <div class="jt-post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 17, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;10&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2080&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Julie Turner
+    
+  
+</div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  
+
+    </header>
+    <article class="jt-content">      
+      
+<div class="jt-article" role="main">  
+  <article role="main" class="blog-post">
+    <div class="jt-crosspost">
+  <p>
+    <span class="jt-crosspost-icon"><i class="fas fa-signs-post"></i></span>
+    <span>This content has also been posted on <a href='#ZgotmplZ' target="_blank">Microsoft 365 Platform Community Blog</a>.</span>
+  </p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let&rsquo;s drive right in.</p>
+<h2 id="what-is-pnpjs">What is PnPjs</h2>
+<p>PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs. So what is a fluent library. Essentially it just means that instead of creating a URL as a string, and then using the fetch api to make a get/post/put/patch call to the API directly, the library allows you to chain method names together to let the underlying code build the fetch call for you. This significantly simplify and streamlines your code since all the boilerplate code for creating the call, modifying headers, deserializing responses, error handling, and throttling is done for you. Further, to clarify the library does very little manipulation of the results (only parsing) and is essentially a pass through for those API endpoints. That said we do also offer some helper functions that make more than one call to make some complicated tasks simpler, but these are fairly rare, <a href="https://pnp.github.io/pnpjs/sp/taxonomy/#getallchildrenasorderedtree">Taxonomy - getAllChildrenAsOrderedTree</a> is a popular example.</p>
+<h2 id="how-to-know-where-to-start">How to know where to start</h2>
+<p>So the first thing you need to do is identify what type of project is you&rsquo;re building. For obvious reasons, getting started with the SharePoint Framework is one of the most popular project types but certainly not the only one we support. You can also build a server based project using NodeJS or a stand alone web project that is hosted somewhere publicly or behind a firewall. In the latter instances authentication will be a bigger part of your scenario because you&rsquo;ll have to make sure you&rsquo;ve picked the authentication method that matches your projects and set up the external requirements for getting a token. For more detailed instructions on the different authentication methods we support please take a look at our <a href="https://pnp.github.io/pnpjs/concepts/authentication/">Authentication documentation</a>. There is also more documentation on <a href="https://pnp.github.io/pnpjs/getting-started/">getting started</a> in that section. You can, of course, roll your own authentication solution by creating your own <a href="https://pnp.github.io/pnpjs/core/behaviors/">behavior</a> instead of using the built in ones, but that is a more advanced topic. I won&rsquo;t go into behaviors, as it&rsquo;s not a getting started topic, but the entire library is extremely extensible so if you find yourself wanting to adjust the way the fetch call is composed or handled or build your own additional methods to augment the library, there is a way to do that and I encourage you to review the documentation in further detail as we&rsquo;ve tried to provide that level of advanced documentation.</p>
+<h2 id="getting-started-with-sharepoint-framework">Getting started with SharePoint Framework</h2>
+<blockquote>
+<p>This article is written as of 1.16.1 version of the SharePoint Framework being the latest. If you are using a different version please make sure to check the <a href="https://pnp.github.io/pnpjs/getting-started/">getting started</a> section to make sure there are no other requirements.</p>
+</blockquote>
+<p>As I mentioned, the most popular use of this library is with those accessing it from the SharePoint Framework (SPFx). Although SPFx has it&rsquo;s own HTTP client class built in for both the SharePoint REST APIs and the Microsoft Graph APIs you still need to build your calls and parse them manually which is fine if you like that type of thing, personally I prefer the intellisense I get from the fluent methods.</p>
+<h3 id="establishing-a-configuration-file">Establishing a configuration file</h3>
+<p>So to get started let&rsquo;s assume that you have used <code>yo @microsoft/sharepoint</code> to spin up a SPFx web part. Let&rsquo;s also be a little more complicated than the online sample and assume you want to make calls to both the SharePoint REST APIs and the Microsoft Graph APIs. Your next step would be to install the modules for <code>graph</code> and <code>sp</code> by using the following command line command which will add both of these packages to your package.json.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">npm i @pnp/sp @pnp/graph --save
+</span></span></code></pre></div><p>Now that we have the packages installed we&rsquo;ll make use of them by creating a set of functions (or service) to consolidate our calls and centralize creating the SharePoint Factory Interface (SPFI) and the Graph Factory Interface (GraphFI). In the example below I&rsquo;m going to walk you through creating a set of functions that will allow you to isolate your api requests. You could also do a more advanced service implementation (which is essentially building a specific type of class) that amounts to the same thing but allows some architectural differences that may be beneficial to a more advanced implementation.</p>
+<p>In the root <code>src</code> directory of you SPFx web part, create a new file with a <code>.ts</code> extension to create your data class. I&rsquo;ll call mine <code>pnpjsConfig.ts</code>.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/getting-started-pnpjs/directory_structure.png" width="390" height="296" alt="Adding pnpjsConfig.ts file to src folder Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Now we&rsquo;ll populate that class by adding the following imports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// import for WebPartContext which we will use to configure our SPFI/GraphFI interfaces.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cm">/* eslint-disable no-var */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">WebPartContext</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@microsoft/sp-webpart-base&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// import pnp and pnp logging system
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">spfi</span><span class="p">,</span> <span class="nx">SPFI</span><span class="p">,</span> <span class="nx">SPFx</span> <span class="kr">as</span> <span class="nx">spSPFx</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@pnp/sp&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">graphfi</span><span class="p">,</span> <span class="nx">GraphFI</span><span class="p">,</span> <span class="nx">SPFx</span> <span class="kr">as</span> <span class="nx">graphSPFx</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@pnp/graph&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">LogLevel</span><span class="p">,</span> <span class="nx">PnPLogging</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;@pnp/logging&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// imports for modules you want to use
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/webs&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/lists&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/items&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/batching&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s2">&#34;@pnp/graph/users&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p>First we&rsquo;re importing the <code>WebPartContext</code> from the <code>sp-webpart-base</code> module so that we can pass that into our factory interfaces. Next we need to import both the <code>SPFI</code> and <code>GraphFI</code> interfaces and factories as well as the <code>SPFx</code> behavior for both modules. Note that we&rsquo;re using the <code>as</code> keyword so that we can make the names of the behaviors unique; SPFx becomes spSPFx and graphSPFx. After that we just want to add imports for the individual modules we&rsquo;re going to be using in our project. By limiting the imports that we use (vs importing @pnp/sp in it&rsquo;s entirety for example) we reduce the build size of our finished solution. My list of imports is an example you should add to and remove as is appropriate.</p>
+<p>Next we&rsquo;re going to create some global variables for storing the instances of the SPFI and GraphFI interfaces. After that we&rsquo;re going to create two functions one to get the SharePoint factory interface and one to get the Graph factory interface. Note that they both take the <code>WebPartContext</code> as an optional parameter. When it&rsquo;s passed in we assume we&rsquo;re creating the factory interfaces and create it assigning it to the global variables we&rsquo;ve declared in the same file. As long as the page doesn&rsquo;t refresh those global variables will have an valid object. Either way the function returns the current interface that can then be acted upon.</p>
+<blockquote>
+<p>Please also note that we&rsquo;re exporting a const that is the getSP and getGraph methods, this makes those methods global on the page so there is only one instance. This may or may not be a problem if you intend to have multiple instances of web parts on the page that implement these same methods.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// eslint-disable-next-line no-var
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">_sp</span>: <span class="kt">SPFI</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">_graph</span>: <span class="kt">GraphFI</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">getSP</span> <span class="o">=</span> <span class="p">(</span><span class="nx">context?</span>: <span class="kt">WebPartContext</span><span class="p">)</span><span class="o">:</span> <span class="nx">SPFI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">context</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//You must add the @pnp/logging package to include the PnPLogging behavior it is no longer a peer dependency
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// The LogLevel set&#39;s at what level a message will be written to the console
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">_sp</span> <span class="o">=</span> <span class="nx">spfi</span><span class="p">().</span><span class="nx">using</span><span class="p">(</span><span class="nx">spSPFx</span><span class="p">(</span><span class="nx">context</span><span class="p">)).</span><span class="nx">using</span><span class="p">(</span><span class="nx">PnPLogging</span><span class="p">(</span><span class="nx">LogLevel</span><span class="p">.</span><span class="nx">Warning</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">_sp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">getGraph</span> <span class="o">=</span> <span class="p">(</span><span class="nx">context?</span>: <span class="kt">WebPartContext</span><span class="p">)</span><span class="o">:</span> <span class="nx">GraphFI</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">context</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//You must add the @pnp/logging package to include the PnPLogging behavior it is no longer a peer dependency
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// The LogLevel set&#39;s at what level a message will be written to the console
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">_graph</span> <span class="o">=</span> <span class="nx">graphfi</span><span class="p">().</span><span class="nx">using</span><span class="p">(</span><span class="nx">graphSPFx</span><span class="p">(</span><span class="nx">context</span><span class="p">)).</span><span class="nx">using</span><span class="p">(</span><span class="nx">PnPLogging</span><span class="p">(</span><span class="nx">LogLevel</span><span class="p">.</span><span class="nx">Warning</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">_graph</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h3 id="initializing-the-config-file">Initializing the config file</h3>
+<p>The next step is to add calls from the SPFx onInit method to create the interfaces. We&rsquo;ll start with the root TS file for the web part that implements the <code>BaseClientSideWebPart</code> interface.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/getting-started-pnpjs/directory_structure_2.png" width="397" height="257" alt="Modifying the root web part class instance Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>In the <code>onInit</code> method we&rsquo;re going to make calls to our <code>getSP</code> and <code>getGraph</code> functions passing in the <code>this.context</code> property which is a <code>WebPartContext</code>. Once that&rsquo;s done those getSPand getGraph functions will return a valid factory interfaces for PnPjs that can then be use to make calls for get and retrieve data as needed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// Import the getGraph and getSP functions from pnpjsConfig.ts file.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">getGraph</span><span class="p">,</span> <span class="nx">getSP</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./pnpjsConfig&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">PnPjsExampleWebPart</span> <span class="kr">extends</span> <span class="nx">BaseClientSideWebPart</span><span class="p">&lt;</span><span class="nt">IPnPjsExampleWebPartProps</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">_isDarkTheme</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">_environmentMessage</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">protected</span> <span class="kr">async</span> <span class="nx">onInit</span><span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">void</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">_environmentMessage</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_getEnvironmentMessage</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Initialize our _sp object that we can then use in other packages without having to pass around the context.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Check out pnpjsConfig.ts for an example of a project setup file.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">getSP</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">getGraph</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="get-some-data">Get some data</h3>
+<p>You now have essentially two options for how to implement your data retrieval methods. The first is that you can retrieve data right inside your ReactJS components or hooks (or framework du jour components). Although this is entirely valid, it makes for harder to read code and less reusability.</p>
+<p>The second method would be to implement more global functions in your <code>pnpjsConfig.ts</code> file. While this is, to me preferable, it does somewhat pollute your global namespace. In the end this is why I always create a service class to encapsulate my data manipulation methods. Since we&rsquo;re just getting started and we&rsquo;re assuming this is a very simple example, we&rsquo;ll move forward instead of complicating the process by adding more layers that are, in the end, only architectural choices.</p>
+<p>Let&rsquo;s start by opening our root web part component file, in this case <code>PnPjsExample.tsx</code>. This is the component that is mounted when our root class calls the render method.</p>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/getting-started-pnpjs/directory_structure_3.png" width="399" height="440" alt="Modifying the root component Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>We&rsquo;ll make sure in our components constructor we&rsquo;re making calls to set local, private, variables to instances of our factory function. That way the component can make use of them to get/put data to SharePoint or the Graph APIs.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">PnPjsExample</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="p">&lt;</span><span class="nt">IPnPjsExampleProps</span><span class="err">,</span> <span class="na">IIPnPjsExampleState</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">_sp</span>: <span class="kt">SPFI</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">_graph</span>: <span class="kt">GraphFI</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="nx">props</span>: <span class="kt">IPnPjsExampleProps</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">_sp</span> <span class="o">=</span> <span class="nx">getSP</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">_graph</span> <span class="o">=</span> <span class="nx">getGraph</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now I can add a private method to this component to go retrieve some data. For instance let&rsquo;s add a method that will read the items from the default document library in a SharePoint site.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">private</span> <span class="nx">_readAllFilesSize</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">void</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">response</span>: <span class="kt">IResponseItem</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&#34;Documents&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nx">items</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&#34;Id&#34;</span><span class="p">,</span> <span class="s2">&#34;Title&#34;</span><span class="p">,</span> <span class="s2">&#34;FileLeafRef&#34;</span><span class="p">,</span> <span class="s2">&#34;File/Length&#34;</span><span class="p">).</span><span class="nx">expand</span><span class="p">(</span><span class="s2">&#34;File/Length&#34;</span><span class="p">)();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// use map to convert IResponseItem[] into our internal object IFile[]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kr">const</span> <span class="nx">items</span>: <span class="kt">IFile</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span>: <span class="kt">IResponseItem</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Id</span>: <span class="kt">item.Id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Title</span>: <span class="kt">item.Title</span> <span class="o">||</span> <span class="s2">&#34;Unknown&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Size</span>: <span class="kt">item.File?.Length</span> <span class="o">||</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Name</span>: <span class="kt">item.FileLeafRef</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Add the items to the state
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">items</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">Logger</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">LOG_SOURCE</span><span class="si">}</span><span class="sb"> (_readAllFilesSize) - </span><span class="si">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="si">}</span><span class="sb"> - `</span><span class="p">,</span> <span class="nx">LogLevel</span><span class="p">.</span><span class="nb">Error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>Note that the example above uses the <code>this._sp</code> factory interface and then chains the methods together to retrieve the data we need. It uses the <code>await</code> keyword because for the most part all methods that return data return <code>promises</code> so using await makes sure the resulting variable is the resolved promise. Breaking down this sample, this is what each section means:</p>
+<ul>
+<li>.web [start at the current web]</li>
+<li>.lists [all the lists in the web]</li>
+<li>.getByTitle(&ldquo;Documents) [the list/library with the title Documents]</li>
+<li>.items [all the items in the list/library]</li>
+<li>.select [limit the columns returned in the payload]</li>
+<li>.expand(&ldquo;File/Length) [knowing that File is a lookup field also get the Length property for each file in this library]</li>
+<li>() [Invoke the method to retrieve the data]</li>
+</ul>
+<p>Another important point to make is that in our <code>pnpjsConfig.ts</code> file we imported methods to support all the methods we were going to use to make this call. This example specifically requires the following imports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/webs&#34;</span><span class="p">;</span> <span class="c1">// &lt;- .web
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/lists&#34;</span><span class="p">;</span> <span class="c1">// &lt;- .lists; .getByTitle
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="s2">&#34;@pnp/sp/items&#34;</span><span class="p">;</span> <span class="c1">// &lt;- .items
+</span></span></span></code></pre></div><blockquote>
+<p>Both .select and .expand are part of the root <code>SPQueryable</code> class, inherited from the Queryable class.</p>
+</blockquote>
+<h2 id="next-steps">Next Steps</h2>
+<p>After that we can manipulate the dataset however we like. Because the method above puts the resulting data in the state of the web part we can then render it to the UI during the render method. Essentially at this point the sky is the limit for what you can do with the various APIs to solve business problems in your organization or for the community at large.</p>
+<p>For a more extensive example please see the <a href="https://github.com/pnp/sp-dev-fx-webparts/tree/main/samples/react-pnp-js-sample">sample project</a> that extends this example in more depth and look to see more articles on more advanced topics in the future.</p>
+<p>Happy Coding!</p>
+
+  </article>
+
+      
+    
+    <div class="jt-pager">
+      
+        <button class="hoo-button" title="SharePoint App Catalog Development Tips" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/sp-appcatalog-dev-tips\/')" > 
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Previous Post</span>      
+        </button>
+      
+      
+        <button class="hoo-button is-reversed" title="Intro to hTWOo-React: Microsoft Fluent UI React alternative" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/intro-htwoo-react\/')">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Next Post</span>
+        </button>
+      
+    </div>
+  
+
+  
+    
+      
+      <div class="jt-disqus-comments">                  
+        <button onclick="jtBlogMain.showComments(event, 'veni-vidi-vici-1')">
+          Show 
+          <span class="disqus-comment-count" data-disqus-url="https://juliemturner.net/post/getting-started-pnpjs/">comments</span>
+        </button>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_config = function () {
+          this.page.url = 'https:\/\/juliemturner.net\/post\/getting-started-pnpjs';
+        };
+      </script>
+      </div>
+      
+    
+  
+</div>
+
+    </article>
+    <aside class="jt-sidebar">
+      
+
+  <div class="jt-asideSection">
+    
+<h2>Share this post</h2>
+
+<ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="//twitter.com/share?url=https%3a%2f%2fjuliemturner.net%2fpost%2fgetting-started-pnpjs%2f&amp;text=Getting%20Started%20with%20PnPjs&amp;via=jfj1997"
+      target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjuliemturner.net%2fpost%2fgetting-started-pnpjs%2f" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//reddit.com/submit?url=https%3a%2f%2fjuliemturner.net%2fpost%2fgetting-started-pnpjs%2f&amp;title=Getting%20Started%20with%20PnPjs" target="_blank" title="Share on Reddit">
+      <i class="fab fa-reddit jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjuliemturner.net%2fpost%2fgetting-started-pnpjs%2f&amp;title=Getting%20Started%20with%20PnPjs" target="_blank"
+      title="Share on LinkedIn">
+      <i class="fab fa-linkedin jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//toot.kytta.dev/?text=Check%20out%20this%20article%20Getting%20Started%20with%20PnPjs%20at%20https%3a%2f%2fjuliemturner.net%2fpost%2fgetting-started-pnpjs%2f" target="_blank"
+      title="Share on Mastodon">
+      <i class="fab fa-mastodon jt-mtag-icon"></i>
+    </a>
+  </li>
+</ul>
+
+  </div>
+
+
+
+
+  <div class="jt-asideSection">
+    <h2>Tags</h2>
+    <ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/microsoft-365/" aria-label="View all posts tagged with 'Microsoft 365'">
+      <span class="hoo-mtag-lbl">Microsoft 365</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/typescript/" aria-label="View all posts tagged with 'Typescript'">
+      <span class="hoo-mtag-lbl">Typescript</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/pnpjs/" aria-label="View all posts tagged with 'PnPjs'">
+      <span class="hoo-mtag-lbl">PnPjs</span>
+    </a>
+  </li>
+  
+</ul>
+  </div>
+
+
+  
+    
+  
+  
+    <div class="jt-asideSection">
+      <h2>See also</h2>
+      <ul class="symp-list">
+      
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/htwoo-210-dialogs/">hTWOo-React 2.1.0 Spotlight: Dialogs</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/better-practices-console-log-pnpjs/">Console Log Better Practices with PnPjs V3</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/intro-htwoo-react/">Intro to hTWOo-React: Microsoft Fluent UI React alternative</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/sp-appcatalog-dev-tips/">SharePoint App Catalog Development Tips</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/dev-tenant/">What is a &#39;Dev Tenant&#39; and why would you want one?</a></li>
+      
+      </ul>
+    </div>
+  
+
+<div class="jt-asideSection">
+  <h2>About the Author</h2>
+  <div class="jt-aside-headshot">
+    <img src="https://juliemturner.net/img/jturner.png" alt="Julie Turner headshot" />
+  </div>
+  <div class="jt-highlight">Julie Turner</div>
+  <div class="jt-subhighlight">Partner/CTO</div>
+  <div class="jt-subhighlight">
+    <a href="https://sympraxisconsulting.com" target="_blank">
+      <div class="symp-logo"></div>
+    </a>
+  </div>
+  <div class="jt-listcont">
+    <ul class="symp-list">
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span>Microsoft MVP since 2017</li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/" target="_blank">Microsoft 365 PnP Team member since 2019</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/pnpjs/" target="_blank">PnPjs maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://lab.n8d.studio/htwoo/" target="_blank">HTWOO maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/portfolio/clouddev-clarity/" target="_blank">CloudDev Clarity co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://officedev.github.io/browser-native/" target="_blank">Browser Native co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/ask-sympraxis/" target="_blank">Ask Sympraxis Bi-Weekly Videocast</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="jt-asideSection">
+  <h2>Join Me Live</h2>
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+  
+</div>
+
+
+    </aside>
+    <footer class="footer">
+      
+        <ul class="hoo-meta-list">
+          
+          <li>
+            
+              <a href="mailto:julie.turner@sympraxisconsulting.com"
+                title="Email me">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://github.com/juliemturner"
+                title="GitHub">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://twitter.com/jfj1997"
+                title="Twitter">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://linkedin.com/in/juliemturner"
+                title="LinkedIn">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://www.youtube.com/user/username"
+                title="Youtube">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+            <a rel="me"href="#ZgotmplZ"
+              title="Mastodon">
+              
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          
+            
+          
+        </ul>
+        <p class="jt-copyright">
+          &nbsp;&copy;
+          2011 - 2023
+          Julie Turner ~ All rights reserved
+        </p>
+
+
+<script src="https://juliemturner.net/js/solid.min.js"></script>
+<script src="https://juliemturner.net/js/brands.min.js"></script>
+<script src="https://juliemturner.net/js/fontawesome.min.js"></script>
+
+<script src="https://juliemturner.net/js/main.js"></script>
+
+
+
+
+
+<script id="dsq-count-scr" src="//veni-vidi-vici-1.disqus.com/count.js" async></script>
+
+
+      
+    </footer>
+  </div>
+</body>
+
+</html>

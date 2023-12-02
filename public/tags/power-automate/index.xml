@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Power Automate on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/power-automate/</link>
+    <description>Recent content in Power Automate on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/power-automate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SharePoint &#43; Flow (&#43; Azure Functions): Launching a Microsoft Flow from Client-Side Code</title>
+      <link>https://juliemturner.net/post/launch-power-automate-with-code/</link>
+      <pubDate>Wed, 05 Jul 2017 20:29:23 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/launch-power-automate-with-code/</guid>
+      <description>The requirement seemed deceptively simple… and it was, somewhat… simple. I&amp;rsquo;ll start with showing you how very simple it is to launch a Microsoft Flow (&amp;ldquo;flow&amp;rdquo;) from your client-side code hosted, well… wherever. I will give you this caveat, launching a flow this way requires no authentication. The URL is entirely obscure, but if you’re concerned that the flow you’re starting does something you only want to allow authenticated users in your organization to do then you may want to rethink this.</description>
+    </item>
+    
+  </channel>
+</rss>

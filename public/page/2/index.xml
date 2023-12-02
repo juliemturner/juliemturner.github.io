@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/</link>
+    <description>Julie Turner Blog on Microsoft 365 (O365), SharePoint, Microsoft Teams, development and extensibility expert with SharePoint Framework (SPFx)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Julie Turner</managingEditor>
+    <webMaster>Julie Turner</webMaster>
+    <copyright>2023 Julie Turner ~ All rights reserved</copyright>
+    
+    <lastBuildDate>Fri, 01 Dec 2023 21:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://juliemturner.net/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    
+    
+    
+      
+    
+    
+    <item>
+      <title>Curate the News: Social Following Sites on behalf of a user</title>
+      <link>https://juliemturner.net/post/curate-news-for-user/</link>
+      <pubDate>Mon, 18 Feb 2019 13:51:20 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/curate-news-for-user/</guid>
+      <description>Curate the News Social Following Sites on behalf of a user The impetus for this post was the desire to follow a site for a batch of users. Why? Well, the news that shows up on the SharePoint home page stems from news posted to sites you follow. So as an organization, especially a large one, if you want to somewhat curate what news gets pushed to your users you need to make sure they’re following the sites that have the news you want them to see.</description>
+    </item>
+    
+    <item>
+      <title>Resolve to Log</title>
+      <link>https://juliemturner.net/post/resolve-to-log/</link>
+      <pubDate>Mon, 31 Dec 2018 18:51:56 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/resolve-to-log/</guid>
+      <description>This post has been updated in a more recent post Console Log Better Practices with PnPjs V3.My Sympraxis partner Marc Anderson mentioned that we’ve been talking about PnPJS packages for SharePoint Framework a lot lately and called out that I would be blogging about utilizing the logging package in his post Using PnPJS and Async/Await to Really Simplify Your API Calls. If you haven’t checked it out and aren’t using PnPJS and the Async/Await method instead of Promises in your SharePoint Framework solutions, you should give it a read.</description>
+    </item>
+    
+    <item>
+      <title>SPFx Anchor Tags - Hitting the Target</title>
+      <link>https://juliemturner.net/post/spfx-anchor-tags/</link>
+      <pubDate>Wed, 08 Aug 2018 18:17:18 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/spfx-anchor-tags/</guid>
+      <description>If you’re developing SharePoint Framework web parts you may have run across an issue whereby your anchor tags will not honor the target=”_blank” attribute allowing you to open a url in a new browser tab. The issue manifests itself only when your goal is to open another SharePoint page from a SharePoint page, i.e. the href is in the SharePoint domain. The reason for this is SharePoint’s built in but rather complex Page Router.</description>
+    </item>
+    
+    <item>
+      <title>Tip: Implementing &#39;Nav&#39; Office Fabric UI React Component</title>
+      <link>https://juliemturner.net/post/nav-officeui-fabric-component/</link>
+      <pubDate>Tue, 31 Jul 2018 23:55:05 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/nav-officeui-fabric-component/</guid>
+      <description>This post is meant to be a quick supplement to the documentation provided by Microsoft around the Nav component of the Fluent UI. This Nav component gives you a control that you either create URL links or maybe more commonly, support navigation via code. For general links, where the URL is either a route or some other page, the implementation of the INavLinkGroup[] and INavLink is quite straight forward, just provide a Key, Name, and URL with a couple other optional parameters.</description>
+    </item>
+    
+    <item>
+      <title>Managing the Unified Group in Office 365 for SharePoint and Beyond</title>
+      <link>https://juliemturner.net/post/managing-unifed-group/</link>
+      <pubDate>Tue, 10 Apr 2018 13:24:04 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/managing-unifed-group/</guid>
+      <description>Introduction Azure Active Directory (AAD) Unified Groups, or better known as Office365 Groups, the security principal that underlies modern SharePoint team sites, Teams, Outlook Groups, Planner, etc. is a very powerful management construct that is the glue that holds the Office 365 security pyramid together. Basically, a Unified Group has both an Owners group and a Members group and by adding users (either users in your tenant or external users – with a Microsoft based work and school account or a personal account) you can create a construct that allows you to work across many of the vast product offerings in Office 365.</description>
+    </item>
+    
+    <item>
+      <title>Harvesting your SharePoint Site Collections</title>
+      <link>https://juliemturner.net/post/harvesting-sharepoint-sites/</link>
+      <pubDate>Tue, 20 Mar 2018 11:36:31 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/harvesting-sharepoint-sites/</guid>
+      <description>One of the things I’ve been working on lately is harvesting a complete listing of all the site collections in a tenant, including as much metadata as possible. Some of the metadata I’m looking for revolves around adding governance to managing your catalog of sites, especially in a large tenant. For sure I think the SharePoint product group has visibility into the needs here but to get full fidelity might take significantly longer than you can wait.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint – Part 4</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</link>
+      <pubDate>Tue, 16 Jan 2018 14:43:38 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</guid>
+      <description>For this last post I want to take what we’ve learned and add the final pieces that have you creating web parts in the same way you would modern SPFx web parts and solutions. We’re going to start by discussing TypeScript and then briefly touch on Sass and how to include these languages into your new Webpack/Gulp environment.
+TypeScript is becoming almost ubiquitous in modern web development. The pros are numerous, my favorites are the ability to write code to target older browser with modern capabilities, and the ability to use a version of intellisense to validate your objects properties and methods.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 3</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</link>
+      <pubDate>Thu, 11 Jan 2018 14:29:46 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</guid>
+      <description>In our last post I went through the gulp process we were implementing to watch our files and upload them into an appropriate SharePoint library so that we can test our work inside SharePoint regardless of if SharePoint was version 2007 or SharePoint Online. Now we’re going to take things further and formalize our process. One of the tools the SharePoint Framework (SPFx) uses is Webpack. Webpack’s main goal is to take the many files that you create as a developer and bundle them all together into one JavaScript file.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 2</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</link>
+      <pubDate>Tue, 09 Jan 2018 14:47:29 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</guid>
+      <description>In the first post in this series I discussed some of the benefits of formalizing your client-side development process and then a bit about starting the process of tooling up. A common scenario to develop our own client-side solutions in SharePoint is to point a Content Editor (CEWP) or Script Editor (SEWP) web part at our custom html, css, and js files that are sitting in a document library somewhere in our environment.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 1</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</link>
+      <pubDate>Fri, 05 Jan 2018 16:20:59 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</guid>
+      <description>Last year, around this time, Marc and I agreed we should write a blog series on our development process. As often happens good intentions get buried in other commitments, but I’ve finally managed to circle back on this topic which I’m finding has become more important than ever. Over the last year the SharePoint Framework has taken off. Although it still doesn’t support the paradigm that I most often am developing for - the full-page app hosted in SharePoint - I still think it’s a great model for development.</description>
+    </item>
+    
+  </channel>
+</rss>

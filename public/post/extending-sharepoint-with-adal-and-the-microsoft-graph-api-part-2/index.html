@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  
+  
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2P5EMX0ZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2P5EMX0ZL');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
+  
+    
+      
+    
+  
+  <title>ADAL authorization - Extending SharePoint with the Microsoft …</title>
+  <meta name="description" content="Further streamline the implementation of ADAL, in AngularJS specifically, but with broader implications to any web based framework." />
+<meta name="author" content="Julie Turner"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Veni, Vidi, Vici",
+    
+    "url": "https:\/\/juliemturner.net\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Veni, Vidi, Vici",
+  "url" : "https:\/\/juliemturner.net\/",
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/juliemturner.net\/post\/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2\/",
+          "name": "Adal authorization extending share point with the microsoft graph – part 2"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "author": {
+    "@type": "Person",
+    "name" : "Julie Turner"
+  },
+  "headline": "ADAL authorization: Extending SharePoint with the Microsoft Graph – Part 2",
+  "description" : "Introduction In Part 1 of this series I covered all the setup needed to start your Microsoft Graph API (MSGraphAPI) client side widget. In Part 2, we’re going to dive into the many ways to use adal.js and its counterpart adal-angular.js. I’ve included the same resources I included in Part 1, under the section for ADAL you’ll find a lot of references to Cloud Identity blog by Vittorio Bertocci who has blogged extensively on the library, explaining in depth the technical workings of it.",
+  "inLanguage" : "en",
+  "wordCount":  2261 ,
+  "datePublished" : "2017-01-26T14:02:36",
+  "dateModified" : "2017-01-26T14:02:36",
+  "image" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+  "keywords" : [ "Microsoft 365, Microsoft Graph, REST, TypeScript, JavaScript" ],
+  "mainEntityOfPage" : "https:\/\/juliemturner.net\/post\/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name": "Veni, Vidi, Vici",
+    "url" : "https:\/\/juliemturner.net\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/juliemturner.net\/VVV_OG_Image.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+<meta property="og:url" content="https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ADAL authorization: Extending SharePoint with the Microsoft Graph – Part 2" />
+<meta property="og:description" content="Introduction In Part 1 of this series I covered all the setup needed to start your Microsoft Graph API (MSGraphAPI) client side widget. In Part 2, we’re going to dive into the many ways to use adal.js and its counterpart adal-angular.js. I’ve included the same resources I included in Part 1, under the section for ADAL you’ll find a lot of references to Cloud Identity blog by Vittorio Bertocci who has blogged extensively on the library, explaining in depth the technical workings of it.">
+<meta property="og:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+<meta property="og:site_name" content="Veni, Vidi, Vici" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="julieturner.net">
+  <meta property="twitter:url" content="https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2/">
+  <meta name="twitter:title" content="ADAL authorization: Extending SharePoint with the Microsoft Graph – …" />
+  <meta name="twitter:description" content="Introduction In Part 1 of this series I covered all the setup needed to start your Microsoft Graph API (MSGraphAPI) client side widget. In Part 2, we’re going to dive into the many ways to use adal.js …">
+  <meta name="twitter:image" content="https://juliemturner.net/VVV_OG_Image.png" />
+  <meta name="generator" content="Hugo 0.111.3"><link rel="canonical" href="https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2/">
+  <link rel="alternate" href="https://juliemturner.net/index.xml" type="application/rss+xml" title="Veni, Vidi, Vici">
+
+  
+  <link rel="stylesheet" href="/sass/main.6773b8d3eb0c22652f9b8b334cc7d1738b1b87e527c955fc4871ca37b0915dab.css" integrity="sha256-Z3O40&#43;sMImUvm4szTMfRc4sbh&#43;UnyVX8SHHKN7CRXas=">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://juliemturner.net/css/syntax.css" />
+  
+
+
+  
+</head>
+
+<body>
+  <a rel="me" href="https://home.social/@sympjulie"></a>
+  <div class="jt-wrapper">
+    <header class="jt-header">
+      
+<nav class="jt-navbar">
+    
+    <a class="jt-logo" title="Veni, Vidi, Vici" href="https://juliemturner.net/" alt="Julie Turner development blog for Microsoft 365, SharePoint, Teams, and Azure">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img">
+  <title></title>
+  <path
+    d="m46.9 133.7.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.2 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.7 3h-3.9l-42.2 66.6-5 1.1zM135.2 119.7l-.7 3.6c-9.9 6.9-18.4 10.4-25.4 10.4-4.4 0-8-1.6-10.8-4.7-2.8-3.1-4.2-7.1-4.2-12.1 0-8.8 3.4-17.1 10.1-24.9 6.8-7.8 14-11.7 21.6-11.7 2.8 0 5 .9 6.8 2.8 1.7 1.9 2.6 4.3 2.6 7.3 0 6-3.1 11.2-9.2 15.5-6.1 4.3-13.5 6.5-22 6.5v2.1c0 9.1 3.3 13.7 10 13.7 5.9.1 12.9-2.7 21.2-8.5zm-31-10c7-.6 12.5-2.4 16.4-5.4 3.9-3 5.9-7 5.9-11.8 0-4.8-1.7-7.2-5.2-7.2-3.8 0-7.4 2.5-10.9 7.5-3.5 4.9-5.6 10.5-6.2 16.9zM149.4 133.1l3.5-14.5 4.6-23.2c.7-3.6 1.1-5.9 1.1-7 0-1.9-.9-2.9-2.8-2.9-3.1 0-7.7 3.4-14 10.3l.8-4.3c6.8-7.4 13-11.1 18.4-11.1 4.5 0 6.8 2.3 6.8 7 0 1.6-.4 4.3-1.1 8l-2.3 11.6h.7c3.9-8 8.3-14.4 13.3-19.3 4.9-4.9 9.5-7.3 13.8-7.3 5.1 0 7.7 2.8 7.7 8.5 0 1.8-.3 4.1-.8 6.8l-4.6 22.9c-.7 3.6-1.1 6-1.1 7 0 2 .9 3 2.8 3 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.3-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-8l4.6-23c.4-1.8.6-3.3.6-4.5 0-2.5-.9-3.8-2.8-3.8-6 0-14.3 9.5-24.9 28.4l-3.4 16.8-9.9.6zM246.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM248 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM348.3 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM427.6 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM468.4 107.1h-.8c-3.6 7.9-7.9 14.3-12.8 19.2-4.9 4.9-9.6 7.4-13.9 7.4-6.6 0-9.9-4.1-9.9-12.4 0-5.6 1.6-11.5 4.9-17.7 3.2-6.2 7.4-11.3 12.6-15.5 3.4-2.8 6.9-4.7 10.3-5.6 3.4-1 8.4-1.4 15-1.4 1.8-6.2 3.8-10.9 5.8-14.2 2-3.3 4.8-6.3 8.4-9.2 6.2-4.9 13-7.3 20.5-7.3 3.1 0 5.9.3 8.4 1l-6.4 6.7c-3.7-1.6-6.9-2.4-9.5-2.4-5 0-8.8 1.8-11.3 5.5-2.5 3.6-4.8 10.5-6.8 20.5l-7.4 37.2c-.8 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.1 0 7.8-3.4 14-10.3l-.9 4.4c-6.8 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.5.4-4.2 1.1-8l2.2-11.8zm3.8-18.8c-3.9-1.8-7.8-2.6-11.7-2.6-5.7 0-10.2 3.6-13.6 10.8-4 8.5-6.1 16.2-6.1 22.9 0 4.9 1.5 7.4 4.4 7.4 2.7 0 6.6-2.8 11.6-8.5 5.1-5.7 9.5-12.1 13.3-19.4l2.1-10.6z" />
+  <path
+    d="m528 118.3-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM529.4 124.3l9.3-6.7 6.9 9.2c-.3 6.3-2.3 11.2-5.9 14.6-3.6 3.4-8.5 5.1-14.7 5.1l2.6-2.9c4.9-.5 7.8-3.8 8.8-9.9l-7-9.4zM629.6 133.7l.3-12.2c0-24.2-2.2-41.1-6.6-50.5-4.7-9.9-10.4-14.9-17.1-14.9-6.1 0-11.5 3.9-16.2 11.7l-2.4-1.3c6.9-10.8 14.5-16.2 22.8-16.2 19.6 0 29.5 22.5 29.5 67.6l15-23.5c9.1-14.2 13.7-23.1 13.7-26.7 0-1.2-1.4-1.8-4.2-1.8h-3.8l.6-2.9h20.2l-.6 2.9h-3.9l-42.2 66.6-5.1 1.2zM709 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4zM754 119.6l-.7 3.7c-10.3 6.9-18.7 10.4-25.2 10.4-4.5 0-8.2-1.5-10.9-4.6-2.8-3.1-4.1-7.1-4.1-12.2 0-9.1 3.4-17.5 10.3-25.1 6.9-7.6 14.5-11.4 22.7-11.4 3.6 0 7.2.8 10.8 2.4l-3.1 12.1h-2.9l.1-.7c.3-1.5.5-2.5.5-3.2 0-4.3-2.9-6.5-8.8-6.5-5.5 0-10.1 2.9-13.8 8.8-3.7 5.9-5.5 13.3-5.5 22.1 0 8.5 3.2 12.7 9.5 12.7 6 .1 13.1-2.8 21.1-8.5zM797.7 118.3l-.8 4.4c-6.9 7.4-13 11-18.4 11-4.5 0-6.8-2.4-6.8-7.1 0-1.6.4-4.2 1.1-7.9l3.2-16.3c.9-4.6 1.3-7.7 1.3-9.2 0-2.6-1-3.9-3.1-3.9-1.4 0-3.9.5-7.6 1.6l.6-2.9 22.9-7.5-3.6 15-4.6 23.2c-.7 3.6-1.1 5.9-1.1 6.9 0 2 .9 3.1 2.8 3.1 3.2 0 7.9-3.5 14.1-10.4zm-17.2-46 3.1-6.4 13.2-8.6-4 8.6-12.3 6.4z" />
+</svg>
+    </a>      
+  
+  <menu class="jt-nav-links">
+    
+      
+        <li class="jt-nav-item">
+          <a title="Blog" href="/">Blog</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="About" href="/me/">About</a>
+        </li>
+      
+    
+      
+        <li class="jt-nav-item">
+          <a title="Privacy Policy" href="/page/privacy-policy/">Privacy Policy</a>
+        </li>
+      
+    
+    
+  </menu>
+</nav>
+
+
+
+
+
+<dialog class="hoo-mdldialog-outer">
+  <div class="hoo-mdldialog" style="--lqdDialogHeight: 60vh; --lqdDialogWidth: 60vw;">
+    <div class="hoo-dlgheader">
+      <div class="hoo-dlgheader-title"><h2>Search Veni, Vidi, Vici</h2></div>
+      <div class="hoo-dlgheader-closer">
+        <button class="hoo-buttonicon" aria-label="Button" onclick="jtBlogMain.hideDialog()">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-close" aria-hidden="true">
+                <use xlink:href="/icons.svg#icon-close"></use>
+            </svg>
+        </span>
+        </button>
+      </div>
+    </div>
+    <div class="hoo-dlgcontent">
+      <gcse:search></gcse:search>
+    </div>
+  </div>
+</dialog>
+      
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  
+    <div class="jt-article-header" style="background-image: url('20170118_ADALLibs.png');">
+      
+      <div class="jt-post-heading">
+        <div class="jt-title">
+        <h1>ADAL authorization: Extending SharePoint with the Microsoft Graph – Part 2</h1>
+          
+          
+            <div class="jt-post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 26, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;11&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2261&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Julie Turner
+    
+  
+</div>
+
+
+          
+        </div>
+      </div>
+    </div>
+  
+
+    </header>
+    <article class="jt-content">      
+      
+<div class="jt-article" role="main">  
+  <article role="main" class="blog-post">
+    <h2 id="introduction">Introduction</h2>
+<p>In <a href="../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1/">Part 1</a> of this series I covered all the setup needed to start your Microsoft Graph API (MSGraphAPI) client side widget. In Part 2, we’re going to dive into the many ways to use adal.js and its counterpart adal-angular.js. I’ve included the same resources I included in <a href="../extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1/">Part 1</a>, under the section for ADAL you’ll find a lot of references to Cloud Identity blog by Vittorio Bertocci who has blogged extensively on the library, explaining in depth the technical workings of it. I encourage you to read those posts I’ve included below to get a complete understanding of the library. Also, included in the references is a post about utilizing ADAL in the SharePoint Framework (SPFx). As is, ADAL was never meant to be used as part of a widget architecture as ADAL isn’t a singleton, so if you have multiple web parts on your page all referencing ADAL you’re going to have issues. The post <code>Call the MSGraphAPI using OAuth from your web part</code> <em>(no longer available)</em> gives you an extension that will help isolate ADAL so that you can utilize it as part of a more strongly developed widget pattern. Since my demo is just that, and since my solution will be the only one running on the page that uses the ADAL library I’m not going to address those modifications here. But, I encourage you do so if that is part of your use case.</p>
+<h2 id="the-adal-library-for-javascript">The ADAL library for JavaScript</h2>
+
+
+
+
+
+<div class="jt-box">
+
+  <figure>    
+    
+      <img src="/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2/20170118_ADALLibs.png" width="746" height="649" alt="20170118_ADALLibs Preview Image" />  
+    
+  </figure>
+</div>
+
+<p>Finally, we get to the part where we talk about writing some code. ADAL stands for “Active Directory Authentication Library”. Based on the client you’re using and which authentication endpoint you’re using, there are a multitude of different examples and SDK’s available as you can see on the MSGraphAPI, <a href="https://developer.microsoft.com/en-us/graph/quick-start">Getting Started</a> page. Because we’re going to write client side code (aka JavaScript, either <a href="https://en.wikipedia.org/wiki/Source-to-source_compiler">transpiled</a> from Typescript or native) and access via Implicit Flow to the MSGraphAPI, we’ll use the adal.js library. It comes in two parts, adal.js and adal-angular.js. If you’re going to use the <a href="https://angularjs.org/">AngularJS</a> framework, you’ll want both pieces. If not, you can just include adal.js, but there will be more work to do to authenticate and get a token. You can find the source in the <a href="https://github.com/AzureAD/azure-activedirectory-library-for-js">ADAL GitHub</a> repo.</p>
+<h3 id="user-authentication">User Authentication</h3>
+<p>One of the things that bothered me was the idea that the user would have to “log in” manually every time the ADAL library would need to authenticate them. In my mind, I envisioned a pop-up that would prompt them for credentials. In the scenario where you’re running this code on your on-premises server in a hybrid scenario, and haven’t set up federated sign-in to your O365 tenant that would be valid, however, in the most likely scenarios I can envision the code would be running in your SharePoint site in your O365 tenant… therefore asking the user to log in again would be annoying at best. Well, sure enough that’s not what happens, the library uses a hidden iframe on the page to make the call to get the user authenticated, since they are technically already authenticated to O365 this is just a matter of “confirming” it for lack of a better term. So, the page does flicker but otherwise this is unnoticeable to the user.</p>
+<blockquote>
+<p>Note: Thanks to <a href="https://twitter.com/wictor">Wictor Wilen</a> for bringing up the issue with using adal.js in IE with a trusted site. Please check out this <a href="https://github.com/AzureAD/azure-activedirectory-library-for-js/issues/102">issue</a>, from the GitHub repo.</p>
+</blockquote>
+<h3 id="adal-config">ADAL Config</h3>
+<p>A big part of utilizing the adal.js libraries is to get all the configuration settings correct. I want to highlight some of the configuration properties that I reviewed and what was useful. You’ll see how to put it together and pass it to adal.init() later. The definitions here come straight from the documentation in the adal.js file itself.</p>
+<ul>
+<li>tenant: string - Your target tenant.</li>
+<li>clientID: string - Client ID assigned to your app by Azure Active Directory.</li>
+<li>endpoints: array - Collection of {Endpoint-ResourceId} used for automatically attaching tokens in webApi calls.</li>
+<li>popUp: boolean - Set this to true to enable login in a popup window instead of a full redirect.Defaults to `false`.</li>
+<li>cacheLocation: string - Sets browser storage to either &rsquo;localStorage&rsquo; or sessionStorage&rsquo;. Defaults to &lsquo;sessionStorage&rsquo;.</li>
+<li>anonymousEndpoints: array - Array of keywords or URI&rsquo;s. ADAL will not attach a token to outgoing requests that have these keywords or uri. Defaults to &rsquo;null'.</li>
+</ul>
+<h3 id="using-adaljs-with-no-framework">Using ADAL.js with No Framework</h3>
+<p>The most tedious coding scenario with ADAL is utilizing it without the AngularJS add-on. I found this <a href="https://nickvandenheuvel.eu/2016/01/06/authenticate-an-office-365-user-with-adal-js/">blog article</a> on how to do it, but unfortunately for me although it worked initially, when it came time to renew the token the ADAL library was throwing errors. After quite a bit of time on it, reviewing the adal-angular.js file and various other blog posts, I managed to work out a scenario that seems to work reliably. For simplicity&rsquo;s sake, I’m showing an entire html file including the JavaScript in one code snippet. I commented the code extensively but in a nutshell, we’ll do the following:</p>
+<ul>
+<li><strong>1.</strong> For simplicity code is executed on page load using jQuery&rsquo;s document.ready function. The goal of that bit of code is to determine if AAD is doing a callback and if so, let the adal.js library handle it.
+<ul>
+<li><strong>a.</strong> If not a callback, check if the user is authenticated, if not, call the ADAL login function</li>
+<li><strong>b.</strong> If not a callback, and user is authenticated, then execute any initialization code we want to run.</li>
+</ul>
+</li>
+<li><strong>2.</strong> When a call needs to be made against the MSGraphAPI, e.g., the sympraxis.getGraphData function, first get the token by calling the sympraxis.getAuthToken function (which returns a promise since it may need to make an asynchronous call to AAD, and if so we need to wait until that completes.
+<ul>
+<li><strong>a.</strong> If the token is in the cache, return it by resolving he promise.</li>
+<li><strong>b.</strong> If the token is not in the cache, acquire a new one and then resolve the promise with the new token.</li>
+</ul>
+</li>
+<li><strong>3.</strong> Make the REST call to the MSGraphAPI and include the token in the header.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://secure.aadcdn.microsoftonline-p.com/lib/1.0.13/js/adal.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>My Great ADAL Test<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;message&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;displayName&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;jobTitle&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;mail&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;mobilePhone&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;officeLocation&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;use strict&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">sympraxis</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">sympraxis</span> <span class="o">||</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">clientId</span> <span class="o">=</span> <span class="s1">&#39;&lt;client id guid&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">tenant</span> <span class="o">=</span> <span class="s1">&#39;&lt;tenant guid&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">tenant</span><span class="o">:</span> <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">tenant</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">clientId</span><span class="o">:</span> <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">clientId</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">endpoints</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">graphUri</span><span class="o">:</span> <span class="s1">&#39;https://graph.microsoft.com&#39;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">cacheLocation</span><span class="o">:</span> <span class="s2">&#34;localStorage&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//Create the autentication context
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">AuthenticationContext</span><span class="p">(</span><span class="nx">sympraxis</span><span class="p">.</span><span class="nx">config</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">getAuthToken</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl">      <span class="c1">//Read the token from the cache
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">var</span> <span class="nx">tokenCache</span> <span class="o">=</span> <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">getCachedToken</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="p">(</span><span class="nx">tokenCache</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">//If token is undefined, then call AAD to get a new token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">acquireToken</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="k">if</span> <span class="p">(</span><span class="nx">error</span> <span class="o">||</span> <span class="o">!</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">d</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">              <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">});</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">tokenCache</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//Return a promise for acquiring token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">getGraphData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//Get the token, either from the cache or from the server
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">var</span> <span class="nx">tokenPromise</span> <span class="o">=</span> <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">getAuthToken</span><span class="p">(</span><span class="nx">sympraxis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">.</span><span class="nx">graphUri</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">tokenPromise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">token</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">//Promise for token resolved
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="k">if</span><span class="p">(</span><span class="nx">token</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="c1">//Valid token, make a REST call to the MSGraphAPI
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>              <span class="kd">var</span> <span class="nx">meUri</span> <span class="o">=</span> <span class="s2">&#34;https://graph.microsoft.com/v1.0/me&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span>
+</span></span><span class="line"><span class="cl">              <span class="p">({</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;GET&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">url</span><span class="o">:</span> <span class="nx">meUri</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                      <span class="c1">//Include the token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                      <span class="s2">&#34;Authorization&#34;</span><span class="o">:</span> <span class="s2">&#34;Bearer &#34;</span> <span class="o">+</span> <span class="nx">token</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#message&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&#34;Got the data.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#displayName&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">displayName</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#jobTitle&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">jobTitle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#mail&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">mail</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#mobilePhone&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">mobilePhone</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#officeLocation&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">officeLocation</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;#message&#34;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&#34;Failed to get the data.&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">});</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">error</span><span class="p">));});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Check For &amp; Handle Redirect From AAD After Login or Acquiring Token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">var</span> <span class="nx">isCallback</span> <span class="o">=</span> <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">isCallback</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">isCallback</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">getLoginError</span><span class="p">())</span> <span class="p">{</span>        
+</span></span><span class="line"><span class="cl">          <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">handleWindowCallback</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">getCachedUser</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="c1">//Log in user
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>              <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">authContext</span><span class="p">.</span><span class="nx">login</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">sympraxis</span><span class="p">.</span><span class="nx">getGraphData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">              
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="using-angular-1x-framework-with-ngroute">Using Angular 1.x framework with ngRoute</h3>
+<p>If you’re a fan of the AngularJS framework, then the adal-angular.js library does all the heavy lifting for you. It extends both AngularJS’s $http provider and the ngRoute directive. It adds the bearer token that was retrieved using the adal.js library to the $httpProvider in your REST calls for you. In addition, it accepts an additional configuration setting on each of your routes which determines whether AD login should be required or not. If set to true, when you navigate to the particular route, the adal-angular.js library makes sure the user is logged in, and then also makes sure the $httpProvider appends the token. If it’s not set - or set to false - then the token will not be appended to the $http calls. Also, note here that I’ve utilized html5Mode on the $locationProvider. I did that because of a recommendation in the documentation that indicated that having it on fixes issues with endless callbacks. I too found this to be an issue, but only when bypassing ngRoute. For safety, I put it in both examples, but I&rsquo;ll leave it to you to test whether it’s necessary in your solution or not. So, at this point I’m sure you can see that this scenario is significantly simplified from our “No Framework” version above. Other than the changes to the .config, no other changes are necessary. You just go about your business making $http calls and the adal-angular.js library does the rest .</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">sympraxis</span><span class="p">.</span><span class="nx">adaltestapp</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;ADALTestApp&#39;</span><span class="p">,</span> <span class="err">\</span><span class="p">[</span><span class="s1">&#39;ngRoute&#39;</span><span class="p">,</span><span class="s1">&#39;AdalAngular&#39;</span><span class="err">\</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="err">\</span><span class="p">[</span><span class="s1">&#39;$routeProvider&#39;</span><span class="p">,</span> <span class="s1">&#39;$httpProvider&#39;</span><span class="p">,</span> <span class="s1">&#39;adalAuthenticationServiceProvider&#39;</span><span class="p">,</span> <span class="s1">&#39;$locationProvider&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="p">(</span><span class="nx">$routeProvider</span><span class="p">,</span> <span class="nx">$httpProvider</span><span class="p">,</span> <span class="nx">adalProvider</span><span class="p">,</span> <span class="nx">$locationProvider</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">$locationProvider</span><span class="p">.</span><span class="nx">html5Mode</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">requireBase</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}).</span><span class="nx">hashPrefix</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nx">$routeProvider</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">controller</span><span class="o">:</span> <span class="s2">&#34;ADALTestCtrl&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">templateUrl</span><span class="o">:</span> <span class="s2">&#34;/sites/Julie/\_catalogs/masterpage/\_ADALTest/html/adaltestview.html&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">requireADLogin</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}).</span><span class="nx">otherwise</span><span class="p">({</span> <span class="nx">redirectTo</span><span class="o">:</span> <span class="s2">&#34;/&#34;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">adalProvider</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">tenant</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">endpoints</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="s1">&#39;https://graph.microsoft.com&#39;</span><span class="o">:</span> <span class="s1">&#39;https://graph.microsoft.com&#39;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">},</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">cacheLocation</span><span class="o">:</span> <span class="s2">&#34;localStorage&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">$httpProvider</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">\</span><span class="p">]);</span>
+</span></span></code></pre></div><h3 id="angular-15-using-components">Angular 1.5+ using Components</h3>
+<p>Angular version 1.5 introduced a new concept called “Components” which was viewed widely as a superior architectural strategy for building Angular applications. So much so a very similar schema was adopted for Angular 2. With components, you generally do not use ngRoute. Further, with many <a href="/post/widget-wrangler/">widget solutions</a>, routing is overkill. So, we need to consider another strategy for managing when the $http provider should include the token and, because ngRoute was making sure the user is authenticated for us (as I noted in the previous section), we’re going to need to handle that as well.</p>
+<p>For authentication, we’ll reuse the concepts we discussed in the “No Framework” section by making sure on page load we trap the callback and allow the ADAL.js library to handle it. Because this is a component there is the handy $onInit() function. That will work perfectly for our needs.</p>
+<p>Now to handle server calls that are not meant to have the token amended… enter, anonymousEndpoints. In this scenario, our configuration would not include the $routeProvider. Instead we would include relative URLs we want to ignore when making $http calls. In this case I included two anonymous endpoints, one for the location of my component templates, and the other is the SharePoint REST APIs.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">sympraxis</span><span class="p">.</span><span class="nx">adaltestapp</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;ADALTestApp&#39;</span><span class="p">,</span> <span class="err">\</span><span class="p">[</span><span class="s1">&#39;AdalAngular&#39;</span><span class="err">\</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="err">\</span><span class="p">[</span><span class="s1">&#39;$httpProvider&#39;</span><span class="p">,</span> <span class="s1">&#39;adalAuthenticationServiceProvider&#39;</span><span class="p">,</span> <span class="s1">&#39;$locationProvider&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="p">(</span><span class="nx">$routeProvider</span><span class="p">,</span> <span class="nx">$httpProvider</span><span class="p">,</span> <span class="nx">adalProvider</span><span class="p">,</span> <span class="nx">$locationProvider</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">$locationProvider</span><span class="p">.</span><span class="nx">html5Mode</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">requireBase</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}).</span><span class="nx">hashPrefix</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">adalProvider</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">tenant</span><span class="o">:</span> <span class="s1">&#39;5a3f949f-70ba-467b-b915-b40feeadc67d&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">clientId</span><span class="o">:</span> <span class="s1">&#39;45c1ba25-1b90-44fd-8ab9-cfb2f45920e8&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">endpoints</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;https://graph.microsoft.com&#39;</span><span class="o">:</span> <span class="s1">&#39;https://graph.microsoft.com&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">cacheLocation</span><span class="o">:</span> <span class="s2">&#34;localStorage&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//endpoints you want ADAL to ignore, they are inclusive paths, also you must use relative paths, if you include http/https it will look for a resource and automatically append the token of the loginResource
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">anonymousEndpoints</span><span class="o">:</span> <span class="err">\</span><span class="p">[</span><span class="s1">&#39;/sites/CDN/Samples/GraphExcel/&#39;</span><span class="p">,</span> <span class="s1">&#39;/sites/Julie/\_api/&#39;</span><span class="err">\</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">$httpProvider</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="err">\</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">constant</span><span class="p">(</span><span class="s2">&#34;\_CONFIG&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ONEDRIVE\_EP&#34;</span><span class="o">:</span><span class="s2">&#34;https://graph.microsoft.com/v1.0/me/drive/&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;SP\_EP&#34;</span><span class="o">:</span><span class="s2">&#34;https://graph.microsoft.com/beta/sharepoint/sites/78f3f43c-7845-4273-8be7-f253552a173f/lists/7bc97907-9a6c-4959-9474-946d854a81a8/drive/&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></div><p>I specified relative URLs in the anonymousEndpoints array we want to ignore because if you review the code that decides if the $http call should append the bearer token to it, you can see that if the URL includes http or https it will try to find a matching endpoint. If it does not find one, it will utilize the token that was used for the login resource. For example, if you try to make a call against the SharePoint REST API and the URL you use includes <a href="https://mytenant.sharepoint.com">https://mytenant.sharepoint.com</a> it’s going to append the bearer token and subsequently fail. Also, note that I only included the root of the URLs I want ADAL to ignore. That is because the test for anonymous endpoint uses a “contains” check.</p>
+<p>The controller for the component we create would then define an $onInit() function that would handle login for those components that need it. There are certainly other ways architecturally to handle this, but I wanted to keep things simple so I wouldn&rsquo;t lose the point in the elegance of the architecture. At a baseline this is what it would look like. We’re going to expand on this, and explain the SP_EP url in the _CONFIG in Part 3.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">geController</span><span class="p">(</span><span class="nx">$http</span><span class="p">,</span> <span class="nx">$q</span><span class="p">,</span> <span class="nx">adalProvider</span><span class="p">,</span> <span class="err">\</span><span class="nx">_CONFIG</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">adalAuthContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AuthenticationContext</span><span class="p">(</span><span class="nx">adalProvider</span><span class="p">.</span><span class="nx">config</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">vm</span><span class="p">.</span><span class="nx">$onInit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">isCallback</span> <span class="o">=</span> <span class="nx">adalAuthContext</span><span class="p">.</span><span class="nx">isCallback</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">isCallback</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">adalAuthContext</span><span class="p">.</span><span class="nx">getLoginError</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">adalAuthContext</span><span class="p">.</span><span class="nx">handleWindowCallback</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">adalAuthContext</span><span class="p">.</span><span class="nx">getCachedUser</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//Log in user
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">adalAuthContext</span><span class="p">.</span><span class="nx">login</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="summary">Summary</h2>
+<p>Now we’ve completed Part 2, you should have everything you need to go off and start making calls to the MSGraphAPI. But, if you’re interested, <a href="/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3/">Part 3</a> will bring all of this together and show you how to create an Excel spreadsheet from scratch, add it to a SharePoint document library, and then manipulate it with the Excel API’s. Please stay tuned&hellip;</p>
+<h2 id="resources">Resources</h2>
+<h3 id="oauth-flows">OAuth Flows</h3>
+<ul>
+<li><a href="https://www.andrewconnell.com/blog/looking-at-the-different-oauth2-flows-supported-in-azuread-for-office-365-apis">Andrew Connell - Looking at the Different OAuth2 Flows Supported in AzureAD for Office 365 APIs</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#updating-an-application">Microsoft - Integrating applications with Azure Active Directory</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-overview#restrictions-on-libraries-amp-sdks">Microsoft - Should I use the v2.0 endpoint?</a></li>
+</ul>
+<h3 id="adal">ADAL</h3>
+<ul>
+<li><a href="https://github.com/AzureAD/azure-activedirectory-library-for-js">GitHub - Azure Active Directory Library for JS</a></li>
+<li><a href="https://www.cloudidentity.com/blog/2015/02/19/introducing-adal-js-v1/">Cloud Identity - Introducing ADAL JS v1</a></li>
+<li><a href="https://www.cloudidentity.com/blog/2014/10/28/adal-javascript-and-angularjs-deep-dive/">Cloud Identity - ADAL JavaScript and AngularJS – Deep Dive</a></li>
+<li><a href="https://www.cloudidentity.com/blog/2013/09/16/getting-acquainted-with-authenticationresult/">Cloud Identity - Getting Acquainted with AuthenticationResult</a></li>
+<li><a href="https://www.cloudidentity.com/blog/2013/10/01/getting-acquainted-with-adals-token-cache/">Cloud Identity - Getting Acquainted with ADAL’s Token Cache</a></li>
+<li><a href="https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part">Microsoft - Call the Microsoft Graph API using OAuth from your web part</a></li>
+</ul>
+<h3 id="microsoft-graph-api">Microsoft Graph API</h3>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0">Microsoft Graph Documentation</a></li>
+</ul>
+
+  </article>
+
+      
+    
+    <div class="jt-pager">
+      
+        <button class="hoo-button" title="Getting Started: Extending SharePoint with ADAL and the Microsoft Graph API – Part 1" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-1\/')" > 
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-left" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Previous Post</span>      
+        </button>
+      
+      
+        <button class="hoo-button is-reversed" title="Getting Results: Extending SharePoint with ADAL and the Microsoft Graph API - Part 3" onclick="jtBlogMain.navigate('https:\/\/juliemturner.net\/post\/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3\/')">
+          <span class="hoo-icon">
+            <svg class="hoo-icon-svg icon-arrow-right" aria-hidden="true">
+              <use xlink:href="/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </span>
+          <span class="hoo-button-label">Next Post</span>
+        </button>
+      
+    </div>
+  
+
+  
+    
+      
+      <div class="jt-disqus-comments">                  
+        <button onclick="jtBlogMain.showComments(event, 'veni-vidi-vici-1')">
+          Show 
+          <span class="disqus-comment-count" data-disqus-url="https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2/">comments</span>
+        </button>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_config = function () {
+          this.page.url = 'https:\/\/juliemturner.net\/post\/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2';
+        };
+      </script>
+      </div>
+      
+    
+  
+</div>
+
+    </article>
+    <aside class="jt-sidebar">
+      
+
+  <div class="jt-asideSection">
+    
+<h2>Share this post</h2>
+
+<ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="//twitter.com/share?url=https%3a%2f%2fjuliemturner.net%2fpost%2fextending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2%2f&amp;text=ADAL%20authorization%3a%20Extending%20SharePoint%20with%20the%20Microsoft%20Graph%20%e2%80%93%20Part%202&amp;via=jfj1997"
+      target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fjuliemturner.net%2fpost%2fextending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2%2f" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//reddit.com/submit?url=https%3a%2f%2fjuliemturner.net%2fpost%2fextending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2%2f&amp;title=ADAL%20authorization%3a%20Extending%20SharePoint%20with%20the%20Microsoft%20Graph%20%e2%80%93%20Part%202" target="_blank" title="Share on Reddit">
+      <i class="fab fa-reddit jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fjuliemturner.net%2fpost%2fextending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2%2f&amp;title=ADAL%20authorization%3a%20Extending%20SharePoint%20with%20the%20Microsoft%20Graph%20%e2%80%93%20Part%202" target="_blank"
+      title="Share on LinkedIn">
+      <i class="fab fa-linkedin jt-mtag-icon"></i>
+    </a>
+  </li>
+
+  
+  <li>
+    <a class="hoo-mtag" href="//toot.kytta.dev/?text=Check%20out%20this%20article%20ADAL%20authorization%3a%20Extending%20SharePoint%20with%20the%20Microsoft%20Graph%20%e2%80%93%20Part%202%20at%20https%3a%2f%2fjuliemturner.net%2fpost%2fextending-sharepoint-with-adal-and-the-microsoft-graph-api-part-2%2f" target="_blank"
+      title="Share on Mastodon">
+      <i class="fab fa-mastodon jt-mtag-icon"></i>
+    </a>
+  </li>
+</ul>
+
+  </div>
+
+
+
+
+  <div class="jt-asideSection">
+    <h2>Tags</h2>
+    <ul class="hoo-meta-list">
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/microsoft-365/" aria-label="View all posts tagged with 'Microsoft 365'">
+      <span class="hoo-mtag-lbl">Microsoft 365</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/microsoft-graph/" aria-label="View all posts tagged with 'Microsoft Graph'">
+      <span class="hoo-mtag-lbl">Microsoft Graph</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/rest/" aria-label="View all posts tagged with 'REST'">
+      <span class="hoo-mtag-lbl">REST</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/typescript/" aria-label="View all posts tagged with 'TypeScript'">
+      <span class="hoo-mtag-lbl">TypeScript</span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="hoo-mtag" href="/tags/javascript/" aria-label="View all posts tagged with 'JavaScript'">
+      <span class="hoo-mtag-lbl">JavaScript</span>
+    </a>
+  </li>
+  
+</ul>
+  </div>
+
+
+  
+    
+  
+  
+    <div class="jt-asideSection">
+      <h2>See also</h2>
+      <ul class="symp-list">
+      
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/htwoo-210-dialogs/">hTWOo-React 2.1.0 Spotlight: Dialogs</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/better-practices-console-log-pnpjs/">Console Log Better Practices with PnPjs V3</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/intro-htwoo-react/">Intro to hTWOo-React: Microsoft Fluent UI React alternative</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/getting-started-pnpjs/">Getting Started with PnPjs</a></li>
+      
+        <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="/post/sp-appcatalog-dev-tips/">SharePoint App Catalog Development Tips</a></li>
+      
+      </ul>
+    </div>
+  
+
+<div class="jt-asideSection">
+  <h2>About the Author</h2>
+  <div class="jt-aside-headshot">
+    <img src="https://juliemturner.net/img/jturner.png" alt="Julie Turner headshot" />
+  </div>
+  <div class="jt-highlight">Julie Turner</div>
+  <div class="jt-subhighlight">Partner/CTO</div>
+  <div class="jt-subhighlight">
+    <a href="https://sympraxisconsulting.com" target="_blank">
+      <div class="symp-logo"></div>
+    </a>
+  </div>
+  <div class="jt-listcont">
+    <ul class="symp-list">
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span>Microsoft MVP since 2017</li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/" target="_blank">Microsoft 365 PnP Team member since 2019</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://pnp.github.io/pnpjs/" target="_blank">PnPjs maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://lab.n8d.studio/htwoo/" target="_blank">HTWOO maintainer</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/portfolio/clouddev-clarity/" target="_blank">CloudDev Clarity co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://officedev.github.io/browser-native/" target="_blank">Browser Native co-host</a></li>
+      <li><span class="sympstar">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+    <path class="st0"
+      d="M33.9,35.1L50,19c-1.7,0.6-3.4,1-5.2,1c-3.6,0-7.1-1.3-9.7-3.7L18.9,0.1c0.6,1.6,1,3.4,1,5.2
+	c0,3.6-1.3,7-3.7,9.7l-0.1,0.1l0,0l-8.6,8.6l-3.6,3.7L0,31.2c1.7-0.6,3.4-1,5.2-1c3.4,0,6.7,1.2,9.2,3.3c0.2,0.2,0.4,0.4,0.6,0.6
+	l1.1,1.1l0.1,0.1L19,38l4.5,4.5l3.6,3.6L28,47l2.9,2.9c-0.6-1.7-1-3.4-1-5.1c0-3.4,1.2-6.8,3.3-9.3C33.5,35.5,33.7,35.3,33.9,35.1z" />
+  </svg>
+</span><a href="https://sympraxisconsulting.com/ask-sympraxis/" target="_blank">Ask Sympraxis Bi-Weekly Videocast</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="jt-asideSection">
+  <h2>Join Me Live</h2>
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+   
+    
+    
+  
+</div>
+
+
+    </aside>
+    <footer class="footer">
+      
+        <ul class="hoo-meta-list">
+          
+          <li>
+            
+              <a href="mailto:julie.turner@sympraxisconsulting.com"
+                title="Email me">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://github.com/juliemturner"
+                title="GitHub">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://twitter.com/jfj1997"
+                title="Twitter">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://linkedin.com/in/juliemturner"
+                title="LinkedIn">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+              <a href="https://www.youtube.com/user/username"
+                title="Youtube">
+                
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          <li>
+            
+            <a rel="me"href="#ZgotmplZ"
+              title="Mastodon">
+              
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </li>
+          
+            
+          
+        </ul>
+        <p class="jt-copyright">
+          &nbsp;&copy;
+          2011 - 2023
+          Julie Turner ~ All rights reserved
+        </p>
+
+
+<script src="https://juliemturner.net/js/solid.min.js"></script>
+<script src="https://juliemturner.net/js/brands.min.js"></script>
+<script src="https://juliemturner.net/js/fontawesome.min.js"></script>
+
+<script src="https://juliemturner.net/js/main.js"></script>
+
+
+
+
+
+<script id="dsq-count-scr" src="//veni-vidi-vici-1.disqus.com/count.js" async></script>
+
+
+      
+    </footer>
+  </div>
+</body>
+
+</html>

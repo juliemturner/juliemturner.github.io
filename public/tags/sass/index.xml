@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sass on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/sass/</link>
+    <description>Recent content in Sass on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/sass/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using CSS Variables to Morph Your SPFx Design at Run Time</title>
+      <link>https://juliemturner.net/post/using-css-variables/</link>
+      <pubDate>Thu, 13 Jun 2019 16:16:33 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/using-css-variables/</guid>
+      <description>I learned about CSS Variables from Stefan Bauer and his post CSS Variables support for SPFx projects through spfx-uifabric-themes. In a nutshell, this npm package, which I’ve started using regularly, transforms the current theme colors available to the SPFx web part into variables that can be used within your SCSS/CSS files. This intrigued me as it’s a native browser capability that&amp;rsquo;s been around since 2015 and because it means that you can affect the styling at run-time vs build-time… which translated means that lots of things you would normally think you’d need script for you can now do with a crafty use of CSS and some variables.</description>
+    </item>
+    
+  </channel>
+</rss>

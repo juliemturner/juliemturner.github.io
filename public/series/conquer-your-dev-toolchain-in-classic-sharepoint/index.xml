@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/</link>
+    <description>Recent content in Conquer your dev toolchain in &#39;Classic&#39; SharePoint on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/series/conquer-your-dev-toolchain-in-classic-sharepoint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint – Part 4</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</link>
+      <pubDate>Tue, 16 Jan 2018 14:43:38 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</guid>
+      <description>For this last post I want to take what we’ve learned and add the final pieces that have you creating web parts in the same way you would modern SPFx web parts and solutions. We’re going to start by discussing TypeScript and then briefly touch on Sass and how to include these languages into your new Webpack/Gulp environment.
+TypeScript is becoming almost ubiquitous in modern web development. The pros are numerous, my favorites are the ability to write code to target older browser with modern capabilities, and the ability to use a version of intellisense to validate your objects properties and methods.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 3</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</link>
+      <pubDate>Thu, 11 Jan 2018 14:29:46 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</guid>
+      <description>In our last post I went through the gulp process we were implementing to watch our files and upload them into an appropriate SharePoint library so that we can test our work inside SharePoint regardless of if SharePoint was version 2007 or SharePoint Online. Now we’re going to take things further and formalize our process. One of the tools the SharePoint Framework (SPFx) uses is Webpack. Webpack’s main goal is to take the many files that you create as a developer and bundle them all together into one JavaScript file.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 2</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</link>
+      <pubDate>Tue, 09 Jan 2018 14:47:29 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</guid>
+      <description>In the first post in this series I discussed some of the benefits of formalizing your client-side development process and then a bit about starting the process of tooling up. A common scenario to develop our own client-side solutions in SharePoint is to point a Content Editor (CEWP) or Script Editor (SEWP) web part at our custom html, css, and js files that are sitting in a document library somewhere in our environment.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 1</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</link>
+      <pubDate>Fri, 05 Jan 2018 16:20:59 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</guid>
+      <description>Last year, around this time, Marc and I agreed we should write a blog series on our development process. As often happens good intentions get buried in other commitments, but I’ve finally managed to circle back on this topic which I’m finding has become more important than ever. Over the last year the SharePoint Framework has taken off. Although it still doesn’t support the paradigm that I most often am developing for - the full-page app hosted in SharePoint - I still think it’s a great model for development.</description>
+    </item>
+    
+  </channel>
+</rss>

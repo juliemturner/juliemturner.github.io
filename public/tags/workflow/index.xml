@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SharePoint Workflow on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/workflow/</link>
+    <description>Recent content in SharePoint Workflow on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Send Email through Visual Studio Workflow in SharePoint 2013</title>
+      <link>https://juliemturner.net/post/send-email-through-visual-studio-workflow-in-sharepoint-2013/</link>
+      <pubDate>Tue, 25 Aug 2015 20:23:34 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/send-email-through-visual-studio-workflow-in-sharepoint-2013/</guid>
+      <description>When building a custom SharePoint 2013 Workflow using Visual Studio I ran into a very odd problem trying to send a notification email to a group of users using the Email action (specifically Microsoft.SharePoint.DesignTime.Activities.Email).
+I could send email from a SharePoint 2013 workflow created using SharePoint Designer, but could not do the same from my custom workflow created in Visual Studio without the workflow throwing an error. I’m not even going to post the error because as it turns out it’s a generic error message that could show up for any number of reasons and has little to nothing to do with the problem which was partially why it took so long to solve.</description>
+    </item>
+    
+  </channel>
+</rss>

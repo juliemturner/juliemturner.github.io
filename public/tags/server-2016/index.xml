@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server 2016 on Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/tags/server-2016/</link>
+    <description>Recent content in Server 2016 on Veni, Vidi, Vici</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>julie.turner@sympraxisconsulting.com (Julie Turner)</managingEditor>
+    <webMaster>julie.turner@sympraxisconsulting.com (Julie Turner)</webMaster>
+    <copyright>Julie Turner ~ All rights reserved</copyright>
+    <lastBuildDate>Thu, 05 Jan 2023 21:22:00 +0000</lastBuildDate><atom:link href="https://juliemturner.net/tags/server-2016/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint – Part 4</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</link>
+      <pubDate>Tue, 16 Jan 2018 14:43:38 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-4/</guid>
+      <description>For this last post I want to take what we’ve learned and add the final pieces that have you creating web parts in the same way you would modern SPFx web parts and solutions. We’re going to start by discussing TypeScript and then briefly touch on Sass and how to include these languages into your new Webpack/Gulp environment.
+TypeScript is becoming almost ubiquitous in modern web development. The pros are numerous, my favorites are the ability to write code to target older browser with modern capabilities, and the ability to use a version of intellisense to validate your objects properties and methods.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 3</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</link>
+      <pubDate>Thu, 11 Jan 2018 14:29:46 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-3/</guid>
+      <description>In our last post I went through the gulp process we were implementing to watch our files and upload them into an appropriate SharePoint library so that we can test our work inside SharePoint regardless of if SharePoint was version 2007 or SharePoint Online. Now we’re going to take things further and formalize our process. One of the tools the SharePoint Framework (SPFx) uses is Webpack. Webpack’s main goal is to take the many files that you create as a developer and bundle them all together into one JavaScript file.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 2</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</link>
+      <pubDate>Tue, 09 Jan 2018 14:47:29 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-2/</guid>
+      <description>In the first post in this series I discussed some of the benefits of formalizing your client-side development process and then a bit about starting the process of tooling up. A common scenario to develop our own client-side solutions in SharePoint is to point a Content Editor (CEWP) or Script Editor (SEWP) web part at our custom html, css, and js files that are sitting in a document library somewhere in our environment.</description>
+    </item>
+    
+    <item>
+      <title>Conquer your dev toolchain in &#39;Classic&#39; SharePoint - Part 1</title>
+      <link>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</link>
+      <pubDate>Fri, 05 Jan 2018 16:20:59 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/conquer-your-dev-toolchain-1/</guid>
+      <description>Last year, around this time, Marc and I agreed we should write a blog series on our development process. As often happens good intentions get buried in other commitments, but I’ve finally managed to circle back on this topic which I’m finding has become more important than ever. Over the last year the SharePoint Framework has taken off. Although it still doesn’t support the paradigm that I most often am developing for - the full-page app hosted in SharePoint - I still think it’s a great model for development.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint REST Date/Time field Item Updates</title>
+      <link>https://juliemturner.net/post/sharepoint-rest-datetime-update/</link>
+      <pubDate>Mon, 06 Nov 2017 20:25:15 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sharepoint-rest-datetime-update/</guid>
+      <description>A recent comment on my blog post “SharePoint time, is not your time, is not their time.” has prompted me to create a short addendum post that specifically references updates and how your thinking might differ from displaying SharePoint date/time values. To recap our example, I was discussing how to manipulate the date values to have your client-side code mimic (or not) the regional settings of your SharePoint site. The question was raised about how to deal with dates when doing POST to a SharePoint list or library from your client-side code.</description>
+    </item>
+    
+    <item>
+      <title>How to work with SharePoint datetime localization/timezones in JavaScript</title>
+      <link>https://juliemturner.net/post/sharepoint-datetime/</link>
+      <pubDate>Mon, 17 Apr 2017 23:54:27 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sharepoint-datetime/</guid>
+      <description>If you develop client side solutions for SharePoint you’ve either run into this or you will run into the following scenario. SharePoint stores all its date/time fields in UTC time. The site collections, sites, and the users, can have their own time zone settings. If you’re using SharePoint out of the box because all the content is rendered on the server and pushed to the client with all the date/time translation has been done for you.</description>
+    </item>
+    
+    <item>
+      <title>Use REST to create SharePoint Document Set (and set metadata)</title>
+      <link>https://juliemturner.net/post/sp-docset-metadata-rest/</link>
+      <pubDate>Mon, 14 Nov 2016 20:16:14 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sp-docset-metadata-rest/</guid>
+      <description>A quick post today to augment what&amp;rsquo;s out there in the &amp;ldquo;Googleverse&amp;rdquo;. I needed to create a Document Set in client side code, and went out to find the appropriate calls to make that happen. To update the metadata on the folder you create (which is all a Document Set really is under the covers), you simply make an &amp;ldquo;almost&amp;rdquo; normal list item update call. So the following is the various &amp;ldquo;functions&amp;rdquo; you need and how to string them together to do this task.</description>
+    </item>
+    
+    <item>
+      <title>Special Characters in REST ListItem Metadata</title>
+      <link>https://juliemturner.net/post/special-characters-in-rest-listitem-metadata/</link>
+      <pubDate>Mon, 12 Sep 2016 21:07:17 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/special-characters-in-rest-listitem-metadata/</guid>
+      <description>I&amp;rsquo;m constantly trying to remember which way to encode content when making calls to the server while developing client side solutions for SharePoint. Usually it&amp;rsquo;s some form of JavaScript&amp;rsquo;s encodeURI()/encodeURIComponent() functions&amp;hellip; but this latest one gave me a bit of trouble until I finally figured it out which encoding to use and, almost as important, when to apply it.
+When making RESTful calls to update or create data in a SharePoint list you must include the &amp;ldquo;__metadata&amp;rdquo; (two underscores followed by &amp;lsquo;metadata&amp;rsquo;) property in the information object you send on the data property of the call.</description>
+    </item>
+    
+    <item>
+      <title>Code Creep: SharePoint &#34;CDN&#34; with Document Libraries</title>
+      <link>https://juliemturner.net/post/code-creep-sharepoint-cdn/</link>
+      <pubDate>Tue, 06 Sep 2016 14:00:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/code-creep-sharepoint-cdn/</guid>
+      <description>Centralizing your SharePoint client side code “Code Creep”… no it’s not the latest thriller movie out of Hollywood, although it probably could be. I’m referring to the sprawl of client side code files that are stored when implementing client side web parts or &amp;ldquo;widgets&amp;rdquo; in SharePoint. A common solution for implementing &amp;ldquo;widgets&amp;rdquo; in SharePoint is to store the files in a document library, linking to them with a CEWP that will then run and render your “widget”.</description>
+    </item>
+    
+    <item>
+      <title>Widget Wrangler Webcast and New Release</title>
+      <link>https://juliemturner.net/post/widget-wrangler-webcast-and-new-release/</link>
+      <pubDate>Mon, 14 Mar 2016 20:36:26 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/widget-wrangler-webcast-and-new-release/</guid>
+      <description>This content has also been posted on Bob German&amp;#39;s Vantage Point.Widget Wrangler Webcast and New Release Here’s a quick update on the Widget Wrangler – the light-weight JavaScript framework that helps you build flexible widgets that can be used in SharePoint content editor web parts, add-in parts, or really pretty much everywhere.
+The Widget Wrangler was featured in a webcast on Channel 9 today (Video has been removed). The Office team’s Vesa Juvonen interviewed WW creators Julie Turner and Bob German, who explained the framework and demonstrated how to use it with AngularJS, jQuery, and plain old JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>Flexible SharePoint Development with Widget Wrangler</title>
+      <link>https://juliemturner.net/post/widget-wrangler/</link>
+      <pubDate>Wed, 13 Jan 2016 22:00:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/widget-wrangler/</guid>
+      <description>This content has also been posted on Bob German&amp;#39;s Vantage Point.What’s a widget, and why should I care? In economics, a widget is a name for a generic gadget or manufactured good; on the web, a widget is a generic piece of web functionality running on a page. What makes widgets special is that, unlike controls in ASP.NET or directives in AngularJS, widgets are generally released separately from the web page that hosts them, and are often deployed by end users.</description>
+    </item>
+    
+    <item>
+      <title>JSLink Validation – from Basic to Advanced</title>
+      <link>https://juliemturner.net/post/jslink-validation-from-basic-to-advanced/</link>
+      <pubDate>Mon, 31 Aug 2015 13:30:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/jslink-validation-from-basic-to-advanced/</guid>
+      <description>Custom field validation using JSLink is an extremely powerful beast. In this post I’m going to make an effort to demystify the different levels of validation you can put into your custom template and how to put it together. Everything I’m about to cover has been covered before in different ways and in different combinations. My hope is that this will help separate out what’s needed and what’s not depending on your scenario… so to that end I’ll cover three scenarios.</description>
+    </item>
+    
+    <item>
+      <title>JSLink Custom User Field Schema</title>
+      <link>https://juliemturner.net/post/jslink-custom-user-field-schema/</link>
+      <pubDate>Fri, 28 Aug 2015 19:13:00 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/jslink-custom-user-field-schema/</guid>
+      <description>I had the requirement of setting the default value of a person field to the current user. After looking around in the great wide internet I found a very helpful article by Glenn Reian article by Glenn Reian which got me started.
+Where I ran into a problem was that my user field had customized settings that weren&amp;rsquo;t being pulled through into the custom implementation of my people picker. As it turns out the issue was with the schema that is passed to the SPClientPeoplePicker_InitStandaloneControlWrapper function.</description>
+    </item>
+    
+    <item>
+      <title>SharePoint 2013 JSLink - All Fields Rendered</title>
+      <link>https://juliemturner.net/post/sharepoint-2013-jslink-all-fields-rendered/</link>
+      <pubDate>Wed, 26 Aug 2015 19:41:41 +0000</pubDate>
+      <author>julie.turner@sympraxisconsulting.com (Julie Turner)</author>
+      <guid>https://juliemturner.net/post/sharepoint-2013-jslink-all-fields-rendered/</guid>
+      <description>While creating a custom Client Template using JSLink, I came up against the issue of knowing when all the fields were rendered on the form. To explain where the issue arises let me first take just a moment to explain when building a custom template for this type of form, where you want to manipulate the fields, you have available to you both a Pre and Post Render function. What that does is fire the function attached to it either pre or post each custom field rendering being executed.</description>
+    </item>
+    
+  </channel>
+</rss>

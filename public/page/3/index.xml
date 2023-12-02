@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Veni, Vidi, Vici</title>
+    <link>https://juliemturner.net/</link>
+    <description>Julie Turner Blog on Microsoft 365 (O365), SharePoint, Microsoft Teams, development and extensibility expert with SharePoint Framework (SPFx)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Julie Turner</managingEditor>
+    <webMaster>Julie Turner</webMaster>
+    <copyright>2023 Julie Turner ~ All rights reserved</copyright>
+    
+    <lastBuildDate>Fri, 01 Dec 2023 21:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://juliemturner.net/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    
+    
+    
+    
+      
+    
+    
+    <item>
+      <title>SharePoint REST Date/Time field Item Updates</title>
+      <link>https://juliemturner.net/post/sharepoint-rest-datetime-update/</link>
+      <pubDate>Mon, 06 Nov 2017 20:25:15 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/sharepoint-rest-datetime-update/</guid>
+      <description>A recent comment on my blog post “SharePoint time, is not your time, is not their time.” has prompted me to create a short addendum post that specifically references updates and how your thinking might differ from displaying SharePoint date/time values. To recap our example, I was discussing how to manipulate the date values to have your client-side code mimic (or not) the regional settings of your SharePoint site. The question was raised about how to deal with dates when doing POST to a SharePoint list or library from your client-side code.</description>
+    </item>
+    
+    <item>
+      <title>Azure Function Development-Deployment Strategy</title>
+      <link>https://juliemturner.net/post/azure-function-development-deployment-strategy/</link>
+      <pubDate>Tue, 05 Sep 2017 15:15:50 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/azure-function-development-deployment-strategy/</guid>
+      <description>There will be some that find what I’m about to say entirely obvious. For those that don’t this is a great way to think about development when the terminology changes but really everything stayed the same. Azure Functions are billed as “serverless computing”, and as I’m sure most of you have figured out already, all this really means is that the Azure extrapolates the complexity of managing the hardware and infrastructure that allows your code to execute.</description>
+    </item>
+    
+    <item>
+      <title>Streamline ADAL implementation: Extending SharePoint with the Microsoft Graph – Part 4</title>
+      <link>https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-4/</link>
+      <pubDate>Wed, 30 Aug 2017 13:25:59 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-4/</guid>
+      <description>Introduction When I last left you (in Part 3) we had completed the round-trip journey that is learning all the facets to accessing the Microsoft Graph API (MSGraph) through an Azure Application and the ADAL.js library. A significant portion of our time was spent simply on the different ways to leverage ADAL.js depending on the framework you were using. In this next installment we&amp;rsquo;re going to go one step further and streamline our implementation of ADAL, in AngularJS specifically, but with broader implications to any web based framework.</description>
+    </item>
+    
+    <item>
+      <title>Creating a property pane for editing items in your SPFx web parts</title>
+      <link>https://juliemturner.net/post/edit-item-property-pane/</link>
+      <pubDate>Mon, 17 Jul 2017 12:34:43 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/edit-item-property-pane/</guid>
+      <description>It’s a great privilege and great fun to work with the exceptional team at Shire now part of Takeda that’s building a bleeding edge intranet to support their now 24,000 employees and growing. The team is exploring some very new territory and learning a lot along the way. During last weeks webinar, Microsoft’s Mark Kashman promised we’d post some of the lessons learned in the project. It’s my pleasure to share with the greater world a tidbit of that knowledge in the form of how to create a property pane for an individual item, not just the web part using the SharePoint Framework (SPFx).</description>
+    </item>
+    
+    <item>
+      <title>SharePoint &#43; Flow (&#43; Azure Functions): Launching a Microsoft Flow from Client-Side Code</title>
+      <link>https://juliemturner.net/post/launch-power-automate-with-code/</link>
+      <pubDate>Wed, 05 Jul 2017 20:29:23 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/launch-power-automate-with-code/</guid>
+      <description>The requirement seemed deceptively simple… and it was, somewhat… simple. I&amp;rsquo;ll start with showing you how very simple it is to launch a Microsoft Flow (&amp;ldquo;flow&amp;rdquo;) from your client-side code hosted, well… wherever. I will give you this caveat, launching a flow this way requires no authentication. The URL is entirely obscure, but if you’re concerned that the flow you’re starting does something you only want to allow authenticated users in your organization to do then you may want to rethink this.</description>
+    </item>
+    
+    <item>
+      <title>Utilizing ngOfficeUIFabric People Picker in SharePoint</title>
+      <link>https://juliemturner.net/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/</link>
+      <pubDate>Wed, 24 May 2017 12:41:14 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/utilizing-ngofficeuifabric-people-picker-in-sharepoint/</guid>
+      <description>One of the great joys of developing custom forms in SharePoint is developing the controls for some of the more complicated field types, specifically the Taxonomy Picker and the People Picker. If you’re sensing sarcasm, you would be correct. There are brave souls out there who recreated these components for us that utilize no less than five (and sometimes more) Microsoft Javascript libraries. The reality is, for the People Picker, which is what I’m going to be discussing today, you’re really looking for a type ahead input field that filters a list of people that you can retrieve from SharePoint.</description>
+    </item>
+    
+    <item>
+      <title>How to work with SharePoint datetime localization/timezones in JavaScript</title>
+      <link>https://juliemturner.net/post/sharepoint-datetime/</link>
+      <pubDate>Mon, 17 Apr 2017 23:54:27 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/sharepoint-datetime/</guid>
+      <description>If you develop client side solutions for SharePoint you’ve either run into this or you will run into the following scenario. SharePoint stores all its date/time fields in UTC time. The site collections, sites, and the users, can have their own time zone settings. If you’re using SharePoint out of the box because all the content is rendered on the server and pushed to the client with all the date/time translation has been done for you.</description>
+    </item>
+    
+    <item>
+      <title>A Big, Thank You!</title>
+      <link>https://juliemturner.net/post/a-big-thank-you/</link>
+      <pubDate>Thu, 02 Mar 2017 14:17:41 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/a-big-thank-you/</guid>
+      <description>Yesterday was a huge day for me professionally as I was awarded my first (and hopefully not last) Microsoft MVP Award. It was such a huge honor, and I felt it appropriate to give a shout out here to the Microsoft community for their support. There have been so many great mentors in my life over the years, many of whom I still collaborate with on a regular (if not daily) basis.</description>
+    </item>
+    
+    <item>
+      <title>Greetings from New Hampshire, Where I’m Co-Authoring a Document</title>
+      <link>https://juliemturner.net/post/coauthoring-a-document/</link>
+      <pubDate>Fri, 03 Feb 2017 16:05:47 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/coauthoring-a-document/</guid>
+      <description>As Marc said in his post on this experience, which of course he published before me, he and I needed to do some work on a Word document together today. We started by emailing, but almost immediately realized we should just share it on our OneDrive. I was in browser at the time, but have since continued to co-author it in Word on my desktop. I’m not going to lie, I’ve had problems with the co-authoring experience in the past, but was keeping an open mind since Marc and I recently “upgraded” (not sure that’s the right word) to the “First Release for Current Channel (Office Insider Slow)” version of Office 2016.</description>
+    </item>
+    
+    <item>
+      <title>Getting Results: Extending SharePoint with ADAL and the Microsoft Graph API - Part 3</title>
+      <link>https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3/</link>
+      <pubDate>Tue, 31 Jan 2017 14:56:05 +0000</pubDate>
+      <author>Julie Turner</author>
+      <guid>https://juliemturner.net/post/extending-sharepoint-with-adal-and-the-microsoft-graph-api-part-3/</guid>
+      <description>Introduction In Part 1, I discussed the background and setup information you would need to successfully embark on a client site widget for SharePoint that accesses the Microsoft Graph API (MSGraphAPI). In Part 2, we went in depth to the various ways of utilizing the adal.js and adal-angular.js libraries for authentication. Now, here in Part 3 we’re going to get right into the nuts and bolts of a real solution that does the following:</description>
+    </item>
+    
+  </channel>
+</rss>
