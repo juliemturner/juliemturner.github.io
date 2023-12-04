@@ -1,8 +1,10 @@
 {{- $headScratch := newScratch -}}
 {{- $headScratch.Set "img" ($.Page.Resources.GetMatch ($.Params.src)) -}}
 {{- $headScratch.Set "bgStyle" "{}" -}}
+{{- $headScratch.Set "format" "webp" -}}
+{{ with $.Params.animated }} {{ $headScratch.Set "format" "gif" }} {{ end }}
 {{ with $.Params.background }} {{ $headScratch.Set "bgStyle" (printf "{ background-color: %s}" $.Params.background )}} {{ end }}
-{{ with $.Params.size }} {{ $headScratch.Set "img" (($headScratch.Get "img").Resize (printf "%s webp" $.Params.size)) }} {{ end }}
+{{ with $.Params.size }} {{ $headScratch.Set "img" (($headScratch.Get "img").Resize (printf "%s %s" $.Params.size $.Params.format)) }} {{ end }}
 {{ $img := $headScratch.Get "img" }}
 {{ $bgStyle := $headScratch.Get "bgStyle" }}
 {{ with $.Params.nomargin }}
