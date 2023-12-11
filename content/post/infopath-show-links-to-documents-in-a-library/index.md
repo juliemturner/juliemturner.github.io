@@ -8,7 +8,8 @@ tags:
   - InfoPath
   - REST
 seo:
-  title: InfoPath - Show links to documents in a library from the form
+  title: "InfoPath Tips: Linking Documents to Forms"
+  description: "Use REST services to display linked documents in InfoPath forms. Learn how to create dynamic hyperlinks and open documents in browser."
 aliases: ["/2013/01/infopath-show-links-to-documents-in-a-library-from-the-form/"]
 ---
 
