@@ -11,6 +11,8 @@ bigimg: [{src: "htwoo-react-release-2.1.png", desc: "hTWOo-React 2.1.0 Spotlight
 
 We've just released the latest version of hTWOo-React, version 2.1. I'm going to be posting various updates highlighting some of the new updates over the next several weeks, so please check back or follow me on LinkedIn for more updates. For more information on hTWOo-React check out our [documentation](https://lab.n8d.studio/htwoo/htwoo-react/?path=/docs/introduction-getting-started--docs). For an overview of hTWOo please see this [previous post](../intro-htwoo-react/) or visit our [hTWOo page](https://lab.n8d.studio/htwoo/).
 
+> hTWOo is a pure html and css implementation of Microsoft Fluent Design. hTWOo-React is a ReactJS wrapper for hTWOo-Core.
+
 ## Dialogs in SPFx just got EASY
 
 My absolute favorite update to hTWOo-Core 2.1 was the implementation of the dialog using the native [dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) which received more [broad browser support in 2022](https://caniuse.com/dialog). In previous versions of hTWOo if we wanted to implement a dialog that would sit on top of a SharePoint page we needed to jump through a bunch of hoops and do the dreaded DOM manipulation to get it into the page in a location that could elevate itself correctly in the z-index. There is an entire [documentation page](https://lab.n8d.studio/htwoo/htwoo-react/?path=/docs/advanced-using-dialogs-in-spfx--docs) dedicated to the code and steps you needed to take in order to successfully implement one. Well, I'm thrilled to say NOT ANY MORE!!! WOOHOOOOOO!!!
