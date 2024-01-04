@@ -1,7 +1,7 @@
 ---
 title: "What is a 'Dev Tenant' and why would you want one?"
 date: Wed, 06 Jan 2021 15:53:37 +0000
-description: "As a co-maintainer of the PnPjs library I know it can be difficult for those just starting out with the library. I wanted to introduce a blog post that goes into more depth about how to start your journey. Let’s drive right in. PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs."
+description: "Get a free Microsoft developer account and a corresponding Microsoft 365 (formerly Office 365) dev tenant to build and test solutions."
 draft: false
 tags: 
   - SharePoint
