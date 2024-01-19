@@ -5,15 +5,23 @@
     {{ if ge $expire now.Unix }}
     <a class="jt-confEntry" href="{{ .url }}" target="_blank">
       <div class="jt-confImage">
-        {{ $alt := .img.alt }}
-        {{ $img := resources.Get .img.src }}
-        {{ $img := $img.Resize "320x webp" }}
-        {{ with $img }} 
-          <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" />
-        {{ end }} 
+        {{- $ext := lower (path.Ext .img.src) -}}
+        {{- if eq $ext ".svg" -}}
+          {{- readFile .img.src | safeHTML -}}
+        {{ else }}
+          {{ $img := resources.Get .img.src }}
+          {{ $alt := .img.alt }}
+          {{ $img := $img.Resize "320x webp" }}
+          {{ with $img }}   
+            <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" />
+          {{ end }} 
+        {{ end }}
       </div>
       <div class="jt-confTitle">{{ .title }}</div>
       <div class="jt-confTitle">{{ .subtitle }}</div>
+      {{ if .code }}
+        <div class="jt-confTitle">{{ .code }}</div>
+      {{ end }}
     </a>
     {{ end }}
   {{ end }}

@@ -1,54 +1,35 @@
 {
   "items": [
     {
+      "title": "North American Cloud & Collaboration Summit",
+      "subtitle": "April 9-11, 2024 ~ Dallas/Ft. Worth TX",
+      "code": "Use code 'JTURNER24' for 25% off!",
+      "url": "https://www.collabsummit.org/registration/",
+      "img": {
+        "src": "conf/Featured-Content-0013-Turner.png", 
+        "alt": "NACCS Speaker Card"
+      },
+      "expire": "2024-04-11T23:59:00Z"
+    },
+    {
       "title": "Microsoft 365 Conference",
-      "subtitle": "May 2-4, 2023 - Las Vegas, NV",
+      "subtitle": "April 30, May 1-2, 2024, Orlando, FL",
       "url": "https://m365conf.com/#!/register",
       "img": {
-        "src": "conf/M365-May23-SpkrCodeBanner-Turner-2023-01-13_021.png", 
-        "alt": "Microsoft 365 Conference Speaker May 2023"
+        "src": "assets/conf/M365-logo.svg", 
+        "alt": "Microsoft 365 Conference Logo"
       },
-      "expire": "2023-05-04T23:59:00Z"
+      "expire": "2024-05-02T23:59:00Z"
     },
     {
-      "title": "European Collaboration Summit 2023",
-      "subtitle": "May 22-24, 2023 - Düsseldorf, Germany",
+      "title": "European Collaboration Summit 2024",
+      "subtitle": "May 14-16, 2024 - Wiesbaden, Germany",
       "url": "https://www.collabsummit.eu/en/tickets/",
       "img": {
-        "src": "conf/ECS23_Julie_Turner.png", 
-        "alt": "European Collaboration Summit Speaker May 2023"
+        "src": "assets/conf/collabsummit-web-logo-6.svg", 
+        "alt": "European Collaboration Summit Logo"
       },
-      "expire": "2023-05-24T23:59:00Z"
-    },
-    {
-      "title": "365 EduCon - DC",
-      "subtitle": "June 12-16, 2023 - Washington, D.C.",
-      "url": "https://365educon.com/DC/index.php/tickets",
-      "img": {
-        "src": "conf/DC23-Turner.png", 
-        "alt": "365 EduCon Speaker June 2023"
-      },
-      "expire": "2023-06-16T23:59:00Z"
-    },
-    {
-      "title": "CollabDays New England",
-      "subtitle": "October 21, 2023 - Burlington, MA",
-      "url": "https://www.collabdays.org/2023-ne/register/",
-      "img": {
-        "src": "conf/CDNE_M365_2023.png", 
-        "alt": "CollabDays New England 202"
-      },
-      "expire": "2023-10-21T23:59:00Z"
-    },
-    {
-      "title": "365 EduCon - Chicago",
-      "subtitle": "October 30 - November 3, 2023 - Chicago, IL",
-      "url": "https://365educon.com/Chicago/tickets",
-      "img": {
-        "src": "conf/chicago-il.jpg", 
-        "alt": "Chicago, IL"
-      },
-      "expire": "2023-11-03T23:59:00Z"
+      "expire": "2024-05-16T23:59:00Z"
     }
   ]
 }

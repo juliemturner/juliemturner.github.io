@@ -16,7 +16,7 @@ url: "/me"
 
 ## Podcasts/Video Shows
 
-[CloudDev Clarity]https://www.youtube.com/playlist?list=PLWv_zMQc_6MpWuYXVEybqj_iGzKlsqGbo)
+[CloudDev Clarity](https://www.youtube.com/playlist?list=PLWv_zMQc_6MpWuYXVEybqj_iGzKlsqGbo)
 
 This show is where Andrew Connell & Julie Turner can discuss, debate, and even disagree on topics specific to developers who are primarily working in the Microsoft cloud space. That includes Microsoft Azure and Microsoft 365, but it's not limited to those areas! They'll also cover topics related to these areas, like testing tools, development tools, practices, and anything else.
 
