@@ -1,0 +1,38 @@
+{{- $img := .Page.Resources.GetMatch .Destination -}}
+{{- $ext := lower (path.Ext $img) -}}
+{{- if eq $ext ".svg" -}}
+	{{- readFile $img.RelPermalink | safeHTML -}}
+{{- else if eq $ext ".webp" -}}
+  <img src="{{$img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width }}" loading="lazy" style="max-width: 100%;height: auto;">
+{{- else if eq $ext ".gif" -}}
+  <img src="{{$img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width }}" loading="lazy" style="max-width: 100%;height: auto;">
+{{- else -}}
+	{{- if and (not $img) .Page.File -}}
+		{{- $path := path.Join .Page.File.Dir .Destination -}}
+		{{- $img = resources.Get $path -}}
+	{{- end -}}
+	{{- with $img -}}
+
+		{{- $fL := 1280 -}}
+		{{- $fM := 768 -}}
+		{{- $fS := 480 -}}
+		
+		{{- $webpFormatL := printf "%sx %s" (string $fL) "webp" -}}
+		{{- $webpL := .Resize $webpFormatL -}}
+
+		{{- $webpFormatM := printf "%sx %s" (string $fM) "webp" -}}
+		{{- $webpM := .Resize $webpFormatM -}}
+
+		{{- $webpFormatS := printf "%sx %s" (string $fS) "webp" -}}
+		{{- $webpS := .Resize $webpFormatS -}}
+		<picture>
+			<source media="(min-width: 1280px)"
+			 srcset="{{ $webpL.RelPermalink}}">
+			<source media="(min-width: 768px)"
+			 srcset="{{ $webpM.RelPermalink}}">
+			<source media="(min-width: 0)"
+			 srcset="{{ $webpS.RelPermalink}}">
+			<img src="{{.RelPermalink }}" height="{{.Height}}" width="{{.Width }}" loading="lazy">
+		</picture>
+	{{- end -}}
+{{- end -}}

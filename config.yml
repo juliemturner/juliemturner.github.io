@@ -11,6 +11,7 @@ pygmentsCodefencesGuessSyntax: true
 rssLimit: 20
 copyright: "Julie Turner ~ All rights reserved"
 languageCode: en-us
+render_hook: true
 
 outputs:
   home:

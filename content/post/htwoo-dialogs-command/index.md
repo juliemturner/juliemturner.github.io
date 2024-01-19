@@ -18,7 +18,7 @@ This post started with a question posted in [sp-dev-docs](https://github.com/Sha
 
 Below is a visual of exactly what we're trying to accomplish. Obviously this is a very primitive implementation. The key here is to remember that you have complete control over the elements inside the dialog. When you combine that surface with your own custom code and maybe some REST calls using [PnPjs](../getting-started-pnpjs/) -- shameless plug -- you can really build some extremely powerful user interfaces.
 
-{{< figure src="demo.gif" alt="Animation of SharePoint Framework command button dialog." animated="true" >}}
+![Animation of SharePoint Framework command button dialog.](demo.webp)
 
 ## Implementation
 

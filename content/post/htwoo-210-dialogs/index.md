@@ -48,7 +48,7 @@ All dialogs components have a visible property that will trigger the show/close 
 
 When you want a non-modal dialog to show a message or status you can use one of the standard dialog configurations. The four configurations offer colored visualizations with the ability to design the contents of the message through the children of the component. Basic configuration would include `<HOODialogContent>` and `<HOODialogActions>`. The first is a container where you can include the "message" elements of your dialog and the latter is where you can include things like `<HOOButton>` elements for actions you want to include in your user interface.
 
-{{< figure src="messagebar_animation.gif" alt="Animation of a status bar dialog." size="1000x341" animated="true" >}}
+![Animation of a status bar dialog.](messagebar_animation.webp)
 
 ### Model Dialogs
 
@@ -60,12 +60,12 @@ With sidebars there is a property for setting the width. The component implement
 
 Basic configuration would include `<HOODialogHeaders>` and `<HOODialogContent>`. The header provides a basic configuration for a title and a "close" action. You can specify the icon to use for the close, the title, and the method for the close action. The second is a container where you can include the "message" elements of your dialog.
 
-{{< figure src="sidebar_animation.gif" alt="Animation of a side bar dialog." animated="true" >}}
+![Animation of a side bar dialog.](sidebar_animation.webp)
 
 ### Fullscreen
 
 Fullscreen is it's own thing. The configuration is the same as with sidebars above, however, when enabled it takes over the entire viewport. At this point you might want to pause and rhuminate on all the fun things you could do that would be evil, but if you reign yourself in you can also see how this could be an incredibly useful tool for providing a large surface to implement a custom user interface. That said, with great power, comes great responsibility so use it wisely.
 
-{{< figure src="fullscreen_animation.gif" alt="Animation of a full screen dialog." animated="true" >}}
+![Animation of a full screen dialog.](fullscreen_animation.webp)
 
 Happy Coding!
