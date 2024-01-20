@@ -1,3 +1,4 @@
+{{- $title := .PlainText -}}
 {{- $img := .Page.Resources.GetMatch .Destination -}}
 {{- $ext := lower (path.Ext $img) -}}
 {{- if eq $ext ".svg" -}}
@@ -32,7 +33,7 @@
 			 srcset="{{ $webpM.RelPermalink}}">
 			<source media="(min-width: 0)"
 			 srcset="{{ $webpS.RelPermalink}}">
-			<img src="{{.RelPermalink }}" height="{{.Height}}" width="{{.Width }}" loading="lazy">
+			<img src="{{.RelPermalink }}" height="{{.Height}}" width="{{.Width }}" loading="lazy" alt="{{ $title }}">
 		</picture>
 	{{- end -}}
 {{- end -}}
