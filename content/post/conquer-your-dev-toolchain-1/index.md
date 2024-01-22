@@ -22,7 +22,7 @@ Formalizing the toolchain is really all about bringing legitimacy to the client-
 
 ## Understand the key aspects
 
-There are so many aspects to an SDLC; development environment, authoring, testing, deployment, documentation, change management, maintenance. I will focus on a few key aspects of the development environment, authoring, deployment, and change management. The point of sharing what we do here at [Sympraxis](https://sympraxisconsulting.com/) is to give you food for thought to build your own system that works for you and your organization.
+There are so many aspects to an SDLC; development environment, authoring, testing, deployment, documentation, change management, maintenance. I will focus on a few key aspects of the development environment, authoring, deployment, and change management. The point of sharing what we do here at [Sympraxis](https://www.sympraxisconsulting.com/) is to give you food for thought to build your own system that works for you and your organization.
 
 ## Pick your own adventure
 
