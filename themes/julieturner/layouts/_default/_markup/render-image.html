@@ -4,9 +4,9 @@
 {{- if eq $ext ".svg" -}}
 	{{- readFile $img.RelPermalink | safeHTML -}}
 {{- else if eq $ext ".webp" -}}
-  <img src="{{$img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width }}" loading="lazy" style="max-width: 100%;height: auto;">
+  <img src="{{$img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width }}" loading="lazy" style="max-width: 100%;height: auto;" alt="{{ $title }}">
 {{- else if eq $ext ".gif" -}}
-  <img src="{{$img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width }}" loading="lazy" style="max-width: 100%;height: auto;">
+  <img src="{{$img.RelPermalink }}" height="{{$img.Height}}" width="{{$img.Width }}" loading="lazy" style="max-width: 100%;height: auto;" alt="{{ $title }}">
 {{- else -}}
 	{{- if and (not $img) .Page.File -}}
 		{{- $path := path.Join .Page.File.Dir .Destination -}}
