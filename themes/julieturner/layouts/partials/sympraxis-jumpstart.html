@@ -1,0 +1,21 @@
+<div class="jt-asideSection">
+  <h2>Work With Me</h2>
+    {{ $src := "Jumpstart-TempCard.png" }}
+    <a class="jt-confEntry" href="https://symp.info/jumpstart" target="_blank">
+      <div class="jt-confImage">
+        {{- $ext := lower (path.Ext $src) -}}
+        {{- if eq $ext ".svg" -}}
+          {{- readFile $src | safeHTML -}}
+        {{ else }}
+          {{ $img := resources.Get $src }}
+          {{ $alt := "SharePoint Framework (SPFx) Advisory Meeting" }}
+          {{ $img := $img.Resize "320x webp" }}
+          {{ with $img }}   
+            <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" />
+          {{ end }} 
+        {{ end }}
+      </div>
+      <div class="jt-confTitle">Sympraxis Microsoft 365 Jumpstart</div>
+      <div class="jt-confTitle">SharePoint Framework (SPFx) Advisory Meeting</div>
+    </a>
+</div>

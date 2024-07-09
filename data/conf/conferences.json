@@ -30,6 +30,17 @@
         "alt": "European Collaboration Summit Logo"
       },
       "expire": "2024-05-16T23:59:00Z"
+    },
+    {
+      "title": "TechCon365 - Microsoft 365 & Power Platform Conference",
+      "subtitle": "August 12-16, 2024 - Washington, D.C.",
+      "url": "https://symp.info/TechCon365DC",
+      "img": {
+        "src": "conf/Sympraxis_Marc_Derek_Julie.png", 
+        "alt": "TechCon365 DC 2024 - Save $100 Code SYMPRAXISDC24"
+      },
+      "expire": "2024-08-16T23:59:00Z",
+      "code": "SYMPRAXISDC24"
     }
   ]
 }

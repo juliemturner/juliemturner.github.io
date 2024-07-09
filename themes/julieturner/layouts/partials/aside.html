@@ -62,6 +62,7 @@
     </ul>
   </div>
 </div>
+{{ partial "sympraxis-jumpstart.html" . }}
 {{ range $.Site.Data.conf.conferences }}
   {{ partial "conferences.html" . }}
 {{ end }}
