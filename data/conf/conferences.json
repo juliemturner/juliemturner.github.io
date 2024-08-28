@@ -41,6 +41,17 @@
       },
       "expire": "2024-08-16T23:59:00Z",
       "code": "SYMPRAXISDC24"
+    },
+    {
+      "title": "TechCon365 - Microsoft 365 & Power Platform Conference",
+      "subtitle": "November 11-15, 2024 - Dallas, TX",
+      "url": "https://techcon365.com/Dallas/tickets",
+      "img": {
+        "src": "conf/techcon365_dallas.png", 
+        "alt": "TechCon365 Dallas 2024 - Save $100 Code JULIETX"
+      },
+      "expire": "2024-11-15T23:59:00Z",
+      "code": "JULIETX"
     }
   ]
 }
